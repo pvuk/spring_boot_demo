@@ -1,0 +1,26 @@
+1. To create spring boot application project open https://start.spring.io/
+1.1 select below Dependencies (as per requirement select as you wish)
+1.1.1 Group(indicates package name) com.spring.transaction
+1.1.2 Dependencies Web×Security×Cloud OAuth2×HATEOAS×Rest Repositories×Aspects×MongoDB×
+1.1.3 Artifact(Project name) spring_boot_demo
+1.1.4 Click on Generate Project
+
+2. Extract folder spring_boot_demo and paste it at current eclipse workspace location
+
+3. Open eclipse
+3.1 Create Java project -> Project Name same as spring_boot_demo(in point 2) -> Finish
+
+4. Convert Project to Maven
+4.1 Right click on Project -> Configure -> convert to Maven
+4.2 Right click on Project -> Maven -> clean
+4.3 Right click on Project -> Maven -> build
+4.4.1 in Goals section add
+clean install -Dmaven.test.skip=true
+
+5. Share Project to Git
+5.1 Right click on Project -> Team -> Share Project -> Git -> 
+5.2 Create -> D:\workspace\learnjava-repository\.git\branches\api
+5.4 (create folder under D:\workspace\learnjava-repository\.git\branches\api) Path within repository -> spring_boot_demo -> Finish
+
+6. Commit Project changes into Git
+6.1 Right click on Project -> Team -> Commit -> write comment why you commit -> Select Files -> Commit and Push
