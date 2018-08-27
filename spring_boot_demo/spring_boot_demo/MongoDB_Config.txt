@@ -1,0 +1,50 @@
+
+-> type => check message
+
+1. Download Mongodb latest version
+1.1 https://www.mongodb.com/download-center?jmp=nav
+1.2 Select Platform -> Download -> select archive / msi
+2. Installation steps
+https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/?_ga=2.6718962.1782262180.1535102519-1561176774.1534941405#install-mdb-edition
+2.1 Start your MongoDB database.
+To start MongoDB, invoke mongod.exe.
+
+EXAMPLE
+
+From the Command Interpreter:
+
+-> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+or
+-> "D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
+
+2.2 If the MongoDB database server is running correctly, the Command Interpreter displays:
+
+=>[initandlisten] waiting for connections
+
+2.3 Connect to MongoDB.
+To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
+
+-> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+
+3. Start MongoDB Enterprise Edition as a Windows Service
+Starting in version 4.0, you can install and configure MongoDB as a Windows Service during the install, and the MongoDB service is started upon successful installation.
+
+To start/restart the service, you can use the Services Manager.
+
+You can also manage the service from the command line. To start the MongoDB service from the command line, invoke the following command:
+
+-> net start MongoDB
+
+3.1 Stop MongoDB Enterprise Edition as a Windows Service
+To stop/pause the MongoDB service, you can use the Services Manager.
+
+You can also manage the service from the command line. To stop the MongoDB service from the command line, invoke the following command:
+
+-> net stop MongoDB
+
+4. Remove MongoDB Enterprise Edition as a Windows Service
+To remove the MongoDB service, first stop the service and then run the following command:
+
+-> sc.exe delete MongoDB
+
+

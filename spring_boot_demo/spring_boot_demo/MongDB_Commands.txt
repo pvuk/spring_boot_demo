@@ -1,0 +1,188 @@
+1 Start your MongoDB database.
+To start MongoDB, invoke mongod.exe.
+
+EXAMPLE
+
+From the Command Interpreter:
+
+-> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+or
+-> "D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
+
+1.1 If the MongoDB database server is running correctly, the Command Interpreter displays:
+
+=>[initandlisten] waiting for connections
+
+1.2 Connect to MongoDB.
+To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
+
+-> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+or
+D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+
+------------------------------------------------------------------------------------------------------------
+
+//https://dzone.com/articles/top-10-most-common-commands-for-beginners
+
+1. Log Into MongoDB
+The following command can be used to log into the MongoDB database. Make sure that the user with credentials such as username and password exist in the database mentioned in place of dbname.
+
+mongo -u <username> -p <password> --authenticationDatabase <dbname>
+
+1.1 Authenticate and Log Out From Database
+When switching to a different database using the use dbName command, the user is required to authenticate using a valid database user for that database. The following command can be used for authentication:
+
+//
+// Authenticate
+//
+db.auth("username", "password");
+//
+// Logout
+//
+db.logout()
+
+1.2 List Down Collections, Users, Roles, etc.
+The following commands can be used to check existing collections, users, etc.
+
+//
+// List down collections of the current database
+//
+>show collections;
+>db.getCollectionNames();
+//
+// List down all the users of current database
+//
+>show users;
+>db.getUsers();
+//
+// List down all the roles
+//
+>show roles
+
+Create a Collection
+The following command can be used to create a collection. The details on this command can be found on this page.
+
+>db.createCollection("collectionName");
+1.3. Insert a Document in a Collection
+Once a collection is created, the next step is to insert one or more documents. Following is a sample command for inserting a document in a collection.
+
+//
+// Insert single document
+//
+db.<collectionName>.insert({field1: "value", field2: "value"})
+//
+// Insert multiple documents
+//
+db.<collectionName>.insert([{field1: "value1"}, {field1: "value2"}])
+db.<collectionName>.insertMany([{field1: "value1"}, {field1: "value2"}])
+1.4. Save or Update Document
+The save command can be used to either update an existing document or insert a new one depending on the document parameter passed to it. If the _id passed matches an existing document, the document is updated. Otherwise, a new document is created. Internally, thesave method uses either the insert or the update command.
+
+//
+// Matching document will be updated; In case, no document matching the ID is found, a new document is created
+//
+db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", field2: "value"});
+1.5. Display Collection Records
+The following commands can be used to retrieve collection records:
+
+//
+// Retrieve all records
+//
+db.<collectionName>.find();
+//
+// Retrieve limited number of records; Following command will print 10 results;
+//
+db.<collectionName>.find().limit(10);
+//
+// Retrieve records by id
+//
+db.<collectionName>.find({"_id": ObjectId("someid")});
+//
+// Retrieve values of specific collection attributes by passing an object having 
+// attribute names assigned to 1 or 0 based on whether that attribute value needs 
+// to be included in the output or not, respectively.
+//
+db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 1, field2: 1});
+db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 0}); // Exclude field1
+//
+// Collection count
+//
+db.<collectionName>.count();
+1.6. Administrative Commands
+Following are some of the administrative commands that can be helpful in finding collection details such as storage size, total size, and overall statistics.
+
+//
+// Get the collection statistics 
+//
+db.<collectionName>.stats()
+db.printCollectionStats()
+//
+// Latency statistics for read, writes operations including average time taken for reads, writes
+// and related umber of operations performed
+//
+db.<collectionName>.latencyStats()
+//
+// Get collection size for data and indexes
+//
+db.<collectionName>.dataSize() // Size of the collection
+db.<collectionName>.storageSize() // Total size of document stored in the collection
+db.<collectionName>.totalSize() // Total size in bytes for both collection data and indexes
+db.<collectionName>.totalIndexSize() // Total size of all indexes in the collection
+
+------------------------------------------------------------------------------------------------------------
+
+
+1.3.How to create a database in MongoDB. / Select Database to Work With
+The use Command
+MongoDB use DATABASE_NAME is used to create database. The command will create a new database if it doesn't exist, otherwise it will return the existing database.
+
+Syntax
+Basic syntax of use DATABASE statement is as follows −
+
+use DATABASE_NAME
+Example
+
+If you want to use a database with name <mydb>, then use DATABASE statement would be as follows −
+>use mydb
+switched to db mydb
+
+1.4
+To check your currently selected database, use the command db
+>db
+mydb
+
+1.5
+If you want to check your databases list, use the command show dbs.
+>show dbs
+local     0.78125GB
+test      0.23012GB
+
+1.6
+Your created database (mydb) is not present in list. To display database, you need to insert at least one document into it.
+>db.movie.insert({"name":"tutorials point"})
+>show dbs
+local      0.78125GB
+mydb       0.23012GB
+test       0.23012GB
+In MongoDB default database is test. If you didn't create any database, then collections will be stored in test database.
+
+2 To create user in db
+//https://docs.mongodb.com/manual/tutorial/enable-authentication/
+
+2.1 Add user to DB
+>db.createUser({user:"admin", pwd:"admin",roles:["readWrite","dbAdmin"]})
+
+2.2 if you want to add without roles
+>db.createUser({user:"admin", pwd:"admin", roles:[]})
+
+2.3 To check Authenticated or not
+>db.auth("admin_name", "1234")
+
+it should give you:
+1
+else :
+Error: Authentication failed.
+0
+
+
+
