@@ -1,5 +1,7 @@
 package com.spring.transaction.model;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -34,4 +36,6 @@ public class DebitCard {
 	private long bankId;
 	
 	private long cardTypeId;
+	
+	private Date cardIssuedOn;
 }

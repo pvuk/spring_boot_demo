@@ -18,7 +18,11 @@ public class CardType {
 	@Id
 	private long cardTypeId;
 
+	private String code;
+	
+	private int position;
+	
 	@NotEmpty(message = "Card Type is required field")
-	private String cardType;
+	private String description;
 
 }
