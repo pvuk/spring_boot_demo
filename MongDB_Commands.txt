@@ -1,9 +1,7 @@
-1 Start your MongoDB database.
+1. Start your MongoDB database.
 To start MongoDB, invoke mongod.exe.
 
-EXAMPLE
-
-From the Command Interpreter:
+EXAMPLE: From the Command Interpreter(Win + R)
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or

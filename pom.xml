@@ -24,6 +24,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
+		<mongo.java.driver.version>3.8.2</mongo.java.driver.version>
 <!-- 		<spring-cloud.version>Edgware.SR4</spring-cloud.version> -->
 	</properties>
 
@@ -74,6 +75,23 @@
 		    <artifactId>lombok</artifactId>
 		    <version>1.18.2</version><!--$NO-MVN-MAN-VER$-->
 		    <scope>provided</scope>
+		</dependency>
+
+<!-- 		referring from the git project https://github.com/pvuk/lib.git -->
+<!-- or		 -->
+		<!-- mongodb java driver -->
+<!-- 		<dependency> -->
+<!-- 			<groupId>org.mongodb</groupId> -->
+<!-- 			<artifactId>mongo-java-driver</artifactId> -->
+<!-- 			<version>${mongo.java.driver.version}}</version> -->
+<!-- 		</dependency> -->
+		
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.12</version>
+		    <scope>test</scope>
 		</dependency>
 				
 	</dependencies>
