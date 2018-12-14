@@ -31,4 +31,6 @@ public class RewardPointsRedeem {
 	private long totalPointsExpire;
 
 	private String pointsExpireDetails;
+	
+	private Long rewardCardId;
 }

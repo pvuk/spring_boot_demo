@@ -1,5 +1,7 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
+
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
@@ -25,8 +27,11 @@ public class RewardPointsEarned {
 	@NotEmpty(message = "Rewards Earned is required field")
 	private long rewardsEarned;
 	
+	private BigDecimal rewardsAdjusted;
+	
 	private long rewardsEarnedForThisYear;
 	
 	private long rewardsEarnedFromTheCardIssueDate;
 	
+	private Long rewardCardId;
 }

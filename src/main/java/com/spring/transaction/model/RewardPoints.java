@@ -18,6 +18,9 @@ public class RewardPoints {
 	@Id
 	private long rewardPointsId;
 	
+	@NotEmpty(message = "Reward Card is required field")
+	private Long rewardCardId;
+	
 	@NotEmpty(message = "Reward Points Catalogue is required field")
 	private long rewardPointsCatalogueId;
 	
