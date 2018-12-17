@@ -1,0 +1,11 @@
+1. Run the java file SpringBootDemoApplication.java
+==========================================================================================	
+	if SecurityConfiguration is not configured
+==========================================================================================	
+2. Using generated security password: 1988702d-61a5-477b-b06d-800ec8bec86d
+2.1 copy password
+3. In console running port is displayed along with context path.
+3.1 For ex: http://localhost:8102/springbootmongo/login
+3.1.1 login is default service provided by spring-boot-starter-security (artifactId)
+3.2 User: user, Password: 1988702d-61a5-477b-b06d-800ec8bec86d
+==========================================================================================
