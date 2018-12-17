@@ -1,5 +1,7 @@
 package com.spring.transaction.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,9 +13,9 @@ import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @Service
 @Transactional(rollbackFor = Exception.class)
+@Slf4j
 public class BankServiceImpl implements BankService {
 	
 	private BankMongoRepository bankMongoRepo;
@@ -44,6 +46,11 @@ public class BankServiceImpl implements BankService {
 	@Override
 	public Bank findByBankId(long bankId) {
 		return bankMongoRepo.findById(bankId).get();
+	}
+
+	@Override
+	public List<Bank> getAllBanks() {
+		return bankMongoRepo.findAll();
 	}
 
 }

@@ -1,5 +1,7 @@
 package com.spring.transaction.service;
 
+import java.util.List;
+
 import com.spring.transaction.model.Bank;
 
 public interface BankService {
@@ -9,4 +11,5 @@ public interface BankService {
 	String deleteBankById(long bankId);
 	
 	Bank findByBankId(long bankId);
+	List<Bank> getAllBanks();
 }

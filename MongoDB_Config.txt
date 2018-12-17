@@ -25,6 +25,8 @@ or
 To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+or
+->D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
 
 3. Start MongoDB Enterprise Edition as a Windows Service
 Starting in version 4.0, you can install and configure MongoDB as a Windows Service during the install, and the MongoDB service is started upon successful installation.

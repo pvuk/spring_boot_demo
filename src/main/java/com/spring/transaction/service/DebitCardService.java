@@ -8,4 +8,6 @@ public interface DebitCardService {
 	
 	DebitCard updateDebitCard(DebitCard debitCard);
 	
+	DebitCard findByDebitCardId(long debitCardId);
+	
 }
