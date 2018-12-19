@@ -9,9 +9,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 @Document(collection = "BANK_CODE")
 public class Bank {
@@ -19,14 +21,27 @@ public class Bank {
 	@Id
 	private long bankId;
 	
-	@NotNull(message="Bank Name Can't be null")
+	@NotNull(message="Bank Name Can't be empty / null")
 	@NotBlank(message="Bank Name Can't be empty")
 	private String bankName;
 	
+	@NotNull(message="IFSC Code Can't be empty / null")
 	private String ifscCode;
+	
+	private long micrCode;
+	
+	private long branchCode;
+	
+	private String branch;
 	
 	private String contactNumber;
 	
 	private String address;
+	
+	private String district;
+	
+	private String state;
+	
+	private String country;
 	
 }

@@ -1,10 +1,13 @@
 package com.spring.transaction.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.mongo.BankMongoRepository;
 import com.spring.transaction.service.BankService;
@@ -18,7 +21,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BankServiceImpl implements BankService {
 	
-	private BankMongoRepository bankMongoRepo;
+	@Autowired private BankMongoRepository bankMongoRepo;
 
 	@Override
 	public String saveBank(Bank bank) {
@@ -45,6 +48,10 @@ public class BankServiceImpl implements BankService {
 
 	@Override
 	public Bank findByBankId(long bankId) {
+		Optional<Bank> findById = bankMongoRepo.findById(bankId);
+		if (findById.isEmpty()) {
+			throw new NotFoundException("BankId "+ bankId +" Not found");
+		}
 		return bankMongoRepo.findById(bankId).get();
 	}
 
