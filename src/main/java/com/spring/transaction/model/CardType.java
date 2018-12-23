@@ -8,11 +8,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Builder
 @Data
 @AllArgsConstructor
-@Document(collection = "CARD_TYPE_CODE")
+@NoArgsConstructor
+@Document(collection = "CARD_TYPE")
 public class CardType {
 
 	@Id

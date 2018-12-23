@@ -6,6 +6,8 @@ EXAMPLE: From the Command Interpreter(Win + R)
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or
 -> "D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
+or
+-> "F:\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="F:\data\db"
 
 1.1 If the MongoDB database server is running correctly, the Command Interpreter displays:
 
@@ -16,7 +18,9 @@ To connect to MongoDB through the mongo.exe shell, open another Command Interpre
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 or
-D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+-> D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+or
+-> F:\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
 
 ------------------------------------------------------------------------------------------------------------
 
@@ -170,6 +174,8 @@ In MongoDB default database is test. If you didn't create any database, then col
 
 2.1 Add user to DB
 >db.createUser({user:"admin", pwd:"admin",roles:["readWrite","dbAdmin"]})
+or
+>db.createUser({user:"m001-student",pwd:"m001-mongodbbasics",roles:["readWrite","dbAdmin"]})
 
 2.2 if you want to add without roles
 >db.createUser({user:"admin", pwd:"admin", roles:[]})
@@ -183,5 +189,16 @@ else :
 Error: Authentication failed.
 0
 
+------------------------------------------------------------------------------------
 
+Use the following information to complete this form, but do not click "Connect" yet.
 
+Hostname: cluster0-shard-00-00-jxeqq.mongodb.net
+
+Username: m001-student
+
+Password: m001-mongodb-basics
+
+Replica Set Name: Cluster0-shard-0
+
+Read Preference: Primary Preferred

@@ -49,7 +49,7 @@ public class BankServiceImpl implements BankService {
 	@Override
 	public Bank findByBankId(long bankId) {
 		Optional<Bank> findById = bankMongoRepo.findById(bankId);
-		if (findById.isEmpty()) {
+		if (findById.isPresent()) {
 			throw new NotFoundException("BankId "+ bankId +" Not found");
 		}
 		return bankMongoRepo.findById(bankId).get();
