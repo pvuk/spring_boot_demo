@@ -1,0 +1,16 @@
+#mongodb
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=admin
+spring.data.mongodb.authentication-database=admin
+spring.data.mongodb.username=m001-student
+spring.data.mongodb.password=m001-mongodbbasics
+
+#logging
+logging.level.org.springframework.data=debug
+logging.level.=error
+
+# App config
+server.port=8102
+spring.application.name=SpringBootMongo
+server.context-path=/bank
