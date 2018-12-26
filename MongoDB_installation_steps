@@ -1,0 +1,28 @@
+1. config the MongoDB clusters settings
+
+2. Download MongoDB Compass from below link
+https://downloads.mongodb.com/compass/mongodb-compass-community-1.15.4-win32-x64.exe
+
+2.2
+Two types of servers are available those are community and enterprise. Choose your priority and click on download
+
+https://www.mongodb.com/download-center/v2/community
+
+https://www.mongodb.com/download-center/v2/enterprise 
+
+3.1.
+Open CMD (WIN + R)
+>F:\mongodb-win32-x86_64-2008plus-ssl-4.0.3\bin\mongo.exe
+
+4.to check how many db's available
+>show dbs
+
+5.1
+To switch into db use below command 
+>use admin
+switched to db admin
+
+5.2
+To create user in db use below command
+> db.createUser({user:"admin",pwd:"admin",roles:["readWrite","dbAdmin"]})
+Successfully added user: { "user" : "admin", "roles" : [ "readWrite", "dbAdmin" ] }
