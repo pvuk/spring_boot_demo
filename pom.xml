@@ -58,10 +58,13 @@
 			<artifactId>spring-cloud-starter-oauth2</artifactId>
 		</dependency>
 		
-		<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+<!-- 		Since you have added both mongodb and data-jpa dependencies in your pom.xml file, it was creating a dependency conflict like below.
+				Try removing jpa dependency and run. It should work fine. 
+			//Ref: https://stackoverflow.com/questions/49475177/failed-to-auto-configure-a-datasource-spring-datasource-url-is-not-specified-->
+<!-- 		<dependency> -->
+<!--             <groupId>org.springframework.boot</groupId> -->
+<!--             <artifactId>spring-boot-starter-data-jpa</artifactId> -->
+<!--         </dependency> -->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
