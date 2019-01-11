@@ -43,5 +43,7 @@ public class CreditCard {
 	
 	private Date cardIssuedOn;
 	
+	private Date cardExpiredOn;
+	
 	private Long rewardCardId;
 }
