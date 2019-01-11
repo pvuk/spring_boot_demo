@@ -153,6 +153,19 @@ db.<collectionName>.find();
 // Retrieve limited number of records; Following command will print 10 results;
 //
 db.<collectionName>.find().limit(10);
+
+--Fetch selective field from collection based on a criteria
+If we want to fetch only the "user_id" for all documents from the collection 'userdetails' which hold the educational qualification "M.C.A.", the following mongodb command can be used :
+
+>db.userdetails.find({"education":"M.C.A."},{"user_id" : 1}).pretty();
+Copy
+N.B. find() method displays the documents in a non structured format but to display the results in a formatted way, the pretty() method can be used.
+
+The SQL equivalent code is
+SELECT user_id 
+FROM userdetails 
+WHERE education="M.C.A."; 
+
 //
 // Retrieve records by id
 //
