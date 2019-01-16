@@ -25,7 +25,7 @@ public class BankServiceImpl implements BankService {
 
 	@Override
 	public String saveBank(Bank bank) {
-		bank = bankMongoRepo.save(bank);
+		bank = bankMongoRepo.insert(bank);
 		return MessageConstants.SUCCESS_SAVE;
 	}
 
