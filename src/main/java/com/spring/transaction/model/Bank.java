@@ -36,12 +36,6 @@ public class Bank {
 	
 	private String contactNumber;
 	
-	private String address;
-	
-	private String district;
-	
-	private String state;
-	
-	private String country;
+	private Long addressId;
 	
 }
