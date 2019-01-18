@@ -1,0 +1,19 @@
+============================================================================================================================
+Bank JSON - Save
+{
+"bankName": "ICICI BANK",
+"ifscCode": "ICIC0006306",
+"micrCode":	"520229002",
+"branchCode": "006306",
+"branch": "VIJAYAWADA",
+"contactNumber":"",
+"address": {
+	"permanentAddress":{
+		"address":"D-40-1-52 5, Sainag Complex, M G Road, Vijayawada. 520010"
+	}
+},
+"district": "KRISHNA",
+"state": "ANDHRA PRADESH",
+"country": "INDIA"
+}
+============================================================================================================================
