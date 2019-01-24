@@ -21,7 +21,7 @@ public class Address {
 	private Long addressId;
 	
 	@NotNull(message = "Permanent Address is required field.")
-	private Long permanentAddressId;
+	private PermanentAddress permanentAddress;
 	
 	@NotNull(message = "Current Address is required field.")
 	private Long currentAddressId;
