@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.mongo.BankMongoRepository;
@@ -23,15 +25,18 @@ public class BankServiceImpl implements BankService {
 	
 	@Autowired private BankMongoRepository bankMongoRepo;
 
+	@Autowired private MongoClient mongoClient;
+	
 	@Override
 	public String saveBank(Bank bank) {
-		bank = bankMongoRepo.insert(bank);
+		MongoCollection<Bank> collection = mongoClient.getDatabase("trans").getCollection("BANK_CODE", Bank.class);
+		collection.insertOne(bank);
 		return MessageConstants.SUCCESS_SAVE;
 	}
 
 	@Override
 	public String updateBank(Bank bank) throws Exception {
-		if (bank != null && bank.getBankId() != 0L) {
+		if (bank != null && bank.getBankId() != null) {
 			bank = bankMongoRepo.save(bank);
 		} else {
 			log.info(ErrorMessages.UPDATE_FAILED);
