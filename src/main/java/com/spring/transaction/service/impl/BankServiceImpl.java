@@ -3,7 +3,9 @@ package com.spring.transaction.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,6 +29,8 @@ public class BankServiceImpl implements BankService {
 
 	@Autowired private MongoClient mongoClient;
 	
+	@Autowired private MongoTemplate mongoTemplate;
+	
 	@Override
 	public String saveBank(Bank bank) {
 		MongoCollection<Bank> collection = mongoClient.getDatabase("trans").getCollection("BANK_CODE", Bank.class);
@@ -46,13 +50,13 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public String deleteBankById(long bankId) {
+	public String deleteBankById(ObjectId bankId) {
 		bankMongoRepo.deleteById(bankId);
 		return MessageConstants.SUCCESS_DELETE;
 	}
 
 	@Override
-	public Bank findByBankId(long bankId) {
+	public Bank findByBankId(ObjectId bankId) {
 		Optional<Bank> findById = bankMongoRepo.findById(bankId);
 		if (findById.isPresent()) {
 			throw new NotFoundException("BankId "+ bankId +" Not found");
