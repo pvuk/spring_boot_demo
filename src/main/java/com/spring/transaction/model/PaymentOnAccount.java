@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import javax.validation.constraints.NotNull;
 
-import org.bson.codecs.pojo.annotations.BsonId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -13,7 +13,7 @@ import lombok.Data;
 @Document(collection="PAYMENT_ON_ACCOUNT")
 public class PaymentOnAccount {
 
-	@BsonId
+	@Id
 	private Long paymentOnAccountId;
 	
 	@NotNull(message="Payment Amount is required field")

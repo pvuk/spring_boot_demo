@@ -1,6 +1,6 @@
 package com.spring.transaction.model;
 
-import org.bson.codecs.pojo.annotations.BsonId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Document(collection = "CURRENT_ADDRESS")
 public class CurrentAddress {
 
-	@BsonId
+	@Id
 	private Long currentAddressId;
 
 	private String address;

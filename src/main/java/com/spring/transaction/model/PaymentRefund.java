@@ -4,7 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
-import org.bson.codecs.pojo.annotations.BsonId;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -13,7 +13,7 @@ import lombok.Data;
 @Document(collection="PAYMENT_REFUND")
 public class PaymentRefund {
 	
-	@BsonId
+	@Id
 	private Long paymentRefundId;
 	
 	@NotNull(message="Payment Refund On is required field")
