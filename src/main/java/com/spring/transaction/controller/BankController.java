@@ -2,6 +2,7 @@ package com.spring.transaction.controller;
 
 import java.util.List;
 
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,13 +36,13 @@ public class BankController {
 	}
 
 	@PostMapping(path = "/deleteBankById")
-	public @ResponseBody ResponseEntity<Object> deleteBankById(@RequestParam(required = true, value = "bankId") long bankId) {
+	public @ResponseBody ResponseEntity<Object> deleteBankById(@RequestParam(required = true, value = "bankId") ObjectId bankId) {
 		String message = bankService.deleteBankById(bankId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/findByBankId")
-	public @ResponseBody ResponseEntity<Object> findByBankId(@RequestParam(required = true, value = "bankId") long bankId) {
+	public @ResponseBody ResponseEntity<Object> findByBankId(@RequestParam(required = true, value = "bankId") ObjectId bankId) {
 		Bank bank = bankService.findByBankId(bankId);
 		return new ResponseEntity<Object>(bank, HttpStatus.OK);
 	}
