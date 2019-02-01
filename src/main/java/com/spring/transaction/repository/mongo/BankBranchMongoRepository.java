@@ -7,6 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.spring.transaction.model.BankBranch;
 
 @RepositoryRestResource(collectionResourceRel="bankbranch", path="bankbranch")
-public interface BankBranchRepository extends MongoRepository<BankBranch, ObjectId> {
+public interface BankBranchMongoRepository extends MongoRepository<BankBranch, ObjectId> {
 
 }

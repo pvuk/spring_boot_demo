@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class PermanentAddress {
 
 	@Id
-	private Long permanentAddressId;
+	private String permanentAddressId;
 
 	private String address;
 

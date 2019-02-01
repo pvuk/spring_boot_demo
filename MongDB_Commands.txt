@@ -145,6 +145,13 @@ db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", f
 1.5. Display Collection Records
 The following commands can be used to retrieve collection records:
 
+------------------------------------------------
+Update Record
+------------------------------------------------
+db.Employee.update(
+{"Employeeid" : 1},
+{$set: { "EmployeeName" : "NewMartin"}});
+
 //
 // Retrieve all records
 //
@@ -180,6 +187,22 @@ db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 0}); // Exclude f
 //
 // Collection count
 //
+---------------------------------------------------------------------------
+Delete Documents in a Collection
+Source: https://www.quackit.com/mongodb/tutorial/mongodb_delete_a_document.cfm
+---------------------------------------------------------------------------
+-->1. You can delete all documents in a collection simply by omitting any filtering criteria.
+	  Let's delete all documents in the artists collection:
+>db.artists.remove( {} )
+Resulting message:
+
+WriteResult({ "nRemoved" : 8 })
+
+-->2. Remove single document from collection
+MongoDB Enterprise > db.BANK_BRANCH.remove({ "_id" : ObjectId("5c519d43ee4cea15304a5bf0")});
+WriteResult({ "nRemoved" : 1 })
+
+---------------------------------------------------------------------------
 db.<collectionName>.count();
 1.6. Administrative Commands
 Following are some of the administrative commands that can be helpful in finding collection details such as storage size, total size, and overall statistics.

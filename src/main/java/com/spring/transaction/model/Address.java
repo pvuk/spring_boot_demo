@@ -2,6 +2,7 @@ package com.spring.transaction.model;
 
 import javax.validation.constraints.NotNull;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 public class Address {
 
 	@Id
-	private Long addressId;
+	private ObjectId addressId;
 	
 	@DBRef
 	@Field(value="PERMANENT_ADDRESS")

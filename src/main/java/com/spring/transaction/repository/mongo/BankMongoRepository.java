@@ -9,10 +9,12 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import com.spring.transaction.model.Bank;
 
-@RepositoryRestResource(collectionResourceRel="bank", path="bank")
+@RepositoryRestResource(collectionResourceRel = "bank", path = "bank")
 //No need implementation, just one interface, and you have CRUD, thanks Spring Data
-public interface BankMongoRepository extends MongoRepository<Bank, ObjectId>{
+public interface BankMongoRepository extends MongoRepository<Bank, ObjectId> {
 
-	List<Bank> findAllByBankName(@Param(value = "bankName") String bankName);
+	List<Bank> findAll();
+
+	Bank findByBankName(@Param(value = "bankName") String bankName);
 
 }

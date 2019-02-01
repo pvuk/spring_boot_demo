@@ -9,8 +9,10 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mongodb.BasicDBObject;
+import com.mongodb.DB;
+import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.mongo.BankMongoRepository;
@@ -32,9 +34,17 @@ public class BankServiceImpl implements BankService {
 	@Autowired private MongoTemplate mongoTemplate;
 	
 	@Override
-	public String saveBank(Bank bank) {
-		MongoCollection<Bank> collection = mongoClient.getDatabase("trans").getCollection("BANK_CODE", Bank.class);
-		collection.insertOne(bank);
+	public String saveBank(Bank bank) throws Exception {
+		try {
+			@SuppressWarnings("deprecation")
+			DB db = mongoClient.getDB("trans");
+			DBCollection dbCollection = db.getCollection("BANK_CODE");
+			BasicDBObject dbObject2 = BasicDBObject.parse(bank.toString());
+			dbCollection.insert(dbObject2);
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new Exception(e);
+		}
 		return MessageConstants.SUCCESS_SAVE;
 	}
 

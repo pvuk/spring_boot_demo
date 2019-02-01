@@ -21,8 +21,7 @@ import lombok.NoArgsConstructor;
 @Document(collection = "BANK_BRANCH")
 public class BankBranch {
 
-	@Id
-	private String bankBranchId;
+	@Id private String bankBranchId;
 	
 	@Indexed
 	@DBRef
@@ -31,18 +30,21 @@ public class BankBranch {
 	@NotBlank(message="Bank is required field.")
 	private Bank bank;
 	
+	@Field(value="IFSC_CODE")
 	@Indexed
 	@NotNull(message="IFSC Code Can't be empty")
 	@NotBlank(message="IFSC Code is required field.")
 	private String ifscCode;
 	
-	private long micrCode;
+	@Field(value="MICR_CODE") private long micrCode;
 	
-	private long branchCode;
+	@Field(value="BRANCH_CODE") private long branchCode;
 	
-	private String branch;
+	@Field(value="BRANCH_CODE_DESCRIPTION") private String branchCodeDescription;
 	
-	private String contactNumber;
+	@Field(value="BRANCH") private String branch;
+	
+	@Field(value="CONTACT_NUMBER") private String contactNumber;
 	
 	@DBRef
 	@Field(value="ADDRESS")

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 public class CurrentAddress {
 
 	@Id
-	private Long currentAddressId;
+	private String currentAddressId;
 
 	private String address;
 

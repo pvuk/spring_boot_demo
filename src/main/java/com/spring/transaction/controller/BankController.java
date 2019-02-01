@@ -24,7 +24,7 @@ public class BankController {
 	@Autowired private BankService bankService;
 	
 	@PostMapping(path = "/saveBank")
-	public @ResponseBody ResponseEntity<Object> saveBank(@RequestBody(required=true) Bank bank) {
+	public @ResponseBody ResponseEntity<Object> saveBank(@RequestBody(required=true) Bank bank) throws Exception {
 		String message = bankService.saveBank(bank);
 		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
 	}

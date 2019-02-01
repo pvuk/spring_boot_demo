@@ -8,7 +8,7 @@ import com.spring.transaction.model.Bank;
 
 public interface BankService {
 	
-	String saveBank(Bank bank);
+	String saveBank(Bank bank) throws Exception;
 	String updateBank(Bank bank) throws Exception;
 	String deleteBankById(ObjectId bankId);
 	

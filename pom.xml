@@ -37,6 +37,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-mongodb</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.mongodb/bson -->
+<!-- 		<dependency> -->
+<!-- 		    <groupId>org.mongodb</groupId> -->
+<!-- 		    <artifactId>bson</artifactId> -->
+<!-- 		    <version>3.9.1</version>$NO-MVN-MAN-VER$ -->
+<!-- 		</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-rest</artifactId>
@@ -87,12 +93,12 @@
 
 <!-- 		referring from the git project https://github.com/pvuk/lib.git -->
 <!-- or		 -->
-		<!-- mongodb java driver -->
-<!-- 		<dependency> -->
-<!-- 			<groupId>org.mongodb</groupId> -->
-<!-- 			<artifactId>mongo-java-driver</artifactId> -->
-<!-- 			<version>${mongo.java.driver.version}}</version> -->
-<!-- 		</dependency> -->
+		<!-- https://mvnrepository.com/artifact/org.mongodb/mongo-java-driver -->
+		<dependency>
+		    <groupId>org.mongodb</groupId>
+		    <artifactId>mongo-java-driver</artifactId>
+		    <version>3.9.1</version>
+		</dependency>
 		
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
