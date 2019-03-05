@@ -3,6 +3,7 @@ package com.spring.transaction.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,6 +14,8 @@ import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.mongo.BankMongoRepository;
@@ -36,11 +39,10 @@ public class BankServiceImpl implements BankService {
 	@Override
 	public String saveBank(Bank bank) throws Exception {
 		try {
-			@SuppressWarnings("deprecation")
-			DB db = mongoClient.getDB("trans");
-			DBCollection dbCollection = db.getCollection("BANK_CODE");
-			BasicDBObject dbObject2 = BasicDBObject.parse(bank.toString());
-			dbCollection.insert(dbObject2);
+			MongoDatabase db = mongoClient.getDatabase("trans");
+			MongoCollection<Document> dbCollection = db.getCollection("BANK_CODE");
+			Document dbObject2 = Document.parse(bank.toString());
+			dbCollection.insertOne(dbObject2);
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception(e);
