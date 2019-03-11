@@ -10,7 +10,7 @@ import lombok.Data;
 public class CardPayment {
 	
 	@Id
-	private Long cardDetailsId;
+	private Long cardPaymentId;
 	private Long creditCardId;
 	private Long debitCardId;
 	private long rewardPointsId;

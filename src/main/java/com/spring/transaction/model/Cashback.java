@@ -20,7 +20,12 @@ public class Cashback {
 	private Date cashbackOn;
 	@NotEmpty(message = "Cashback Amount Description is required field")
 	private String description;	
-	private String cashbackEligibleOnlyWhen;	
+	private String cashbackEligibleOnlyWhen;
+	private BigDecimal percentage;
+	private BigDecimal eligibleCashback;
+	private BigDecimal cashbackUpto;
+	private BigDecimal cashbackUptoDescription;
+	private BigDecimal cashbackAdjusted;
 	private String cashbackType;	
 	private Long cashbackCategoryId;
 }
