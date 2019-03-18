@@ -1,11 +1,15 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -30,16 +34,38 @@ public class Bank {
 	@NotNull(message = "Bank Name Can't be empty.")
 	@NotBlank(message = "Bank Name is required field.")
 	private String bankName;
+	
+	private Date establishedOn;
+	
+	private Long establishedYear;
+	
+	private String headQuarter;
+	
+	private Long branches;
+	
+	private BigDecimal revenues;
+	
+	private String strRevenues;
+	
+	private BigDecimal totalAssets;
+	
+	private String strTotalAssets;
+	
+	private String notes;
+	
+	private String refLink;
+	
+	@DBRef
+	@Field(value="BANK_TYPE")
+	private BankType bankType;
 
-	/**
-	 * Pass MongoDB Field value for inserting data, if Field value is different then new column is created.
-	 * 
-	 * In MongoDB Field value and java Field value is different.
-	 * Ex: In DB Field value BANK_NAME not equal to Java Field value bankName
-	 */
 	@Override
 	public String toString() {
-		return "{\"BANK_NAME\":" +"\""+ bankName + "\"}";
+		return "Bank [bankId=" + bankId + ", bankName=" + bankName + ", establishedOn=" + establishedOn
+				+ ", establishedYear=" + establishedYear + ", headQuarter=" + headQuarter + ", branches=" + branches
+				+ ", revenues=" + revenues + ", strRevenues=" + strRevenues + ", totalAssets=" + totalAssets
+				+ ", strTotalAssets=" + strTotalAssets + ", notes=" + notes + ", refLink=" + refLink + ", bankType="
+				+ bankType + "]";
 	}
 	
 }
