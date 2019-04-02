@@ -20,7 +20,7 @@ public class SwaggerConfig {
 
 	private String basePackage = "com.spring.transaction.controller";
 
-	@Bean
+	@Bean(name="bankAPI")
 	public Docket bankAPI() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.groupName("BankAPI")
@@ -38,7 +38,7 @@ public class SwaggerConfig {
 		return apiInfo;
 	}
 	
-	@Bean
+	@Bean(name="bankBranchAPI")
 	public Docket bankBranchAPI() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.groupName("BankBranchAPI")
