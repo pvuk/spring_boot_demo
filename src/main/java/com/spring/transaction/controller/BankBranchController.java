@@ -1,5 +1,7 @@
 package com.spring.transaction.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.http.HttpStatus;
@@ -22,5 +24,10 @@ public class BankBranchController {
 	public @ResponseBody ResponseEntity<Object> saveBankBranch(@RequestBody(required=true) BankBranch bankBranch) throws Exception {
 		String message = bankBranchService.saveBankBranch(bankBranch);
 		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
+	}
+	
+	@PostMapping(path = "/getBankBranchIds")
+	public @ResponseBody ResponseEntity<Object> getBankBranchIds(@RequestBody(required=true) List<String> bankBranchIds) throws Exception {
+		return new ResponseEntity<Object>(bankBranchIds, HttpStatus.OK);
 	}
 }

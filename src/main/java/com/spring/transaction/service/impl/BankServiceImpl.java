@@ -10,9 +10,6 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mongodb.BasicDBObject;
-import com.mongodb.DB;
-import com.mongodb.DBCollection;
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -62,18 +59,20 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public String deleteBankById(ObjectId bankId) {
-		bankMongoRepo.deleteById(bankId);
+	public String deleteBankById(String bankId) {
+		ObjectId objectId = new ObjectId(bankId);
+		bankMongoRepo.deleteById(objectId);
 		return MessageConstants.SUCCESS_DELETE;
 	}
 
 	@Override
-	public Bank findByBankId(ObjectId bankId) {
-		Optional<Bank> findById = bankMongoRepo.findById(bankId);
+	public Bank findByBankId(String bankId) {
+		ObjectId objectId = new ObjectId(bankId);
+		Optional<Bank> findById = bankMongoRepo.findById(objectId);
 		if (findById.isPresent()) {
 			throw new NotFoundException("BankId "+ bankId +" Not found");
 		}
-		return bankMongoRepo.findById(bankId).get();
+		return bankMongoRepo.findById(objectId).get();
 	}
 
 	@Override

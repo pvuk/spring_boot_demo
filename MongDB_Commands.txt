@@ -80,7 +80,7 @@ else :
 Error: Authentication failed.
 0
 
-------------------------------------------------------------------------------------
+=========================================================================================================================================
 
 //https://dzone.com/articles/top-10-most-common-commands-for-beginners
 
@@ -145,13 +145,15 @@ db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", f
 1.5. Display Collection Records
 The following commands can be used to retrieve collection records:
 
-------------------------------------------------
-Update Record
-------------------------------------------------
+=========================================================================================================================================
+															Update Record
+=========================================================================================================================================
 db.Employee.update(
 {"Employeeid" : 1},
 {$set: { "EmployeeName" : "NewMartin"}});
-
+=========================================================================================================================================
+															GET
+=========================================================================================================================================
 //
 // Retrieve all records
 //
@@ -187,10 +189,10 @@ db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 0}); // Exclude f
 //
 // Collection count
 //
----------------------------------------------------------------------------
-Delete Documents in a Collection
+=========================================================================================================================================
+														Delete Documents in a Collection
 Source: https://www.quackit.com/mongodb/tutorial/mongodb_delete_a_document.cfm
----------------------------------------------------------------------------
+=========================================================================================================================================
 -->1. You can delete all documents in a collection simply by omitting any filtering criteria.
 	  Let's delete all documents in the artists collection:
 >db.artists.remove( {} )
@@ -202,7 +204,7 @@ WriteResult({ "nRemoved" : 8 })
 MongoDB Enterprise > db.BANK_BRANCH.remove({ "_id" : ObjectId("5c519d43ee4cea15304a5bf0")});
 WriteResult({ "nRemoved" : 1 })
 
----------------------------------------------------------------------------
+=========================================================================================================================================
 db.<collectionName>.count();
 1.6. Administrative Commands
 Following are some of the administrative commands that can be helpful in finding collection details such as storage size, total size, and overall statistics.
@@ -225,7 +227,7 @@ db.<collectionName>.storageSize() // Total size of document stored in the collec
 db.<collectionName>.totalSize() // Total size in bytes for both collection data and indexes
 db.<collectionName>.totalIndexSize() // Total size of all indexes in the collection
 
----------------------------------------------------------------------------------------------------
+=========================================================================================================================================
 
 Use the following information to complete this form, but do not click "Connect" yet.
 

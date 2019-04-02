@@ -6,7 +6,6 @@ import java.util.Date;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -27,7 +26,7 @@ public class Bank {
 
 	@Id
 	@Field(value = "BANK_ID", order = 1)
-	private ObjectId bankId;
+	private String bankId;
 
 	@Field(value = "BANK_NAME", order = 2)
 	@Indexed(unique = true)
