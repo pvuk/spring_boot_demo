@@ -1,0 +1,4 @@
+1. http://localhost:8102/springbootmongo/swagger-ui.html
+2. Configure controller rest services in com.spring.transaction.configuration.SwaggerConfig
+2.1 For example if your controller @RequestMapping value is "/bank/service" append .* at the end, 
+	final output in Docket path will be "/bank/service.*"
