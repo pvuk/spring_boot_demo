@@ -15,7 +15,7 @@ import com.spring.transaction.model.BankBranch;
 import com.spring.transaction.model.CurrentAddress;
 import com.spring.transaction.model.PermanentAddress;
 import com.spring.transaction.repository.mongo.BankBranchMongoRepository;
-import com.spring.transaction.repository.mongo.BankMongoRepository;
+import com.spring.transaction.repository.mongo.BankRepository;
 import com.spring.transaction.service.BankBranchService;
 import com.spring.transaction.validator.ErrorMessages;
 import com.spring.transaction.validator.MessageConstants;
@@ -29,7 +29,7 @@ public class BankBranchServiceImpl implements BankBranchService {
 
 	@Autowired private MongoTemplate mongoTemplate;
 	
-	@Autowired private BankMongoRepository bankMongoRepository;
+	@Autowired private BankRepository bankMongoRepository;
 	@Autowired private BankBranchMongoRepository bankBranchMongoRepository;
 	
 	@Override

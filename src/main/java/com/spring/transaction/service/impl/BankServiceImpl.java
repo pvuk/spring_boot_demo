@@ -15,7 +15,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
-import com.spring.transaction.repository.mongo.BankMongoRepository;
+import com.spring.transaction.repository.mongo.BankRepository;
 import com.spring.transaction.service.BankService;
 import com.spring.transaction.validator.ErrorMessages;
 import com.spring.transaction.validator.MessageConstants;
@@ -27,7 +27,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class BankServiceImpl implements BankService {
 	
-	@Autowired private BankMongoRepository bankMongoRepo;
+	@Autowired private BankRepository bankMongoRepo;
 
 	@Autowired private MongoClient mongoClient;
 	
@@ -70,7 +70,7 @@ public class BankServiceImpl implements BankService {
 		ObjectId objectId = new ObjectId(bankId);
 		Optional<Bank> findById = bankMongoRepo.findById(objectId);
 		if (findById.isPresent()) {
-			throw new NotFoundException("BankId "+ bankId +" Not found");
+			throw new NotFoundException("BankId: "+ bankId +" Not found");
 		}
 		return bankMongoRepo.findById(objectId).get();
 	}
