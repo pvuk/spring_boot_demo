@@ -1,4 +1,21 @@
-1. http://localhost:8102/springbootmongo/swagger-ui.html
-2. Configure controller rest services in com.spring.transaction.configuration.SwaggerConfig
-2.1 For example if your controller @RequestMapping value is "/bank/service" append .* at the end, 
+1. Add below dependencies in pom.xml
+<!-- 		https://dzone.com/articles/spring-boot-restful-api-documentation-with-swagger -->
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger-ui</artifactId>
+		    <version>2.9.2</version>
+			<scope>compile</scope>
+		</dependency>
+
+2. Access URL -> http://localhost:8102/springbootmongo/swagger-ui.html
+3. Configure controller rest services in com.spring.transaction.configuration.SwaggerConfig
+3.1 For example if your controller(BankController) @RequestMapping value is "/bank/service" append .* at the end, 
 	final output in Docket path will be "/bank/service.*"
+4. Maintain individual Docket method for each controller
