@@ -11,7 +11,7 @@ import com.spring.transaction.model.Bank;
 
 @RepositoryRestResource(collectionResourceRel = "bank", path = "bank")
 //No need implementation, just one interface, and you have CRUD, thanks Spring Data
-public interface BankMongoRepository extends MongoRepository<Bank, ObjectId> {
+public interface BankRepository extends MongoRepository<Bank, ObjectId> {
 
 	List<Bank> findAll();
 

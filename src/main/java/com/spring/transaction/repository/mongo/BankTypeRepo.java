@@ -6,6 +6,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import com.spring.transaction.model.BankType;
 
 @RepositoryRestResource(collectionResourceRel="bankType", path = "bankType")
-public interface BankTypeMongoRepo extends MongoRepository<BankType, Long> {
+public interface BankTypeRepo extends MongoRepository<BankType, Long> {
 
 }
