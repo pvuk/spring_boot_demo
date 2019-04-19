@@ -3,16 +3,12 @@ package com.spring.transaction.service.impl;
 import java.util.List;
 import java.util.Optional;
 
-import org.bson.Document;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mongodb.MongoClient;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.MongoDatabase;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.mongo.BankRepository;
@@ -29,21 +25,21 @@ public class BankServiceImpl implements BankService {
 	
 	@Autowired private BankRepository bankMongoRepo;
 
-	@Autowired private MongoClient mongoClient;
+//	@Autowired private MongoClient mongoClient;
 	
 	@Autowired private MongoTemplate mongoTemplate;
 	
 	@Override
 	public String saveBank(Bank bank) throws Exception {
-		try {
+		/*try {
 			MongoDatabase db = mongoClient.getDatabase("trans");
 			MongoCollection<Document> dbCollection = db.getCollection("BANK_CODE");
 			Document dbObject2 = Document.parse(bank.toString());
 			dbCollection.insertOne(dbObject2);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new Exception(e);
-		}
+			throw new Exception(e.getMessage());
+		}*/
 		return MessageConstants.SUCCESS_SAVE;
 	}
 
@@ -78,6 +74,12 @@ public class BankServiceImpl implements BankService {
 	@Override
 	public List<Bank> getAllBanks() {
 		return bankMongoRepo.findAll();
+	}
+
+	@Override
+	public String saveAllBanks(List<Bank> banks) throws Exception{
+		banks.forEach(bank -> mongoTemplate.insert(bank));
+		return MessageConstants.SUCCESS_SAVE;
 	}
 
 }
