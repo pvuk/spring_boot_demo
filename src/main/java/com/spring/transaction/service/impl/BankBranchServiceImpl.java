@@ -42,7 +42,6 @@ public class BankBranchServiceImpl implements BankBranchService {
 			Bank findByBankName = bankMongoRepository.findByBankName(bankName);
 			if (findByBankName == null) {
 				mongoTemplate.insert(bank);
-				log.info("Saving Bank for BankBranch: {}", bank);
 			} else if (findByBankName != null && findByBankName.getBankId() != null) {
 				bank = findByBankName;
 			}
@@ -52,6 +51,7 @@ public class BankBranchServiceImpl implements BankBranchService {
 			if (bankBranch != null && !StringUtils.isEmpty(branch)) {
 				BankBranch findByBranch = bankBranchMongoRepository.findByBranch(branch);
 				if (findByBranch != null) {
+					log.error(bankName +" Branch: "+ branch +" Already exsit");
 					throw new Exception(bankName +" Branch: "+ branch +" Already exsit");
 				}
 			}
@@ -59,11 +59,9 @@ public class BankBranchServiceImpl implements BankBranchService {
 			if (address != null) {
 				PermanentAddress permanentAddress = address.getPermanentAddress();
 				mongoTemplate.insert(permanentAddress);
-				log.info("Saving PermanentAddress of Address for BankBranch: {}", permanentAddress);
 				
 				CurrentAddress currentAddress = address.getCurrentAddress();
 				mongoTemplate.insert(currentAddress);
-				log.info("Saving CurrentAddress of Address for BankBranch: {}", currentAddress);
 				
 				if (permanentAddress != null && permanentAddress.getPermanentAddressId() != null) {
 					address.setCurrentAddress(currentAddress);
@@ -71,12 +69,12 @@ public class BankBranchServiceImpl implements BankBranchService {
 					mongoTemplate.insert(address);
 					log.info("Saving Address for BankBranch: {}", currentAddress);
 				} else {
+					log.error("Something went wrong. "+ ErrorMessages.PLEASE_CONTACT_IT_SUPPORT);
 					throw new Exception("Something went wrong. "+ ErrorMessages.PLEASE_CONTACT_IT_SUPPORT);
 				}
 				bankBranch.setAddress(address);
 			}
 			bankBranchMongoRepository.save(bankBranch);
-			log.info("Saved BankBranch: {}", bankBranch);
 			log.info("End - saveBankBranch");
 		} catch (Exception e) {
 			e.printStackTrace();
