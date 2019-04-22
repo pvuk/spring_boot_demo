@@ -1,7 +1,5 @@
 package com.spring.transaction.repository.mongo;
 
-import java.util.List;
-
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.query.Param;
@@ -13,7 +11,7 @@ import com.spring.transaction.model.Bank;
 //No need implementation, just one interface, and you have CRUD, thanks Spring Data
 public interface BankRepository extends MongoRepository<Bank, ObjectId> {
 
-	List<Bank> findAll();
+//	List<Bank> findAll();
 
 	Bank findByBankName(@Param(value = "bankName") String bankName);
 

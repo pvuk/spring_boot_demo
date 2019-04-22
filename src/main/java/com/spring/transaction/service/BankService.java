@@ -8,7 +8,7 @@ public interface BankService {
 	
 	String saveBank(Bank bank) throws Exception;
 	
-	String saveAllBanks(List<Bank> banks) throws Exception;
+	List<Bank> saveAllBanks(List<Bank> banks) throws Exception;
 	
 	String updateBank(Bank bank) throws Exception;
 	

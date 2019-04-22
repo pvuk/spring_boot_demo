@@ -33,8 +33,8 @@ public class BankController {
 	@TrackTime
 	@PostMapping(path = "/saveAllBanks")
 	public @ResponseBody ResponseEntity<Object> saveAllBanks(@RequestBody(required=true) List<Bank> banks) throws Exception {
-		String message = bankService.saveAllBanks(banks);
-		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
+		List<Bank> list = bankService.saveAllBanks(banks);
+		return new ResponseEntity<Object>(list, HttpStatus.CREATED);
 	}
 
 	@PostMapping(path = "/updateBank")

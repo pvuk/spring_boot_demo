@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -27,7 +26,7 @@ public class BankServiceImpl implements BankService {
 
 //	@Autowired private MongoClient mongoClient;
 	
-	@Autowired private MongoTemplate mongoTemplate;
+//	@Autowired private MongoTemplate mongoTemplate;
 	
 	@Override
 	public String saveBank(Bank bank) throws Exception {
@@ -73,13 +72,14 @@ public class BankServiceImpl implements BankService {
 
 	@Override
 	public List<Bank> getAllBanks() {
-		return bankMongoRepo.findAll();
+		List<Bank> list = bankMongoRepo.findAll();
+		return list;
 	}
 
 	@Override
-	public String saveAllBanks(List<Bank> banks) throws Exception{
-		banks.forEach(bank -> mongoTemplate.insert(bank));
-		return MessageConstants.SUCCESS_SAVE;
+	public List<Bank> saveAllBanks(List<Bank> banks) throws Exception{
+		banks.forEach(bank -> bankMongoRepo.insert(bank));
+		return banks;
 	}
 
 }
