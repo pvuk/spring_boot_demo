@@ -14,6 +14,7 @@ import org.aspectj.lang.annotation.Pointcut;
  */
 public class CommonCRUDJoinPointConfig {
 	
-	@Pointcut(value="execution(* com.spring.transaction.controller.*.get*())")
-	public void allGetLayerExecution() {};
+	@Pointcut(value="execution(* com.spring.transaction.controller.*.get*())") public void allGetLayerExecution() {};
+	
+	@Pointcut(value="execution(* com.spring.transaction.controller.*.save*())") public void saveLayerExecution() {};
 }

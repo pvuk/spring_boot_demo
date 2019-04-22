@@ -38,4 +38,11 @@ public class ControllerCRUDAspect {
 		proceedingJoinPoint.proceed();
 		log.info("{} - Total Response Time: {} ms", proceedingJoinPoint.getSignature(), System.currentTimeMillis() - start);
 	}
+	
+	@Around(value = "com.spring.transaction.aspect.CommonCRUDJoinPointConfig.saveLayerExecution()")
+	public void saveLayerExecution(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+		long start = System.currentTimeMillis();
+		proceedingJoinPoint.proceed();
+		log.info("{} - Total Response Time: {} ms", proceedingJoinPoint.getSignature(), System.currentTimeMillis() - start);
+	}
 }
