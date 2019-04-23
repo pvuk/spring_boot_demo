@@ -58,6 +58,9 @@ public class Bank {
 	@Field(value="BANK_TYPE")
 	private BankType bankType;
 
+	@Builder.Default
+	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
+	
 	@Override
 	public String toString() {
 		return "Bank [bankId=" + bankId + ", bankName=" + bankName + ", establishedOn=" + establishedOn

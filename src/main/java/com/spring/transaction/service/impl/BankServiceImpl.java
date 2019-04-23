@@ -5,6 +5,9 @@ import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,7 +29,7 @@ public class BankServiceImpl implements BankService {
 
 //	@Autowired private MongoClient mongoClient;
 	
-//	@Autowired private MongoTemplate mongoTemplate;
+	@Autowired private MongoTemplate mongoTemplate;
 	
 	@Override
 	public String saveBank(Bank bank) throws Exception {
@@ -78,7 +81,16 @@ public class BankServiceImpl implements BankService {
 
 	@Override
 	public List<Bank> saveAllBanks(List<Bank> banks) throws Exception{
-		banks.forEach(bank -> bankMongoRepo.insert(bank));
+		Query query = new Query();
+		banks.forEach(bank -> {
+			query.addCriteria(Criteria.where("BANK_NAME").is(bank.getBankName()));
+			boolean exists = mongoTemplate.exists(query, Bank.class);
+			if (!exists) {
+				bankMongoRepo.insert(bank);
+			} else {
+				bank.getErrorMessageMap().putErrorMsg(bank.getBankName(), bank.getBankName() +" not inserted.");
+			}
+		});
 		return banks;
 	}
 
