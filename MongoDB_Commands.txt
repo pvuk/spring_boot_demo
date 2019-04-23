@@ -100,6 +100,8 @@ Error: Authentication failed.
 0
 
 =========================================================================================================================================
+												LOGIN COMMANDS
+=========================================================================================================================================
 
 //https://dzone.com/articles/top-10-most-common-commands-for-beginners
 
@@ -138,6 +140,10 @@ The following commands can be used to check existing collections, users, etc.
 //
 >show roles
 
+=========================================================================================================================================
+															CREATE COLLECTION
+=========================================================================================================================================
+
 Create a Collection
 The following command can be used to create a collection. The details on this command can be found on this page.
 
@@ -149,6 +155,23 @@ Once a collection is created, the next step is to insert one or more documents. 
 // Insert single document
 //
 db.<collectionName>.insert({field1: "value", field2: "value"})
+>db.BANK_CODE.insert({"bankName" : "RBL Bank",
+      "establishedOn" : null,
+      "establishedYear" : 1943,
+      "headQuarter" : "Mumbai, Maharashtra",
+      "branches" : 342,
+      "revenues" : null,
+      "strRevenues" : "â‚¹44.68 billion (US$620 million)",
+      "totalAssets" : null,
+      "strTotalAssets" : "â‚¹486.74 billion (US$6.8 billion)",
+      "notes" : null,
+      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+      "bankType": {
+	  	       "id": "5c8f4406dc344c0e6c19a369",
+               "code": "private",
+                "position": 2,
+                "description": "Private-sector banks"
+      }});
 //
 // Insert multiple documents
 //
