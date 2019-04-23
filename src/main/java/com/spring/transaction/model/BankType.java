@@ -1,8 +1,10 @@
 package com.spring.transaction.model;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -27,6 +29,9 @@ public class BankType {
 	@Id
 	@Field(value = "BANK_TYPE_ID", order = 2)
 	private String id;
+	
+	@Indexed(unique = true)
+	@NotBlank(message = "Bank Type Code is required field.")
 	private String code;
 	private int position;
 	
