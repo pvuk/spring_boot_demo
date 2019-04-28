@@ -10,11 +10,11 @@ import lombok.Data;
 @Document(collection="MOVIE_OFFER")
 public class MovieOffer {
 	
-	private Long movieOfferId;
+	private String movieOfferId;
 	private String movieOfferAtParterns;
 	private Long offerApplicableDayFromId;	
 	private Long offerApplicableDayToId;
-	private Long cashbackId;
-	private Long rewardCardId;
+	private String cashbackId;
+	private String rewardCardId;
 	
 }

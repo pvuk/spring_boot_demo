@@ -1,5 +1,6 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -14,7 +15,10 @@ import lombok.Data;
 public class PaymentReverse {
 
 	@Id
-	private Long paymentReverseId;
+	private String paymentReverseId;
+	
+	@NotNull(message="Reverse Amount is required field")
+	private BigDecimal reverseAmount;
 	
 	@NotNull(message="Payment Reverse On is required field")
 	private Date paymentReverseOn;

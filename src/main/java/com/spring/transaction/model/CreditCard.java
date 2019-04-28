@@ -19,7 +19,7 @@ import lombok.Data;
 public class CreditCard {
 
 	@Id
-	private long creditCardId;
+	private String creditCardId;
 
 	@Indexed(unique = true)
 	private String cardNumber;

@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class CreditLimit {
 
 	@Id
-	private long creditLimitId;
+	private String creditLimitId;
 	
 	private Integer position;
 	private String code;

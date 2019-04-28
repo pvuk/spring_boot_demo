@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -13,7 +14,7 @@ import lombok.Data;
 @Document(collection = "CASHBACK")
 public class Cashback {
 	
-	private Long cashbackId;
+	@Id private String cashbackId;
 	private BigDecimal cashbackAmount;	
 	private BigDecimal payment;	
 	private Date paymentOn;

@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "BANK_BRANCH")
+@Document(collection = "BANK_BRANCH_CODE")
 public class BankBranch {
 
 	@Id private String bankBranchId;

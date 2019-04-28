@@ -1,5 +1,6 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -14,7 +15,10 @@ import lombok.Data;
 public class PaymentRefund {
 	
 	@Id
-	private Long paymentRefundId;
+	private String paymentRefundId;
+	
+	@NotNull(message="Refund Amount is required field")
+	private BigDecimal refundAmount;
 	
 	@NotNull(message="Payment Refund On is required field")
 	private Date paymentRefundOn;

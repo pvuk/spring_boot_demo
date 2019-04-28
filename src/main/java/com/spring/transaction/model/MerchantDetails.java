@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class MerchantDetails {
 	
 	@Id
-	private long merchantDetailsId;
+	private String merchantDetailsId;
 	
 	private String code;
 	
@@ -27,6 +27,6 @@ public class MerchantDetails {
 	@NotEmpty(message = "Merchant Name is required field")
 	private String description;
 	
-	private long merchantPointsId;
+	private String merchantPointsId;
 	
 }

@@ -16,10 +16,10 @@ import lombok.Data;
 public class RewardPoints {
 	
 	@Id
-	private long rewardPointsId;
+	private String rewardPointsId;
 	
 	@NotEmpty(message = "Reward Card is required field")
-	private Long rewardCardId;
+	private String rewardCardId;
 	
 	@NotEmpty(message = "Reward Points Catalogue is required field")
 	private long rewardPointsCatalogueId;
@@ -31,7 +31,7 @@ public class RewardPoints {
 	private long merchantDetailsId;
 	
 	@NotEmpty(message = "Reward Points Earned is required field")
-	private long rewardPointsEarnedId;
+	private String rewardPointsEarnedId;
 	
 	private long bonusPoints;
 	
@@ -40,6 +40,6 @@ public class RewardPoints {
 	private long rewardsClosingBalance;
 	
 	@NotEmpty(message = "Reward Points Redeemed To is required field")
-	private long rewardPointsRedeemId;
+	private String rewardPointsRedeemId;
 	
 }

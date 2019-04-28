@@ -14,18 +14,18 @@ import lombok.Data;
 public class PaymentOnAccount {
 
 	@Id
-	private Long paymentOnAccountId;
+	private String paymentOnAccountId;
 	
 	@NotNull(message="Payment Amount is required field")
 	private BigDecimal paymentAmount;
 	
-	private Long paymentReceivedId;
+	private String paymentReceivedId;
 	
-	private Long paymentFailedId;
+	private String paymentFailedId;
 	
-	private Long paymentRefundId;
+	private String paymentRefundId;
 	
-	private Long paymentReverseId;
+	private String paymentReverseId;
 	
-	private Long cashbackId;
+	private String cashbackId;
 }

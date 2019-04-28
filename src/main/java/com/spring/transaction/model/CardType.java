@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class CardType {
 
 	@Id
-	private long cardTypeId;
+	private String cardTypeId;
 
 	private String code;
 	

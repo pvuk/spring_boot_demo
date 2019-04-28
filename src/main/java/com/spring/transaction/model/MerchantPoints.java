@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class MerchantPoints {
 	
 	@Id
-	private long MerchantPointsId;
+	private String merchantPointsId;
 	
 	@NotEmpty(message = "Point Value is required field")
 	private long eachPointValue;

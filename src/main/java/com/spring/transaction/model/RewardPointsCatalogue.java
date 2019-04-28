@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class RewardPointsCatalogue {
 
 	@Id
-	private long rewardPointsCatalogueId;
+	private String rewardPointsCatalogueId;
 	
 	private String code;
 	

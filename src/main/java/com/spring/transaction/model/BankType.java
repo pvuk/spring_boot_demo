@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "BANK_TYPE")
+@Document(collection = "BANK_TYPE_CODE")
 public class BankType {
 	
 	/*

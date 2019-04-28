@@ -15,7 +15,7 @@ import lombok.Data;
 public class DebitCard {
 
 	@Id
-	private long debitCardId;
+	private String debitCardId;
 
 	@Indexed(unique = true)
 	private String cardNumber;
@@ -41,5 +41,5 @@ public class DebitCard {
 	
 	private Date cardIssuedOn;
 	
-	private Long rewardCardId;
+	private String rewardCardId;
 }

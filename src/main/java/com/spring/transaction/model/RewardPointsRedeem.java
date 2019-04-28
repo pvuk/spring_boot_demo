@@ -16,7 +16,7 @@ import lombok.Data;
 public class RewardPointsRedeem {
 
 	@Id
-	private long rewardPointsRedeemId;
+	private String rewardPointsRedeemId;
 
 	private long rewardsRedeemedThisMonth;
 
@@ -32,5 +32,5 @@ public class RewardPointsRedeem {
 
 	private String pointsExpireDetails;
 	
-	private Long rewardCardId;
+	private String rewardCardId;
 }

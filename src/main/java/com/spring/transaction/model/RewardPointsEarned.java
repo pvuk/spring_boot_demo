@@ -18,7 +18,7 @@ import lombok.Data;
 public class RewardPointsEarned {
 	
 	@Id
-	private long rewardPointsEarnedId;
+	private String rewardPointsEarnedId;
 	
 	private long rewardsEarnedOnOnlinePartners;
 	
@@ -33,5 +33,5 @@ public class RewardPointsEarned {
 	
 	private long rewardsEarnedFromTheCardIssueDate;
 	
-	private Long rewardCardId;
+	private String rewardCardId;
 }

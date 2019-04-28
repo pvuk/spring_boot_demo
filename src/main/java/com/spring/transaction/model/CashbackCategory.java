@@ -12,7 +12,7 @@ import lombok.Data;
 public class CashbackCategory {
 
 	@Id
-	private Long cashbackCategoryId;
+	private String cashbackCategoryId;
 
 	private String code;
 	

@@ -1,5 +1,6 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -14,7 +15,10 @@ import lombok.Data;
 public class PaymentReceived {
 	
 	@Id
-	private Long paymentReceivedId;
+	private String paymentReceivedId;
+	
+	@NotNull(message="Received Amount is required field")
+	private BigDecimal receivedAmount;
 	
 	@NotNull(message="Payment Received On is required field")
 	private Date paymentReceivedOn;

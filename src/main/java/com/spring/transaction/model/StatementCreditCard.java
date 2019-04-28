@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -22,4 +23,7 @@ public class StatementCreditCard {
 	private Date statementFrom;
 	private Date statementTo;
 	private Date dueDate;
+	
+	@DBRef
+	private CreditCard creditCardId;
 }
