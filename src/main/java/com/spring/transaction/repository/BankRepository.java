@@ -1,4 +1,4 @@
-package com.spring.transaction.repository.mongo;
+package com.spring.transaction.repository;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;

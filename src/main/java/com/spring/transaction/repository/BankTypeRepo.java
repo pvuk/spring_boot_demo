@@ -1,4 +1,4 @@
-package com.spring.transaction.repository.mongo;
+package com.spring.transaction.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
