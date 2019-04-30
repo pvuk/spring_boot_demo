@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
-import com.spring.transaction.repository.mongo.BankRepository;
+import com.spring.transaction.repository.BankRepository;
 import com.spring.transaction.service.BankService;
 import com.spring.transaction.validator.ErrorMessages;
 import com.spring.transaction.validator.MessageConstants;

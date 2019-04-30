@@ -1,5 +1,7 @@
 package com.spring.transaction.model;
 
+import javax.validation.constraints.NotEmpty;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -27,4 +29,7 @@ public class CurrentAddress {
 	private String state;
 
 	private String country;
+	
+	@NotEmpty(message = "Address is required field.")
+	private String addressId;
 }
