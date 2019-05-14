@@ -20,7 +20,7 @@ public class MerchantPoints {
 	@Id
 	private String merchantPointsId;
 	
-	@NotEmpty(message = "Point Value is required field")
+	@NotEmpty(message = "Point Value is required field.")
 	private long eachPointValue;
 	
 	private long pointsOnEvery;

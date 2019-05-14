@@ -19,7 +19,7 @@ public class Cashback {
 	private BigDecimal payment;	
 	private Date paymentOn;
 	private Date cashbackOn;
-	@NotEmpty(message = "Cashback Amount Description is required field")
+	@NotEmpty(message = "Cashback Amount Description is required field.")
 	private String description;	
 	private String cashbackEligibleOnlyWhen;
 	private BigDecimal percentage;

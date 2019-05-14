@@ -18,6 +18,6 @@ public class CashbackCategory {
 	
 	private int position;
 	
-	@NotEmpty(message = "Cashback Category is required field")
+	@NotEmpty(message = "Cashback Category is required field.")
 	private String description;
 }

@@ -40,5 +40,5 @@ public class WalletPayment {
 //	private String profileId;
 	
 	@DBRef
-	private CardPayment cardPaymentId;
+	private PaymentBy paymentById;
 }

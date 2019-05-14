@@ -24,7 +24,7 @@ public class MerchantDetails {
 	
 	private int position;
 	
-	@NotEmpty(message = "Merchant Name is required field")
+	@NotEmpty(message = "Merchant Name is required field.")
 	private String description;
 	
 	private String merchantPointsId;

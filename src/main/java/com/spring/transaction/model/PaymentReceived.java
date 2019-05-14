@@ -16,10 +16,14 @@ public class PaymentReceived {
 	
 	@Id
 	private String paymentReceivedId;
+
+	private BigDecimal actualAmount;
 	
-	@NotNull(message="Received Amount is required field")
+	@NotNull(message="Received Amount is required field.")
 	private BigDecimal receivedAmount;
-	
-	@NotNull(message="Payment Received On is required field")
+    
+	private BigDecimal remainingAmount;
+
+    @NotNull(message="Payment Received On is required field.")
 	private Date paymentReceivedOn;
 }

@@ -4,9 +4,9 @@ import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import com.spring.transaction.model.CardPayment;
+import com.spring.transaction.model.PaymentBy;
 
-@RepositoryRestResource(collectionResourceRel = "cardPayment", path = "cardPayment")
-public interface CardPaymentRepository extends MongoRepository<CardPayment, ObjectId> {
+@RepositoryRestResource(collectionResourceRel = "paymentBy", path = "paymentBy")
+public interface PaymentByRepository extends MongoRepository<PaymentBy, ObjectId> {
 	
 }

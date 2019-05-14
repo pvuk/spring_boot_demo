@@ -1,19 +1,27 @@
 package com.spring.transaction.model;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
 
 @Data
-@Document(collection = "CARD_PAYMENT")
-public class CardPayment {
+@Document(collection = "PAYMENT_BY")
+public class PaymentBy {
 	
 	@Id
-	private String cardPaymentId;
+	private String paymentById;
 	private String creditCardId;
 	private String debitCardId;
 	private String netBankingPaymentId;
 	private String rewardPointsId;
 	private String movieOfferId;
+	private String cashPaymentId;
+	
+	@NotNull(message="Received From is required field.")
+	private String receivedFromUserId;
+	
+	private boolean paymentShowToExpenser;
 }

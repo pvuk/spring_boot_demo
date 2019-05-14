@@ -24,7 +24,7 @@ public class RewardPointsEarned {
 	
 	private long rewardsEarnedOnAllOtherOnlineSpends;
 	
-	@NotEmpty(message = "Rewards Earned is required field")
+	@NotEmpty(message = "Rewards Earned is required field.")
 	private long rewardsEarned;
 	
 	private BigDecimal rewardsAdjusted;

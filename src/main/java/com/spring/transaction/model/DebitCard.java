@@ -24,7 +24,7 @@ public class DebitCard {
 	
 	private int expireYear;
 	
-	@NotNull(message = "Name On Card is required field")
+	@NotNull(message = "Name On Card is required field.")
 	private String nameOnCard;
 	
 	private int cvv;
@@ -33,10 +33,10 @@ public class DebitCard {
 	
 	private boolean vertualCard;
 
-	@NotNull(message = "Bank Name is required field")
+	@NotNull(message = "Bank Name is required field.")
 	private long bankId;
 	
-	@NotNull(message = "Card Type is required field")
+	@NotNull(message = "Card Type is required field.")
 	private long cardTypeId;
 	
 	private Date cardIssuedOn;

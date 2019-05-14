@@ -36,7 +36,7 @@ public class CreditCard {
 	
 	private boolean vertualCard;
 
-	@NotNull(message = "BankId is required field")
+	@NotNull(message = "BankId is required field.")
 	private long bankId;
 	
 	private long cardTypeId;

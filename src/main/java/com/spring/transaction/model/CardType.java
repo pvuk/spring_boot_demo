@@ -24,7 +24,7 @@ public class CardType {
 	
 	private int position;
 	
-	@NotEmpty(message = "Card Type is required field")
+	@NotEmpty(message = "Card Type is required field.")
 	private String description;
 
 }

@@ -17,9 +17,11 @@ public class PaymentRefund {
 	@Id
 	private String paymentRefundId;
 	
-	@NotNull(message="Refund Amount is required field")
+	@NotNull(message="Refund Amount is required field.")
 	private BigDecimal refundAmount;
 	
-	@NotNull(message="Payment Refund On is required field")
+	@NotNull(message="Payment Refund On is required field.")
 	private Date paymentRefundOn;
+	
+	private String paymentOnAccountId;
 }

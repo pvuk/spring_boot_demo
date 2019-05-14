@@ -24,6 +24,6 @@ public class RewardPointsCatalogue {
 	
 	private int position;
 	
-	@NotEmpty(message = "Reward Points On Every is required field")
+	@NotEmpty(message = "Reward Points On Every is required field.")
 	private String description;
 }

@@ -17,9 +17,11 @@ public class PaymentFailed {
 	@Id
 	private String paymentFailedId;
 	
-	@NotNull(message="Failed Amount is required field")
+	@NotNull(message="Failed Amount is required field.")
 	private BigDecimal failedAmount;
 	
-	@NotNull(message="Payment Failed On is required field")
+	@NotNull(message="Payment Failed On is required field.")
 	private Date paymentFailedOn;
+	
+	private String paymentOnAccountId;
 }

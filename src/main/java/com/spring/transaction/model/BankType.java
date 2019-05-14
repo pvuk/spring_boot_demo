@@ -35,6 +35,6 @@ public class BankType {
 	private String code;
 	private int position;
 	
-	@NotEmpty(message = "Bank Type is required field")
+	@NotEmpty(message = "Bank Type is required field.")
 	private String description;
 }

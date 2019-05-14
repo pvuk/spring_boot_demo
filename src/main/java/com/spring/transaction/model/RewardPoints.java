@@ -18,19 +18,19 @@ public class RewardPoints {
 	@Id
 	private String rewardPointsId;
 	
-	@NotEmpty(message = "Reward Card is required field")
+	@NotEmpty(message = "Reward Card is required field.")
 	private String rewardCardId;
 	
-	@NotEmpty(message = "Reward Points Catalogue is required field")
+	@NotEmpty(message = "Reward Points Catalogue is required field.")
 	private long rewardPointsCatalogueId;
 	
-	@NotEmpty(message = "Opening Balance is required field")
+	@NotEmpty(message = "Opening Balance is required field.")
 	private long rewardsOpeningBalance;
 	
-	@NotEmpty(message = "Merchant Name is required field")
+	@NotEmpty(message = "Merchant Name is required field.")
 	private long merchantDetailsId;
 	
-	@NotEmpty(message = "Reward Points Earned is required field")
+	@NotEmpty(message = "Reward Points Earned is required field.")
 	private String rewardPointsEarnedId;
 	
 	private long bonusPoints;
@@ -39,7 +39,7 @@ public class RewardPoints {
 	
 	private long rewardsClosingBalance;
 	
-	@NotEmpty(message = "Reward Points Redeemed To is required field")
+	@NotEmpty(message = "Reward Points Redeemed To is required field.")
 	private String rewardPointsRedeemId;
 	
 }
