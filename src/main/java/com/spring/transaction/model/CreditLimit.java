@@ -20,8 +20,6 @@ public class CreditLimit {
 	@Id
 	private String creditLimitId;
 	
-	private Integer position;
-	private String code;
 	private String cardUpgradeThrough;
 	
 	private Long cardUpgradeLimitFrom;

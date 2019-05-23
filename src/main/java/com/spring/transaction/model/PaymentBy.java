@@ -13,6 +13,9 @@ public class PaymentBy {
 	
 	@Id
 	private String paymentById;
+	
+	@NotNull(message="UserId is required field.")
+	private String userId;
 	private String creditCardId;
 	private String debitCardId;
 	private String netBankingPaymentId;
