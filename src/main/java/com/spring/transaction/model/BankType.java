@@ -37,4 +37,8 @@ public class BankType {
 	
 	@NotEmpty(message = "Bank Type is required field.")
 	private String description;
+	
+	private String section;
+	private String category;
+	private String comment;
 }

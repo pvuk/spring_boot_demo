@@ -1,0 +1,81 @@
+[
+{
+	"code":"public",
+	"position":1,
+	"description":"Public Sector Banks",
+	"section": "Scheduled",
+	"category": "Commercial",
+	"comment": ""
+},
+{
+	"code":"private",
+	"position":2,
+	"description":"Private Sector Banks",
+	"section": "Scheduled",
+	"category": "Commercial",
+	"comment": ""
+},
+{
+	"code":"regionalrural",
+	"position":3,
+	"description":"Regional Rural Banks(RRB)",
+	"section": "Scheduled",
+	"category": "Commercial",
+	"comment": ""
+},
+{
+	"code":"foreign",
+	"position":4,
+	"description":"Foreign Banks",
+	"section": "Scheduled",
+	"category": "Commercial",
+	"comment": ""
+},
+{
+	"code":"rural",
+	"position": 5,
+	"description":"State(Rural)",
+	"section": "Scheduled",
+	"category": "State Co-operative",
+	"comment": ""
+},
+{
+	"code":"urban",
+	"position": 6,
+	"description":"Urban",
+	"section": "Scheduled",
+	"category": "Urban Co-operative",
+	"comment": ""
+},
+{
+	"code":"",
+	"position": 7,
+	"description":"",
+	"section": "Non-Scheduled",
+	"category": ""
+},
+{
+	"code":"paymentsbank",
+	"position": 8,
+	"description":"Payments Bank",
+	"section": "",
+	"category": "",
+	"comment": ""
+},
+{
+	"code":"smallfinancebanks",
+	"position": 9,
+	"description":"Small Finance Banks",
+	"section": "",
+	"category": "",
+	"comment": ""
+},
+{
+	"code":"wallet",
+	"position": 10,
+	"description":"wallet",
+	"section": "",
+	"category": "",
+	"comment": ""
+}
+]

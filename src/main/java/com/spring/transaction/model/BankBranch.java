@@ -49,4 +49,6 @@ public class BankBranch {
 	@DBRef
 	@Field(value="ADDRESS")
 	private Address address;
+	
+	private boolean isActive;
 }

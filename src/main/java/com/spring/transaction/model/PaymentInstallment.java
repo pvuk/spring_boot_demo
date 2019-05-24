@@ -1,5 +1,11 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
+import java.util.Date;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,5 +17,15 @@ public class PaymentInstallment {
 
 	@Id
 	private String paymentInstallmentId;
+	
+	@NotNull
+	private BigDecimal amountDue;
+	
+	private Date dueDate;
+	private BigDecimal previousAmount;
+	private BigDecimal amountPaid;
+	
+	@Size(max = 3000)
+	private String userComment;
 	
 }
