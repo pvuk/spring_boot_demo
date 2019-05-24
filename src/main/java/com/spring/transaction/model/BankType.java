@@ -27,7 +27,7 @@ public class BankType {
 	 * If possible, an id property or field declared as a String in the Java class is converted to and stored as an ObjectId by using a Spring Converter<String, ObjectId>. 
 	 */
 	@Id
-	@Field(value = "BANK_TYPE_ID", order = 2)
+	@Field(value = "BANK_TYPE_ID")
 	private String id;
 	
 	@Indexed(unique = true)
@@ -41,4 +41,7 @@ public class BankType {
 	private String section;
 	private String category;
 	private String comment;
+	
+//	@Transient
+//	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
 }

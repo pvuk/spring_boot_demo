@@ -68,6 +68,7 @@ public class BankServiceImpl implements BankService {
 		ObjectId objectId = new ObjectId(bankId);
 		Optional<Bank> findById = bankMongoRepo.findById(objectId);
 		if (findById.isPresent()) {
+			log.error("BankId: "+ bankId +" Not found");
 			throw new NotFoundException("BankId: "+ bankId +" Not found");
 		}
 		return bankMongoRepo.findById(objectId).get();
@@ -88,6 +89,7 @@ public class BankServiceImpl implements BankService {
 			if (!exists) {
 				bankMongoRepo.insert(bank);
 			} else {
+				log.error(bank.getBankName() +" not inserted.");
 				bank.getErrorMessageMap().putErrorMsg(bank.getBankName(), bank.getBankName() +" not inserted.");
 			}
 		});

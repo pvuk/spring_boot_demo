@@ -1,10 +1,20 @@
 package com.spring.transaction.configuration;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.MongoDbFactory;
 import org.springframework.data.mongodb.config.AbstractMongoConfiguration;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.SimpleMongoDbFactory;
+import org.springframework.data.mongodb.core.convert.DbRefResolver;
+import org.springframework.data.mongodb.core.convert.DefaultDbRefResolver;
+import org.springframework.data.mongodb.core.convert.DefaultMongoTypeMapper;
+import org.springframework.data.mongodb.core.convert.MappingMongoConverter;
+import org.springframework.data.mongodb.core.mapping.MongoMappingContext;
 
 import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
 
 /**
  * https://stackoverflow.com/questions/21386449/spring-data-and-mongodb-simple-roll-back-with-spring-within-transactional
@@ -38,4 +48,21 @@ public class MongoConfig extends AbstractMongoConfiguration {
 	public String getDatabaseName() {
 		return dbName;
 	}
+	
+	public MongoCollection<Document> getCollection(String collectionName){
+		MongoCollection<org.bson.Document> dbCollection = mongoClient().getDatabase(getDatabaseName()).getCollection(collectionName);
+		return dbCollection;
+	}
+	
+	//https://stackoverflow.com/questions/21386449/spring-data-and-mongodb-simple-roll-back-with-spring-within-transactional
+//	public MongoTemplate fetchMongoTemplate(int projectId) {
+//        DbRefResolver dbRefResolver = new DefaultDbRefResolver(mongoDbFactory());
+//        MappingMongoConverter mappingMongoConverter = new MappingMongoConverter(dbRefResolver, new MongoMappingContext());
+//        // Don't save _class to mongo
+//        mappingMongoConverter.setTypeMapper(new DefaultMongoTypeMapper(null));
+//        MongoDbFactory customizedDBFactory = new SimpleMongoDbFactory(mongoClient(), getDatabaseName());
+//        MongoTemplate mongoTemplate = new MongoTemplate(customizedDBFactory,mappingMongoConverter);
+//        MongoTransactionManager mongoTransactionManager = new MongoTransactionManager(customizedDBFactory);
+//        return mongoTemplate;
+//    }
 }
