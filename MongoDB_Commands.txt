@@ -5,8 +5,9 @@ EXAMPLE: From the Command Interpreter(Win + R)
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or
--> "D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
->D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
+> "D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod.exe" --dbpath="D:\uday\data\db-new"
+> --"D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
+> D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
 or
 -> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="I:\data\db"
 
@@ -19,7 +20,8 @@ To connect to MongoDB through the mongo.exe shell, open another Command Interpre
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 or
--> D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
+> --D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
 or
 -> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
 
@@ -98,6 +100,9 @@ it should give you:
 else :
 Error: Authentication failed.
 0
+
+2.4 To find MongoDB version
+> db.version()
 
 =========================================================================================================================================
 												LOGIN COMMANDS

@@ -15,7 +15,7 @@ From the Command Interpreter:
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or
--> "D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
+-> "D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod.exe" --dbpath="D:\uday\data\db-new"
 
 2.2 If the MongoDB database server is running correctly, the Command Interpreter displays:
 
@@ -26,7 +26,16 @@ To connect to MongoDB through the mongo.exe shell, open another Command Interpre
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 or
-->D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+-> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
+
+==========================================================================================================================================================
+															Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+															metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+==========================================================================================================================================================
+2.4.a To enable free monitoring, run the following command: 
+> db.enableFreeMonitoring()
+2.4.b To permanently disable this reminder, run the following command: 
+> db.disableFreeMonitoring()
 
 3. Start MongoDB Enterprise Edition as a Windows Service
 Starting in version 4.0, you can install and configure MongoDB as a Windows Service during the install, and the MongoDB service is started upon successful installation.
