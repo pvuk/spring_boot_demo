@@ -58,4 +58,8 @@ To remove the MongoDB service, first stop the service and then run the following
 
 -> sc.exe delete MongoDB
 
-
+==========================================================================================================================================================
+															Connect to MongoDB cloud
+==========================================================================================================================================================
+1. Open below link and login 
+https://www.mongodb.com/download-center/cloud
