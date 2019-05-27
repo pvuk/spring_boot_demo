@@ -7,3 +7,4 @@ Swagger 2: To generate REST API documentation for a Spring Boot project(2.9.2)
 1. Custom Exception handling using Spring
 	Refer: ExceptionHandlingDoc.txt
 =========================================================================================================================
+Spring version upgraded from 2.0.4.RELEASE to 2.1.5.RELEASE(May 15, 2019) on May 27, 2019
