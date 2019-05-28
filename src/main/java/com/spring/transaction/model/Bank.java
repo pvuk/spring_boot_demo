@@ -34,30 +34,39 @@ public class Bank {
 	@NotBlank(message = "Bank Name is required field.")
 	private String bankName;
 	
+	@Field(value = "ESTABLISHED_ON", order = 3)
 	private Date establishedOn;
 	
+	@Field(value = "ESTABLISHED_YEAR", order = 4)
 	private Long establishedYear;
 	
+	@Field(value = "HEAD_QUARTER", order = 5)
 	private String headQuarter;
 	
+	@Field(value = "BRANCHES", order = 6)
 	private Long branches;
 	
 	private BigDecimal revenues;
 	
+	@Field(value = "REVENUES", order = 7)
 	private String strRevenues;
 	
 	private BigDecimal totalAssets;
 	
+	@Field(value = "TOTAL_ASSETS", order = 8)
 	private String strTotalAssets;
 	
+	@Field(value = "NOTES", order = 9)
 	private String notes;
 	
+	@Field(value = "REF_LINK", order = 10)
 	private String refLink;
 	
 	@DBRef
 	@Field(value="BANK_TYPE")
 	private BankType bankType;
 
+	@Field(value = "ERROR_MESSAGE_MAP", order = 11)
 	@Builder.Default
 	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
 	
