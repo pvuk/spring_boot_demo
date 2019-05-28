@@ -8,11 +8,11 @@ import com.spring.transaction.model.BankType;
 
 public interface BankTypeService {
 	
-	String saveBankType(BankType bankType) throws Exception;
+	String save(BankType bankType) throws Exception;
 	
-	List<BankType> saveAllBankTypes(List<BankType> bankTypes) throws Exception;
+	List<BankType> saveAll(List<BankType> bankTypes) throws Exception;
 	
-	String updateBankType(BankType bankType) throws Exception;
+	String update(BankType bankType) throws Exception;
 	
 	String deleteBankTypeById(ObjectId bankTypeId);
 }

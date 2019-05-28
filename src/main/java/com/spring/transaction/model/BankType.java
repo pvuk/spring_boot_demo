@@ -4,7 +4,10 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.index.IndexDirection;
 import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -30,18 +33,36 @@ public class BankType {
 	@Field(value = "BANK_TYPE_ID")
 	private String id;
 	
-	@Indexed(unique = true)
-	@NotBlank(message = "Bank Type Code is required field.")
+	@Field(value = "CODE")
+	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
+	@TextIndexed
+	@NotEmpty(message = "Bank Type Code is required field.")
 	private String code;
+	
+	@Field(value = "POSITION")
 	private int position;
 	
+	@Field(value = "DESCRIPTION")
 	@NotEmpty(message = "Bank Type is required field.")
 	private String description;
 	
+	@Field(value = "SECTION")
 	private String section;
+	
+	@Field(value = "CATEGORY")
 	private String category;
+	
+	@Field(value = "COMMENT")
 	private String comment;
 	
-//	@Transient
-//	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
+	@Transient
+	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
+
+	@Override
+	public String toString() {
+		return "BankType [id=" + id + ", code=" + code + ", position=" + position + ", description=" + description
+				+ ", section=" + section + ", category=" + category + ", comment=" + comment + ", errorMessageMap="
+				+ errorMessageMap + "]";
+	}
+	
 }

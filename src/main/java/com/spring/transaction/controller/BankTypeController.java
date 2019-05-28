@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.transaction.model.BankType;
 import com.spring.transaction.service.BankTypeService;
+import com.spring.transaction.validator.MessageConstants;
 
 @BasePathAwareController
 @RequestMapping("/bankType/service")
@@ -26,26 +27,26 @@ public class BankTypeController {
 	@Autowired
 	BankTypeService bankTypeService;
 
-	@GetMapping(value = "/saveBankType")
-	public @ResponseBody String saveBankType(BankType bankType) throws Exception {
-		return bankTypeService.saveBankType(bankType);
+	@GetMapping(value = "/save")
+	public @ResponseBody String save(BankType bankType) throws Exception {
+		return bankTypeService.save(bankType);
 	}
 
-	@PutMapping(value = "/saveAllBankTypes")
-	public @ResponseBody ResponseEntity<List<BankType>> saveAllBankTypes(@RequestBody List<BankType> bankTypes) throws Exception {
+	@PutMapping(value = "/saveAll")
+	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody List<BankType> bankTypes) throws Exception {
 		List<BankType> list = null;
 		try {
-			list = bankTypeService.saveAllBankTypes(bankTypes);
+			list = bankTypeService.saveAll(bankTypes);
 		} catch (Exception e) {
 			e.printStackTrace();
+			return new ResponseEntity<Object>(e.getMessage() +". "+ MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		return new ResponseEntity<List<BankType>>(list, HttpStatus.CREATED);
+		return new ResponseEntity<Object>(list, HttpStatus.CREATED);
 	}
 
-	@PostMapping(value = "/updateBankType")
-	public @ResponseBody String updateBankType(BankType bankType) throws Exception {
-		return null;
-
+	@PostMapping(value = "/update")
+	public @ResponseBody String update(BankType bankType) throws Exception {
+		return bankTypeService.update(bankType);
 	}
 
 	@DeleteMapping(value = "/deleteBankTypeById/{bankTypeId}")

@@ -8,5 +8,6 @@ public interface CodeTableConstants {
 
 	public interface Column {
 		public static final String BANK_TYPE_ID = "BANK_TYPE_ID";
+		public static final String CODE = "CODE";
 	}
 }

@@ -10,10 +10,10 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spring.transaction.configuration.MongoConfig;
 import com.spring.transaction.model.BankType;
 import com.spring.transaction.repository.BankTypeRepository;
 import com.spring.transaction.service.BankTypeService;
+import com.spring.transaction.validator.CodeTableConstants;
 import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -25,32 +25,38 @@ public class BankTypeServiceImpl implements BankTypeService {
 	
 	@Autowired private MongoTemplate mongoTemplate;
 	@Autowired private BankTypeRepository bankTypeMongoRepo;
-	@Autowired private MongoConfig mongoConfig;
+//	@Autowired private MongoConfig mongoConfig;
 	
 	@Override
-	public String saveBankType(BankType bankType) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public String save(BankType bankType) throws Exception {
+		
+		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
 
 	@Override
-	public List<BankType> saveAllBankTypes(List<BankType> bankTypes) throws Exception {
-		Query query = new Query();
+	public List<BankType> saveAll(List<BankType> bankTypes) throws Exception {
 		bankTypes.forEach(bankType -> {
-			query.addCriteria(Criteria.where("code").is(bankType.getCode()));
+			Query query = Query.query(Criteria.where(CodeTableConstants.Column.CODE).is(bankType.getCode()));
 			boolean exists = mongoTemplate.exists(query, BankType.class);
+			log.info(query.toString());
 			if (!exists) {
+//				int projectId = 100;
+//		        if (projectId != 0) {
+//		            mongoTemplate = mongoConfig.fetchMongoTemplate(100);
+//		            mongoTemplate.setSessionSynchronization(SessionSynchronization.ALWAYS);
+//		            log.info("mongoTemplate <{}>", mongoTemplate.getDb().getName());
+//		        }
 				bankTypeMongoRepo.insert(bankType);
 			} else {
-				log.error(bankType.getCode() +" not inserted.");
-//				bankType.getErrorMessageMap().putErrorMsg(bankType.getCode(), bankType.getCode() +" not inserted.");
+				log.info(bankType.getDescription() +" already exist.");
+				bankType.getErrorMessageMap().putErrorMsg(MessageConstants.STATUS.WARNING, bankType.getDescription() +" already exist.");
 			}
 		});
 		return bankTypes;
 	}
 
 	@Override
-	public String updateBankType(BankType bankType) throws Exception {
+	public String update(BankType bankType) throws Exception {
 		
 		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}

@@ -89,7 +89,7 @@ public class BankServiceImpl implements BankService {
 				bankMongoRepo.insert(bank);
 			} else {
 				log.info(bank.getBankName() +" already exist.");
-				bank.getErrorMessageMap().putErrorMsg(bank.getBankName(), bank.getBankName() +" already exist.");
+				bank.getErrorMessageMap().putErrorMsg(MessageConstants.STATUS.WARNING, bank.getBankName() +" already exist.");
 			}
 		});
 		return banks;

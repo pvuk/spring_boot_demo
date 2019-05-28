@@ -1,0 +1,2 @@
+sudo mongod --dbpath /path/to/mongo/data --replSet "vflux01"
+sudo mongod --dbpath ="D:/uday/data/db-new" --replSet "vflux01"

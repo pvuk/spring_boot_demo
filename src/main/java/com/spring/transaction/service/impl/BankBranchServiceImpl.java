@@ -85,14 +85,14 @@ public class BankBranchServiceImpl implements BankBranchService {
 
 	@Override
 	public String updateBankBranch(BankBranch bankBranch) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+
+		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
 
 	@Override
 	public String deleteBankBranchById(ObjectId bankBranchId) {
-		// TODO Auto-generated method stub
-		return null;
+
+		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
 
 	@Override
