@@ -13,9 +13,11 @@ EXAMPLE
 
 From the Command Interpreter:
 
--> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or
--> "D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod.exe" --dbpath="D:\uday\data\db-new"
+> "D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod.exe" --dbpath="D:\uday\data\db-new"
+or
+> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
 
 2.2 If the MongoDB database server is running correctly, the Command Interpreter displays:
 
@@ -24,9 +26,11 @@ or
 2.3 Connect to MongoDB.
 To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
 
--> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 or
--> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
+> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
+or
+> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
 
 ==========================================================================================================================================================
 															Enable MongoDB's free cloud-based monitoring service, which will then receive and display
