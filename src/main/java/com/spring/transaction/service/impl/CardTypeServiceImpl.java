@@ -1,5 +1,8 @@
 package com.spring.transaction.service.impl;
 
+import java.util.Optional;
+
+import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,9 +46,9 @@ public class CardTypeServiceImpl implements CardTypeService {
 	}
 
 	@Override
-	public CardType getCardTypeById(String cardTypeId) {
-		// TODO Auto-generated method stub
-		return null;
+	public CardType getCardTypeById(ObjectId cardTypeId) {
+		Optional<CardType> byId = cardTypeRepo.findById(cardTypeId);
+		return byId.isPresent() ? byId.get() : null;
 	}
 
 }

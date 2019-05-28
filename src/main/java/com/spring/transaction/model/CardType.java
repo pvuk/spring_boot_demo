@@ -3,6 +3,7 @@ package com.spring.transaction.model;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
@@ -14,7 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "CARD_TYPE")
+@Document(collection = "CARD_TYPE_CODE")
 public class CardType {
 
 	@Id
@@ -27,4 +28,17 @@ public class CardType {
 	@NotEmpty(message = "Card Type is required field.")
 	private String description;
 
+	@Transient
+	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
+	
+	public CardType setErrorMessageMap(String aKey, String aValue) {
+		errorMessageMap.putErrorMsg(aKey, aValue);
+		return this;
+	}
+
+	@Override
+	public String toString() {
+		return "CardType [cardTypeId=" + cardTypeId + ", code=" + code + ", position=" + position + ", description="
+				+ description + ", errorMessageMap=" + errorMessageMap + "]";
+	}
 }

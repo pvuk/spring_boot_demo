@@ -1,5 +1,7 @@
 package com.spring.transaction.service;
 
+import org.bson.types.ObjectId;
+
 import com.spring.transaction.model.DebitCard;
 
 public interface DebitCardService {
@@ -8,6 +10,6 @@ public interface DebitCardService {
 	
 	DebitCard updateDebitCard(DebitCard debitCard);
 	
-	DebitCard findByDebitCardId(long debitCardId);
+	DebitCard getByDebitCardId(ObjectId debitCardId);
 	
 }
