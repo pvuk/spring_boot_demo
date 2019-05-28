@@ -16,5 +16,9 @@ public class CommonCRUDJoinPointConfig {
 	
 	@Pointcut(value="execution(* com.spring.transaction.controller.*.get*())") public void allGetLayerExecution() {};
 	
-	@Pointcut(value="execution(* com.spring.transaction.controller.*.save*())") public void saveLayerExecution() {};
+	@Pointcut(value="execution(* com.spring.transaction.controller.*.save*(..))") public void saveLayerExecution() {};
+	
+	@Pointcut("within(@org.springframework.stereotype.Controller *)") public void controller() {}
+
+	@Pointcut("execution(* *.*(..))") protected void allMethod() {}
 }

@@ -32,15 +32,10 @@ public class BankTypeController {
 		return bankTypeService.save(bankType);
 	}
 
+	
 	@PutMapping(value = "/saveAll")
 	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody List<BankType> bankTypes) throws Exception {
-		List<BankType> list = null;
-		try {
-			list = bankTypeService.saveAll(bankTypes);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return new ResponseEntity<Object>(e.getMessage() +". "+ MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT, HttpStatus.INTERNAL_SERVER_ERROR);
-		}
+		List<BankType> list = bankTypeService.saveAll(bankTypes);
 		return new ResponseEntity<Object>(list, HttpStatus.CREATED);
 	}
 

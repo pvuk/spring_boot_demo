@@ -1,6 +1,5 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
@@ -56,7 +55,7 @@ public class BankType {
 	private String comment;
 	
 	@Transient
-	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
+	private ErrorMessageMap errorMessageMap;
 
 	@Override
 	public String toString() {

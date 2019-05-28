@@ -1,6 +1,8 @@
 package com.spring.transaction.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.springframework.context.annotation.Configuration;
@@ -44,5 +46,10 @@ public class ControllerCRUDAspect {
 		long start = System.currentTimeMillis();
 		proceedingJoinPoint.proceed();
 		log.info("{} - Total Response Time: {} ms", proceedingJoinPoint.getSignature(), System.currentTimeMillis() - start);
+	}
+	
+	@AfterThrowing(pointcut = "com.spring.transaction.aspect.CommonCRUDJoinPointConfig.controller() && com.spring.transaction.aspect.CommonCRUDJoinPointConfig.allMethod()", throwing = "exception")
+	public void logAfter(JoinPoint jp, Throwable exception) {
+		log.error("An exception has been thrown in " + jp.getSignature().getName() + " (), Cause : " + exception.getCause());
 	}
 }

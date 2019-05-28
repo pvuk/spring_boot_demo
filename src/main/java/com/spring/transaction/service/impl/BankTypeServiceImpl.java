@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.transaction.model.BankType;
+import com.spring.transaction.model.ErrorMessageMap;
 import com.spring.transaction.repository.BankTypeRepository;
 import com.spring.transaction.service.BankTypeService;
 import com.spring.transaction.validator.CodeTableConstants;
@@ -49,7 +50,9 @@ public class BankTypeServiceImpl implements BankTypeService {
 				bankTypeMongoRepo.insert(bankType);
 			} else {
 				log.info(bankType.getDescription() +" already exist.");
-				bankType.getErrorMessageMap().putErrorMsg(MessageConstants.STATUS.WARNING, bankType.getDescription() +" already exist.");
+				ErrorMessageMap errorMessageMap = bankType.getErrorMessageMap();
+				errorMessageMap.putErrorMsg(MessageConstants.STATUS.WARNING, bankType.getDescription() +" already exist.");
+				bankType.setErrorMessageMap(errorMessageMap);
 			}
 		});
 		return bankTypes;
