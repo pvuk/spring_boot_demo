@@ -67,7 +67,7 @@ public class Bank {
 				+ ", establishedYear=" + establishedYear + ", headQuarter=" + headQuarter + ", branches=" + branches
 				+ ", revenues=" + revenues + ", strRevenues=" + strRevenues + ", totalAssets=" + totalAssets
 				+ ", strTotalAssets=" + strTotalAssets + ", notes=" + notes + ", refLink=" + refLink + ", bankType="
-				+ bankType + "]";
+				+ bankType + ", errorMessageMap=" + errorMessageMap + "]";
 	}
 	
 }

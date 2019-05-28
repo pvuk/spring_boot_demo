@@ -82,15 +82,14 @@ public class BankServiceImpl implements BankService {
 
 	@Override
 	public List<Bank> saveAllBanks(List<Bank> banks) throws Exception{
-		Query query = new Query();
 		banks.forEach(bank -> {
-			query.addCriteria(Criteria.where("BANK_NAME").is(bank.getBankName()));
+			Query query = Query.query(Criteria.where("BANK_NAME").is(bank.getBankName()));
 			boolean exists = mongoTemplate.exists(query, Bank.class);
 			if (!exists) {
 				bankMongoRepo.insert(bank);
 			} else {
-				log.error(bank.getBankName() +" not inserted.");
-				bank.getErrorMessageMap().putErrorMsg(bank.getBankName(), bank.getBankName() +" not inserted.");
+				log.info(bank.getBankName() +" already exist.");
+				bank.getErrorMessageMap().putErrorMsg(bank.getBankName(), bank.getBankName() +" already exist.");
 			}
 		});
 		return banks;
