@@ -41,4 +41,8 @@ public class WalletPayment {
 	
 	@DBRef
 	private PaymentBy paymentById;
+	
+	@Field(value="CUSTOMER_ID")
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

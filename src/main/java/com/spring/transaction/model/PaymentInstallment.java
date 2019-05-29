@@ -26,6 +26,9 @@ public class PaymentInstallment {
 	private BigDecimal amountPaid;
 	
 	@Size(max = 3000)
-	private String userComment;
+	private String comment;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 	
 }

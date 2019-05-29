@@ -1,5 +1,7 @@
 package com.spring.transaction.model;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -21,4 +23,7 @@ public class PaymentOnAccount {
 	private String paymentReverseId;
 	
 	private String cashbackId;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

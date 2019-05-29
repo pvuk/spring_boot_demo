@@ -26,5 +26,7 @@ public class MerchantPoints {
 	private long pointsOnEvery;
 	
 	//10x
-	private String rewardsOnMerchantCategory;
+	private String description;
+	
+	private String partnerShipId;
 }

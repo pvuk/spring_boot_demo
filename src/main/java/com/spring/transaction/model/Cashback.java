@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -29,4 +30,7 @@ public class Cashback {
 	private BigDecimal cashbackAdjusted;
 	private String cashbackType;	
 	private Long cashbackCategoryId;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

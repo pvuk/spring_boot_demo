@@ -1,6 +1,9 @@
 package com.spring.transaction.model;
 
 import java.sql.Timestamp;
+import java.util.Date;
+
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,9 +25,17 @@ public class CreditLimit {
 	
 	private String cardUpgradeThrough;
 	
-	private Long cardUpgradeLimitFrom;
-	private Long cardUpgradeLimitTo;
-	private Timestamp cardUpgradeLimitOn;
+	private Long upgradeLimitFrom;
+	private Long upgradeLimitTo;
+	private Timestamp upgradeLimitOn;
+
+	private Long temporaryLimit;
+	private Date temporaryLimitFrom;
+	private Date temporaryLimitTo;
 	
-	private CreditCard creditCard; 
+	@NotNull(message = "Credit Card is required field.")
+	private CreditCard creditCard;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

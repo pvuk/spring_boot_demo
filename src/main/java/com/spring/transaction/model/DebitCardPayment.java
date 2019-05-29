@@ -15,13 +15,19 @@ import lombok.Data;
 @Document(collection="Debit_Card_Payment")
 public class DebitCardPayment {
 	
-	@Id
-	private String debitCardPaymentId;
+	@Id private String debitCardPaymentId;
 
+	@Field(value="DEBIT_CARD_ID")
+	@NotNull(message="Debit Card is required field.")
+	private String debitCardId;
+	
 	@Field(value="AMOUNT")
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
 	@Field(value = "TRANSACTION_ON")
 	private Date transactionOn;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

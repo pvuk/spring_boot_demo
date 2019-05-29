@@ -35,4 +35,7 @@ public class BankPayment {
 	@Field(value="AMOUNT")
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

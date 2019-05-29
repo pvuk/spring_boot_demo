@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.transaction.model.BankType;
 import com.spring.transaction.service.BankTypeService;
-import com.spring.transaction.validator.MessageConstants;
 
 @BasePathAwareController
 @RequestMapping("/bankType/service")

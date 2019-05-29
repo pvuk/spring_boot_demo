@@ -3,6 +3,8 @@ package com.spring.transaction.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -23,4 +25,7 @@ public class CashPayment {
     private Date paidOn;
     private BigDecimal recievedAmount;
     private Date recievedOn;
+    
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

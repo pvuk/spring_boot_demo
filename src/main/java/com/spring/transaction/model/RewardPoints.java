@@ -1,6 +1,7 @@
 package com.spring.transaction.model;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -22,13 +23,13 @@ public class RewardPoints {
 	private String rewardCardId;
 	
 	@NotEmpty(message = "Reward Points Catalogue is required field.")
-	private long rewardPointsCatalogueId;
+	private String rewardPointsCatalogueId;
 	
 	@NotEmpty(message = "Opening Balance is required field.")
 	private long rewardsOpeningBalance;
 	
 	@NotEmpty(message = "Merchant Name is required field.")
-	private long merchantDetailsId;
+	private String merchantDetailsId;
 	
 	@NotEmpty(message = "Reward Points Earned is required field.")
 	private String rewardPointsEarnedId;
@@ -41,5 +42,8 @@ public class RewardPoints {
 	
 	@NotEmpty(message = "Reward Points Redeemed To is required field.")
 	private String rewardPointsRedeemId;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 	
 }

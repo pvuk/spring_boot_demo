@@ -17,10 +17,17 @@ public class CreditCardPayment {
 	
 	@Id private String creditCardPaymentId;
 	
+	@Field(value="CREDIT_CARD_ID")
+	@NotNull(message="Credit Card is required field.")
+	private String creditCardId;
+	
 	@Field(value="AMOUNT")
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
 	@Field(value = "TRANSACTION_ON")
 	private Date transactionOn;
+	
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

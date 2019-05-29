@@ -1,12 +1,10 @@
 package com.spring.transaction.model;
 
-import java.util.Date;
-
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -18,32 +16,14 @@ import lombok.Data;
 @Document(collection = "CREDIT_CARD_CODE")
 public class CreditCard {
 
+	@Field(value = "CREDIT_CARD_ID")
 	@Id
 	private String creditCardId;
 
-	@Indexed(unique = true)
-	private String cardNumber;
+	@Field(value="CODE") private String code;
 	
-	private int expireMonth;
+	@Field(value="POSITION") private Long position;
 	
-	private int expireYear;
-	
-	private String nameOnCard;
-	
-	private int cvv;
-	
-	private boolean allowedInternationalTransaction;
-	
-	private boolean vertualCard;
-
-	@NotNull(message = "BankId is required field.")
-	private long bankId;
-	
-	private long cardTypeId;
-	
-	private Date cardIssuedOn;
-	
-	private Date cardExpiredOn;
-	
-	private Long rewardCardId;
+	@NotNull(message="Card Name is required field.")
+	@Field(value="DESCRIPTION") private String description;
 }

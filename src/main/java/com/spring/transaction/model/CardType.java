@@ -5,6 +5,7 @@ import javax.validation.constraints.NotEmpty;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +28,11 @@ public class CardType {
 	
 	@NotEmpty(message = "Card Type is required field.")
 	private String description;
+	
+	@Field(value = "IS_VERTUAL_CARD")
+	private boolean IsVertualCard;
+	
+	private String comments;
 
 	@Transient
 	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
