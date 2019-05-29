@@ -26,4 +26,8 @@ public class NetBankingPayment {
 	@Field(value="AMOUNT")
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
+	
+	@Field(value="CUSTOMER_ID")
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }
