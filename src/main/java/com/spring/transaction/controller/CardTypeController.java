@@ -17,7 +17,7 @@ import com.spring.transaction.service.CardTypeService;
 import com.spring.transaction.validator.MessageConstants;
 
 @BasePathAwareController
-@RequestMapping(value="/cardType/service")
+@RequestMapping(value="/cardType/custom")
 public class CardTypeController {
 	
 	@Autowired private CardTypeService cardTypeService;

@@ -18,7 +18,7 @@ import com.spring.transaction.service.DebitCardService;
 import com.spring.transaction.validator.MessageConstants;
 
 @RestController
-@RequestMapping(value = "debitCard/service")
+@RequestMapping(value = "debitCard/custom")
 public class DebitCardController {
 
 	@Autowired

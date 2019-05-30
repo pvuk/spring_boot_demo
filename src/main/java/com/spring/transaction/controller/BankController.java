@@ -20,7 +20,7 @@ import com.spring.transaction.model.Bank;
 import com.spring.transaction.service.BankService;
 
 @BasePathAwareController
-@RequestMapping("/bank/service")
+@RequestMapping("/bank/custom")
 public class BankController {
 	
 	@Autowired private BankService bankService;

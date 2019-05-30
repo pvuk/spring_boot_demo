@@ -15,7 +15,7 @@ import com.spring.transaction.model.BankBranch;
 import com.spring.transaction.service.BankBranchService;
 
 @BasePathAwareController
-@RequestMapping(value="/bankBranch/service/")
+@RequestMapping(value="/bankBranch/custom/")
 public class BankBranchController {
 	
 	@Autowired private BankBranchService bankBranchService;
