@@ -16,14 +16,15 @@ import lombok.Data;
 @Document(collection = "CREDIT_CARD_CODE")
 public class CreditCard {
 
-	@Field(value = "CREDIT_CARD_ID")
+	@Field(value = "CREDIT_CARD_ID", order = 1)
 	@Id
 	private String creditCardId;
 
-	@Field(value="CODE") private String code;
+	@Field(value="CODE", order = 2) private String code;
 	
-	@Field(value="POSITION") private Long position;
+	@Field(value="POSITION", order = 3) private Long position;
 	
+	@Field(value="DESCRIPTION", order = 4)
 	@NotNull(message="Card Name is required field.")
-	@Field(value="DESCRIPTION") private String description;
+	private String description;
 }

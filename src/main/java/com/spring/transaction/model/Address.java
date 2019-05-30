@@ -20,16 +20,17 @@ import lombok.NoArgsConstructor;
 @Document(collection = "ADDRESS")
 public class Address {
 
+	@Field(value = "ADDRESS_ID", order = 1)
 	@Id
 	private ObjectId addressId;
-	
+
 	@DBRef
-	@Field(value="PERMANENT_ADDRESS")
+	@Field(value = "PERMANENT_ADDRESS", order = 2)
 	@NotNull(message = "Permanent Address is required field.")
 	private PermanentAddress permanentAddress;
-	
+
 	@DBRef
-	@Field(value="CURRENT_ADDRESS")
+	@Field(value = "CURRENT_ADDRESS", order = 3)
 	@NotNull(message = "Current Address is required field.")
 	private CurrentAddress currentAddress;
 }

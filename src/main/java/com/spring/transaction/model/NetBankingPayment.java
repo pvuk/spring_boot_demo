@@ -16,18 +16,19 @@ import lombok.Data;
 @Document(collection = "NETBANKING_PAYMENT")
 public class NetBankingPayment {
 	
+	@Field(value="NET_BANKING_PAYMENT_ID", order = 1)
 	@Id private String netBankingPaymentId;
 	
-	@Field(value = "TRANSACTION_ON")
+	@Field(value = "TRANSACTION_ON", order = 2)
 	private Date transactionOn;
 	
 	@DBRef private BankPayment bankAccount;
 	
-	@Field(value="AMOUNT")
+	@Field(value="AMOUNT", order = 3)
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
-	@Field(value="CUSTOMER_ID")
+	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }

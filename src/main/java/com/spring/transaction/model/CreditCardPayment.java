@@ -15,19 +15,21 @@ import lombok.Data;
 @Document(collection = "CREDIT_CARD_PAYMENT")
 public class CreditCardPayment {
 	
+	@Field(value="CREDIT_CARD_PAYMENT_ID", order = 1)
 	@Id private String creditCardPaymentId;
 	
-	@Field(value="CREDIT_CARD_ID")
+	@Field(value="CREDIT_CARD_ID", order = 2)
 	@NotNull(message="Credit Card is required field.")
 	private String creditCardId;
 	
-	@Field(value="AMOUNT")
+	@Field(value="AMOUNT", order = 3)
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
-	@Field(value = "TRANSACTION_ON")
+	@Field(value = "TRANSACTION_ON", order = 4)
 	private Date transactionOn;
 	
+	@Field(value="CUSTOMER_ID", order = 5)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }

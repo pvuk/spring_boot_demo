@@ -12,12 +12,22 @@ import lombok.Data;
 @Document(collection="TRANS_ERROR_LOG_REPORT")
 public class TransErrorLogReport {
 	
+	@Field(value = "TRANS_ERROR_LOG_REPORT_ID", order = 1)
 	@Id private String transErrorLogReportId;
+	
+	@Field(value = "MESSAGE", order = 2)
 	private String message;
+
+	@Field(value = "PRINT_STACK_TRACE", order = 3)
+	private String printStackTrace;
+	
+	@Field(value = "CLASS_NAME", order = 4)
 	private String className;
+	
+	@Field(value = "METHOD_NAME", order = 5)
 	private String methodName;
 	
-	@Field(value="CUSTOMER_ID")
+	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }

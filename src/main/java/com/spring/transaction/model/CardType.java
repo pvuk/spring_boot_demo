@@ -19,19 +19,24 @@ import lombok.NoArgsConstructor;
 @Document(collection = "CARD_TYPE_CODE")
 public class CardType {
 
+	@Field(value = "CARD_TYPE_ID", order = 1)
 	@Id
 	private String cardTypeId;
 
+	@Field(value = "CODE", order = 2)
 	private String code;
 	
+	@Field(value = "POSITION", order = 3)
 	private int position;
 	
+	@Field(value = "DESCRIPTION", order = 4)
 	@NotEmpty(message = "Card Type is required field.")
 	private String description;
 	
-	@Field(value = "IS_VERTUAL_CARD")
+	@Field(value = "IS_VERTUAL_CARD", order = 5)
 	private boolean IsVertualCard;
 	
+	@Field(value = "COMMENTS", order = 6)
 	private String comments;
 
 	@Transient

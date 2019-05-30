@@ -22,27 +22,25 @@ import lombok.NoArgsConstructor;
 @Document(collection = "WALLET_PAYMENT")
 public class WalletPayment {
 	
+	@Field(value = "WALLET_PAYMENT_ID", order = 1)
 	@Id private String walletPaymentId;
 	
-	@Field(value="AMOUNT")
+	@Field(value="AMOUNT", order = 2)
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
-	@Field(value = "TRANSACTION_ON")
+	@Field(value = "TRANSACTION_ON", order = 3)
 	private Date transactionOn;
 	
 	@NotNull(message="Wallet is required field.")
 	@DBRef
 	private Wallet wallet;
 	
-//	@NotNull(message="User is required field.")`
-//	@DBRef
-//	private String profileId;
-	
+	@NotNull(message="PaymentBy is required field.")
 	@DBRef
-	private PaymentBy paymentById;
+	private PaymentBy paymentBy;
 	
-	@Field(value="CUSTOMER_ID")
+	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }
