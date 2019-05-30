@@ -6,6 +6,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.spring.transaction.validation.group.GroupCustomer;
+
 import lombok.Data;
 
 @Data
@@ -17,7 +19,7 @@ public class PaymentBy {
 	private String paymentById;
 	
 	@Field(value="PAYMENT_RECEIVED_FROM_CUSTOMER_ID", order = 2)
-	@NotNull(message="Payment Received From Customer is required field.")
+	@NotNull(message = "Payment Received From Customer is required field.", groups = GroupCustomer.class)
 	private String customerId;
 	
 	@Field(value="CREDIT_CARD_PAYMENT_ID", order = 3)
