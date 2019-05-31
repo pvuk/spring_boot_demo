@@ -41,6 +41,8 @@ or
 2.4.b To permanently disable this reminder, run the following command: 
 > db.disableFreeMonitoring()
 
+==========================================================================================================================================================
+
 3. Start MongoDB Enterprise Edition as a Windows Service
 Starting in version 4.0, you can install and configure MongoDB as a Windows Service during the install, and the MongoDB service is started upon successful installation.
 

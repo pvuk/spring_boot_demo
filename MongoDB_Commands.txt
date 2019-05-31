@@ -32,6 +32,15 @@ or
 Start a standalone mongod instance without access control.
 > mongod --port 27017 --dbpath="D:\uday\data\db"
 
+1.4 Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+	metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+1.4.1 To enable free monitoring, run the following command: 
+> db.enableFreeMonitoring()
+1.4.2 To permanently disable this reminder, run the following command: 
+> db.disableFreeMonitoring()
+
+==========================================================================================================================================================
+
 ==========================================================================================================================================================
 															How to create a database in MongoDB
 ==========================================================================================================================================================
