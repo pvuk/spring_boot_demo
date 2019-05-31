@@ -22,25 +22,21 @@ public class CardTypeController {
 	
 	@Autowired private CardTypeService cardTypeService;
 	
-	@PostMapping(value = "/save")
-	public @ResponseBody CardType save(@RequestBody CardType cardType) {
+	public @ResponseBody @PostMapping(value = "/save") CardType save(@RequestBody CardType cardType) {
 		cardType = cardTypeService.save(cardType);
 		return cardType;
 	}
 	
-	@PostMapping(value = "/update")
-	public @ResponseBody CardType update(@RequestBody CardType cardType) {
+	public @ResponseBody @PostMapping(value = "/update") CardType update(@RequestBody CardType cardType) {
 		cardType = cardTypeService.save(cardType);
 		return cardType;
 	}
 	
-	@PostMapping(value = "/delete")
-	public @ResponseBody String delete(@RequestBody CardType cardType) {
+	public @ResponseBody @PostMapping(value = "/delete") String delete(@RequestBody CardType cardType) {
 		return cardTypeService.delete(cardType);
 	}
 	
-	@GetMapping(value = "/getCardTypeById")
-	public @ResponseBody ResponseEntity<Object> getCardTypeById(
+	public @ResponseBody @GetMapping(value = "/getCardTypeById") ResponseEntity<Object> getCardTypeById(
 			@RequestParam(value = "cardTypeId", required = true) ObjectId cardTypeId) {
 		CardType card = cardTypeService.getCardTypeById(cardTypeId);
 		if (card != null && card.getCardTypeId() != null) {
