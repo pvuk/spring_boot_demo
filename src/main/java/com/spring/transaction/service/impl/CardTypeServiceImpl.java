@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.spring.transaction.model.CardType;
 import com.spring.transaction.repository.CardTypeRepository;
 import com.spring.transaction.service.CardTypeService;
+import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -22,7 +23,7 @@ public class CardTypeServiceImpl implements CardTypeService {
 	
 	@Override
 	public CardType save(CardType cardType) {
-		cardType = cardTypeRepo.save(cardType);
+		cardType = cardTypeRepo.insert(cardType);
 		return cardType;
 	}
 
@@ -37,12 +38,11 @@ public class CardTypeServiceImpl implements CardTypeService {
 		try {
 			cardTypeRepo.delete(cardType);
 		} catch (Exception e) {
-			log.error("Record delete failed for cardTypeId: {}", cardType.getCardTypeId());
 			// maintain error log for catch block using spring aop
-			log.error("delete: {}", e.getMessage());
-			return "Record delete failed";
+			log.error("Record delete failed for cardTypeId: {}, cause: {}", cardType.getCardTypeId(), e.getMessage());
+			return MessageConstants.Failed.DELETE + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 		}
-		return "Record deleted Successfully";
+		return MessageConstants.Success.DELETE;
 	}
 
 	@Override

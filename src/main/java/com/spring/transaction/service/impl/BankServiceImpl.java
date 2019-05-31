@@ -15,7 +15,6 @@ import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.BankRepository;
 import com.spring.transaction.service.BankService;
-import com.spring.transaction.validator.ErrorMessages;
 import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +41,7 @@ public class BankServiceImpl implements BankService {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
 		}*/
-		return MessageConstants.SUCCESS_SAVE;
+		return MessageConstants.Success.SAVE;
 	}
 
 	@Override
@@ -50,17 +49,17 @@ public class BankServiceImpl implements BankService {
 		if (bank != null && bank.getBankId() != null) {
 			bank = bankMongoRepo.save(bank);
 		} else {
-			log.info(ErrorMessages.UPDATE_FAILED);
-			throw new Exception(ErrorMessages.UPDATE_FAILED);
+			log.info("updateBank: {}, for bankId: {}", MessageConstants.Failed.UPDATE, bank.getBankId());
+			throw new Exception(MessageConstants.Failed.UPDATE);
 		}
-		return MessageConstants.SUCCESS_UPDATE;
+		return MessageConstants.Success.UPDATE;
 	}
 
 	@Override
 	public String deleteBankById(String bankId) {
 		ObjectId objectId = new ObjectId(bankId);
 		bankMongoRepo.deleteById(objectId);
-		return MessageConstants.SUCCESS_DELETE;
+		return MessageConstants.Success.DELETE;
 	}
 
 	@Override
@@ -69,7 +68,7 @@ public class BankServiceImpl implements BankService {
 		Optional<Bank> findById = bankMongoRepo.findById(objectId);
 		if (findById.isPresent()) {
 			log.error("BankId: "+ bankId +" Not found");
-			throw new NotFoundException("BankId: "+ bankId +" Not found");
+			throw new NotFoundException("BankId: "+ bankId +" Not found. "+ MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT);
 		}
 		return bankMongoRepo.findById(objectId).get();
 	}
@@ -89,7 +88,7 @@ public class BankServiceImpl implements BankService {
 				bankMongoRepo.insert(bank);
 			} else {
 				log.info(bank.getBankName() +" already exist.");
-				bank.getErrorMessageMap().putErrorMsg(MessageConstants.STATUS.WARNING, bank.getBankName() +" already exist.");
+				bank.getErrorMessageMap().putErrorMsg(MessageConstants.Status.WARNING, bank.getBankName() +" already exist.");
 			}
 		});
 		return banks;

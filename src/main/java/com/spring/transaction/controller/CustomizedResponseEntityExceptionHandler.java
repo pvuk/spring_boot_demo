@@ -12,6 +12,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import com.spring.transaction.exception.ErrorDetails;
 import com.spring.transaction.exception.NotFoundException;
+import com.spring.transaction.validator.MessageConstants;
 
 @ControllerAdvice
 @RestController
@@ -19,13 +20,17 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 	@ExceptionHandler(NotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleUserNotFoundException(NotFoundException ex, WebRequest request) {
-		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+		ErrorDetails errorDetails = new ErrorDetails(new Date(),
+				ex.getMessage() + ". " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT,
+				request.getDescription(false));
 		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	}
-	
+
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ErrorDetails> handleUserException(Exception ex, WebRequest request) {
-		ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(), request.getDescription(false));
+		ErrorDetails errorDetails = new ErrorDetails(new Date(),
+				ex.getMessage() + ". " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT,
+				request.getDescription(false));
 		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

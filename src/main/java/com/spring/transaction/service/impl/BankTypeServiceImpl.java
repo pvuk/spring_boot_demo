@@ -30,8 +30,13 @@ public class BankTypeServiceImpl implements BankTypeService {
 	
 	@Override
 	public String save(BankType bankType) throws Exception {
-		
-		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
+		try {
+			bankTypeMongoRepo.insert(bankType);
+		} catch (Exception e) {
+			log.error("save: {}", e.getMessage());
+			return MessageConstants.ERROR_MESSAGE;
+		}
+		return MessageConstants.Success.SAVE;
 	}
 
 	@Override
@@ -51,7 +56,7 @@ public class BankTypeServiceImpl implements BankTypeService {
 			} else {
 				log.info(bankType.getDescription() +" already exist.");
 				ErrorMessageMap errorMessageMap = bankType.getErrorMessageMap();
-				errorMessageMap.putErrorMsg(MessageConstants.STATUS.WARNING, bankType.getDescription() +" already exist.");
+				errorMessageMap.putErrorMsg(MessageConstants.Status.WARNING, bankType.getDescription() +" already exist.");
 				bankType.setErrorMessageMap(errorMessageMap);
 			}
 		});
@@ -60,8 +65,13 @@ public class BankTypeServiceImpl implements BankTypeService {
 
 	@Override
 	public String update(BankType bankType) throws Exception {
-		
-		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
+		try {
+			bankTypeMongoRepo.save(bankType);
+		} catch (Exception e) {
+			log.error("update: {}", e.getMessage());
+			return MessageConstants.ERROR_MESSAGE;
+		}
+		return MessageConstants.Success.UPDATE;
 	}
 
 	@Override
@@ -70,9 +80,13 @@ public class BankTypeServiceImpl implements BankTypeService {
 //		MongoCollection<org.bson.Document> dbCollection = mongoConfig.getCollection(CodeTableConstants.Entity.BANK_TYPE);
 //		DeleteResult deleteOne = dbCollection.deleteOne(Filters.eq(CodeTableConstants.Column.BANK_TYPE_ID, bankTypeId));
 //		return deleteOne.getDeletedCount() == 0 ? MessageConstants.SUCCESS_DELETE : MessageConstants.ERROR_MESSAGE;
-
-		bankTypeMongoRepo.deleteById(bankTypeId);
-		return MessageConstants.SUCCESS_DELETE;
+		try {
+			bankTypeMongoRepo.deleteById(bankTypeId);
+		} catch (Exception e) {
+			log.error("deleteBankTypeById: {}", e.getMessage());
+			return MessageConstants.ERROR_MESSAGE;
+		}
+		return MessageConstants.Success.DELETE;
 		
 //		Query query = new Query().addCriteria(Criteria.where("BANK_TYPE_ID").is(bankTypeId));
 //		DeleteResult result = mongoTemplate.remove(query, BankType.class);

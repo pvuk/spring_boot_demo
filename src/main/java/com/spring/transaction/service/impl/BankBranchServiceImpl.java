@@ -1,6 +1,7 @@
 package com.spring.transaction.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
+import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Address;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.model.BankBranch;
@@ -17,7 +19,6 @@ import com.spring.transaction.model.PermanentAddress;
 import com.spring.transaction.repository.BankBranchRepository;
 import com.spring.transaction.repository.BankRepository;
 import com.spring.transaction.service.BankBranchService;
-import com.spring.transaction.validator.ErrorMessages;
 import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -29,8 +30,8 @@ public class BankBranchServiceImpl implements BankBranchService {
 
 	@Autowired private MongoTemplate mongoTemplate;
 	
-	@Autowired private BankRepository bankMongoRepository;
-	@Autowired private BankBranchRepository bankBranchMongoRepository;
+	@Autowired private BankRepository bankMongoRepo;
+	@Autowired private BankBranchRepository bankBranchMongoRepo;
 	
 	@Override
 	public String saveBankBranch(BankBranch bankBranch) throws Exception {
@@ -39,7 +40,7 @@ public class BankBranchServiceImpl implements BankBranchService {
 			
 			Bank bank = bankBranch.getBank();
 			String bankName = bank.getBankName();
-			Bank findByBankName = bankMongoRepository.findByBankName(bankName);
+			Bank findByBankName = bankMongoRepo.findByBankName(bankName);
 			if (findByBankName == null) {
 				mongoTemplate.insert(bank);
 			} else if (findByBankName != null && findByBankName.getBankId() != null) {
@@ -49,7 +50,7 @@ public class BankBranchServiceImpl implements BankBranchService {
 			
 			String branch = bankBranch.getBranch();
 			if (bankBranch != null && !StringUtils.isEmpty(branch)) {
-				BankBranch findByBranch = bankBranchMongoRepository.findByBranch(branch);
+				BankBranch findByBranch = bankBranchMongoRepo.findByBranch(branch);
 				if (findByBranch != null) {
 					log.error(bankName +" Branch: "+ branch +" Already exsit");
 					throw new Exception(bankName +" Branch: "+ branch +" Already exsit");
@@ -68,19 +69,16 @@ public class BankBranchServiceImpl implements BankBranchService {
 					address.setPermanentAddress(permanentAddress);
 					mongoTemplate.insert(address);
 					log.info("Saving Address for BankBranch: {}", currentAddress);
-				} else {
-					log.error("Something went wrong. "+ ErrorMessages.PLEASE_CONTACT_IT_SUPPORT);
-					throw new Exception("Something went wrong. "+ ErrorMessages.PLEASE_CONTACT_IT_SUPPORT);
 				}
 				bankBranch.setAddress(address);
 			}
-			bankBranchMongoRepository.save(bankBranch);
+			bankBranchMongoRepo.save(bankBranch);
 			log.info("End - saveBankBranch");
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
 		}
-		return MessageConstants.SUCCESS_SAVE;
+		return MessageConstants.Success.SAVE;
 	}
 
 	@Override
@@ -97,14 +95,25 @@ public class BankBranchServiceImpl implements BankBranchService {
 
 	@Override
 	public BankBranch findByBankBranchId(ObjectId bankBranchId) {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			Optional<BankBranch> byId = bankBranchMongoRepo.findById(bankBranchId);
+			return byId.isPresent() ? byId.get() : null;
+		} catch (Exception e) {
+			log.error("findByBankBranchId: {} not found. Cause: {}", bankBranchId, e.getMessage());
+			throw new NotFoundException("BankBranchId "+ bankBranchId +" not found. Cause: "+ e.getMessage());
+		}
 	}
 
 	@Override
 	public List<BankBranch> getAllBankBranches() {
-		// TODO Auto-generated method stub
-		return null;
+		List<BankBranch> list = null;
+		try {
+			list = bankBranchMongoRepo.findAll();
+		} catch (Exception e) {
+			log.error("getAllBankBranches: {}", e.getMessage());
+			throw new NotFoundException(e.getMessage());
+		}
+		return list;
 	}
 
 }
