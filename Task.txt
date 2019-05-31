@@ -1,1 +1,2 @@
 1. Work on Validation groups(@NotNull) and Group Sequences
+2. Write some services using Spring projection.
