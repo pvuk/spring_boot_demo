@@ -1,5 +1,4 @@
 [ {
-      "bankId" : "5c5408c4ee4cea336451be20",
       "bankName" : "ICICI BANK",
       "establishedOn" : null,
       "establishedYear" : null,
@@ -10,9 +9,17 @@
       "totalAssets" : null,
       "strTotalAssets" : null,
       "notes" : null,
-      "refLink" : null
+      "refLink" : null,
+      "bankType": {
+	  	  		"id": "5cece8c83d495818d0bd9f80",
+                "code": "private",
+                "position": 2,
+                "description": "Private Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     }, {
-      "bankId" : "5c543d4aee4cea02609b1d76",
       "bankName" : "STATE BANK OF INDIA",
       "establishedOn" : null,
       "establishedYear" : null,
@@ -23,9 +30,17 @@
       "totalAssets" : null,
       "strTotalAssets" : null,
       "notes" : null,
-      "refLink" : null
+      "refLink" : null,
+      "bankType": {
+	  			"id": "5cecfaab3d495818d0bd9f82",
+                "code": "public",
+                "position": 1,
+                "description": "Public Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     }, {
-      "bankId" : "5c7e6fe7ef1fd3148c1a077e",
       "bankName" : "Kotak Mahindra Bank",
       "establishedOn" : null,
       "establishedYear" : null,
@@ -36,9 +51,17 @@
       "totalAssets" : null,
       "strTotalAssets" : null,
       "notes" : null,
-      "refLink" : null
+      "refLink" : null,
+      "bankType": {
+	    	   "id": "5cece8c83d495818d0bd9f80",
+                "code": "private",
+                "position": 2,
+                "description": "Private Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     }, {
-      "bankId" : "5c8f4d65dc344c3814f25d2e",
       "bankName" : "Yes Bank",
       "establishedOn" : null,
       "establishedYear" : 2004,
@@ -49,9 +72,17 @@
       "totalAssets" : null,
       "strTotalAssets" : "₹2.15 trillion (US$30 billion)",
       "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India"
+      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+      "bankType": {
+	  	       "id": "5cece8c83d495818d0bd9f80",
+                "code": "private",
+                "position": 2,
+                "description": "Private Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     }, {
-      "bankId" : "5c8f8fb2dc344c259076882c",
       "bankName" : "RBL Bank",
       "establishedOn" : null,
       "establishedYear" : 1943,
@@ -62,9 +93,17 @@
       "totalAssets" : null,
       "strTotalAssets" : "₹486.74 billion (US$6.8 billion)",
       "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India"
+      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+      "bankType": {
+	  	       "id": "5cece8c83d495818d0bd9f80",
+                "code": "private",
+                "position": 2,
+                "description": "Private Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     }, {
-      "bankId" : "5c8f90c4dc344c259076882d",
       "bankName" : "Bank of Baroda",
       "establishedOn" : null,
       "establishedYear" : 1908,
@@ -75,9 +114,17 @@
       "totalAssets" : null,
       "strTotalAssets" : "₹6,949 billion (US$97 billion)",
       "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India"
+      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+      "bankType": {
+				"id": "5cecfaab3d495818d0bd9f82",
+                "code": "public",
+                "position": 1,
+                "description": "Public Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     }, {
-      "bankId" : "5c8f9121dc344c259076882e",
       "bankName" : "Andhra Bank",
       "establishedOn" : null,
       "establishedYear" : 1923,
@@ -88,5 +135,14 @@
       "totalAssets" : null,
       "strTotalAssets" : "₹2,221.26 billion (US$31 billion)",
       "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India"
+      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+      "bankType": {
+				"id": "5cecfaab3d495818d0bd9f82",
+                "code": "public",
+                "position": 1,
+                "description": "Public Sector Banks",
+                "section": "Scheduled",
+                "category": "Commercial",
+                "comment": ""
+      }
     } ]

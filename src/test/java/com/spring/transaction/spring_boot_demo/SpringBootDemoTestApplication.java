@@ -1,17 +1,26 @@
 package com.spring.transaction.spring_boot_demo;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.util.ResourceUtils;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.spring.transaction.model.Bank;
 import com.spring.transaction.test.model.User;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class SpringBootDemoTestApplication {
 
 	public static void main(String[] args) {
@@ -24,9 +33,35 @@ public class SpringBootDemoTestApplication {
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig1.class);
 		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 
-		crudOperationsOfUser(mongoOperation);
+//		crudOperationsOfUser(mongoOperation);
 		
-		((ClassPathXmlApplicationContext) ctx).close();//simple casting
+		insertBankDocumentsFromJSON(mongoOperation);
+		
+		((AnnotationConfigApplicationContext) ctx).close();//simple casting
+	}
+
+	private static void insertBankDocumentsFromJSON(MongoOperations mongoOperation) {
+		String resourceLocation = "classpath:json/put-bank_code.json";
+		try {
+			File file = ResourceUtils.getFile(resourceLocation );
+			List<Bank> list = new ObjectMapper().readValue(file, new TypeReference<List<Bank>>() {});
+			list.forEach(bank->{
+				if (bank.getBankId()==null) {
+					String bankId = mongoOperation.findOne(new Query(Criteria.where("BANK_NAME").is(bank.getBankName())), Bank.class).getBankId();
+					if (bankId == null) {
+						mongoOperation.insert(bank);						
+					} else {
+						log.warn("BankName: {} is trying to insert again", bank.getBankName());
+					}
+				} else {
+					log.warn("BankName: {} is trying to update", bank.getBankName());
+				}
+			});
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static void crudOperationsOfUser(MongoOperations mongoOperation) {
