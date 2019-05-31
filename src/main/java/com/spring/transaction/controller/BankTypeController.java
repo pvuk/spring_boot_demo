@@ -23,15 +23,13 @@ import com.spring.transaction.service.BankTypeService;
 @RequestMapping("/bankType/custom")
 public class BankTypeController {
 
-	@Autowired
-	BankTypeService bankTypeService;
+	@Autowired BankTypeService bankTypeService;
 
 	@GetMapping(value = "/save")
 	public @ResponseBody String save(BankType bankType) throws Exception {
 		return bankTypeService.save(bankType);
 	}
 
-	
 	@PutMapping(value = "/saveAll")
 	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody List<BankType> bankTypes) throws Exception {
 		List<BankType> list = bankTypeService.saveAll(bankTypes);
@@ -45,7 +43,7 @@ public class BankTypeController {
 
 	@DeleteMapping(value = "/deleteBankTypeById/{bankTypeId}")
 	public @ResponseBody String deleteBankTypeById(
-			@PathVariable(required = true, name = "bankTypeId") ObjectId bankTypeId) {
+			@PathVariable(required = true, name = "bankTypeId") ObjectId bankTypeId) throws Exception {
 		return bankTypeService.deleteBankTypeById(bankTypeId);
 	}
 }

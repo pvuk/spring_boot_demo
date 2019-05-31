@@ -14,5 +14,5 @@ public interface BankTypeService {
 	
 	String update(BankType bankType) throws Exception;
 	
-	String deleteBankTypeById(ObjectId bankTypeId);
+	String deleteBankTypeById(ObjectId bankTypeId) throws Exception;
 }

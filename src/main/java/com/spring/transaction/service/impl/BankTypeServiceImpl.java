@@ -34,7 +34,7 @@ public class BankTypeServiceImpl implements BankTypeService {
 			bankTypeMongoRepo.insert(bankType);
 		} catch (Exception e) {
 			log.error("save: {}", e.getMessage());
-			return MessageConstants.ERROR_MESSAGE;
+			throw new Exception(MessageConstants.Failed.SAVE +" Cause: "+ e.getMessage());
 		}
 		return MessageConstants.Success.SAVE;
 	}
@@ -69,13 +69,13 @@ public class BankTypeServiceImpl implements BankTypeService {
 			bankTypeMongoRepo.save(bankType);
 		} catch (Exception e) {
 			log.error("update: {}", e.getMessage());
-			return MessageConstants.ERROR_MESSAGE;
+			throw new Exception(MessageConstants.Failed.UPDATE +" Cause: "+ e.getMessage());
 		}
 		return MessageConstants.Success.UPDATE;
 	}
 
 	@Override
-	public String deleteBankTypeById(ObjectId bankTypeId) {
+	public String deleteBankTypeById(ObjectId bankTypeId) throws Exception {
 		//record not deleted. please work on below code
 //		MongoCollection<org.bson.Document> dbCollection = mongoConfig.getCollection(CodeTableConstants.Entity.BANK_TYPE);
 //		DeleteResult deleteOne = dbCollection.deleteOne(Filters.eq(CodeTableConstants.Column.BANK_TYPE_ID, bankTypeId));
@@ -84,7 +84,7 @@ public class BankTypeServiceImpl implements BankTypeService {
 			bankTypeMongoRepo.deleteById(bankTypeId);
 		} catch (Exception e) {
 			log.error("deleteBankTypeById: {}", e.getMessage());
-			return MessageConstants.ERROR_MESSAGE;
+			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());
 		}
 		return MessageConstants.Success.DELETE;
 		
