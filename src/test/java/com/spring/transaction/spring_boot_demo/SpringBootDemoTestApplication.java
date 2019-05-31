@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -13,47 +14,51 @@ import com.spring.transaction.test.model.User;
 
 public class SpringBootDemoTestApplication {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-	// For XML
-	//ApplicationContext ctx = new GenericXmlApplicationContext("SpringConfig.xml");
-    	
-	// For Annotation
-	ApplicationContext ctx = 
-             new AnnotationConfigApplicationContext(SpringMongoConfig1.class);
-	MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
+		// For XML
+		// ApplicationContext ctx = new
+		// GenericXmlApplicationContext("SpringConfig.xml");
 
-	User user = new User("test", "password123");
+		// For Annotation
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig1.class);
+		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 
-	// save
-	mongoOperation.save(user);		
+		crudOperationsOfUser(mongoOperation);
+		
+		((ClassPathXmlApplicationContext) ctx).close();//simple casting
+	}
 
-	// now user object got the created id.
-	System.out.println("1. user : " + user);
+	private static void crudOperationsOfUser(MongoOperations mongoOperation) {
+		User user = new User("test", "password123");
 
-	// query to search user
-	Query searchUserQuery = new Query(Criteria.where("username").is("mkyong"));
+		// save
+		mongoOperation.save(user);
 
-	// find the saved user again.
-	User savedUser = mongoOperation.findOne(searchUserQuery, User.class);
-	System.out.println("2. find - savedUser : " + savedUser);
+		// now user object got the created id.
+		System.out.println("1. user : " + user);
 
-	// update password
-	mongoOperation.updateFirst(searchUserQuery, 
-                         Update.update("password", "new password"),User.class);
+		// query to search user
+		Query searchUserQuery = new Query(Criteria.where("username").is("mkyong"));
 
-	// find the updated user object
-	User updatedUser = mongoOperation.findOne(searchUserQuery, User.class);
+		// find the saved user again.
+		User savedUser = mongoOperation.findOne(searchUserQuery, User.class);
+		System.out.println("2. find - savedUser : " + savedUser);
 
-	System.out.println("3. updatedUser : " + updatedUser);
+		// update password
+		mongoOperation.updateFirst(searchUserQuery, Update.update("password", "new password"), User.class);
 
-	// delete
-	mongoOperation.remove(searchUserQuery, User.class);
+		// find the updated user object
+		User updatedUser = mongoOperation.findOne(searchUserQuery, User.class);
 
-	// List, it should be empty now.
-	List<User> listUser = mongoOperation.findAll(User.class);
-	System.out.println("4. Number of user = " + listUser.size());
+		System.out.println("3. updatedUser : " + updatedUser);
 
-    }
+		// delete
+		mongoOperation.remove(searchUserQuery, User.class);
+
+		// List, it should be empty now.
+		List<User> listUser = mongoOperation.findAll(User.class);
+		System.out.println("4. Number of user = " + listUser.size());
+	}
 
 }
