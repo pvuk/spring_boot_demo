@@ -1,0 +1,3 @@
+1. simple casting
+1.1 Description: Already created instance is type cast to child class
+1.2 SpringBootDemoTestApplication -> ((ClassPathXmlApplicationContext) ctx).close();//simple casting
