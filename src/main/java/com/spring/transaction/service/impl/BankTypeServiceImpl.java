@@ -19,6 +19,11 @@ import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @Slf4j
 @Transactional(rollbackFor = Exception.class)
 @Service
@@ -101,6 +106,12 @@ public class BankTypeServiceImpl implements BankTypeService {
 //		Query query = new Query().addCriteria(Criteria.where("BANK_TYPE_ID").is(bankTypeId));
 //		DeleteResult result = mongoTemplate.remove(query, BankType.class);
 //		return result.getDeletedCount() == 0 ? MessageConstants.SUCCESS_DELETE : MessageConstants.ERROR_MESSAGE;
+	}
+
+	@Override
+	public BankType getBankTypeById(ObjectId bankTypeId) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

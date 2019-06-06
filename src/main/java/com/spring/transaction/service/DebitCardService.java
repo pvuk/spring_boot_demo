@@ -1,15 +1,21 @@
 package com.spring.transaction.service;
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 
 import com.spring.transaction.model.DebitCard;
 
 public interface DebitCardService {
 	
-	DebitCard saveDebitCard(DebitCard debitCard);
+	DebitCard getDebitCardById(ObjectId debitCardId) throws Exception;
 	
-	DebitCard updateDebitCard(DebitCard debitCard);
+	String save(DebitCard debitCard) throws Exception;
 	
-	DebitCard getByDebitCardId(ObjectId debitCardId);
+	List<DebitCard> saveAll(List<DebitCard> debitCards) throws Exception;
+	
+	String update(DebitCard debitCard) throws Exception;
+	
+	String deleteDebitCardById(ObjectId debitCardId) throws Exception;
 	
 }

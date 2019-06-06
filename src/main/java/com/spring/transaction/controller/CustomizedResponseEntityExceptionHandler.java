@@ -14,6 +14,11 @@ import com.spring.transaction.exception.ErrorDetails;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.validator.MessageConstants;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @ControllerAdvice
 @RestController
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {

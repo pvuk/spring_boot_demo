@@ -19,6 +19,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.spring.transaction.model.BankType;
 import com.spring.transaction.service.BankTypeService;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @BasePathAwareController
 @RequestMapping("/bankType/custom")
 public class BankTypeController {

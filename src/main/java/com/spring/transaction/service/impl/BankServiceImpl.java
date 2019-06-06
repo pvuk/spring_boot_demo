@@ -19,6 +19,11 @@ import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @Service
 @Transactional(rollbackFor = Exception.class)
 @Slf4j
@@ -26,26 +31,33 @@ public class BankServiceImpl implements BankService {
 	
 	@Autowired private BankRepository bankMongoRepo;
 
-//	@Autowired private MongoClient mongoClient;
+//	@Autowired private MongoConfig mongoConfig;
 	
 	@Autowired private MongoTemplate mongoTemplate;
 	
 	@Override
-	public String saveBank(Bank bank) throws Exception {
-		/*try {
-			MongoDatabase db = mongoClient.getDatabase("trans");
-			MongoCollection<Document> dbCollection = db.getCollection("BANK_CODE");
-			Document dbObject2 = Document.parse(bank.toString());
-			dbCollection.insertOne(dbObject2);
+	public String save(Bank bank) throws Exception {
+		try {
+//			MongoCollection<Document> bankCollection = mongoConfig.getCollection("BANK_CODE");
+//			
+//			MongoCollection<Document> bankTypeCollection = mongoConfig.getCollection("BANK_TYPE_CODE");
+//			Bson eq = Filters.eq("BANK_TYPE_CODE.CODE", bank.getBankType().getCode());
+//			BankType bankType = bankTypeCollection.find(eq, BankType.class).first();
+//			if (bankType != null && bankType.getId() != null) {
+//				bank.getBankType().setId(bankType.getId());
+//			}
+//			Document bankDocument = Document.parse(bank.toString());
+			
+//			bankCollection.insertOne(bankDocument);
 		} catch (Exception e) {
-			e.printStackTrace();
-			throw new Exception(e.getMessage());
-		}*/
+			log.error("save: {}", e);
+			throw new Exception(MessageConstants.Failed.SAVE +" Cause: "+ e.getMessage());
+		}
 		return MessageConstants.Success.SAVE;
 	}
 
 	@Override
-	public String updateBank(Bank bank) throws Exception {
+	public String update(Bank bank) throws Exception {
 		if (bank != null && bank.getBankId() != null) {
 			bank = bankMongoRepo.save(bank);
 		} else {
@@ -80,7 +92,7 @@ public class BankServiceImpl implements BankService {
 	}
 
 	@Override
-	public List<Bank> saveAllBanks(List<Bank> banks) throws Exception{
+	public List<Bank> saveAll(List<Bank> banks) throws Exception{
 		banks.forEach(bank -> {
 			Query query = Query.query(Criteria.where("BANK_NAME").is(bank.getBankName()));
 			boolean exists = mongoTemplate.exists(query, Bank.class);

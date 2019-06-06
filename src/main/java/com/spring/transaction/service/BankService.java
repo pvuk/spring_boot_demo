@@ -6,11 +6,11 @@ import com.spring.transaction.model.Bank;
 
 public interface BankService {
 	
-	String saveBank(Bank bank) throws Exception;
+	String save(Bank bank) throws Exception;
 	
-	List<Bank> saveAllBanks(List<Bank> banks) throws Exception;
+	List<Bank> saveAll(List<Bank> banks) throws Exception;
 	
-	String updateBank(Bank bank) throws Exception;
+	String update(Bank bank) throws Exception;
 	
 	String deleteBankById(String bankId);
 	

@@ -20,8 +20,8 @@ public interface MessageConstants {
 	}
 	
 	public interface Failed {
-		public static final String DELETE 	= "Deleting Record failed.";
-		public static final String UPDATE 	= "Updating Record failed.";
-		public static final String SAVE 	= "Saving Record failed.";
+		public static final String DELETE 	= "Record Deleting Failed.";
+		public static final String UPDATE 	= "Record Updating Failed.";
+		public static final String SAVE 	= "Record Saving Failed.";
 	}
 }

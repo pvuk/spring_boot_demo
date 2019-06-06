@@ -16,28 +16,31 @@ import com.spring.transaction.model.CardType;
 import com.spring.transaction.service.CardTypeService;
 import com.spring.transaction.validator.MessageConstants;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @BasePathAwareController
 @RequestMapping(value="/cardType/custom")
 public class CardTypeController {
 	
 	@Autowired private CardTypeService cardTypeService;
 	
-	public @ResponseBody @PostMapping(value = "/save") CardType save(@RequestBody CardType cardType) {
-		cardType = cardTypeService.save(cardType);
-		return cardType;
+	public @ResponseBody @PostMapping(value = "/save") ResponseEntity<Object> save(@RequestBody CardType cardType) throws Exception {
+		return new ResponseEntity<Object>(cardTypeService.save(cardType), HttpStatus.CREATED);
 	}
 	
-	public @ResponseBody @PostMapping(value = "/update") CardType update(@RequestBody CardType cardType) {
-		cardType = cardTypeService.save(cardType);
-		return cardType;
+	public @ResponseBody @PostMapping(value = "/update") ResponseEntity<Object> update(@RequestBody CardType cardType) throws Exception {
+		return new ResponseEntity<Object>(cardTypeService.update(cardType), HttpStatus.OK);
 	}
 	
-	public @ResponseBody @PostMapping(value = "/delete") String delete(@RequestBody CardType cardType) {
-		return cardTypeService.delete(cardType);
+	public @ResponseBody @PostMapping(value = "/delete") ResponseEntity<Object> delete(@RequestBody ObjectId cardTypeId) throws Exception {
+		return new ResponseEntity<Object>(cardTypeService.delete(cardTypeId), HttpStatus.OK);
 	}
 	
 	public @ResponseBody @GetMapping(value = "/getCardTypeById") ResponseEntity<Object> getCardTypeById(
-			@RequestParam(value = "cardTypeId", required = true) ObjectId cardTypeId) {
+			@RequestParam(value = "cardTypeId", required = true) ObjectId cardTypeId) throws Exception {
 		CardType card = cardTypeService.getCardTypeById(cardTypeId);
 		if (card != null && card.getCardTypeId() != null) {
 			return new ResponseEntity<Object>(card, HttpStatus.OK);

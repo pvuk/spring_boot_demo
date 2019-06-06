@@ -8,13 +8,15 @@ import com.spring.transaction.model.BankBranch;
 
 public interface BankBranchService {
 	
-	String saveBankBranch(BankBranch bankBranch) throws Exception;
-
-	String updateBankBranch(BankBranch bankBranch) throws Exception;
-
-	String deleteBankBranchById(ObjectId bankBranchId);
-
-	BankBranch findByBankBranchId(ObjectId bankBranchId);
+	BankBranch getBankBranchById(ObjectId bankBranchId) throws Exception;
+	
+	String save(BankBranch bankBranch) throws Exception;
+	
+	List<BankBranch> saveAll(List<BankBranch> bankBranchs) throws Exception;
+	
+	String update(BankBranch bankBranch) throws Exception;
+	
+	String deleteBankBranchById(ObjectId bankBranchId) throws Exception;
 
 	List<BankBranch> getAllBankBranches();
 }

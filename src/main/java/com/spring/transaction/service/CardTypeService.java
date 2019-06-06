@@ -1,16 +1,20 @@
 package com.spring.transaction.service;
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 
 import com.spring.transaction.model.CardType;
 
 public interface CardTypeService {
 	
-	public CardType save(CardType cardType);
+	CardType getCardTypeById(ObjectId cardTypeId) throws Exception;
 	
-	public CardType update(CardType cardType);
+	String save(CardType cardType) throws Exception;
 	
-	public String delete(CardType cardType);
+	List<CardType> saveAll(List<CardType> cardTypes) throws Exception;
 	
-	public CardType getCardTypeById(ObjectId cardTypeId);
+	String update(CardType cardType) throws Exception;
+	
+	String delete(ObjectId cardTypeId) throws Exception;
 }

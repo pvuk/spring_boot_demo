@@ -26,22 +26,22 @@ public class BankController {
 	@Autowired private BankService bankService;
 	
 	@TrackTime
-	@PostMapping(path = "/saveBank")
-	public @ResponseBody ResponseEntity<Object> saveBank(@RequestBody(required=true) Bank bank) throws Exception {
-		String message = bankService.saveBank(bank);
+	@PostMapping(path = "/save")
+	public @ResponseBody ResponseEntity<Object> save(@RequestBody(required=true) Bank bank) throws Exception {
+		String message = bankService.save(bank);
 		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
 	}
 	
 	@TrackTime
 	@PostMapping(path = "/saveAllBanks")
-	public @ResponseBody ResponseEntity<Object> saveAllBanks(@RequestBody(required=true) List<Bank> banks) throws Exception {
-		List<Bank> list = bankService.saveAllBanks(banks);
+	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody(required=true) List<Bank> banks) throws Exception {
+		List<Bank> list = bankService.saveAll(banks);
 		return new ResponseEntity<Object>(list, HttpStatus.CREATED);
 	}
 
-	@PostMapping(path = "/updateBank")
-	public @ResponseBody ResponseEntity<Object> updateBank(@RequestBody Bank bank) throws Exception {
-		String message = bankService.updateBank(bank);
+	@PostMapping(path = "/update")
+	public @ResponseBody ResponseEntity<Object> update(@RequestBody Bank bank) throws Exception {
+		String message = bankService.update(bank);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

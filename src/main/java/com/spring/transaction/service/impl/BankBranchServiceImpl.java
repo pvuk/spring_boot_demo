@@ -23,6 +23,11 @@ import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @Service
 @Transactional(rollbackFor = Exception.class)
 @Slf4j
@@ -34,7 +39,7 @@ public class BankBranchServiceImpl implements BankBranchService {
 	@Autowired private BankBranchRepository bankBranchMongoRepo;
 	
 	@Override
-	public String saveBankBranch(BankBranch bankBranch) throws Exception {
+	public String save(BankBranch bankBranch) throws Exception {
 		try {
 			log.info("Start - saveBankBranch");
 			
@@ -80,9 +85,15 @@ public class BankBranchServiceImpl implements BankBranchService {
 		}
 		return MessageConstants.Success.SAVE;
 	}
+	
+	@Override
+	public List<BankBranch> saveAll(List<BankBranch> bankBranchs) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 	@Override
-	public String updateBankBranch(BankBranch bankBranch) throws Exception {
+	public String update(BankBranch bankBranch) throws Exception {
 
 		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
@@ -94,7 +105,7 @@ public class BankBranchServiceImpl implements BankBranchService {
 	}
 
 	@Override
-	public BankBranch findByBankBranchId(ObjectId bankBranchId) {
+	public BankBranch getBankBranchById(ObjectId bankBranchId) {
 		try {
 			Optional<BankBranch> byId = bankBranchMongoRepo.findById(bankBranchId);
 			return byId.isPresent() ? byId.get() : null;

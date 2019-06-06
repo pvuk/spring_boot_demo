@@ -17,6 +17,11 @@ import com.spring.transaction.model.DebitCard;
 import com.spring.transaction.service.DebitCardService;
 import com.spring.transaction.validator.MessageConstants;
 
+/**
+ * 
+ * @author venkataudaykiranp
+ *
+ */
 @RestController
 @RequestMapping(value = "debitCard/custom")
 public class DebitCardController {
@@ -26,21 +31,19 @@ public class DebitCardController {
 
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	private @ResponseBody DebitCard saveDebitCard(@RequestBody DebitCard debitCard) {
-		debitCard = debitCardService.saveDebitCard(debitCard);
-		return debitCard;
+	private @ResponseBody ResponseEntity<Object> save(@RequestBody DebitCard debitCard) throws Exception {
+		return new ResponseEntity<Object>(debitCardService.save(debitCard), HttpStatus.CREATED);
 	}
 
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	private @ResponseBody DebitCard updateDebitCard(@RequestBody DebitCard debitCard) {
-		debitCard = debitCardService.updateDebitCard(debitCard);
-		return debitCard;
+	private @ResponseBody ResponseEntity<Object> update(@RequestBody DebitCard debitCard) throws Exception {
+		return new ResponseEntity<Object>(debitCardService.update(debitCard), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/getByDebitCardId")
 	public @ResponseBody ResponseEntity<Object> getByDebitCardId(
-			@RequestParam(value = "debitCardId", required = true) ObjectId debitCardId) {
-		DebitCard card = debitCardService.getByDebitCardId(debitCardId);
+			@RequestParam(value = "debitCardId", required = true) ObjectId debitCardId) throws Exception {
+		DebitCard card = debitCardService.getDebitCardById(debitCardId);
 		if (card != null && card.getDebitCardId() != null) {
 			return new ResponseEntity<Object>(card, HttpStatus.OK);
 		}
