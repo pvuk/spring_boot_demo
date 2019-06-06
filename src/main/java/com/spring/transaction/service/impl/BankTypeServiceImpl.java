@@ -31,7 +31,17 @@ public class BankTypeServiceImpl implements BankTypeService {
 	@Override
 	public String save(BankType bankType) throws Exception {
 		try {
-			bankTypeMongoRepo.insert(bankType);
+			bankType = bankTypeMongoRepo.insert(bankType);
+			if (bankType.getId()==null) {
+				String bankTypeId = mongoTemplate.find(new Query(Criteria.where("CODE").is(bankType.getCode())), BankType.class).get(0).getId();
+				if (bankTypeId == null) {
+					bankTypeMongoRepo.insert(bankType);
+				} else {
+					log.warn("BankType: {} is trying to insert again", bankType.getDescription());
+				}
+			} else {
+				log.warn("BankType: {} is trying to update", bankType.getDescription());
+			}
 		} catch (Exception e) {
 			log.error("save: {}", e.getMessage());
 			throw new Exception(MessageConstants.Failed.SAVE +" Cause: "+ e.getMessage());
