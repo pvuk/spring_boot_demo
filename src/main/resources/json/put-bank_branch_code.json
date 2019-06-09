@@ -1,0 +1,21 @@
+{
+	"bankBranchId": "",
+	"bank":{
+		"bankName": "STATE BANK OF INDIA"
+	},
+	"ifscCode: "SBIN0012681",
+	"micrCode": 520002120,
+	"branchCode": 012681,
+	"branchCodeDescription": "",
+	"branch": "CHUTTUGUNTA CENTRE GUNTUR",
+	"contactNumber":null,
+	"address":{
+		"permanentAddress": {
+			"address": "Sri Saivilla Apartments, Chuttugunta Centre, Lalpuram Road, Guntur",
+			"district": "GUNTUR",
+			"state": "ANDHRA PRADESH"
+				
+		}
+	},
+	"isActive": true
+}

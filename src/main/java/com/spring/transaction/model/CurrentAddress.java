@@ -31,13 +31,16 @@ public class CurrentAddress {
 	@Field(value="PIN_CODE", order = 4)
 	private String pinCode;
 
-	@Field(value="STATE", order = 5)
+	@Field(value="DISTRICT", order = 5)
+	private String district;
+	
+	@Field(value="STATE", order = 6)
 	private String state;
 
-	@Field(value="COUNTRY", order = 6)
+	@Field(value="COUNTRY", order = 7)
 	private String country;
-	
-	@Field(value="ADDRESS_ID", order = 7)
+
+	@Field(value="ADDRESS_ID", order = 8)
 	@NotEmpty(message = "Address is required field.")
 	private String addressId;
 }
