@@ -47,4 +47,7 @@ public class RewardPointsRedeem {
 	@Field(value="CUSTOMER_ID", order = 13)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Field(value = "CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
 }

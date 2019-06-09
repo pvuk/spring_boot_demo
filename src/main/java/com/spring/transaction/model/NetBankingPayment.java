@@ -31,4 +31,7 @@ public class NetBankingPayment {
 	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Field(value = "CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
 }

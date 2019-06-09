@@ -45,4 +45,7 @@ public class PaymentBy {
 	
 	@Field(value="PAYMENT_SHOW_TO_EXPENSER", order = 10)
 	private boolean paymentShowToExpenser;
+	
+	@Field(value = "COMMENT", order = 11)
+	private String comment;
 }

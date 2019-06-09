@@ -7,6 +7,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 /**
@@ -28,4 +29,7 @@ public class CashPayment {
     
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Field(value = "CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
 }
