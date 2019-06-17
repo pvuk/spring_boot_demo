@@ -1,0 +1,101 @@
+[{
+"CODE": "paytm",
+"POSITION": 1,
+"DESCRIPTION":"Paytm"
+},{
+"CODE": "payzapp",
+"POSITION": 2,
+"DESCRIPTION":"PayZapp"
+},{
+"CODE": "phonepe",
+"POSITION": 3,
+"DESCRIPTION":"PhonePe"
+},{
+"CODE": "googlepay",
+"POSITION": 4,
+"DESCRIPTION":"GooglePay"
+},{
+"CODE": "yespay",
+"POSITION": 5,
+"DESCRIPTION":"BHIM YES PAY"
+},{
+"CODE": "pockets",
+"POSITION": 6,
+"DESCRIPTION":"Pockets By ICICI"
+},{
+"CODE": "freecharge",
+"POSITION": 7,
+"DESCRIPTION":"FreeCharge"
+},{
+"CODE": "amzonpay",
+"POSITION": 8,
+"DESCRIPTION":"AmazonPay"
+},{
+"CODE": "twallet",
+"POSITION": 9,
+"DESCRIPTION":"T Wallet"
+},{
+"CODE": "samsungpay",
+"POSITION": 10,
+"DESCRIPTION":"Samsung Pay"
+},{
+"CODE": "mobikwik",
+"POSITION": 11,
+"DESCRIPTION":"Mobikwik"
+},{
+"CODE": "citrus",
+"POSITION": 12,
+"DESCRIPTION":"Citrus(Pay U Money)"
+},{
+"CODE": "statebankbuddy",
+"POSITION": 13,
+"DESCRIPTION":"State Bank Buddy"
+},{
+"CODE": "olamoney",
+"POSITION": 14,
+"DESCRIPTION":"OlaMoney"
+},{
+"CODE": "jiomoney",
+"POSITION": 15,
+"DESCRIPTION":"Jio Money"
+},{
+"CODE": "paypal",
+"POSITION": 16,
+"DESCRIPTION":"PayPal"
+},{
+"CODE": "oxigen",
+"POSITION": 17,
+"DESCRIPTION":"Oxigen"
+},{
+"CODE": "airtelmoney",
+"POSITION": 18,
+"DESCRIPTION":"Airtel Money"
+},{
+"CODE": "chillr",
+"POSITION": 19,
+"DESCRIPTION":"Chillr"
+},{
+"CODE": "redbus",
+"POSITION": 20,
+"DESCRIPTION":"Red Bus"
+},{
+"CODE": "xpaywallet",
+"POSITION": 21,
+"DESCRIPTION":"XPay Wallet"
+},{
+"CODE": "vodafonempesa",
+"POSITION": 22,
+"DESCRIPTION":"Vodafone M-Pesa"
+},{
+"CODE": "bhim",
+"POSITION": 23,
+"DESCRIPTION":"BHIM"
+},{
+"CODE": "abpbwallet",
+"POSITION": 24,
+"DESCRIPTION":"ABPB Wallet"
+},{
+"CODE": "yonobysbi",
+"POSITION": 25,
+"DESCRIPTION":"YONO By SBI"
+}]
