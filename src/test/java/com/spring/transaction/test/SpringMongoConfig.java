@@ -1,4 +1,4 @@
-package com.spring.transaction.spring_boot_demo;
+package com.spring.transaction.test;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

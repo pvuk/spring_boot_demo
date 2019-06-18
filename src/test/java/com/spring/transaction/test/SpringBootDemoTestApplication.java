@@ -1,10 +1,11 @@
-package com.spring.transaction.spring_boot_demo;
+package com.spring.transaction.test;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -16,6 +17,8 @@ import org.springframework.util.ResourceUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.transaction.model.Bank;
+import com.spring.transaction.model.Wallet;
+import com.spring.transaction.service.WalletService;
 import com.spring.transaction.test.model.User;
 
 import lombok.extern.slf4j.Slf4j;
@@ -35,15 +38,30 @@ public class SpringBootDemoTestApplication {
 
 //		crudOperationsOfUser(mongoOperation);
 		
-		insertBankDocumentsFromJSON(mongoOperation);
+//		insertBankDocumentsFromJSON(mongoOperation);
+		
+		insertWalletDocumentsFromJSON();
 		
 		((AnnotationConfigApplicationContext) ctx).close();//simple casting
+	}
+	@Autowired
+	private static WalletService walletService;
+
+	public static void insertWalletDocumentsFromJSON() {
+		try {
+			List<Wallet> wallets = new ObjectMapper().readValue(ResourceUtils.getFile("classpath:json/put-wallet_code.json"), new TypeReference<List<Wallet>>() {});
+			walletService.saveAll(wallets);
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static void insertBankDocumentsFromJSON(MongoOperations mongoOperation) {
 		String resourceLocation = "classpath:json/put-bank_code.json";
 		try {
-			File file = ResourceUtils.getFile(resourceLocation );
+			File file = ResourceUtils.getFile(resourceLocation);
 			List<Bank> list = new ObjectMapper().readValue(file, new TypeReference<List<Bank>>() {});
 			list.forEach(bank->{
 				if (bank.getBankId()==null) {
