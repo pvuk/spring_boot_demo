@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.MessageSource;
 import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -61,12 +60,4 @@ public class WalletController {
 		Wallet byId = walletService.getById(walletId);
 		return new ResponseEntity<Object>(byId, HttpStatus.OK);
 	}
-	
-	private final MessageSource messageSource;
-	 
-    @Autowired
-    public WalletController(MessageSource messageSource, WalletService service) {
-        this.messageSource = messageSource;
-        this.walletService = service;
-    }
 }

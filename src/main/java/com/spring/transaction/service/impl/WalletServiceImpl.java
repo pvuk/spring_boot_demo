@@ -10,8 +10,6 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spring.transaction.model.Bank;
-import com.spring.transaction.model.BankType;
 import com.spring.transaction.model.Wallet;
 import com.spring.transaction.repository.WalletRepository;
 import com.spring.transaction.service.WalletService;
