@@ -1,168 +1,177 @@
-[ {
-      "bankName" : "ICICI BANK",
-      "establishedOn" : null,
-      "establishedYear" : 1994,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 4867,
-      "revenues" : null,
-      "strRevenues" : "₹736.60 billion (US$11 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹11.242 trillion (US$160 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-	  	  		"id": "5cece8c83d495818d0bd9f80",
-                "code": "private",
-                "position": 2,
-                "description": "Private Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "STATE BANK OF INDIA",
-      "establishedOn" : null,
-      "establishedYear" : 1955,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 24000,
-      "revenues" : null,
-      "strRevenues" : "₹34,450 billion (US$500 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹2,110 billion (US$31 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-	  			"id": "5cecfaab3d495818d0bd9f82",
-                "code": "public",
-                "position": 1,
-                "description": "Public Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "Kotak Mahindra Bank",
-      "establishedOn" : null,
-      "establishedYear" : 2003,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 1369,
-      "revenues" : null,
-      "strRevenues" : "₹211.76 billion (US$3.1 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹2.146 trillion (US$31 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-	    	   "id": "5cece8c83d495818d0bd9f80",
-                "code": "private",
-                "position": 2,
-                "description": "Private Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "Yes Bank",
-      "establishedOn" : null,
-      "establishedYear" : 2004,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 1050,
-      "revenues" : null,
-      "strRevenues" : "₹205.81 billion (US$3.0 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹2.15 trillion (US$31 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-	  	       "id": "5cece8c83d495818d0bd9f80",
-                "code": "private",
-                "position": 2,
-                "description": "Private Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "RBL Bank",
-      "establishedOn" : null,
-      "establishedYear" : 1943,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 342,
-      "revenues" : null,
-      "strRevenues" : "₹44.68 billion (US$650 million)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹486.74 billion (US$7.0 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-	  	       "id": "5cece8c83d495818d0bd9f80",
-                "code": "private",
-                "position": 2,
-                "description": "Private Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "Bank of Baroda",
-      "establishedOn" : null,
-      "establishedYear" : 1908,
-      "headQuarter" : "Vadodara, Gujarat",
-      "branches" : 9447,
-      "revenues" : null,
-      "strRevenues" : "₹6,949 billion (US$100 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹422 billion (US$6.1 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-				"id": "5cecfaab3d495818d0bd9f82",
-                "code": "public",
-                "position": 1,
-                "description": "Public Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "Andhra Bank",
-      "establishedOn" : null,
-      "establishedYear" : 1923,
-      "headQuarter" : "Hyderabad, Telangana",
-      "branches" : 2803,
-      "revenues" : null,
-      "strRevenues" : "₹2,221.26 billion (US$32 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹180.27 billion (US$2.6 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-				"id": "5cecfaab3d495818d0bd9f82",
-                "code": "public",
-                "position": 1,
-                "description": "Public Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    }, {
-      "bankName" : "Axis Bank",
-      "establishedOn" : null,
-      "establishedYear" : 1993,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 4050,
-      "revenues" : null,
-      "strRevenues" : "₹414.093 billion (US$6.0 billion)",
-      "totalAssets" : null,
-      "strTotalAssets" : "₹6.914 trillion (US$100 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-                "code": "private",
-                "position": 2,
-                "description": "Private Sector Banks",
-                "section": "Scheduled",
-                "category": "Commercial",
-                "comment": ""
-      }
-    } ]
+[
+	{
+		"bankName": "ICICI BANK",
+		"establishedOn": null,
+		"establishedYear": 1994,
+		"headQuarter": "Mumbai, Maharashtra",
+		"branches": 4867,
+		"revenues": null,
+		"strRevenues": "₹736.60 billion (US$11 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹11.242 trillion (US$160 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cece8c83d495818d0bd9f80",
+			"code": "private",
+			"position": 2,
+			"description": "Private Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "STATE BANK OF INDIA",
+		"establishedOn": null,
+		"establishedYear": 1955,
+		"headQuarter": "Mumbai, Maharashtra",
+		"branches": 24000,
+		"revenues": null,
+		"strRevenues": "₹34,450 billion (US$500 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹2,110 billion (US$31 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cecfaab3d495818d0bd9f82",
+			"code": "public",
+			"position": 1,
+			"description": "Public Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "Kotak Mahindra Bank",
+		"establishedOn": null,
+		"establishedYear": 2003,
+		"headQuarter": "Mumbai, Maharashtra",
+		"branches": 1369,
+		"revenues": null,
+		"strRevenues": "₹211.76 billion (US$3.1 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹2.146 trillion (US$31 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cece8c83d495818d0bd9f80",
+			"code": "private",
+			"position": 2,
+			"description": "Private Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "Yes Bank",
+		"establishedOn": null,
+		"establishedYear": 2004,
+		"headQuarter": "Mumbai, Maharashtra",
+		"branches": 1050,
+		"revenues": null,
+		"strRevenues": "₹205.81 billion (US$3.0 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹2.15 trillion (US$31 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cece8c83d495818d0bd9f80",
+			"code": "private",
+			"position": 2,
+			"description": "Private Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "RBL Bank",
+		"establishedOn": null,
+		"establishedYear": 1943,
+		"headQuarter": "Mumbai, Maharashtra",
+		"branches": 342,
+		"revenues": null,
+		"strRevenues": "₹44.68 billion (US$650 million)",
+		"totalAssets": null,
+		"strTotalAssets": "₹486.74 billion (US$7.0 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cece8c83d495818d0bd9f80",
+			"code": "private",
+			"position": 2,
+			"description": "Private Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "Bank of Baroda",
+		"establishedOn": null,
+		"establishedYear": 1908,
+		"headQuarter": "Vadodara, Gujarat",
+		"branches": 9447,
+		"revenues": null,
+		"strRevenues": "₹6,949 billion (US$100 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹422 billion (US$6.1 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cecfaab3d495818d0bd9f82",
+			"code": "public",
+			"position": 1,
+			"description": "Public Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "Andhra Bank",
+		"establishedOn": null,
+		"establishedYear": 1923,
+		"headQuarter": "Hyderabad, Telangana",
+		"branches": 2803,
+		"revenues": null,
+		"strRevenues": "₹2,221.26 billion (US$32 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹180.27 billion (US$2.6 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"id": "5cecfaab3d495818d0bd9f82",
+			"code": "public",
+			"position": 1,
+			"description": "Public Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	},
+	{
+		"bankName": "Axis Bank",
+		"establishedOn": null,
+		"establishedYear": 1993,
+		"headQuarter": "Mumbai, Maharashtra",
+		"branches": 4050,
+		"revenues": null,
+		"strRevenues": "₹414.093 billion (US$6.0 billion)",
+		"totalAssets": null,
+		"strTotalAssets": "₹6.914 trillion (US$100 billion)",
+		"notes": null,
+		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+		"bankType": {
+			"code": "private",
+			"position": 2,
+			"description": "Private Sector Banks",
+			"section": "Scheduled",
+			"category": "Commercial",
+			"comment": ""
+		}
+	}
+]
