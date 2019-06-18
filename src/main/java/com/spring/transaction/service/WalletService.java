@@ -12,10 +12,10 @@ public interface WalletService {
 
 	List<Wallet> saveAll(List<Wallet> wallets) throws Exception;
 
-	String update(Wallet wallet);
+	String update(Wallet wallet) throws Exception;
 
-	String deleteById(ObjectId walletId);
+	String deleteById(ObjectId walletId) throws Exception;
 
-	Wallet getById(ObjectId walletId);
+	Wallet getById(ObjectId walletId) throws Exception;
 
 }

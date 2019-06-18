@@ -16,6 +16,6 @@ public interface DebitCardService {
 	
 	String update(DebitCard debitCard) throws Exception;
 	
-	String deleteDebitCardById(ObjectId debitCardId) throws Exception;
+	String deleteById(ObjectId debitCardId) throws Exception;
 	
 }

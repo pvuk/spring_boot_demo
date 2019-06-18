@@ -49,9 +49,9 @@ public class CreditLimitController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteCreditLimitById")
-	public @ResponseBody ResponseEntity<Object> deleteCreditLimitById(@RequestParam(required = true, value = "creditLimitId") ObjectId creditLimitId) throws Exception {
-		String message = creditLimitService.deleteCreditLimitById(creditLimitId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "creditLimitId") ObjectId creditLimitId) throws Exception {
+		String message = creditLimitService.deleteById(creditLimitId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

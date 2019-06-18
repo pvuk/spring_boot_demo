@@ -49,9 +49,9 @@ public class CreditCardController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteCreditCardById")
-	public @ResponseBody ResponseEntity<Object> deleteCreditCardById(@RequestParam(required = true, value = "creditCardId") ObjectId creditCardId) throws Exception {
-		String message = creditCardService.deleteCreditCardById(creditCardId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "creditCardId") ObjectId creditCardId) throws Exception {
+		String message = creditCardService.deleteById(creditCardId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

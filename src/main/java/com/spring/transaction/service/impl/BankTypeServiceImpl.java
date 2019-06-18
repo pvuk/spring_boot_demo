@@ -36,8 +36,7 @@ public class BankTypeServiceImpl implements BankTypeService {
 	@Override
 	public String save(BankType bankType) throws Exception {
 		try {
-			bankType = bankTypeMongoRepo.insert(bankType);
-			if (bankType.getId()==null) {
+			if (bankType.getId() == null) {
 				String bankTypeId = mongoTemplate.find(new Query(Criteria.where("CODE").is(bankType.getCode())), BankType.class).get(0).getId();
 				if (bankTypeId == null) {
 					bankTypeMongoRepo.insert(bankType);

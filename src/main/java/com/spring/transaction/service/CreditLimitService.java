@@ -16,5 +16,5 @@ public interface CreditLimitService {
 	
 	String update(CreditLimit creditLimit) throws Exception;
 	
-	String deleteCreditLimitById(ObjectId creditLimitId) throws Exception;
+	String deleteById(ObjectId creditLimitId) throws Exception;
 }

@@ -49,9 +49,9 @@ public class RewardCardController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteRewardCardById")
-	public @ResponseBody ResponseEntity<Object> deleteRewardCardById(@RequestParam(required = true, value = "rewardCardId") ObjectId rewardCardId) throws Exception {
-		String message = rewardCardService.deleteRewardCardById(rewardCardId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "rewardCardId") ObjectId rewardCardId) throws Exception {
+		String message = rewardCardService.deleteById(rewardCardId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

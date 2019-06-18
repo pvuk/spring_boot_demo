@@ -1,6 +1,7 @@
 package com.spring.transaction.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +29,6 @@ public class WalletServiceImpl implements WalletService {
 	@Override
 	public String save(Wallet wallet) throws Exception {
 		try {
-			wallet = walletRepo.insert(wallet);
 			if (wallet.getWalletId() == null) {
 				String bankTypeId = mongoTemplate.find(new Query(Criteria.where("CODE").is(wallet.getCode())), Wallet.class).get(0).getWalletId();
 				if (bankTypeId == null) {
@@ -59,21 +59,47 @@ public class WalletServiceImpl implements WalletService {
 	}
 
 	@Override
-	public String update(Wallet wallet) {
-		// TODO Auto-generated method stub
-		return null;
+	public String update(Wallet wallet) throws Exception {
+		try {
+			if (wallet.getWalletId() != null) {
+				String bankTypeId = mongoTemplate.find(new Query(Criteria.where("CODE").is(wallet.getCode())), Wallet.class).get(0).getWalletId();
+				if (bankTypeId != null) {
+					wallet = walletRepo.save(wallet);
+				} else {
+					log.warn("Wallet: {} is not found", wallet.getDescription());
+				}
+			} else {
+				log.warn("Wallet: {} is trying to insert", wallet.getDescription());
+			}
+		} catch (Exception e) {
+			log.error("update: {}", e.getMessage());
+			throw new Exception(MessageConstants.Failed.UPDATE +" Cause: "+ e.getMessage());
+		}
+		return MessageConstants.Success.SAVE;
 	}
 
 	@Override
-	public String deleteById(ObjectId walletId) {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteById(ObjectId walletId) throws Exception {
+		try {
+			walletRepo.deleteById(walletId);
+		} catch (Exception e) {
+			log.error("deleteById: {}", e.getMessage());
+			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());
+		}
+		return MessageConstants.Success.DELETE;
 	}
 
 	@Override
-	public Wallet getById(ObjectId walletId) {
-		// TODO Auto-generated method stub
-		return null;
+	public Wallet getById(ObjectId walletId) throws Exception {
+		Wallet wallet = null;
+		try {
+			Optional<Wallet> findById = walletRepo.findById(walletId);
+			wallet = findById.isPresent() ? findById.get() : null;
+		} catch (Exception e) {
+			log.error("deleteById: {}", e.getMessage());
+			throw new Exception(MessageConstants.Failed.GET +" Cause: "+ e.getMessage());
+		}
+		return wallet;
 	}
 
 }

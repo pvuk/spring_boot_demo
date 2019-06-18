@@ -16,5 +16,5 @@ public interface AddressService {
 	
 	String update(Address address) throws Exception;
 	
-	String deleteAddressById(ObjectId addressId) throws Exception;
+	String deleteById(ObjectId addressId) throws Exception;
 }

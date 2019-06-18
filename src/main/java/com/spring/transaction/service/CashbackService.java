@@ -16,5 +16,5 @@ public interface CashbackService {
 	
 	String update(Cashback cashback) throws Exception;
 	
-	String deleteCashbackById(ObjectId cashbackId) throws Exception;
+	String deleteById(ObjectId cashbackId) throws Exception;
 }

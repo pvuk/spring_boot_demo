@@ -16,5 +16,5 @@ public interface CreditCardService {
 	
 	String update(CreditCard creditCard) throws Exception;
 	
-	String deleteCreditCardById(ObjectId creditCardId) throws Exception;
+	String deleteById(ObjectId creditCardId) throws Exception;
 }

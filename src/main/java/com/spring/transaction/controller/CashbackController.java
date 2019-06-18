@@ -49,9 +49,9 @@ public class CashbackController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteCashbackById")
-	public @ResponseBody ResponseEntity<Object> deleteCashbackById(@RequestParam(required = true, value = "cashbackId") ObjectId cashbackId) throws Exception {
-		String message = cashbackService.deleteCashbackById(cashbackId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "cashbackId") ObjectId cashbackId) throws Exception {
+		String message = cashbackService.deleteById(cashbackId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

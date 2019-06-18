@@ -49,9 +49,9 @@ public class MerchantDetailsController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteMerchantDetailsById")
-	public @ResponseBody ResponseEntity<Object> deleteMerchantDetailsById(@RequestParam(required = true, value = "merchantDetailsId") ObjectId merchantDetailsId) throws Exception {
-		String message = merchantDetailsService.deleteMerchantDetailsById(merchantDetailsId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "merchantDetailsId") ObjectId merchantDetailsId) throws Exception {
+		String message = merchantDetailsService.deleteById(merchantDetailsId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

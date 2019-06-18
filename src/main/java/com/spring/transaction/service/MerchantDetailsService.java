@@ -16,5 +16,5 @@ public interface MerchantDetailsService {
 	
 	String update(MerchantDetails merchantDetails) throws Exception;
 	
-	String deleteMerchantDetailsById(ObjectId merchantDetailsId) throws Exception;
+	String deleteById(ObjectId merchantDetailsId) throws Exception;
 }

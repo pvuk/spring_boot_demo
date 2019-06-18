@@ -3,11 +3,16 @@ package com.spring.transaction.service.impl;
 import java.util.List;
 
 import org.bson.types.ObjectId;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.transaction.model.CreditCard;
+import com.spring.transaction.repository.CreditCardRepository;
 import com.spring.transaction.service.CreditCardService;
+import com.spring.transaction.validator.MessageConstants;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * 
@@ -16,8 +21,11 @@ import com.spring.transaction.service.CreditCardService;
  */
 @Service
 @Transactional(rollbackFor = Throwable.class)
+@Slf4j
 public class CreditCardServiceImpl implements CreditCardService {
 
+	@Autowired private CreditCardRepository creditCardRepo;
+	
 	@Override
 	public CreditCard getCreditCardById(ObjectId creditCardId) throws Exception {
 		// TODO Auto-generated method stub
@@ -43,9 +51,14 @@ public class CreditCardServiceImpl implements CreditCardService {
 	}
 
 	@Override
-	public String deleteCreditCardById(ObjectId creditCardId) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteById(ObjectId creditCardId) throws Exception {
+		try {
+			creditCardRepo.deleteById(creditCardId);
+		} catch (Exception e) {
+			log.error("deleteById: {}", e.getMessage());
+			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());
+		}
+		return MessageConstants.Success.DELETE;
 	}
 
 }

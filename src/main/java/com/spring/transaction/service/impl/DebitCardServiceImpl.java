@@ -13,6 +13,8 @@ import com.spring.transaction.repository.DebitCardRepository;
 import com.spring.transaction.service.DebitCardService;
 import com.spring.transaction.validator.MessageConstants;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 
  * @author venkataudaykiranp
@@ -20,6 +22,7 @@ import com.spring.transaction.validator.MessageConstants;
  */
 @Service
 @Transactional(rollbackFor = Throwable.class)
+@Slf4j
 public class DebitCardServiceImpl implements DebitCardService {
 
 	@Autowired DebitCardRepository debitCardRepo;
@@ -43,9 +46,14 @@ public class DebitCardServiceImpl implements DebitCardService {
 	}
 
 	@Override
-	public String deleteDebitCardById(ObjectId debitCardId) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+	public String deleteById(ObjectId debitCardId) throws Exception {
+		try {
+			debitCardRepo.deleteById(debitCardId);
+		} catch (Exception e) {
+			log.error("deleteById: {}", e.getMessage());
+			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());
+		}
+		return MessageConstants.Success.DELETE;
 	}
 
 	@Override

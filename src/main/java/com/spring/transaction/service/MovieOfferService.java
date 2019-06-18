@@ -16,5 +16,5 @@ public interface MovieOfferService {
 	
 	String update(MovieOffer movieOffer) throws Exception;
 	
-	String deleteMovieOfferById(ObjectId movieOfferId) throws Exception;
+	String deleteById(ObjectId movieOfferId) throws Exception;
 }

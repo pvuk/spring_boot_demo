@@ -16,5 +16,5 @@ public interface RewardCardService {
 	
 	String update(RewardCard RewardCard) throws Exception;
 	
-	String deleteRewardCardById(ObjectId rewardCardId) throws Exception;
+	String deleteById(ObjectId rewardCardId) throws Exception;
 }

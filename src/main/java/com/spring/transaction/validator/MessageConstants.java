@@ -23,5 +23,6 @@ public interface MessageConstants {
 		public static final String DELETE 	= "Record Deleting Failed.";
 		public static final String UPDATE 	= "Record Updating Failed.";
 		public static final String SAVE 	= "Record Saving Failed.";
+		public static final String GET 		= "Record not found.";
 	}
 }

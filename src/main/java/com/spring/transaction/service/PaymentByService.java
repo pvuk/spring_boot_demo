@@ -16,5 +16,5 @@ public interface PaymentByService {
 	
 	String update(PaymentBy paymentBy) throws Exception;
 	
-	String deletePaymentByById(ObjectId paymentById) throws Exception;
+	String deleteById(ObjectId paymentById) throws Exception;
 }

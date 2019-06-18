@@ -16,7 +16,7 @@ public interface BankBranchService {
 	
 	String update(BankBranch bankBranch) throws Exception;
 	
-	String deleteBankBranchById(ObjectId bankBranchId) throws Exception;
+	String deleteById(ObjectId bankBranchId) throws Exception;
 
 	List<BankBranch> getAllBankBranches();
 }

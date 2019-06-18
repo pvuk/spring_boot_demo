@@ -99,9 +99,14 @@ public class BankBranchServiceImpl implements BankBranchService {
 	}
 
 	@Override
-	public String deleteBankBranchById(ObjectId bankBranchId) {
-
-		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
+	public String deleteById(ObjectId bankBranchId) throws Exception {
+		try {
+			bankBranchMongoRepo.deleteById(bankBranchId);
+		} catch (Exception e) {
+			log.error("deleteById: {}", e.getMessage());
+			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());
+		}
+		return MessageConstants.Success.DELETE;
 	}
 
 	@Override

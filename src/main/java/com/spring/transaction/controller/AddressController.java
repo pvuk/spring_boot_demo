@@ -49,9 +49,9 @@ public class AddressController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteAddressById")
-	public @ResponseBody ResponseEntity<Object> deleteAddressById(@RequestParam(required = true, value = "addressId") ObjectId addressId) throws Exception {
-		String message = addressService.deleteAddressById(addressId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "addressId") ObjectId addressId) throws Exception {
+		String message = addressService.deleteById(addressId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

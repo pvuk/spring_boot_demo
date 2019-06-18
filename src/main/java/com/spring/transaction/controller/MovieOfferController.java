@@ -49,9 +49,9 @@ public class MovieOfferController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deleteMovieOfferById")
-	public @ResponseBody ResponseEntity<Object> deleteMovieOfferById(@RequestParam(required = true, value = "movieOfferId") ObjectId movieOfferId) throws Exception {
-		String message = movieOfferService.deleteMovieOfferById(movieOfferId);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "movieOfferId") ObjectId movieOfferId) throws Exception {
+		String message = movieOfferService.deleteById(movieOfferId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 

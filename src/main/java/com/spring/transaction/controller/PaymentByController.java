@@ -49,9 +49,9 @@ public class PaymentByController {
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
-	@PostMapping(path = "/deletePaymentByById")
-	public @ResponseBody ResponseEntity<Object> deletePaymentByById(@RequestParam(required = true, value = "paymentById") ObjectId paymentById) throws Exception {
-		String message = paymentByService.deletePaymentByById(paymentById);
+	@PostMapping(path = "/deleteById")
+	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "paymentById") ObjectId paymentById) throws Exception {
+		String message = paymentByService.deleteById(paymentById);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
