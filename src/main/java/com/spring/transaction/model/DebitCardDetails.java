@@ -38,9 +38,10 @@ public class DebitCardDetails {
 	@Field(value="ALLOW_INTERNATIONAL_TRANSACTION", order = 7)
 	private boolean allowInternationalTransaction;
 	
-	@Field(value="VERTUAL_CARD", order = 8)
-	private boolean vertualCard;
-
+	@Field(value = "DEBIT_CARD_ID", order = 8)
+	@NotNull(message = "Debit Card is required field.")
+	private String debitCardId;
+	
 	@Field(value="BANK_ID", order = 9)
 	@NotNull(message = "Bank Name is required field.")
 	private long bankId;
@@ -55,8 +56,14 @@ public class DebitCardDetails {
 	@Field(value = "REWARD_CARD_ID", order = 12)
 	@NotNull(message="Reward Card is required field.")
 	private String rewardCardId;
+
+	@Field(value = "IS_ACTIVE", order=13)
+	private Boolean isActive;
 	
-	@Field(value="CUSTOMER_ID", order = 13)
+	@Field(value = "IS_SEMI_CLOSED", order=14)
+	private Boolean isSemiClosed;
+	
+	@Field(value="CUSTOMER_ID", order = 15)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }

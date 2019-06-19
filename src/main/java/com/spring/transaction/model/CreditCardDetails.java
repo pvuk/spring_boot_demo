@@ -38,24 +38,34 @@ public class CreditCardDetails {
 	@Field(value = "ALLOWED_INTERNATIONAL_TRANSACTION", order = 7)
 	private boolean allowedInternationalTransaction;
 
-	@Field(value = "BANK_ID", order = 8)
+	@Field(value = "CREDIT_CARD_ID", order = 8)
+	@NotNull(message = "Credit Card is required field.")
+	private String creditCardId;
+	
+	@Field(value = "BANK_ID", order = 9)
 	@NotNull(message = "BankId is required field.")
 	private long bankId;
 
-	@Field(value = "CARD_TYPE_ID", order = 9)
+	@Field(value = "CARD_TYPE_ID", order = 10)
 	private long cardTypeId;
 
-	@Field(value = "CARD_ISSUED_ON", order = 10)
+	@Field(value = "CARD_ISSUED_ON", order = 11)
 	private Date cardIssuedOn;
 
-	@Field(value = "CARD_EXPIRED_ON", order = 11)
+	@Field(value = "CARD_EXPIRED_ON", order = 12)
 	private Date cardExpiredOn;
 
-	@Field(value = "REWARD_CARD_ID", order=12)
+	@Field(value = "REWARD_CARD_ID", order=13)
 	@NotNull(message="Reward Card is required field.")
 	private Long rewardCardId;
+	
+	@Field(value = "IS_ACTIVE", order=14)
+	private Boolean isActive;
+	
+	@Field(value = "IS_SEMI_CLOSED", order=15)
+	private Boolean isSemiClosed;
 
-	@Field(value = "CUSTOMER_ID", order = 13)
+	@Field(value = "CUSTOMER_ID", order = 16)
 	@NotNull(message = "Customer is required field.")
 	private String customerId;
 }
