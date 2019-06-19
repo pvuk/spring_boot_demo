@@ -26,7 +26,7 @@ import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.spring.transaction.model.Wallet;
-import com.spring.transaction.test.controller.WalletController;
+import com.spring.transaction.test.controller.TestWalletController;
 import com.spring.transaction.test.service.WalletService;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -41,7 +41,7 @@ public class ControllerTestApplication {
 	//https://www.petrikainulainen.net/programming/spring-framework/unit-testing-of-spring-mvc-controllers-configuration/
 	@Before
     public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(new WalletController(messageSource(), walletServiceMock))
+        mockMvc = MockMvcBuilders.standaloneSetup(new TestWalletController(messageSource(), walletServiceMock))
                 .setHandlerExceptionResolvers(exceptionResolver())
                 .setValidator(validator())
                 .setViewResolvers(viewResolver())

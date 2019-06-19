@@ -26,14 +26,14 @@ import com.spring.transaction.test.service.WalletService;
  */
 @BasePathAwareController
 @RequestMapping(value = "/wallet/test")
-public class WalletController {
+public class TestWalletController {
 
 	@Autowired private WalletService walletService;
 
 	private final MessageSource messageSource;
 	 
     @Autowired
-    public WalletController(MessageSource messageSource, WalletService service) {
+    public TestWalletController(MessageSource messageSource, WalletService service) {
         this.messageSource = messageSource;
         this.walletService = service;
     }

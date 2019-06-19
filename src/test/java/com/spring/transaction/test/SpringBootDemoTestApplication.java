@@ -17,9 +17,9 @@ import org.springframework.util.ResourceUtils;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.transaction.model.Bank;
-import com.spring.transaction.model.Wallet;
-import com.spring.transaction.service.WalletService;
 import com.spring.transaction.test.model.User;
+import com.spring.transaction.test.model.Wallet;
+import com.spring.transaction.test.service.WalletService;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -44,8 +44,8 @@ public class SpringBootDemoTestApplication {
 		
 		((AnnotationConfigApplicationContext) ctx).close();//simple casting
 	}
-	@Autowired
-	private static WalletService walletService;
+	
+	@Autowired private static WalletService walletService;
 
 	public static void insertWalletDocumentsFromJSON() {
 		try {
