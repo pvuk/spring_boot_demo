@@ -28,53 +28,70 @@ public class EMIPayment {
 	private String paymentById;
 	
 	@Field(value="EMI_START_ON", order = 3)
-	@NotNull(message="Credit Card is required field.")
-	private String emiStartOn;
+	@NotNull(message="EMI Start On is required field.")
+	private Date emiStartOn;
 	
 	@Field(value="EMI_ENDS_ON", order = 4)
-	@NotNull(message="Amount is required field.")
-	private BigDecimal emiEndsOn;
+	@NotNull(message="EMI Ends On is required field.")
+	private Date emiEndsOn;
 	
-	@Field(value="EMI_PAYMENT_AMOUNT", order = 5)
-	private Date emiPaymentAmount;
+	@Field(value="EMI_DUE_DATE", order = 5)
+	@NotNull(message="EMI Due Date is required field.")
+	private Date emiDueDate;
 	
-	@Field(value="EMI_PAID", order = 6)
+	@Field(value="LOAN_AMOUNT", order = 6)
+	@NotNull(message="Loan Amount required field.")
+	private BigDecimal loanAmount;
+	
+	@Field(value="TOTAL_EMI_PAYMENT_WITH_INTEREST", order = 7)
+	private BigDecimal totalEMIPaymentWithInterest;
+	
+	@Field(value="UNBILLED_PRINCIPAL", order = 8)
+	private BigDecimal unbilledPrincipal;
+	
+	@Field(value="CURRENT_EMI_DUE", order = 9)
+	private BigDecimal currentEMIDue;
+	
+	@Field(value="Goods_&_Services_Tax", order = 10)
+	private BigDecimal goodsAndServicesTax;
+	
+	@Field(value="PROCESSING_FEE", order = 11)
+	private BigDecimal processingFee;
+	
+	@Field(value="TOTAL_PAYMENT_DUE", order = 12)
+	private BigDecimal totalPaymentDue;
+	
+	@Field(value="MINIMUM_AMOUNT_DUE", order = 13)
+	private BigDecimal minimumAmountDue;
+	
+	@Field(value="EMI_PAID", order = 14)
 	private BigDecimal emiPaid;
 	
-	@Field(value="OVERAL_EMI_PAID", order = 7)
-	private BigDecimal overalEMIPaid;
+	@Field(value="REMAINING_PAYMENT", order = 15)
+	private BigDecimal remainingPayment;
 	
-	@Field(value="CURRENT_EMI_AMOUNT", order = 8)
-	private BigDecimal currentEMIAmount;
+	@Field(value="EMI_PAID_ON", order = 16)
+	private Date emiPaidOn;
 	
-	@Field(value="REMAINING_EMI_AMOUNT", order = 9)
-	private BigDecimal remainingEMIAmount;
-	
-	@Field(value="REMAINING_EMI_PAYMENT", order = 10)
-	private BigDecimal remainingEMIPayment;
-	
-	@Field(value="ACTUAL_EMI_AMOUNT", order = 11)
-	private BigDecimal actualEMIAmount;
-	
-	@Field(value="EMI_CHARGABLE_AMOUNT", order = 12)
+	@Field(value="EMI_CHARGABLE_AMOUNT", order = 17)
 	private BigDecimal emiChargableAmount;
 	
-	@Field(value="EMI_MONTHS", order = 13)
+	@Field(value="EMI_MONTHS", order = 18)
 	private String emiMonths;
 	
-	@Field(value="COMMENT", order = 14)
+	@Field(value="COMMENT", order = 19)
 	private String comment;
 	
-	@Field(value="OVERAL_EMI_PAYMENT_AMOUNT", order = 15)
+	@Field(value="OVERAL_EMI_PAID", order = 20)
+	private BigDecimal overalEMIPaid;
+	
+	@Field(value="OVERAL_EMI_PAYMENT_AMOUNT", order = 21)
 	private BigDecimal overalEMIPaymentAmount;
 	
-	@Field(value="DIFFERENCE_IN_EMI_AMOUNT", order = 16)
-	private BigDecimal differenceInEMIAmount;
-	
-	@Field(value="CUSTOMER_ID", order = 17)
+	@Field(value="CUSTOMER_ID", order = 22)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	
-	@Field(value = "CONFIRM_PAYMENT", order = 18)
+	@Field(value = "CONFIRM_PAYMENT", order = 23)
 	private Boolean confirmPayment;
 }
