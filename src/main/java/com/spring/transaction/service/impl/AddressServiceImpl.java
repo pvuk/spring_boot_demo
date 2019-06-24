@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.spring.transaction.exception.InternalServerError;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Address;
 import com.spring.transaction.repository.AddressRepository;
@@ -30,25 +31,38 @@ public class AddressServiceImpl implements AddressService {
 	
 	@Override
 	public Address getAddressById(ObjectId addressId) throws Exception {
-		return null;
+		Address address = null;
+		try {
+			Optional<Address> byId = addressRepo.findById(addressId);
+			address = byId.isPresent() ? byId.get() : null;
+		} catch (Exception e) {
+			log.error("Error: {}", e.getMessage());
+			throw new NotFoundException(e.getMessage());
+		}
+		return address;
 	}
 
 	@Override
 	public String save(Address address) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			addressRepo.insert(address);
+		} catch (Exception e) {
+			log.error("Error: {}", e.getMessage());
+			throw new InternalServerError(e.getMessage());
+		}
+		return MessageConstants.Success.SAVE;
 	}
 
 	@Override
 	public List<Address> saveAll(List<Address> addresss) throws Exception {
-		// TODO Auto-generated method stub
+		log.info(MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT);
 		return null;
 	}
 
 	@Override
 	public String update(Address address) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
 
 	@Override
