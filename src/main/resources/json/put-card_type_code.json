@@ -1,0 +1,58 @@
+[
+	{
+		"code": "creditcard",
+		"position": 1,
+		"description": "Credit Card",
+		"isVertualCard": false,
+		"comments": "A feature of a credit card is that the issuer of the card creates aline of credits (usually called a credit limit) for the cardholder on which the cardholder can draw (i.e., borrow) for payment to a merchant in making a purchase or as a cash advance to the cardholder. Most credit cards are issued by or through local banks or credit unions, but some non-bank financial institutions also offer cards directly to the public."
+	},
+	{
+		"code": "debitcard",
+		"position": 1,
+		"description": "Debit Card",
+		"isVertualCard": false,
+		"comments": "A feature of a debit card (also known as abank card, check card or some other description) is that when a cardholder makes a purchase funds are withdrawn directly from either the cardholder’s bank account or from the remaining balance on the card. In some cases, the “cards” are designed exclusively for use on the Internet, and so there is no physical card."
+	},
+	{
+		"code": "atmcard",
+		"position": 1,
+		"description": "ATM card",
+		"isVertualCard": false,
+		"comments": "An ATM card (known under a number of names) is any card that can be used in automated teller machines (ATMs) for transactions such as deposits, cash withdrawals, obtaining account information, and other types of transactions, often through interbank networks. Cards may be issued solely to access ATMs, and most debit or credit cards may also be used at ATMs, but charge and proprietary cards cannot."
+	},
+	{
+		"code": "fleetcard",
+		"position": 1,
+		"description": "Fleet Card",
+		"isVertualCard": false,
+		"comments": "A fleet card is used as a payment card most commonly for gasoline, diesel and other fuels at gas stations. Fleet cards can also be used to pay for vehicle maintenance and expenses at the discretion of the fleet owner or manager."
+	},
+	{
+		"code": "smartcard",
+		"position": 1,
+		"description": "Smart Card",
+		"isVertualCard": false,
+		"comments": "A smart card is plastic card about the size of a credit card, with an embedded microchip that can be loaded with data, used for telephone calling, electronic cash payments and other applications and then periodically refreshed for additional use."
+	},
+	{
+		"code": "rupaycard",
+		"position": 1,
+		"description": "RuPay Card",
+		"isVertualCard": false,
+		"comments": "RuPayis an Indian domestic card scheme conceived and launched by the National Payments Corporation of India (NPCI). It was created to fulfill the Reserve Bank of India’s desire to have a domestic, open loop, and multilateral system of payments in India."
+	},
+	{
+		"code": "mastercard",
+		"position": 1,
+		"description": "MasterCard",
+		"isVertualCard": false,
+		"comments": "Worldwide credit card corporation that works with financial institutions to issue credit cards. The credit cards distributed by the company are done so under the MasterCard brand, which is one of the three major credit cards accepted at vendors across the world. Master Card converted from a privately held company to a public company on May 25, 2006."
+	},
+	{
+		"code": "virtualcard",
+		"position": 1,
+		"description": "Virtual Card",
+		"isVertualCard": true,
+		"comments": "Most virtual cards can be used for making purchases internationally as well as on domestic websites. However, a few banks might issue virtual cards that can be used only in India."
+	}
+]

@@ -34,7 +34,7 @@ public class CardType {
 	private String description;
 	
 	@Field(value = "IS_VERTUAL_CARD", order = 5)
-	private boolean IsVertualCard;
+	private boolean isVertualCard;
 	
 	@Field(value = "COMMENTS", order = 6)
 	private String comments;

@@ -1,0 +1,151 @@
+[{
+	"code": "visa",
+	"position": 1,
+	"description": "Visa",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "mastercard",
+	"position": 1,
+	"description": "Mastercard",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "americanexpress",
+	"position": 1,
+	"description": "American Express",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "discover",
+	"position": 1,
+	"description": "Discover",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "dinersclub",
+	"position": 1,
+	"description": "Diners Club",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "carteblanche",
+	"position": 1,
+	"description": "Carte Blanche",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "jcb",
+	"position": 1,
+	"description": "JCB",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "enroute",
+	"position": 1,
+	"description": "EnRoute",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "jal",
+	"position": 1,
+	"description": "JAL",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "maestroukdomestic",
+	"position": 1,
+	"description": "Maestro (UK Domestic)",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "nicoshousecard",
+	"position": 1,
+	"description": "NICOS house card",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "delta",
+	"position": 1,
+	"description": "Delta",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "visaelectron",
+	"position": 1,
+	"description": "Visa Electron",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "dankor",
+	"position": 1,
+	"description": "Dankor",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "cartesbancaires",
+	"position": 1,
+	"description": "Cartes Bancaires",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "cartasi",
+	"position": 1,
+	"description": "Carta Si",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "encodedaccountnumber",
+	"position": 1,
+	"description": "Encoded account number",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "uatp",
+	"position": 1,
+	"description": "UATP",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "maestrointernational",
+	"position": 1,
+	"description": "Maestro (International)",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "hipercard",
+	"position": 1,
+	"description": "Hipercard",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "aura",
+	"position": 1,
+	"description": "Aura",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "oricohousecard",
+	"position": 1,
+	"description": "ORICO house card",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "elo",
+	"position": 1,
+	"description": "Elo",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "rupay",
+	"position": 1,
+	"description": "RuPay",
+	"isVertualCard": false,
+	"comments": ""
+},{
+	"code": "chinaunionpay",
+	"position": 1,
+	"description": "China UnionPay",
+	"isVertualCard": false,
+	"comments": ""
+}]

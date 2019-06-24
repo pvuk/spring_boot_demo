@@ -1,0 +1,9 @@
+[{
+	"className": "CARD_TYPE_CODE",
+	"packageName": "",
+	"source_reference": "https://www.daytodaygk.com/different-types-of-cards-a-complete-overview/"
+},{
+	"entity": "CARD_TYPE_AUTHORIZATION",
+	"packageName": "",
+	"source_reference": "http://apps.cybersource.com/library/documentation/dev_guides/CC_Svcs_SO_API/html/wwhelp/wwhimpl/common/html/wwhelp.htm#href=app_card_types.html&single=true"
+}]
