@@ -1,2 +1,4 @@
 1. Work on Validation groups(@NotNull) and Group Sequences
 2. Write some services using Spring projection.
+3. Validate Mandatory fields at API side using Spring Validation.
+4. Implement the feature to support multiple databases to handle CRUD operations. 
