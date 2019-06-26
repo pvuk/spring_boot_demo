@@ -1,0 +1,37 @@
+[{
+	"code": "bob",
+	"position": 1,
+	"description": "BANK OF BARODA"
+},{
+	"code": "sbi",
+	"position": 2,
+	"description": "STATE BANK OF INDIA"
+},{
+	"code": "icici",
+	"position": 3,
+	"description": "ICICI"
+},{
+	"code": "rblbank",
+	"position": 4,
+	"description": "RBL BANK"
+},{
+	"code": "yesbank",
+	"position": 5,
+	"description": "YES BANK"
+},{
+	"code": "kotakmahindrabank",
+	"position": 6,
+	"description": "Kotak Mahindra Bank"
+},{
+	"code": "hdfc",
+	"position": 7,
+	"description": "HDFC BANK"
+},{
+	"code": "paytmpaymentsbank",
+	"position": 8,
+	"description": "Paytm Payments Bank"
+},{
+	"code": "idfcbank",
+	"position": 9,
+	"description": "IDFC Bank"
+}]

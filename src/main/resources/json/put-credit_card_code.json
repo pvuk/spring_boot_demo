@@ -1,69 +1,69 @@
 [{
-	"CODE":"icicicoralhp",
-	"POSITION":1,
-	"DESCRIPTION":"ICICI CORAL HP PETROLIUM"
+	"code":"icicicoralhp",
+	"position":1,
+	"description":"ICICI CORAL HP PETROLIUM"
 },{
-	"CODE":"sbisimplyclick",
-	"POSITION":2,
-	"DESCRIPTION":"SBI SIMPLY CLICK"
+	"code":"sbisimplyclick",
+	"position":2,
+	"description":"SBI SIMPLY CLICK"
 },{
-	"CODE":"citiplatinumcashback",
-	"POSITION":3,
-	"DESCRIPTION":"Citi Platinum Cashback"
+	"code":"citiplatinumcashback",
+	"position":3,
+	"description":"Citi Platinum Cashback"
 },{
-	"CODE":"rblmovieblockbuster",
-	"POSITION":4,
-	"DESCRIPTION":"RBL MOVIE BLOCKBUSTER"
+	"code":"rblmovieblockbuster",
+	"position":4,
+	"description":"RBL MOVIE BLOCKBUSTER"
 },{
-	"CODE":"hdfctimestitanium",
-	"POSITION":5,
-	"DESCRIPTION":"HDFC TIEMS TITANIUM"
+	"code":"hdfctimestitanium",
+	"position":5,
+	"description":"HDFC TIEMS TITANIUM"
 },{
-	"CODE":"citiindianoil",
-	"POSITION":6,
-	"DESCRIPTION":"CITI INDIAN OIL"
+	"code":"citiindianoil",
+	"position":6,
+	"description":"CITI INDIAN OIL"
 },{
-	"CODE":"kotakroyale",
-	"POSITION":7,
-	"DESCRIPTION":"KOTAK ROYALE"
+	"code":"kotakroyale",
+	"position":7,
+	"description":"KOTAK ROYALE"
 },{
-	"CODE":"yesrewardsplus",
-	"POSITION":8,
-	"DESCRIPTION":"YES REWARDS PLUS"
+	"code":"yesrewardsplus",
+	"position":8,
+	"description":"YES REWARDS PLUS"
 },{
-	"CODE":"sbiprimepro",
-	"POSITION":9,
-	"DESCRIPTION":"SBI PRIME PRO"
+	"code":"sbiprimepro",
+	"position":9,
+	"description":"SBI PRIME PRO"
 },{
-	"CODE":"amexeverdaygoldcreditcard",
-	"POSITION":10,
-	"DESCRIPTION":"AMEX EVERDAY GOLD CREDIT CARD"
+	"code":"amexeverdaygoldcreditcard",
+	"position":10,
+	"description":"AMEX EVERDAY GOLD CREDIT CARD"
 },{
-	"CODE":"paytmpostpaid",
-	"POSITION":11,
-	"DESCRIPTION":"PAYTM POSTPAID"
+	"code":"paytmpostpaid",
+	"position":11,
+	"description":"PAYTM POSTPAID"
 },{
-	"CODE":"indusindauraplatinum",
-	"POSITION":12,
-	"DESCRIPTION":"INDUSIND AURA PLATINUM"
+	"code":"indusindauraplatinum",
+	"position":12,
+	"description":"INDUSIND AURA PLATINUM"
 },{
-	"CODE":"bajajfinservemi",
-	"POSITION":13,
-	"DESCRIPTION":"BAJAJ FINSERV EMI"
+	"code":"bajajfinservemi",
+	"position":13,
+	"description":"BAJAJ FINSERV EMI"
 },{
-	"CODE":"icicipaylaterxx1985",
-	"POSITION":14,
-	"DESCRIPTION":"ICICI PAY LATER XX1985"
+	"code":"icicipaylaterxx1985",
+	"position":14,
+	"description":"ICICI PAY LATER XX1985"
 },{
-	"CODE":"bajajfinservrblbanksupercard",
-	"POSITION":15,
-	"DESCRIPTION":"BAJAJ FINSERV RBL BANK SUPERCARD"
+	"code":"bajajfinservrblbanksupercard",
+	"position":15,
+	"description":"BAJAJ FINSERV RBL BANK SUPERCARD"
 },{
-	"CODE":"icicipaylaterxx2159 ",
-	"POSITION":16,
-	"DESCRIPTION":"ICICI PAY LATER XX2159"
+	"code":"icicipaylaterxx2159 ",
+	"position":16,
+	"description":"ICICI PAY LATER XX2159"
 },{
-	"CODE":"indusindnexxt",
-	"POSITION":17,
-	"DESCRIPTION":"INDUSIND NEXXT"
-},]
+	"code":"indusindnexxt",
+	"position":17,
+	"description":"INDUSIND NEXXT"
+}]
