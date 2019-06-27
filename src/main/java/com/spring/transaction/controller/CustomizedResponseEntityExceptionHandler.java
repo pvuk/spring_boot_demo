@@ -14,6 +14,8 @@ import com.spring.transaction.exception.ErrorDetails;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.validator.MessageConstants;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 
  * @author venkataudaykiranp
@@ -21,10 +23,13 @@ import com.spring.transaction.validator.MessageConstants;
  */
 @ControllerAdvice
 @RestController
+@Slf4j
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
 	@ExceptionHandler(NotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleUserNotFoundException(NotFoundException ex, WebRequest request) {
+		log.error("handleUserNotFoundException: {}",
+				getErrorDetails(ex) + ". " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT);
 		ErrorDetails errorDetails = new ErrorDetails(new Date(),
 				ex.getMessage() + ". " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT,
 				request.getDescription(false));
@@ -33,9 +38,17 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 	@ExceptionHandler(Exception.class)
 	public final ResponseEntity<ErrorDetails> handleUserException(Exception ex, WebRequest request) {
+		log.error("handleUserException: {}", getErrorDetails(ex));
 		ErrorDetails errorDetails = new ErrorDetails(new Date(),
 				ex.getMessage() + ". " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT,
 				request.getDescription(false));
 		return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+	private Object getErrorDetails(Exception ex) {
+		StackTraceElement ste = ex.getStackTrace()[0];
+		Object errorDetails = "Error: "+ ex.getMessage() +", occured at class :"+ ste.getClassName() +", methodName: "+ ste.getMethodName() +", lineNumber: "+
+				ste.getLineNumber() +", fileName: "+ ste.getFileName();
+		return errorDetails;
 	}
 }
