@@ -1,4 +1,17 @@
+===================================================================================================================================
+														Concept																	
+===================================================================================================================================
 1. Work on Validation groups(@NotNull) and Group Sequences
 2. Write some services using Spring projection.
 3. Validate Mandatory fields at API side using Spring Validation.
-4. Implement the feature to support multiple databases to handle CRUD operations. 
+
+===================================================================================================================================
+														Feature - Task																	
+===================================================================================================================================
+1. Implement the feature to support multiple databases to handle CRUD operations.
+
+===================================================================================================================================
+														Notification																	
+===================================================================================================================================
+1*. Notify user before 3 / 2 / 1 - month / 15 days for MileStoneAcheivementFinalDate.
+2. Notify friends available cc limit once payment is done those who are using cc.

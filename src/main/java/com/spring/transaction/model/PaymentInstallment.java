@@ -24,9 +24,9 @@ public class PaymentInstallment {
 	@NotNull(message="Amount Due is required field.")
 	private BigDecimal amountDue;
 	
-	@Field(value="DUE_DATE", order = 3) private Date dueDate;
-	@Field(value="previousAmount", order = 4) private BigDecimal previousAmount;
-	@Field(value="amountPaid", order = 5) private BigDecimal amountPaid;
+	@Field(value="DUE_DATE", order = 3) 		private Date dueDate;
+	@Field(value="PREVIOUS_AMOUNT", order = 4) 	private BigDecimal previousAmount;
+	@Field(value="AMOUNT_PAID", order = 5) 		private BigDecimal amountPaid;
 	
 	@Field(value="COMMENT", order = 6)
 	@Size(max = 3000)

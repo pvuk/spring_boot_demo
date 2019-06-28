@@ -49,11 +49,11 @@ public class CreditCardDetails {
 	@Field(value = "CARD_TYPE_ID", order = 10)
 	private long cardTypeId;
 
-	@Field(value = "CARD_ISSUED_ON", order = 11)
-	private Date cardIssuedOn;
+	@Field(value = "VALID_FROM_MONTH", order = 11)
+	private Date validFromMonth;
 
-	@Field(value = "CARD_EXPIRED_ON", order = 12)
-	private Date cardExpiredOn;
+	@Field(value = "VALID_FROM_YEAR", order = 12)
+	private Date validFromYear;
 
 	@Field(value = "REWARD_CARD_ID", order=13)
 	@NotNull(message="Reward Card is required field.")
