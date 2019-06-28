@@ -29,7 +29,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
 
-	@Autowired TransErrorLogReportRepo transErrorLogReportRepo;
+//	@Autowired TransErrorLogReportRepo transErrorLogReportRepo;
 	
 	@ExceptionHandler(NotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleUserNotFoundException(NotFoundException ex, WebRequest request) {
@@ -69,19 +69,19 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		Object errorDetails = "Error: " + message + ", occured at class :" + className + ", methodName: " + methodName
 				+ ", lineNumber: " + lineNumber + ", fileName: " + fileName +", StatusCode: "+ statusCode +", StatusName: "+ statusName;
 		
-		TransErrorLogReport logReport = TransErrorLogReport.builder()
-				.className(className)
-				.customerId(null)
-				.errorLogReportOn(date)
-				.fileName(fileName)
-				.lineNumber(lineNumber)
-				.message(message)
-				.methodName(methodName)
-				.printStackTrace(ex)
-				.statusCode(statusCode)
-				.statusName(statusName)
-				.build();
-		transErrorLogReportRepo.save(logReport);
+//		TransErrorLogReport logReport = TransErrorLogReport.builder()
+//				.className(className)
+//				.customerId(null)
+//				.errorLogReportOn(date)
+//				.fileName(fileName)
+//				.lineNumber(lineNumber)
+//				.message(message)
+//				.methodName(methodName)
+//				.printStackTrace(ex)
+//				.statusCode(statusCode)
+//				.statusName(statusName)
+//				.build();
+//		transErrorLogReportRepo.save(logReport);
 		return errorDetails;
 	}
 }
