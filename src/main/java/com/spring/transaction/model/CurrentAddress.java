@@ -1,6 +1,7 @@
 package com.spring.transaction.model;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -43,4 +44,8 @@ public class CurrentAddress {
 	@Field(value="ADDRESS_ID", order = 8)
 	@NotEmpty(message = "Address is required field.")
 	private String addressId;
+	
+	@Field(value="CUSTOMER_ID", order = 9)
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

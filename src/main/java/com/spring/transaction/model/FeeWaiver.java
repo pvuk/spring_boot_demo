@@ -22,9 +22,9 @@ public class FeeWaiver {
 	@Field(value="PAYMENT_HISTORY_ID")
 	private String paymentHistoryId;
 	
-	@Field(value="CREDIT_CARD_DETAILS_ID")
-	@NotNull(message = "Credit Card is required field.")
-	private String creditCardDetailsId;
+	@Field(value="CARD_DETAILS_ID")
+	@NotNull(message = "Card is required field.")
+	private String cardDetailsId;
 	
 	@Field(value = "MILESTONE_ACHEIVEMENT_FINAL_DATE")
 	private Date mileStoneAcheivementFinalDate;
@@ -55,4 +55,8 @@ public class FeeWaiver {
 	
 	@Field("ANNUAL_FEE_WAIVER_ON")
 	private Date annualFeeWaiverOn;
+	
+	@Field(value="CUSTOMER_ID")
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

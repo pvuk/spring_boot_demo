@@ -19,5 +19,13 @@ Spring version upgraded from 2.0.4.RELEASE to 2.1.5.RELEASE(May 15, 2019) on May
 													MongoDB Version settings
 =========================================================================================================================
 upgraded MongoDB version from 4.0.1 to 4.0.9 on May 27, 2019
-Downoaded below zip file from https://www.mongodb.com/download-center/v2/community
+Download below zip file from https://www.mongodb.com/download-center/v2/community
 mongodb-win32-x86_64-2008plus-ssl-4.0.9
+
+4.
+=========================================================================================================================
+													Hibernate Version settings
+=========================================================================================================================
+Current Hibernate version 5.4.3.Final
+Reference link: https://mvnrepository.com/artifact/org.hibernate/hibernate-core/5.4.3.Final
+Libraries using: hibernate-core

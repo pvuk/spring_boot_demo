@@ -25,6 +25,12 @@ public class WalletPayment {
 	@Field(value = "WALLET_PAYMENT_ID", order = 1)
 	@Id private String walletPaymentId;
 	
+	/*
+	 * check if @Field is not mention how column name created in database
+	 */
+	@NotNull(message="Wallet is required field.")
+	private String walletDetailsId;
+	
 	@Field(value="AMOUNT", order = 2)
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;

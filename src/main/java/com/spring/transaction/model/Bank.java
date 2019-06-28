@@ -62,6 +62,11 @@ public class Bank {
 	@Field(value = "REF_LINK", order = 10)
 	private String refLink;
 	
+	/*
+	 * if not found user can add. Need to approve by Admin
+	 */
+	private Boolean isNew;
+	
 	@DBRef
 	@Field(value="BANK_TYPE")
 	private BankType bankType;

@@ -33,4 +33,8 @@ public class Address {
 	@Field(value = "CURRENT_ADDRESS", order = 3)
 	@NotNull(message = "Current Address is required field.")
 	private CurrentAddress currentAddress;
+	
+	@Field(value="CUSTOMER_ID", order = 4)
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }
