@@ -12,6 +12,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * 	Ex: We can also start Spring boot application by Configure with below annotations
  * 		@Configuration, @EnableAutoConfiguration
  * </p>
+ * <p>
+ * 	The @SpringBootApplication annotation enables auto-configuration and component scanning.
+ * </p>
  *
  */
 @SpringBootApplication

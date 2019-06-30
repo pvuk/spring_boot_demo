@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +20,7 @@ import com.spring.transaction.model.PermanentAddress;
 import com.spring.transaction.repository.BankBranchRepository;
 import com.spring.transaction.repository.BankRepository;
 import com.spring.transaction.service.BankBranchService;
+import com.spring.transaction.service.CRUDOperationService;
 import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -31,7 +33,8 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Transactional(rollbackFor = Exception.class)
 @Slf4j
-public class BankBranchServiceImpl implements BankBranchService {
+@Qualifier(value="bankBranchService")
+public class BankBranchServiceImpl implements CRUDOperationService, BankBranchService {
 
 	@Autowired private MongoTemplate mongoTemplate;
 	
@@ -39,10 +42,23 @@ public class BankBranchServiceImpl implements BankBranchService {
 	@Autowired private BankBranchRepository bankBranchMongoRepo;
 	
 	@Override
-	public String save(BankBranch bankBranch) throws Exception {
+	public List<BankBranch> getAllBankBranches() {
+		List<BankBranch> list = null;
+		try {
+			list = bankBranchMongoRepo.findAll();
+		} catch (Exception e) {
+			log.error("getAllBankBranches: {}", e.getMessage());
+			throw new NotFoundException(e.getMessage());
+		}
+		return list;
+	}
+
+	@Override
+	public String save(Object insert) throws Exception {
 		try {
 			log.info("Start - saveBankBranch");
 			
+			BankBranch bankBranch = (BankBranch) insert;
 			Bank bank = bankBranch.getBank();
 			String bankName = bank.getBankName();
 			Bank findByBankName = bankMongoRepo.findByBankName(bankName);
@@ -85,51 +101,39 @@ public class BankBranchServiceImpl implements BankBranchService {
 		}
 		return MessageConstants.Success.SAVE;
 	}
-	
+
 	@Override
-	public List<BankBranch> saveAll(List<BankBranch> bankBranchs) throws Exception {
+	public List<Object> saveAll(List<Object> list) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String update(BankBranch bankBranch) throws Exception {
+	public String update(Object update) throws Exception {
 
 		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
 
 	@Override
-	public String deleteById(ObjectId bankBranchId) throws Exception {
+	public String deleteById(ObjectId id) throws Exception {
 		try {
-			bankBranchMongoRepo.deleteById(bankBranchId);
+			bankBranchMongoRepo.deleteById(id);
 		} catch (Exception e) {
-			log.error("deleteById: {}", e.getMessage());
+			log.error("deleteById: {}, Cause: {}", id, e.getMessage());
 			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());
 		}
 		return MessageConstants.Success.DELETE;
 	}
 
 	@Override
-	public BankBranch getBankBranchById(ObjectId bankBranchId) {
+	public Object getById(ObjectId id) {
 		try {
-			Optional<BankBranch> byId = bankBranchMongoRepo.findById(bankBranchId);
+			Optional<BankBranch> byId = bankBranchMongoRepo.findById(id);
 			return byId.isPresent() ? byId.get() : null;
 		} catch (Exception e) {
-			log.error("findByBankBranchId: {} not found. Cause: {}", bankBranchId, e.getMessage());
-			throw new NotFoundException("BankBranchId "+ bankBranchId +" not found. Cause: "+ e.getMessage());
+			log.error("BankBranchId "+ id +" not found. Cause: "+ e.getMessage());
+			throw new NotFoundException("BankBranchId "+ id +" not found. Cause: "+ e.getMessage());
 		}
-	}
-
-	@Override
-	public List<BankBranch> getAllBankBranches() {
-		List<BankBranch> list = null;
-		try {
-			list = bankBranchMongoRepo.findAll();
-		} catch (Exception e) {
-			log.error("getAllBankBranches: {}", e.getMessage());
-			throw new NotFoundException(e.getMessage());
-		}
-		return list;
 	}
 
 }
