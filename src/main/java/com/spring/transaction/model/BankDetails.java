@@ -14,6 +14,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 @Document(collection="BANK_DETAILS")
 public class BankDetails {
 	

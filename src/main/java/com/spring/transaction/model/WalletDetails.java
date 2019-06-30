@@ -14,6 +14,7 @@ import lombok.Builder;
 import lombok.Data;
 
 @Data
+@Builder
 @Document(collection = "WALLET_DETAILS")
 public class WalletDetails {
 	
