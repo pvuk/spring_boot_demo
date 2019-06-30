@@ -49,8 +49,14 @@ public class TransErrorLogReport {
 	
 	@Field(value = "ERROR_LOG_REPORT_ON", order = 10)
 	private Date errorLogReportOn;
+
+	@Field(value = "REQUEST_URL", order = 11)
+	private String requestURL;
 	
-	@Field(value="CUSTOMER_ID", order = 11)
+	@Field(value = "PARAMETERS_ALIAS_QUERY_STRING")
+	private String parameters;
+	
+	@Field(value="CUSTOMER_ID", order = 12)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 
