@@ -57,8 +57,7 @@ public class RewardPoints {
 	
 	@Field(value="REWARDS_CLOSING_BALANCE", order = 8) private long rewardsClosingBalance;
 	
-	@Field(value="REWARD_POINTS_ADDED_ON", order = 9)
-	private Date rewardPointsAddedOn;
+	@Field(value="REWARD_POINTS_ADDED_ON", order = 9) private Date rewardPointsAddedOn;
 	
 	@Field(value="MERCHANT_DETAILS_ID", order = 10)
 	@NotEmpty(message = "Merchant Name is required field.")

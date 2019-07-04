@@ -26,8 +26,10 @@ public class RewardPointsRedeem {
 	
 	@Field(value="REWARDS_REDEEMED_THIS_MONTH", order = 3) private long rewardsRedeemedThisMonth;
 
-	@Field(value="REWARDS_REDEEMED_TO", order = 4) private long rewardsRedeemedTo;
+	@Field(value="REWARDS_REDEEMED_TO", order = 4) private String rewardsRedeemedTo;
 
+	@Field(value="REWARDS_REDEEMED_ON") private Date rewardsRedeemedOn;
+	
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH", order = 5) private long rewardsExpireThisMonth;
 	
 	//SBI Bank Rewards Feature
