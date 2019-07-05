@@ -20,7 +20,7 @@ import lombok.NoArgsConstructor;
  * @author venkataudaykiranp
  * 
  *         Note: PERMANENT_ADDRESS columns and CURRENT_ADDRESS columns should be
- *         equal. In some cases
+ *         equal. In some classes
  *         {@link org.springframework.beans.BeanUtils#copyProperties
  *         BeanUtils.copyProperties} method is used to copy entire data from
  *         PermanentAddress to CurrentAddress
