@@ -37,6 +37,9 @@ public class BankPayment {
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
+	@Field(value="CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
+	
 	@Field(value="CUSTOMER_ID", order = 5)
 	@NotNull(message="Customer is required field.")
 	private String customerId;

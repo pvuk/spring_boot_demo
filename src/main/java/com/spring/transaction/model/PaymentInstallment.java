@@ -32,6 +32,9 @@ public class PaymentInstallment {
 	@Size(max = 3000)
 	private String comment;
 	
+	@Field(value="CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
+	
 	@Field(value="CUSTOMER_ID", order = 7)
 	@NotNull(message="Customer is required field.")
 	private String customerId;

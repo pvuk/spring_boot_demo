@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.spring.transaction.service.CRUDOperationService;
+import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,8 +18,13 @@ public class CRUDOperationsServiceImpl implements CRUDOperationService {
 	
 	@Override
 	public String save(Object insert) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		try {
+			
+		} catch (Exception e) {
+			log.error("save: {}", e.getMessage());
+			throw new Exception(e.getMessage());
+		}
+		return MessageConstants.Success.SAVE;
 	}
 
 	@Override

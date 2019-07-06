@@ -32,6 +32,9 @@ public class PaymentReceived {
 	@Field(value="PAYMENT_RECEIVED_ON", order = 5)
     @NotNull(message="Payment Received On is required field.")
 	private Date paymentReceivedOn;
+	
+	@Field(value="CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
     
     @Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")

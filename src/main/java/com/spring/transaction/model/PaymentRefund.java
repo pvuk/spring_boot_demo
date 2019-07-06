@@ -30,6 +30,9 @@ public class PaymentRefund {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 5)
 	private String paymentOnAccountId;
 	
+	@Field(value="CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
+	
 	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
 	private String customerId;
