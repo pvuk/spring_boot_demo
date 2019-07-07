@@ -86,6 +86,9 @@ public class RewardPointsEarned {
 	@Field(value="REWARD_POINTS_ID", order = 23)
 	private String rewardPointsId;
 	
+	@Field(value="CONFIRM_PAYMENT")
+	private Boolean confirmPayment;
+	
 	@Field(value="CUSTOMER_ID", order = 24)
 	@NotNull(message="Customer is required field.")
 	private String customerId;

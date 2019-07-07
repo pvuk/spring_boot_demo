@@ -30,6 +30,9 @@ public class PaymentFailed {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 4)
 	private String paymentOnAccountId;
 	
+	@Field(value="IS_PAYMENT_ROLLBACK_TO_SOURCE")
+	private Boolean isPaymentRollbackToSource;
+	
 	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
 	private String customerId;
