@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.bson.types.ObjectId;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -56,7 +57,7 @@ public class BankBranchServiceImpl implements CRUDOperationService, BankBranchSe
 	@Override
 	public String save(Object insert) throws Exception {
 		try {
-			log.info("Start - saveBankBranch");
+			log.info("saveBankBranch - START");
 			
 			BankBranch bankBranch = (BankBranch) insert;
 			Bank bank = bankBranch.getBank();
@@ -77,27 +78,40 @@ public class BankBranchServiceImpl implements CRUDOperationService, BankBranchSe
 					throw new Exception(bankName +" Branch: "+ branch +" Already exsit");
 				}
 			}
+			
 			Address address = bankBranch.getAddress();
 			if (address != null) {
 				PermanentAddress permanentAddress = address.getPermanentAddress();
-				mongoTemplate.insert(permanentAddress);
-				
 				CurrentAddress currentAddress = address.getCurrentAddress();
-				mongoTemplate.insert(currentAddress);
 				
-				if (permanentAddress != null && permanentAddress.getPermanentAddressId() != null) {
-					address.setCurrentAddress(currentAddress);
-					address.setPermanentAddress(permanentAddress);
+				if (permanentAddress != null || currentAddress != null) {
+					
+					if (address.getIsPermanentAddressIsSameAsCurrentAddress()) {
+						BeanUtils.copyProperties(permanentAddress, currentAddress);
+						currentAddress.setIsActiveCurrentAddress(true);
+					}
+					
+					if (permanentAddress != null) {
+						permanentAddress.setIsActivePermanentAddress(true);
+						PermanentAddress pA = mongoTemplate.insert(permanentAddress);
+						address.setPermanentAddressId(pA.getPermanentAddressId());
+					}
+					
+					if (currentAddress != null){
+						currentAddress.setIsActiveCurrentAddress(true);
+						CurrentAddress cA = mongoTemplate.insert(currentAddress);
+						address.setCurrentAddressId(cA.getCurrentAddressId());
+					}
 					mongoTemplate.insert(address);
-					log.info("Saving Address for BankBranch: {}", currentAddress);
 				}
 				bankBranch.setAddress(address);
 			}
 			bankBranchMongoRepo.save(bankBranch);
-			log.info("End - saveBankBranch");
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new Exception(e.getMessage());
+		} finally {
+			log.info("saveBankBranch - END");
 		}
 		return MessageConstants.Success.SAVE;
 	}

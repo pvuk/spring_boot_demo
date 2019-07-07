@@ -26,17 +26,18 @@ public class RewardPointsRedeem {
 	
 	@Field(value="REWARDS_REDEEMED_THIS_MONTH", order = 3) private long rewardsRedeemedThisMonth;
 
-	@Field(value="REWARDS_REDEEMED_TO", order = 4) private long rewardsRedeemedTo;
+	@Field(value="REWARDS_REDEEMED_TO", order = 4) private String rewardsRedeemedTo;
 
-	@Field(value="REWARDS_ADJUSTED", order = 5) private long rewardsAdjusted;
-
-	@Field(value="REWARDS_EXPIRE_THIS_MONTH", order = 6) private long rewardsExpireThisMonth;
+	@Field(value="REWARDS_REDEEMED_ON") private Date rewardsRedeemedOn;
+	
+	@Field(value="REWARDS_EXPIRE_THIS_MONTH", order = 5) private long rewardsExpireThisMonth;
 	
 	//SBI Bank Rewards Feature
-	@Field(value="REWARDS_EXPIRE_NEXT_MONTH", order = 7) private long rewardsExpireNextMonth;
-	@Field(value="REWARDS_EXPIRE_NEXT_THREE_MONTH", order = 8) private long rewardsExpireNextThreeMonth;
+	@Field(value="REWARDS_EXPIRE_NEXT_MONTH", order = 6) 		private long rewardsExpireNextMonth;
+	@Field(value="REWARDS_EXPIRE_NEXT_THREE_MONTH", order = 7) 	private long rewardsExpireNextThreeMonth;
 
-	@Field(value="POINTS_EXPIRE_ON", order = 9) private Date pointsExpireOn;
+	@Field(value="POINTS_EXPIRE_NEXT_MONTH_ON", order = 8) 			private Date pointsExpireNextMonthOn;
+	@Field(value="POINTS_EXPIRE_NEXT_THREE_MONTH_ON", order = 9) 	private Date pointsExpireNextThreeMonthOn;
 
 	@Field(value="TOTAL_POINTS_EXPIRE", order = 10) private long totalPointsExpire;
 
@@ -48,6 +49,6 @@ public class RewardPointsRedeem {
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	
-	@Field(value = "CONFIRM_PAYMENT")
+	@Field(value = "CONFIRM_PAYMENT", order = 14)
 	private Boolean confirmPayment;
 }
