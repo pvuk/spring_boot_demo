@@ -1,13 +1,16 @@
 package com.spring.transaction.model;
 
+import java.math.BigDecimal;
+
+import javax.persistence.Embedded;
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.math.BigDecimal;
-
-import javax.validation.constraints.NotNull;
+import com.spring.transaction.model.audit.AuditData;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -37,10 +40,13 @@ public class BankPayment {
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
-	@Field(value="CONFIRM_PAYMENT")
+	@Field(value="CONFIRM_PAYMENT", order = 5)
 	private Boolean confirmPayment;
 	
-	@Field(value="CUSTOMER_ID", order = 5)
+	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Embedded
+	private AuditData auditData;
 }

@@ -3,12 +3,15 @@ package com.spring.transaction.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Embedded;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.spring.transaction.model.audit.AuditData;
 
 import lombok.Data;
 
@@ -39,34 +42,37 @@ public class Cashback {
 	@Field(value = "CASHBACK_ELIGIBLE_ONLY_WHEN", order = 7)
 	private String cashbackEligibleOnlyWhen;
 	
-	@Field(value="CASHBACK_ELIGIBLE_ONLY_WHEN_DESCRIPTION")
+	@Field(value="CASHBACK_ELIGIBLE_ONLY_WHEN_DESCRIPTION", order = 8)
 	private String cashbackEligibleOnlyWhenDescription;
 	
-	@Field(value = "PERCENTAGE", order = 8)
+	@Field(value = "PERCENTAGE", order = 9)
 	private Double percentage;
 	
-	@Field(value = "ELIGIBLE_CASHBACK", order = 9)
+	@Field(value = "ELIGIBLE_CASHBACK", order = 10)
 	private BigDecimal eligibleCashback;
 	
-	@Field(value = "ADDITIONAL_CASHBACK")
+	@Field(value = "ADDITIONAL_CASHBACK", order = 11)
 	private BigDecimal additionalCashback;
 	
-	@Field(value = "CASHBACK_UPTO", order = 10)
+	@Field(value = "CASHBACK_UPTO", order = 12)
 	private BigDecimal cashbackUpto;
 	
-	@Field(value = "CASHBACK_UPTO_DESCRIPTION", order = 11)
+	@Field(value = "CASHBACK_UPTO_DESCRIPTION", order = 13)
 	private BigDecimal cashbackUptoDescription;
 	
-	@Field(value = "CASHBACK_ADJUSTED", order = 12)
+	@Field(value = "CASHBACK_ADJUSTED", order = 14)
 	private BigDecimal cashbackAdjusted;
 	
-	@Field(value = "CASHBACK_TYPE", order = 13)
+	@Field(value = "CASHBACK_TYPE", order = 15)
 	private String cashbackType;
 	
-	@Field(value = "CASHBACK_CATEGORY_ID", order = 14)
+	@Field(value = "CASHBACK_CATEGORY_ID", order = 16)
 	private Long cashbackCategoryId;
 	
-	@Field(value = "CUSTOMER_ID", order = 15)
+	@Field(value = "CUSTOMER_ID", order = 17)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Embedded
+	private AuditData auditData;
 }

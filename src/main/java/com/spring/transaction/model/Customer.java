@@ -2,12 +2,14 @@ package com.spring.transaction.model;
 
 import java.util.Date;
 
+import javax.persistence.Embedded;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
-
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.spring.transaction.model.audit.AuditData;
 
 import lombok.Data;
 
@@ -18,23 +20,44 @@ public class Customer {
 	@Field(value = "CUSTOMER_ID", order = 1)
 	@Id
 	private String customerId;
+	
+	@Field(value = "USER_NAME", order = 2)
+	private String userName;
 
-	@Field(value = "FIRST_NAME", order = 2)
+	@Field(value = "login_Name", order = 3)
+	private String loginName;
+
+	@Field(value = "LAST_LOGIN_DATE", order = 4)
+	private Date lastLoginDate;
+
+	@Field(value = "USER_FUNCTION_ID", order = 5)
+	private Long userFunctionId;
+
+	@Field(value = "USER_LOCATION_ID", order = 6)
+	private Long userLocationId;
+
+	@Field(value = "EMAIL", order = 7)
+	private String email;
+
+	@Field(value = "FIRST_NAME", order = 8)
 	private String firstName;
 	
-	@Field(value = "MIDDLE_NAME", order = 3)
+	@Field(value = "MIDDLE_NAME", order = 9)
 	private String middleName;
 	
-	@Field(value = "LAST_NAME", order = 4)
+	@Field(value = "LAST_NAME", order = 10)
 	private String lastName;
 	
-	@Field(value = "DATE_OF_BIRTH", order = 5)
+	@Field(value = "DATE_OF_BIRTH", order = 11)
 	private Date dateOfBirth;
 	
-	@Field(value = "ADDRESS_ID", order = 6)
+	@Field(value = "ADDRESS_ID", order = 12)
 	@NotNull(message= "Address is required field")
 	private String addressId;
 	
-	@Field(value = "EMPLOYEER_ID", order = 7)
+	@Field(value = "EMPLOYEER_ID", order = 13)
 	private String employeerId;
+	
+	@Embedded
+	private AuditData auditData;
 }

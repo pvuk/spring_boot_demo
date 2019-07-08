@@ -1,5 +1,6 @@
 package com.spring.transaction.model;
 
+import javax.persistence.Embedded;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.data.annotation.Id;
@@ -9,6 +10,8 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.spring.transaction.model.audit.AuditData;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -53,6 +56,18 @@ public class BankType {
 	
 	@Field(value = "COMMENT", order = 7)
 	private String comment;
+	
+	/*
+	 * if not found user can add. Need to approve by Admin
+	 */
+	@Field(value = "IS_NEW", order = 8) 		private Boolean isNew;
+	@Field(value = "APPROVED", order = 9) 		private Boolean approved;
+	@Field(value = "APPROVED_BY", order = 10) 	private Boolean approvedBy;
+	@Field(value = "REJECTED", order = 11) 		private Boolean rejected;
+	@Field(value = "REJECTED_BY", order = 12) 	private Boolean rejectedBy;
+	
+	@Embedded
+	private AuditData auditData;
 	
 	@Transient
 	private ErrorMessageMap errorMessageMap;

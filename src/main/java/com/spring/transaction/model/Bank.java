@@ -3,6 +3,8 @@ package com.spring.transaction.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Embedded;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -11,6 +13,8 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.spring.transaction.model.audit.AuditData;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -46,32 +50,44 @@ public class Bank {
 	@Field(value = "BRANCHES", order = 6)
 	private Long branches;
 	
+	@Field(value = "REVENUES", order = 7)
 	private BigDecimal revenues;
 	
-	@Field(value = "REVENUES", order = 7)
+	@Transient
 	private String strRevenues;
 	
+	@Field(value = "TOTAL_ASSETS", order = 9)
 	private BigDecimal totalAssets;
 	
-	@Field(value = "TOTAL_ASSETS", order = 8)
+	@Transient
 	private String strTotalAssets;
 	
-	@Field(value = "NOTES", order = 9)
+	@Field(value = "NOTES", order = 11)
 	private String notes;
 	
-	@Field(value = "REF_LINK", order = 10)
+	@Field(value = "REF_LINK", order = 12)
 	private String refLink;
 	
 	/*
 	 * if not found user can add. Need to approve by Admin
 	 */
-	private Boolean isNew;
+	@Field(value = "IS_NEW", order = 13) 		private Boolean isNew;
+	@Field(value = "APPROVED", order = 14) 		private Boolean approved;
+	@Field(value = "APPROVED_BY", order = 15) 	private Boolean approvedBy;
+	@Field(value = "REJECTED", order = 16) 		private Boolean rejected;
+	@Field(value = "REJECTED_BY", order = 17) 	private Boolean rejectedBy;
 	
 	@DBRef
-	@Field(value="BANK_TYPE")
+	@Field(value="BANK_TYPE", order = 18)
 	private BankType bankType;
 
-	@Field(value = "ERROR_MESSAGE_MAP", order = 11)
+	@Field(value="CUSTOMER_ID", order = 19)
+	@NotNull(message="Customer is required field.")
+	private String customerId;
+	
+	@Embedded
+	private AuditData auditData;
+	
 	@Builder.Default
 	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
 	
