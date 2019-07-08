@@ -8,6 +8,6 @@ import com.spring.transaction.model.Customer;
 
 public interface CustomerRepo extends PagingAndSortingRepository<Customer, Long> {
 
-	@Query("select cu from Customer cu where LOWER(cu.email) = LOWER(:email)")
+	@Query("{ LOWER('email') : ?0 }")
 	Customer findByEmailCaseInsensitive(@Param("email") String email);
 }
