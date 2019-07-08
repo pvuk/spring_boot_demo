@@ -25,3 +25,15 @@
 														Maven - Task																	
 ===================================================================================================================================
 1. Execute every operation using available maven commands
+
+===================================================================================================================================
+														UI: Validation - Task																	
+===================================================================================================================================
+1. If CAPSLOCK is on show warning message beside Textbox(CAPSLOCK is on) to alert the user. User is trying to enter their password in CAPSLOCK mode.
+1.1 If and only if before enter into the site, if the CAPSLOCK is on then warning should be display.
+1.2 When the first time the textbox is empty and no alphanumeric values in password control then warn the user.
+
+===================================================================================================================================
+														Java - Task																	
+===================================================================================================================================
+1. Write @annotation that reads all variable names and when insert into db columns should be created as capital letters.

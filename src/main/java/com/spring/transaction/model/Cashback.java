@@ -39,11 +39,17 @@ public class Cashback {
 	@Field(value = "CASHBACK_ELIGIBLE_ONLY_WHEN", order = 7)
 	private String cashbackEligibleOnlyWhen;
 	
+	@Field(value="CASHBACK_ELIGIBLE_ONLY_WHEN_DESCRIPTION")
+	private String cashbackEligibleOnlyWhenDescription;
+	
 	@Field(value = "PERCENTAGE", order = 8)
 	private Double percentage;
 	
 	@Field(value = "ELIGIBLE_CASHBACK", order = 9)
 	private BigDecimal eligibleCashback;
+	
+	@Field(value = "ADDITIONAL_CASHBACK")
+	private BigDecimal additionalCashback;
 	
 	@Field(value = "CASHBACK_UPTO", order = 10)
 	private BigDecimal cashbackUpto;
