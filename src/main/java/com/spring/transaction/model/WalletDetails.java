@@ -53,6 +53,9 @@ public class WalletDetails {
 	@Field(value="CREDIT")
 	private BigDecimal credit;
 	
+	@Field(value="CARD_LIMIT_ID")
+	private String cardLimitId;
+	
 	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
 	private String customerId;

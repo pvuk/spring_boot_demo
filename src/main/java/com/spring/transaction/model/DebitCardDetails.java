@@ -63,7 +63,10 @@ public class DebitCardDetails {
 	@Field(value = "IS_SEMI_CLOSED", order=14)
 	private Boolean isSemiClosed;
 	
-	@Field(value="CUSTOMER_ID", order = 15)
+	@Field(value = "CARD_LIMIT_ID", order=15)
+	private String cardLimitId;
+	
+	@Field(value="CUSTOMER_ID", order = 16)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }

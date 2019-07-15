@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.transaction.aspect.TrackTime;
-import com.spring.transaction.model.CreditLimit;
-import com.spring.transaction.service.CreditLimitService;
+import com.spring.transaction.model.CardLimit;
+import com.spring.transaction.service.CardLimitService;
 
 /**
  * 
@@ -24,40 +24,45 @@ import com.spring.transaction.service.CreditLimitService;
  *
  */
 @RestController
-@RequestMapping(value="/creditLimit/custom/")
-public class CreditLimitController {
+@RequestMapping(value = "/creditLimit/custom/")
+public class CardLimitController {
 
-	@Autowired private CreditLimitService creditLimitService;
-	
+	@Autowired
+	private CardLimitService cardLimitService;
+
 	@TrackTime
 	@PostMapping(path = "/save")
-	public @ResponseBody ResponseEntity<Object> save(@RequestBody(required=true) CreditLimit creditLimit) throws Exception {
-		String message = creditLimitService.save(creditLimit);
+	public @ResponseBody ResponseEntity<Object> save(@RequestBody(required = true) CardLimit cardLimit)
+			throws Exception {
+		String message = cardLimitService.save(cardLimit);
 		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
 	}
-	
+
 	@TrackTime
 	@PostMapping(path = "/saveAll")
-	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody(required=true) List<CreditLimit> creditLimits) throws Exception {
-		List<CreditLimit> list = creditLimitService.saveAll(creditLimits);
+	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody(required = true) List<CardLimit> cardLimits)
+			throws Exception {
+		List<CardLimit> list = cardLimitService.saveAll(cardLimits);
 		return new ResponseEntity<Object>(list, HttpStatus.CREATED);
 	}
 
 	@PostMapping(path = "/update")
-	public @ResponseBody ResponseEntity<Object> update(@RequestBody CreditLimit creditLimit) throws Exception {
-		String message = creditLimitService.update(creditLimit);
+	public @ResponseBody ResponseEntity<Object> update(@RequestBody CardLimit cardLimit) throws Exception {
+		String message = cardLimitService.update(cardLimit);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
 	@PostMapping(path = "/deleteById")
-	public @ResponseBody ResponseEntity<Object> deleteById(@RequestParam(required = true, value = "creditLimitId") ObjectId creditLimitId) throws Exception {
-		String message = creditLimitService.deleteById(creditLimitId);
+	public @ResponseBody ResponseEntity<Object> deleteById(
+			@RequestParam(required = true, value = "cardLimitId") ObjectId cardLimitId) throws Exception {
+		String message = cardLimitService.deleteById(cardLimitId);
 		return new ResponseEntity<Object>(message, HttpStatus.OK);
 	}
 
 	@GetMapping(path = "/getCreditLimitById")
-	public @ResponseBody ResponseEntity<Object> getCreditLimitById(@RequestParam(required = true, value = "creditLimitId") ObjectId creditLimitId) throws Exception {
-		CreditLimit CreditLimit = creditLimitService.getCreditLimitById(creditLimitId);
+	public @ResponseBody ResponseEntity<Object> getCreditLimitById(
+			@RequestParam(required = true, value = "cardLimitId") ObjectId cardLimitId) throws Exception {
+		CardLimit CreditLimit = cardLimitService.getCreditLimitById(cardLimitId);
 		return new ResponseEntity<Object>(CreditLimit, HttpStatus.OK);
 	}
 }

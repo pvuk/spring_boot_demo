@@ -7,9 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.spring.transaction.model.CreditLimit;
-import com.spring.transaction.repository.CreditLimitRepository;
-import com.spring.transaction.service.CreditLimitService;
+import com.spring.transaction.model.CardLimit;
+import com.spring.transaction.repository.CardLimitRepository;
+import com.spring.transaction.service.CardLimitService;
 import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -22,38 +22,38 @@ import lombok.extern.slf4j.Slf4j;
 @Service
 @Transactional(rollbackFor = Throwable.class)
 @Slf4j
-public class CreditLimitServiceImpl implements CreditLimitService {
+public class CreditLimitServiceImpl implements CardLimitService {
 
-	@Autowired private CreditLimitRepository creditLimitRepo;
+	@Autowired private CardLimitRepository creditLimitRepo;
 	
 	@Override
-	public CreditLimit getCreditLimitById(ObjectId creditLimitId) throws Exception {
+	public CardLimit getCreditLimitById(ObjectId cardLimitId) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String save(CreditLimit creditLimit) throws Exception {
+	public String save(CardLimit cardLimit) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<CreditLimit> saveAll(List<CreditLimit> creditLimits) throws Exception {
+	public List<CardLimit> saveAll(List<CardLimit> cardLimits) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String update(CreditLimit creditLimit) throws Exception {
+	public String update(CardLimit cardLimit) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public String deleteById(ObjectId creditLimitId) throws Exception {
+	public String deleteById(ObjectId cardLimitId) throws Exception {
 		try {
-			creditLimitRepo.deleteById(creditLimitId);
+			creditLimitRepo.deleteById(cardLimitId);
 		} catch (Exception e) {
 			log.error("deleteById: {}", e.getMessage());
 			throw new Exception(MessageConstants.Failed.DELETE +" Cause: "+ e.getMessage());

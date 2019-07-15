@@ -18,15 +18,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "CREDIT_LIMIT")
-public class CreditLimit {
+@Document(collection = "CARD_LIMIT")
+public class CardLimit {
 
-	@Field(value="CREDIT_LIMIT_ID", order = 1)
+	@Field(value="CARD_LIMIT_ID", order = 1)
 	@Id
-	private String creditLimitId;
+	private String cardLimitId;
 	
 	//Message, Email, ITR, SMS, Post
 	@Field(value="CARD_UPGRADE_THROUGH", order = 2) private String cardUpgradeThrough;
+	
+	@Field(value = "CARD_LIMIT_ENHANCEMENT_REQUEST_ON") private Date cardLimitEnhancementRequestOn;
 	
 	@Field(value="UPGRADE_LIMIT_FROM", order = 3) private Long upgradeLimitFrom;
 	@Field(value="UPGRADE_LIMIT_TO", order = 4) private Long upgradeLimitTo;
@@ -36,10 +38,10 @@ public class CreditLimit {
 	@Field(value="TEMPORARY_LIMIT_FROM", order = 7) private Date temporaryLimitFrom;
 	@Field(value="TEMPORARY_LIMIT_TO", order = 8) private Date temporaryLimitTo;
 	
-	@NotNull(message = "Credit Card is required field.")
-	private CreditCard creditCard;
+	@Field(value = "CARD_DETAILS_ID", order = 9)
+	private String cardDetailsId;
 	
-	@Field(value="CUSTOMER_ID", order = 9)
+	@Field(value="CUSTOMER_ID", order = 10)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }
