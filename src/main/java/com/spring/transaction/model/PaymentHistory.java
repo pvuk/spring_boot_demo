@@ -1,6 +1,6 @@
 package com.spring.transaction.model;
 
-import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -31,6 +31,10 @@ public class PaymentHistory {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 2)
 	private String paymentOnAccountId;
 	
+	/*
+	 * 1. Count 1 period as 1 year.
+	 * 2. Every year period will increase to +1.
+	 */
 	@Field(value="PERIOD_ID", order = 3)
 	private Long periodId;
 	
@@ -40,17 +44,13 @@ public class PaymentHistory {
 	@Field(value="YEAR", order = 5)
 	private Long year;
 	
-	@Field(value = "CURRENT_MONTH_ONLINE_SPENDS")
-	private BigDecimal currentMonthOnlineSpends;
+	@NotEmpty(message = "Paid On is required field.")
+	@Field(value = "PAID_ON")
+	private Date paidOn;
 	
-	@Field(value = "MILESTONE_ACHEIVEMENT")
-	private BigDecimal mileStoneAcheivement;
-	
-	@Field(value = "SPENDS_LEFT_TO_REACH_THE_MILESTONE_OF")
-	private BigDecimal spendsLeftToReachTheMilestoneOf;
-	
-	@Field(value = "MILESTONE_ACHEIVEMENT_DESCRIPTION")
-	private String mileStoneAcheivementDescription;
+	@NotEmpty(message="MileStone Achievement is required field.")
+	@Field(value = "MILESTONE_ACHIEVEMENT_ID")
+	private Long mileStoneAchievementId;
 	
 	@Field(value="COMMENT", order = 6)
 	@Size(max = 3000)
