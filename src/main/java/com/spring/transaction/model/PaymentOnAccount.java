@@ -34,7 +34,10 @@ public class PaymentOnAccount {
 	@Field(value = "PAYMENT_BY_ID", order = 7)
 	private String paymentById;
 	
-	@Field(value="CUSTOMER_ID", order = 8)
+	@Field(value="PAYMENT_STATUS_ID", order = 8)
+	private String paymentStatusId;
+	
+	@Field(value="CUSTOMER_ID", order = 9)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }

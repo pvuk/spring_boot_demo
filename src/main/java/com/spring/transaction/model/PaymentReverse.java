@@ -33,10 +33,13 @@ public class PaymentReverse {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 5)
 	private String paymentOnAccountId;
 	
-	@Field(value="CONFIRM_PAYMENT")
+	@Field(value="PAYMENT_STATUS_ID", order = 6)
+	private String paymentStatusId;
+	
+	@Field(value="CONFIRM_PAYMENT", order = 7)
 	private Boolean confirmPayment;
 	
-	@Field(value="CUSTOMER_ID")
+	@Field(value="CUSTOMER_ID", order = 8)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }
