@@ -26,7 +26,17 @@ public class CashPayment {
     private Date paidOn;
     private BigDecimal recievedAmount;
     private Date recievedOn;
-    
+
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
+	
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	

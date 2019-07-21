@@ -36,6 +36,16 @@ public class PaymentReceived {
 	@Field(value="PAYMENT_STATUS_ID", order = 6)
 	private String paymentStatusId;
 	
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
+	
 	@Field(value="CONFIRM_PAYMENT", order = 7)
 	private Boolean confirmPayment;
     

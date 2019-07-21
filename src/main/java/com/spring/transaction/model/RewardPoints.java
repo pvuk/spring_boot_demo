@@ -29,11 +29,11 @@ public class RewardPoints {
 	private String rewardCardId;
 	
 	@Field(value="REWARD_POINTS_CATALOGUE_ID", order = 3)
-	@NotEmpty(message = "Reward Points Catalogue is required field.")
+//	@NotEmpty(message = "Reward Points Catalogue is required field.")
 	private String rewardPointsCatalogueId;
 	
 	@Field(value="MERCHANT_DETAILS_ID", order = 10)
-	@NotEmpty(message = "Merchant Name is required field.")
+//	@NotEmpty(message = "Merchant Name is required field.")
 	private String merchantDetailsId;
 	
 	@Field(value="REWARD_POINTS_EARNED_ID", order = 11)
@@ -41,10 +41,11 @@ public class RewardPoints {
 	private String rewardPointsEarnedId;
 	
 	@Field(value="REWARD_POINTS_REDEEM_ID", order = 13)
-	@NotEmpty(message = "Reward Points Redeemed To is required field.")
+//	@NotEmpty(message = "Reward Points Redeemed To is required field.")
 	private String rewardPointsRedeemId;
 	
 	@Field(value = "STATEMENT_CREDIT_CARD_ID", order = 14)
+	@NotEmpty(message = "Statement Of Credit Card is required field.")
 	private String statementCreditCardId;
 	
 	@Field(value="CUSTOMER_ID", order = 15)

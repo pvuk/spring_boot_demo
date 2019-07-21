@@ -12,12 +12,12 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 @Data
-@Document(collection = "STATEMENT_CREDIT_CARD")
-public class StatementCreditCard {
+@Document(collection = "CREDIT_CARD_STATEMENT")
+public class CreditCardStatement {
 	
-	@Field(value = "STATEMENT_CREDIT_CARD_ID", order = 1)
+	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 1)
 	@Id
-	private String statementCreditCardId;
+	private String creditCardStatementId;
 	
 	@Field(value = "IS_STATEMENT_CYCLE_CLOSED", order = 2)
 	@NotNull(message="Credit Card Statement Cycle Closed is required field.")
@@ -31,6 +31,16 @@ public class StatementCreditCard {
 	
 	@Field(value = "DUE_DATE", order = 5)
 	private Date dueDate;
+
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
 	
 	@NotNull(message="Credit card is required field.")
 	@DBRef

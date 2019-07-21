@@ -40,6 +40,16 @@ public class BankPayment {
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
+	
 	@Field(value="CONFIRM_PAYMENT", order = 5)
 	private Boolean confirmPayment;
 	

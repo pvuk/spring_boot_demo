@@ -107,6 +107,16 @@ public class RewardPointsEarned {
 	@NotNull(message = "Statement Reward Points is required field.")
 	@Field(value="REWARD_POINTS_ID", order = 26)
 	private String rewardPointsId;
+
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
 	
 	@Field(value="CONFIRM_PAYMENT", order = 27)
 	private Boolean confirmPayment;

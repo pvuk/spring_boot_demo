@@ -33,9 +33,15 @@ public class PaymentInstallment {
 	@Field(value="PAYMENT_INSTALLMENT_STATUS_ID", order = 8)
 	private String paymentInstallmentStatusId;
 	
-	@Field(value="COMMENT", order = 9)
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS", order = 9)
 	@Size(max = 3000)
-	private String comment;
+	private String transactionDetails;
 	
 	@Field(value="CONFIRM_PAYMENT", order = 10)
 	private Boolean confirmPayment;

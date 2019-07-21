@@ -45,6 +45,16 @@ public class WalletPayment {
 	@NotNull(message="PaymentBy is required field.")
 	@DBRef
 	private PaymentBy paymentBy;
+
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
 	
 	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")

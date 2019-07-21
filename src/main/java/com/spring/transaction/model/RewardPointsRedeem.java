@@ -43,7 +43,16 @@ public class RewardPointsRedeem {
 
 	@Field(value="POINTS_EXPIRE_DETAILS", order = 11) private String pointsExpireDetails;
 	
-	@Field(value="COMMENT", order = 12) private String comment;
+
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS", order = 12)
+	private String transactionDetails;
+	
 	
 	@Field(value="CUSTOMER_ID", order = 13)
 	@NotNull(message="Customer is required field.")

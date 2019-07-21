@@ -30,6 +30,16 @@ public class PaymentFailed {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 4)
 	private String paymentOnAccountId;
 	
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS")
+	@NotNull(message="Transaction Details is required field.")
+	private String transactionDetails;
+	
 	@Field(value="IS_PAYMENT_ROLLBACK_TO_SOURCE")
 	private Boolean isPaymentRollbackToSource;
 	

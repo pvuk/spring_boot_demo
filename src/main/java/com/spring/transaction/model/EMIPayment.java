@@ -79,14 +79,20 @@ public class EMIPayment {
 	@Field(value="EMI_MONTHS", order = 18)
 	private String emiMonths;
 	
-	@Field(value="COMMENT", order = 19)
-	private String comment;
-	
 	@Field(value="OVERAL_EMI_PAID", order = 20)
 	private BigDecimal overalEMIPaid;
 	
 	@Field(value="OVERAL_EMI_PAYMENT_AMOUNT", order = 21)
 	private BigDecimal overalEMIPaymentAmount;
+
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/*
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_DETAILS", order = 19)
+	private String transactionDetails;
 	
 	@Field(value="CUSTOMER_ID", order = 22)
 	@NotNull(message="Customer is required field.")
