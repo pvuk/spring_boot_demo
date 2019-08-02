@@ -48,7 +48,7 @@ public class PersonalLoan {
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salarieddoctor, selfemplprofessionaldoctororca, selfemplprofessionalothers.
 	 */
-	private String yearsInCurrentProfessionId;
+	private String yearsOfExperienceId;
 	
 	/*
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
@@ -71,6 +71,7 @@ public class PersonalLoan {
 	/*
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplownbusn.
+	 * 2. Refer YEARS_OF_EXPERIENCE_ID for insert / update
 	 */
 	private String yearsInCurrentBusinessId;
 }
