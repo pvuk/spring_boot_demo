@@ -32,6 +32,8 @@
 1. If CAPSLOCK is on show warning message beside Textbox(CAPSLOCK is on) to alert the user. User is trying to enter their password in CAPSLOCK mode.
 1.1 If and only if before enter into the site, if the CAPSLOCK is on then warning should be display.
 1.2 When the first time the textbox is empty and no alphanumeric values in password control then warn the user.
+2. Provide info about control if needed. Provide icon info when user place cursor information regarding that control should be displayed. 
+2.a Ref: https://personal-loan.gosahi.com/employment-details
 
 ===================================================================================================================================
 														Java - Task																	

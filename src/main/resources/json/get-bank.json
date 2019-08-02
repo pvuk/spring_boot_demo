@@ -2,6 +2,19 @@
 	"_embedded": {
 		"bank": [
 			{
+				"bankId": "",
+				"bankName": "I don't have bank account'",
+				"establishedOn": null,
+				"establishedYear": null,
+				"headQuarter": null,
+				"branches": null,
+				"revenues": null,
+				"strRevenues": null,
+				"totalAssets": null,
+				"strTotalAssets": null,
+				"notes": "Promote bank account to Banks from Customers to become Partern with Banks",
+				"refLink": null
+			},{
 				"bankId": "5c5408c4ee4cea336451be20",
 				"bankName": "ICICI BANK",
 				"establishedOn": null,

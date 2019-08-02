@@ -1,0 +1,21 @@
+[{
+	"code": "salariedemployee",
+	"position": 1,
+	"description": "Salaried Employee"
+},{
+	"code": "salarieddoctor",
+	"position": 2,
+	"description": "Salaried Doctor"
+},{
+	"code": "selfemplprofessionaldoctororca",
+	"position": 3,
+	"description": "Self Employed Professional (Doctor / CA)"
+},{
+	"code": "selfemplprofessionalothers",
+	"position": 4,
+	"description": "Self Employed Professional (Others)"
+},{
+	"code": "selfemplownbusn",
+	"position": 5,
+	"description": "Self Employed (Own Business)"
+}]
