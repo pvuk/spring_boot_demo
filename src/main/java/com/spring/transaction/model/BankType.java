@@ -2,6 +2,7 @@ package com.spring.transaction.model;
 
 import javax.persistence.Embedded;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
@@ -38,7 +39,7 @@ public class BankType {
 	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@TextIndexed
-	@NotEmpty(message = "Bank Type Code is required field.")
+	@NotNull(message = "Bank Type Code is required field.")
 	private String code;
 	
 	@Field(value = "POSITION", order = 3)

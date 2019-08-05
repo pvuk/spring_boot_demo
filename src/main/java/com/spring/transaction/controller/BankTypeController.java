@@ -8,7 +8,6 @@ import org.springframework.data.rest.webmvc.BasePathAwareController;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -30,8 +29,8 @@ public class BankTypeController {
 
 	@Autowired BankTypeService bankTypeService;
 
-	@GetMapping(value = "/save")
-	public @ResponseBody String save(BankType bankType) throws Exception {
+	@PutMapping(value = "/save")
+	public @ResponseBody String save(@RequestBody BankType bankType) throws Exception {
 		return bankTypeService.save(bankType);
 	}
 

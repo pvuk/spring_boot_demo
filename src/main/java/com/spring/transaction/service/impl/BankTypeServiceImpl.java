@@ -9,6 +9,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import com.spring.transaction.model.BankType;
 import com.spring.transaction.model.ErrorMessageMap;
@@ -37,8 +38,8 @@ public class BankTypeServiceImpl implements BankTypeService {
 	public String save(BankType bankType) throws Exception {
 		try {
 			if (bankType.getId() == null) {
-				String bankTypeId = mongoTemplate.find(new Query(Criteria.where("CODE").is(bankType.getCode())), BankType.class).get(0).getId();
-				if (bankTypeId == null) {
+				BankType findOne = mongoTemplate.findOne(new Query(Criteria.where("CODE").is(bankType.getCode())), BankType.class);
+				if (findOne == null || findOne.getId() == null) {
 					bankTypeMongoRepo.insert(bankType);
 				} else {
 					log.warn("BankType: {} is trying to insert again", bankType.getDescription());
