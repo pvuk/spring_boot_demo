@@ -8,12 +8,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @author venkataudaykiranp
  * 
  * <p>
- * 	we can start Spring boot application without using @SpringBootApplication.
+ * 	we can start Spring boot application without using {@link org.springframework.boot.autoconfigure.SpringBootApplication @SpringBootApplication}.<br>
  * 	Ex: We can also start Spring boot application by Configure with below annotations
- * 		@Configuration, @EnableAutoConfiguration
+ * 		{@link org.springframework.context.annotation.Configuration @Configuration }, 
+ * 		{@link org.springframework.boot.autoconfigure.EnableAutoConfiguration @EnableAutoConfiguration}
  * </p>
  * <p>
- * 	The @SpringBootApplication annotation enables auto-configuration and component scanning.
+ * 	The {@link org.springframework.boot.autoconfigure.SpringBootApplication @SpringBootApplication}
+ *  annotation enables auto-configuration and component scanning.
  * </p>
  *
  */

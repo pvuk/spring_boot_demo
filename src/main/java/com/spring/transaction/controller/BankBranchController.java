@@ -37,17 +37,19 @@ public class BankBranchController {
 	
 	/**
 	 * <p>
-	 * if you call below service as GET then 405 status will return. Because you are
+	 * If you call below service as GET then 405 status will return. Because you are
 	 * calling GET but this service allows POST
 	 * </p> 
-	 * <b>Status: </b>405 Method Not
-	 * Allowed
-	 * 
+	 * <b>Status: </b>405 Method Not Allowed
 	 * <p>
 	 * A request was made of a resource using a request method not supported by that
 	 * resource; for example using GET on a form which requires data to be presented
 	 * via POST, or using PUT on a read-only resource
 	 * </p>
+	 * 
+	 * @param bankBranchId
+	 * @return bankBranch
+	 * @throws Exception
 	 */
 	@PostMapping(path = "/getById")
 	public @ResponseBody ResponseEntity<Object> getById(@RequestBody(required=true) ObjectId bankBranchId) throws Exception {

@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
  *         {@link org.springframework.beans.BeanUtils#copyProperties
  *         BeanUtils.copyProperties} method is used to copy entire data from
  *         PermanentAddress to CurrentAddress.
- *         </br>
+ *         <br>
  *         <b>Common Address using classes: </b> {@link com.spring.transaction.service.impl.BankBranchServiceImpl#save BankBranchServiceImpl.save}  
  *
  */

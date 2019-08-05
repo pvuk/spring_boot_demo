@@ -16,14 +16,14 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class StringUtil {
 	
-	/**
+		/**
 	    * This method is for log print. 
 	    * If parsing fails will return finalQuery otherwise parsed query will return.
-	    * Replace parameter with value. For ex: customerId = :customerId with customerId = 2888.</br>
+	    * Replace parameter with value. For ex: customerId = :customerId with customerId = 2888.
 	    * <pre>
-	    * {@code @Autowired private JdbcTemplate jdbcTemplate;}
+	    * {@code @Autowired private JdbcTemplate jdbcTemplate;
 	    * private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-	    * {@code @PostConstruct private void postConstruct() { namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(jdbcTemplate); }}
+	    * @PostConstruct private void postConstruct() { namedParameterJdbcTemplate = new NamedParameterJdbcTemplate(jdbcTemplate);} 
 	    * 
 	    * String finalQuery = "select * from customer where customerId = : customerId";
 	    * MapSqlParameterSource mapSqlParameter = new MapSqlParameterSource();
@@ -32,9 +32,9 @@ public class StringUtil {
 	    * }
 	    * 
 	    * List<Map<String, Object>> result = namedParameterJdbcTemplate.queryForList(finalQuery, mapSqlParameter);
-	    * </pre>
+	    * }</pre>
 	    * @param finalQuery
-	    * @param param @see {@link org.springframework.jdbc.core.namedparam.MapSqlParameterSource#getValues()}
+	    * @param param {@link org.springframework.jdbc.core.namedparam.MapSqlParameterSource#getValues()}
 	    * @return finalQuery / query (ex: select * from customer where customerId = : customerId; / select * from customer where customerId = 2762;)
 	    */
 		public static String replaceParamWithValue(String finalQuery, Map<String, Object> param) {

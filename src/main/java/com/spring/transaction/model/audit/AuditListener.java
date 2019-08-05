@@ -10,9 +10,9 @@ import javax.persistence.PreUpdate;
 
 /**
  * Customized version of the JPA auditing feature, which responds to entity changes by setting audit fields. See
- * {@link http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-auditing-part-one/}
+ * <a href="http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-auditing-part-one/">spring-data-jpa-tutorial-auditing-part-one</a>
  * and
- * {@link http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-auditing-part-two/}.
+ * <a href="http://www.petrikainulainen.net/programming/spring-framework/spring-data-jpa-tutorial-auditing-part-two/">spring-data-jpa-tutorial-auditing-part-two</a>.
  * We're using a customized version because our audit fields are embedded via composition using
  * {@link AuditData} rather than in-lined via inheritance.
  * 
