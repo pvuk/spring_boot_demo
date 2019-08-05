@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.model.BankBranch;
+import com.spring.transaction.model.BankType;
+import com.spring.transaction.model.CurrentBankAccount;
 
 @Configuration
 @Component
@@ -20,6 +22,6 @@ public class TransRestConfigurer implements RepositoryRestConfigurer {
 
 	@Override
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
-		config.exposeIdsFor(Bank.class, BankBranch.class);
+		config.exposeIdsFor(Bank.class, BankBranch.class, BankType.class, CurrentBankAccount.class);
 	}
 }
