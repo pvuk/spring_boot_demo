@@ -166,12 +166,29 @@
 		"notes": null,
 		"refLink": "https://en.wikipedia.org/wiki/List_of_banks_in_India",
 		"bankType": {
+			"id": "5cece8c83d495818d0bd9f80",
 			"code": "private",
 			"position": 2,
 			"description": "Private Sector Banks",
 			"section": "Scheduled",
 			"category": "Commercial",
 			"comment": ""
+		}
+	},
+	{
+		"bankName": "I don't have bank account",
+		"establishedOn": null,
+		"establishedYear": null,
+		"headQuarter": null,
+		"branches": null,
+		"revenues": null,
+		"strRevenues": null,
+		"totalAssets": null,
+		"strTotalAssets": null,
+		"notes": "Promote bank account to Banks from Customers to become Partern with Banks",
+		"refLink": null,
+		"bankType": {
+			
 		}
 	}
 ]

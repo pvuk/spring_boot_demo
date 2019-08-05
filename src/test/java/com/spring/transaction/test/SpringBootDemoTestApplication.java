@@ -38,9 +38,9 @@ public class SpringBootDemoTestApplication {
 
 //		crudOperationsOfUser(mongoOperation);
 		
-//		insertBankDocumentsFromJSON(mongoOperation);
+		insertBankDocumentsFromJSON(mongoOperation);
 		
-		insertWalletDocumentsFromJSON();
+//		insertWalletDocumentsFromJSON();
 		
 		((AnnotationConfigApplicationContext) ctx).close();//simple casting
 	}
@@ -65,9 +65,10 @@ public class SpringBootDemoTestApplication {
 			List<Bank> list = new ObjectMapper().readValue(file, new TypeReference<List<Bank>>() {});
 			list.forEach(bank->{
 				if (bank.getBankId()==null) {
-					String bankId = mongoOperation.findOne(new Query(Criteria.where("BANK_NAME").is(bank.getBankName())), Bank.class).getBankId();
-					if (bankId == null) {
-						mongoOperation.insert(bank);						
+					Bank findOne = mongoOperation.findOne(new Query(Criteria.where("BANK_NAME").is(bank.getBankName())), Bank.class);
+					if (findOne == null || findOne.getBankId() == null) {
+						mongoOperation.insert(bank);
+						log.warn("insertBankDocumentsFromJSON: {} is inserted", bank);
 					} else {
 						log.warn("BankName: {} is trying to insert again", bank.getBankName());
 					}
