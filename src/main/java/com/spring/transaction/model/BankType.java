@@ -1,7 +1,6 @@
 package com.spring.transaction.model;
 
 import javax.persistence.Embedded;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -46,7 +45,7 @@ public class BankType {
 	private int position;
 	
 	@Field(value = "DESCRIPTION", order = 4)
-	@NotEmpty(message = "Bank Type is required field.")
+	@NotNull(message = "Bank Type is required field.")
 	private String description;
 	
 	@Field(value = "SECTION", order = 5)

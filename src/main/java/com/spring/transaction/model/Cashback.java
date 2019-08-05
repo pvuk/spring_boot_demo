@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Embedded;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -36,7 +35,7 @@ public class Cashback {
 	private Date cashbackOn;
 	
 	@Field(value = "DESCRIPTION", order = 6)
-	@NotEmpty(message = "Cashback Amount Description is required field.")
+	@NotNull(message = "Cashback Amount Description is required field.")
 	private String description;
 	
 	@Field(value = "CASHBACK_ELIGIBLE_ONLY_WHEN", order = 7)

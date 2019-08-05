@@ -1,7 +1,7 @@
 package com.spring.transaction.model;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
@@ -26,6 +26,6 @@ public class PaymentInstallmentStatus {
 	@Field(value="POSITION", order = 3) private int position;
 	
 	@Field(value="DESCRIPTION", order = 4)
-	@NotEmpty(message = "Status is required field.")
+	@NotNull(message = "Status is required field.")
 	private String description;
 }

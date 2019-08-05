@@ -1,6 +1,6 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,7 +23,7 @@ public class CardTypeAuthorization {
 	private int position;
 	
 	@Field(value = "DESCRIPTION", order = 4)
-	@NotEmpty(message = "Card Type is required field.")
+	@NotNull(message = "Card Type is required field.")
 	private String description;
 	
 	@Field(value = "COMMENTS", order = 5)

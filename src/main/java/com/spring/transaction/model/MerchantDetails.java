@@ -1,6 +1,6 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -29,7 +29,7 @@ public class MerchantDetails {
 	private int position;
 	
 	@Field(value="DESCRIPTION", order = 4)
-	@NotEmpty(message = "Merchant Name is required field.")
+	@NotNull(message = "Merchant Name is required field.")
 	private String description;
 	
 	@Field(value="MERCHANT_POINTS_ID", order = 5)

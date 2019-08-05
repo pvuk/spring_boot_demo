@@ -1,6 +1,5 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -25,27 +24,27 @@ public class RewardPoints {
 	 * 1. Only one record allows per card, per statement in REWARD_POINTS
 	 */
 	@Field(value="REWARD_CARD_ID", order = 2)
-	@NotEmpty(message = "Reward Card is required field.")
+	@NotNull(message = "Reward Card is required field.")
 	private String rewardCardId;
 	
 	@Field(value="REWARD_POINTS_CATALOGUE_ID", order = 3)
-//	@NotEmpty(message = "Reward Points Catalogue is required field.")
+//	@NotNull(message = "Reward Points Catalogue is required field.")
 	private String rewardPointsCatalogueId;
 	
 	@Field(value="MERCHANT_DETAILS_ID", order = 10)
-//	@NotEmpty(message = "Merchant Name is required field.")
+//	@NotNull(message = "Merchant Name is required field.")
 	private String merchantDetailsId;
 	
 	@Field(value="REWARD_POINTS_EARNED_ID", order = 11)
-	@NotEmpty(message = "Reward Points Earned is required field.")
+	@NotNull(message = "Reward Points Earned is required field.")
 	private String rewardPointsEarnedId;
 	
 	@Field(value="REWARD_POINTS_REDEEM_ID", order = 13)
-//	@NotEmpty(message = "Reward Points Redeemed To is required field.")
+//	@NotNull(message = "Reward Points Redeemed To is required field.")
 	private String rewardPointsRedeemId;
 	
 	@Field(value = "STATEMENT_CREDIT_CARD_ID", order = 14)
-	@NotEmpty(message = "Statement Of Credit Card is required field.")
+	@NotNull(message = "Statement Of Credit Card is required field.")
 	private String statementCreditCardId;
 	
 	@Field(value="CUSTOMER_ID", order = 15)

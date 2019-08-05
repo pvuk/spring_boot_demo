@@ -1,6 +1,5 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -30,7 +29,7 @@ public class RewardPointsCatalogue {
 	private int position;
 	
 	@Field(value="DESCRIPTION", order = 4)
-	@NotEmpty(message = "Reward Points On Every is required field.")
+	@NotNull(message = "Reward Points On Every is required field.")
 	private String description;
 	
 	@Field(value="CUSTOMER_ID", order = 5)

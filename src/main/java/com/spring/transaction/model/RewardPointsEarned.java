@@ -3,7 +3,6 @@ package com.spring.transaction.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -30,11 +29,11 @@ public class RewardPointsEarned {
 	 * 3. If card is in inActive state don't run Thread cycle.
 	 */
 	@Field(value="previous_Balance", order = 2)
-	@NotEmpty(message = "Previous Balance / Opening Balance is required field.")
+	@NotNull(message = "Previous Balance / Opening Balance is required field.")
 	private long previousBalance;
 	
 	@Field(value="REWARDS_EARNED", order = 3)
-	@NotEmpty(message = "Rewards Earned is required field.")
+	@NotNull(message = "Rewards Earned is required field.")
 	private long rewardsEarned;
 	
 	/*

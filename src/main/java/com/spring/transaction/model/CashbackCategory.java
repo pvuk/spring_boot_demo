@@ -1,6 +1,6 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,6 +23,6 @@ public class CashbackCategory {
 	private int position;
 	
 	@Field(value = "DESCRIPTION", order = 4)
-	@NotEmpty(message = "Cashback Category is required field.")
+	@NotNull(message = "Cashback Category is required field.")
 	private String description;
 }

@@ -2,7 +2,6 @@ package com.spring.transaction.model;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -27,7 +26,7 @@ public class PaymentHistory {
 	@Id
 	private String paymentHistoryId;
 	
-	@NotEmpty(message="Payment On Account is required field.")
+	@NotNull(message="Payment On Account is required field.")
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 2)
 	private String paymentOnAccountId;
 	
@@ -44,11 +43,11 @@ public class PaymentHistory {
 	@Field(value="YEAR", order = 5)
 	private Long year;
 	
-	@NotEmpty(message = "Paid On is required field.")
+	@NotNull(message = "Paid On is required field.")
 	@Field(value = "PAID_ON")
 	private Date paidOn;
 	
-	@NotEmpty(message="MileStone Achievement is required field.")
+	@NotNull(message="MileStone Achievement is required field.")
 	@Field(value = "MILESTONE_ACHIEVEMENT_ID")
 	private Long mileStoneAchievementId;
 	

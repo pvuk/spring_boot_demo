@@ -1,7 +1,6 @@
 package com.spring.transaction.model;
 
 import javax.persistence.Column;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import org.bson.types.ObjectId;
@@ -57,7 +56,7 @@ public class PermanentAddress {
 	private String country;
 
 	@Field(value="ADDRESS_ID", order = 8)
-	@NotEmpty(message = "Address is required field.")
+	@NotNull(message = "Address is required field.")
 	private String addressId;
 	
 	/*

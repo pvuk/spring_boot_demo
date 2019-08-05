@@ -1,6 +1,6 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -23,7 +23,7 @@ public class MerchantPoints {
 	private String merchantPointsId;
 	
 	@Field(value="EACH_POINT_VALUE", order = 2)
-	@NotEmpty(message = "Point Value is required field.")
+	@NotNull(message = "Point Value is required field.")
 	private long eachPointValue;
 	
 	@Field(value="POINTS_ON_EVERY", order = 3)
