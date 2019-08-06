@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Embedded;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -34,8 +33,7 @@ public class Bank {
 
 	@Field(value = "BANK_NAME", order = 2)
 	@Indexed(unique = true)
-	@NotNull(message = "Bank Name Can't be empty.")
-	@NotBlank(message = "Bank Name is required field.")
+	@NotNull(message = "Bank Name is required field.")
 	private String bankName;
 	
 	@Field(value = "ESTABLISHED_ON", order = 3)

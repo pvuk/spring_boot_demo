@@ -4,7 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Id;
 import javax.persistence.PrePersist;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -31,6 +30,7 @@ public class ProfilePassword {
 	private String profilePasswordId;
 	
 	@Field(value = "PASSWORD")
+	@NotNull(message = "Password is required field.")
 	private String password;
 	
 	@Field(value = "IS_ACTIVE")
@@ -64,7 +64,6 @@ public class ProfilePassword {
 
 	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "CustomerId is required field.")
-	@NotBlank(message = "CustomerId is not blank.")
 	private String customerId;
 	
 	@PrePersist

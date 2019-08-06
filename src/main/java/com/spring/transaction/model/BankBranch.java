@@ -30,14 +30,12 @@ public class BankBranch {
 	@Indexed
 	@DBRef
 	@Field(value="BANK_CODE", order = 2)
-	@NotNull(message="Bank Can't be empty.")
 	@NotBlank(message="Bank is required field.")
 	private Bank bank;
 	
 	@Field(value="IFSC_CODE", order = 3)
 	@Indexed
-	@NotNull(message="IFSC Code Can't be empty")
-	@NotBlank(message="IFSC Code is required field.")
+	@NotNull(message="IFSC Code is required field.")
 	private String ifscCode;
 	
 	@Field(value="MICR_CODE", order = 4) 				private long micrCode;

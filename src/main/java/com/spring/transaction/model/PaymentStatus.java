@@ -1,6 +1,5 @@
 package com.spring.transaction.model;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -20,7 +19,7 @@ public class PaymentStatus {
 	
 	@Field(value="CODE", order = 2)
 	@Indexed(unique = true)
-	@NotBlank(message = "Code is required field.")
+	@NotNull(message = "Code is required field.")
 	private String code;
 	
 	@Field(value="POSITION", order = 3) private int position;
