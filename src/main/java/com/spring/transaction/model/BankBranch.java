@@ -1,7 +1,6 @@
 package com.spring.transaction.model;
 
 import javax.persistence.Embedded;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -30,7 +29,7 @@ public class BankBranch {
 	@Indexed
 	@DBRef
 	@Field(value="BANK_CODE", order = 2)
-	@NotBlank(message="Bank is required field.")
+	@NotNull(message="Bank is required field.")
 	private Bank bank;
 	
 	@Field(value="IFSC_CODE", order = 3)
