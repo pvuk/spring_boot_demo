@@ -17,6 +17,9 @@ public class FuelPayment {
 	@Id
 	private String fuelPaymentId;
 	
+	@NotNull(message = "Payment By is required field.")
+	private String paymentById;
+	
 	@NotNull(message = "Bill Amount is required field.")
 	private BigDecimal billAmount;
 	private Date paymentOn;
