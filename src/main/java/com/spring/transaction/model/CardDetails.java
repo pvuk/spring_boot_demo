@@ -28,6 +28,8 @@ public class CardDetails {
 	@Field(value = "CARD_ID", order = 3)
 	private String cardId;
 	
+	private String feesAndChargesId;
+	
 	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")
 	private String customerId;

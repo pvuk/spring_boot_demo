@@ -40,7 +40,7 @@ public class PaymentReceived {
 	private String referenceNo;
 	
 	/*
-	 * 1. Where the transaction is done.
+	 * 1. Where the transaction is done(Payment Description).
 	 */
 	@Field(value = "TRANSACTION_DETAILS")
 	@NotNull(message="Transaction Details is required field.")
