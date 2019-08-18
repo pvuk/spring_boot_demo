@@ -1,2 +1,0 @@
-1. This Project using Spring boot + Maven + Git + MongoDB
-2. This Project depends on lib project which is available at https://github.com/pvuk/lib.git 

@@ -1,4 +1,9 @@
-package com.spring.transaction.pattern;
+package com.spring.transaction.pattern.abstraction.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.spring.transaction.pattern.abstraction.EntityBridgeAbstraction;
+import com.spring.transaction.pattern.service.EntityBridgeImplementor;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,8 +15,10 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @Slf4j
+@Service
 public class EntityBridgeAbstractionImpl implements EntityBridgeAbstraction {
 
+//	@Autowired
 	private EntityBridgeImplementor dbConnect = null;
 	
 	public EntityBridgeAbstractionImpl(EntityBridgeImplementor dbConnect) {

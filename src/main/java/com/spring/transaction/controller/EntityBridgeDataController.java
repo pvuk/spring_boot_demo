@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.transaction.exception.NotFoundException;
-import com.spring.transaction.pattern.EntityBridgeAbstraction;
-import com.spring.transaction.pattern.EntityBridgeAbstractionImpl;
-import com.spring.transaction.pattern.EntityBridgeHibernateImplementor;
-import com.spring.transaction.pattern.EntityBridgeMongoDBImplementor;
-import com.spring.transaction.pattern.EntityBridgeMySqlImplementor;
-import com.spring.transaction.pattern.EntityBridgeOracleImplementor;
-import com.spring.transaction.pattern.EntityBridgePostgresqlImplementor;
+import com.spring.transaction.pattern.abstraction.EntityBridgeAbstraction;
+import com.spring.transaction.pattern.abstraction.impl.EntityBridgeAbstractionImpl;
+import com.spring.transaction.pattern.service.impl.EntityBridgeHibernateServiceImplementor;
+import com.spring.transaction.pattern.service.impl.EntityBridgeMongoDBServiceImplementor;
+import com.spring.transaction.pattern.service.impl.EntityBridgeMySqlServiceImplementor;
+import com.spring.transaction.pattern.service.impl.EntityBridgeOracleServiceImplementor;
+import com.spring.transaction.pattern.service.impl.EntityBridgePostgresqlServiceImplementor;
 import com.spring.transaction.validator.MessageConstants;
 
 /**
@@ -26,25 +26,24 @@ import com.spring.transaction.validator.MessageConstants;
 @RequestMapping(value = "/data/custom/")
 public class EntityBridgeDataController {
 
-	@Autowired
-	EntityBridgeAbstraction connect;
+	@Autowired private EntityBridgeAbstraction connect;
 
 	public @ResponseBody Object save(@PathVariable(name = "dbConnect") String dbConnect, @RequestBody Object save) {
 		switch (dbConnect) {
 		case "MongoDB":
-			connect = new EntityBridgeAbstractionImpl(new EntityBridgeMongoDBImplementor());
+			connect = new EntityBridgeAbstractionImpl(new EntityBridgeMongoDBServiceImplementor());
 			break;
 		case "Postgresql":
-			connect = new EntityBridgeAbstractionImpl(new EntityBridgePostgresqlImplementor());
+			connect = new EntityBridgeAbstractionImpl(new EntityBridgePostgresqlServiceImplementor());
 			break;
 		case "Hibernate":
-			connect = new EntityBridgeAbstractionImpl(new EntityBridgeHibernateImplementor());
+			connect = new EntityBridgeAbstractionImpl(new EntityBridgeHibernateServiceImplementor());
 			break;
 		case "MySql":
-			connect = new EntityBridgeAbstractionImpl(new EntityBridgeMySqlImplementor());
+			connect = new EntityBridgeAbstractionImpl(new EntityBridgeMySqlServiceImplementor());
 			break;
 		case "Oracle":
-			connect = new EntityBridgeAbstractionImpl(new EntityBridgeOracleImplementor());
+			connect = new EntityBridgeAbstractionImpl(new EntityBridgeOracleServiceImplementor());
 			break;
 		default:
 			throw new NotFoundException("Database notfound. " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT);

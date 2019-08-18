@@ -1,6 +1,8 @@
-package com.spring.transaction.pattern;
+package com.spring.transaction.pattern.service.impl;
 
-public class EntityBridgeMySqlImplementor implements EntityBridgeImplementor {
+import com.spring.transaction.pattern.service.EntityBridgeImplementor;
+
+public class EntityBridgeMySqlServiceImplementor implements EntityBridgeImplementor {
 
 	@Override
 	public Object saveModel(Object save) {

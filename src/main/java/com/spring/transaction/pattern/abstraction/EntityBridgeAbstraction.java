@@ -1,4 +1,4 @@
-package com.spring.transaction.pattern;
+package com.spring.transaction.pattern.abstraction;
 
 public interface EntityBridgeAbstraction {
 	

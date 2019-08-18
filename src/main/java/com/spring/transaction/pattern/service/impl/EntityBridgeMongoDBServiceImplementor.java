@@ -1,6 +1,11 @@
-package com.spring.transaction.pattern;
+package com.spring.transaction.pattern.service.impl;
 
-public class EntityBridgeOracleImplementor implements EntityBridgeImplementor {
+import org.springframework.stereotype.Service;
+
+import com.spring.transaction.pattern.service.EntityBridgeImplementor;
+
+@Service
+public class EntityBridgeMongoDBServiceImplementor implements EntityBridgeImplementor {
 
 	@Override
 	public Object saveModel(Object save) {
