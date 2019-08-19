@@ -34,14 +34,15 @@ public class CardLimit {
 	@Field(value="UPGRADE_LIMIT_TO", order = 4) private Long upgradeLimitTo;
 	@Field(value="UPGRADE_LIMIT_ON", order = 5) private Timestamp upgradeLimitOn;
 
-	@Field(value="TEMPORARY_LIMIT", order = 6) private Long temporaryLimit;
-	@Field(value="TEMPORARY_LIMIT_FROM", order = 7) private Date temporaryLimitFrom;
-	@Field(value="TEMPORARY_LIMIT_TO", order = 8) private Date temporaryLimitTo;
+	@Field(value="TEMPORARY_LIMIT_FROM", order = 6) 				private Long temporaryLimit;
+	@Field(value="TEMPORARY_LIMIT_TO", order = 7) 					private Date temporaryLimitFrom;
+	@Field(value="TEMPORARY_LIMIT_ELIGIBLE_FROM_DATE", order = 8) 	private Date temporaryLimitEligibleFromDate;
+	@Field(value="TEMPORARY_LIMIT_ELIGIBLE_TO_DATE", order = 9) 	private Date temporaryLimitEligibleToDate;
 	
-	@Field(value = "CARD_DETAILS_ID", order = 9)
+	@Field(value = "CARD_DETAILS_ID", order = 10)
 	private String cardDetailsId;
 	
-	@Field(value="CUSTOMER_ID", order = 10)
+	@Field(value="CUSTOMER_ID", order = 11)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 }
