@@ -7,6 +7,10 @@ com.spring.transaction.dto
 com.spring.transaction.exception
 com.spring.transaction.model
 com.spring.transaction.model.audit
+com.spring.transaction.pattern.abstraction
+com.spring.transaction.pattern.abstraction.impl
+com.spring.transaction.pattern.service
+com.spring.transaction.pattern.service.impl
 com.spring.transaction.repository
 com.spring.transaction.security
 com.spring.transaction.service
