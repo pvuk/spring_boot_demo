@@ -100,6 +100,8 @@ public class CreditCardStatement {
 	@DBRef
 	private CreditCard creditCardId;
 	
+	private String creditCardModeOfPaymentId;
+	
 	/*
 	 * check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */

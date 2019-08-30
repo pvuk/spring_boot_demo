@@ -1,0 +1,279 @@
+[
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Using RBL Bank Account",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Next Day",
+					"paymentCreditToCardAccount": "Next Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Pay Now",
+						"loginAndAccessLink": "https://online.rblbank.com/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&__FG_BUTTONS__=LOAD&ACTION.LOAD=Y&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=176",
+						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/rblV1.png",
+						"comment": ""
+					}
+				]
+			},
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Using Other Bank Account (Non - RBL Bank)",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Same Day",
+					"paymentCreditToCardAccount": "Next Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Pay Now",
+						"loginAndAccessLink": "https://ccservices.rblbank.com/RblPayU/",
+						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/Payu.jpg",
+						"comment": ""
+					},
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Pay Now",
+						"loginAndAccessLink": "https://ccservices.rblbank.com/rblrazorpay/",
+						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/rzp-logo-RBL_Bank.png",
+						"comment": ""
+					},
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Pay Now",
+						"loginAndAccessLink": "https://pgi.billdesk.com/pgidsk/pgmerc/rtncard/index.jsp",
+						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/Billdesk_logo.jpg",
+						"comment": ""
+					}
+				]
+			}
+		],
+		"modeOfPayment": "Net Banking",
+		"customerId": -1
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "All Bank Debit Cards accepted",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Same Day",
+					"paymentCreditToCardAccount": "Next Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Pay Now",
+						"loginAndAccessLink": "https://ccservices.rblbank.com/rblrazorpay/",
+						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/rzp-logo-RBL_Bank.png",
+						"comment": ""
+					}
+				]
+			},
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Debit Cards accepted",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Same Day",
+					"paymentCreditToCardAccount": "Next Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Pay Now",
+						"loginAndAccessLink": "https://pgi.billdesk.com/pgidsk/pgmerc/rtncard/index.jsp",
+						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/Billdesk_logo.jpg",
+						"comment": ""
+					}
+				]
+			}
+		],
+		"modeOfPayment": "Debit Card",
+		"customerId": -1
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Using Virtual Payment Address (VPA)",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Same Day",
+					"paymentCreditToCardAccount": "Next Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "RBL MyCard App",
+						"loginAndAccessLink": "https://www.rblbank.com/product/credit-cards/rbl-mycard-app",
+						"loginAndAccessImage": "",
+						"comment": ""
+					}
+				]
+			}
+		],
+		"modeOfPayment": "UPI",
+		"customerId": -1
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Using any Bank Account",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Same Day",
+					"paymentCreditToCardAccount": "Same Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "",
+						"loginAndAccessLink": "",
+						"loginAndAccessImage": "",
+						"comment": "Login to your bank account and use below \u2018Payee \/ Beneficiary\u2019 details:\r\n\r\nPayee Name: Name as on your RBL Bank Credit Card\r\nPayee Account Number: 16-digit Credit Card number\r\nBank Name: RBL Bank\r\nIFSC Code: RATN0CRCARD\r\nBranch Location: NOC Goregaon, Mumbai"
+					}
+				]
+			}
+		],
+		"modeOfPayment": "NEFT Payment",
+		"customerId": -1
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Any Bank Account",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Next Day",
+					"paymentCreditToCardAccount": "Same Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "Click here",
+						"loginAndAccessLink": "https://www.rblbank.com/api/v1/doc/document/Credit%20Cards/NACH-Mandate-form-I.pdf",
+						"loginAndAccessImage": "",
+						"comment": "Registration required\r\nClick here to download the form"
+					}
+				]
+			}
+		],
+		"modeOfPayment": "NACH",
+		"customerId": -1
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Deposit at RBL Bank Branches",
+				"convenienceFee": "Rs. 250/- + GST Per Transaction",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Next Day",
+					"paymentCreditToCardAccount": "Same Day",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "RBL Bank Branch Locations",
+						"loginAndAccessLink": "https://www.rblbank.com/locate-branch",
+						"loginAndAccessImage": "",
+						"comment": ""
+					}
+				]
+			}
+		],
+		"modeOfPayment": "Cash",
+		"customerId": -1
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "Deposit at RBL Bank Branches / Courier",
+				"convenienceFee": "FREE",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "Subject to realization",
+					"paymentCreditToCardAccount": "Subject to realization",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "RBL Bank Branch Locations",
+						"loginAndAccessLink": "https://www.rblbank.com/locate-branch",
+						"loginAndAccessImage": "",
+						"comment": "RBL Bank Branch Locations \r\nOr\r\nCourier your cheques to: \r\nRBL Bank Limited,\r\nCards Operating Centre,\r\nUnit: 306 \u2013311, 3rd Floor,\r\nJMDMegapolis,\r\nSohna Road, Sector - 48,\r\nGurugram - 122 018, Haryana."
+					}
+				]
+			},
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "",
+				"convenienceFee": "",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "",
+					"paymentCreditToCardAccount": "",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "",
+						"loginAndAccessLink": "",
+						"loginAndAccessImage": "",
+						"comment": ""
+					}
+				]
+			}
+		],
+		"modeOfPayment": "Cheque",
+		"customerId": -1
+	}
+]

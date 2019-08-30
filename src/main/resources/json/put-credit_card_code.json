@@ -1,69 +1,110 @@
-[{
-	"code":"icicicoralhp",
-	"position":1,
-	"description":"ICICI CORAL HP PETROLIUM"
-},{
-	"code":"sbisimplyclick",
-	"position":2,
-	"description":"SBI SIMPLY CLICK"
-},{
-	"code":"citiplatinumcashback",
-	"position":3,
-	"description":"Citi Platinum Cashback"
-},{
-	"code":"rblmovieblockbuster",
-	"position":4,
-	"description":"RBL MOVIE BLOCKBUSTER"
-},{
-	"code":"hdfctimestitanium",
-	"position":5,
-	"description":"HDFC TIEMS TITANIUM"
-},{
-	"code":"citiindianoil",
-	"position":6,
-	"description":"CITI INDIAN OIL"
-},{
-	"code":"kotakroyale",
-	"position":7,
-	"description":"KOTAK ROYALE"
-},{
-	"code":"yesrewardsplus",
-	"position":8,
-	"description":"YES REWARDS PLUS"
-},{
-	"code":"sbiprimepro",
-	"position":9,
-	"description":"SBI PRIME PRO"
-},{
-	"code":"amexeverdaygoldcreditcard",
-	"position":10,
-	"description":"AMEX EVERDAY GOLD CREDIT CARD"
-},{
-	"code":"paytmpostpaid",
-	"position":11,
-	"description":"PAYTM POSTPAID"
-},{
-	"code":"indusindauraplatinum",
-	"position":12,
-	"description":"INDUSIND AURA PLATINUM"
-},{
-	"code":"bajajfinservemi",
-	"position":13,
-	"description":"BAJAJ FINSERV EMI"
-},{
-	"code":"icicipaylaterxx1985",
-	"position":14,
-	"description":"ICICI PAY LATER XX1985"
-},{
-	"code":"bajajfinservrblbanksupercard",
-	"position":15,
-	"description":"BAJAJ FINSERV RBL BANK SUPERCARD"
-},{
-	"code":"icicipaylaterxx2159 ",
-	"position":16,
-	"description":"ICICI PAY LATER XX2159"
-},{
-	"code":"indusindnexxt",
-	"position":17,
-	"description":"INDUSIND NEXXT"
-}]
+[
+	{
+		"code": "icicicoralhp",
+		"position": 1,
+		"description": "ICICI CORAL HP PETROLIUM",
+		"isActive": true
+	},
+	{
+		"code": "sbisimplyclick",
+		"position": 2,
+		"description": "SBI SIMPLY CLICK",
+		"isActive": true
+	},
+	{
+		"code": "citiplatinumcashback",
+		"position": 3,
+		"description": "Citi Platinum Cashback",
+		"isActive": true
+	},
+	{
+		"code": "rblmovieblockbuster",
+		"position": 4,
+		"description": "RBL MOVIE BLOCKBUSTER",
+		"isActive": true
+	},
+	{
+		"code": "hdfctimestitanium",
+		"position": 5,
+		"description": "HDFC TIEMS TITANIUM",
+		"isActive": true
+	},
+	{
+		"code": "citiindianoil",
+		"position": 6,
+		"description": "CITI INDIAN OIL",
+		"isActive": true
+	},
+	{
+		"code": "kotakroyale",
+		"position": 7,
+		"description": "KOTAK ROYALE",
+		"isActive": true
+	},
+	{
+		"code": "yesrewardsplus",
+		"position": 8,
+		"description": "YES REWARDS PLUS",
+		"isActive": true
+	},
+	{
+		"code": "sbiprimepro",
+		"position": 9,
+		"description": "SBI PRIME PRO",
+		"isActive": true
+	},
+	{
+		"code": "amexeverdaygoldcreditcard",
+		"position": 10,
+		"description": "AMEX EVERDAY GOLD CREDIT CARD",
+		"isActive": true
+	},
+	{
+		"code": "paytmpostpaid",
+		"position": 11,
+		"description": "PAYTM POSTPAID",
+		"isActive": false
+	},
+	{
+		"code": "indusindauraplatinum",
+		"position": 12,
+		"description": "INDUSIND AURA PLATINUM",
+		"isActive": false
+	},
+	{
+		"code": "bajajfinservemi",
+		"position": 13,
+		"description": "BAJAJ FINSERV EMI",
+		"isActive": true
+	},
+	{
+		"code": "icicipaylaterxx1985",
+		"position": 14,
+		"description": "ICICI PAY LATER XX1985",
+		"isActive": true
+	},
+	{
+		"code": "bajajfinservrblbanksupercard",
+		"position": 15,
+		"description": "BAJAJ FINSERV RBL BANK SUPERCARD",
+		"isActive": true
+	},
+	{
+		"code": "icicipaylaterxx2159 ",
+		"position": 16,
+		"description": "ICICI PAY LATER XX2159",
+		"isActive": false
+	},
+	{
+		"code": "indusindnexxt",
+		"position": 17,
+		"description": "INDUSIND NEXXT",
+		"isActive": true
+	},
+	{
+		"code": "amazonpayicicibank",
+		"position": 18,
+		"description": "AMAZON PAY ICICI BANK",
+		"isActive": true
+	}
+]

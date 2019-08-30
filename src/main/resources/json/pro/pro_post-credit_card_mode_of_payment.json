@@ -1,0 +1,55 @@
+[
+	{
+		"_comment": "https://www.freeformatter.com/json-escape.html",
+		"//comment": "use above site to parse json string with multi lines for generate json string with escape sequence"
+	},
+	{
+		"creditCard": {
+			"creditCardId": ""
+		},
+		"ccPaymentTypeList": [
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "",
+				"convenienceFee": "",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "",
+					"paymentCreditToCardAccount": "",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "",
+						"loginAndAccessLink": "",
+						"loginAndAccessImage": "",
+						"comment": ""
+					}
+				]
+			},
+			{
+				"creditCardModeOfPaymentId": "",
+				"type": "",
+				"convenienceFee": "",
+				"ccPaymentTurnAroundTime": {
+					"ccPaymentType": "",
+					"availableLimitRelease": "",
+					"paymentCreditToCardAccount": "",
+					"customerId": -1
+				},
+				"ccPaymentLoginAndAccessList": [
+					{
+						"creditCardPaymentTypeId": "",
+						"loginAndAccessLinkDescription": "",
+						"loginAndAccessLink": "",
+						"loginAndAccessImage": "",
+						"comment": ""
+					}
+				]
+			}
+		],
+		"modeOfPayment": "",
+		"customerId": -1
+	}
+]

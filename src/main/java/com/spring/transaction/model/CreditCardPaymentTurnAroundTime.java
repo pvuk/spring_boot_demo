@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 
@@ -15,27 +16,22 @@ import lombok.Data;
  *
  */
 @Data
-@Document(collection="CreditCardPaymentTurnAroundTime")
+@Document(collection="CREDIT_CARD_PAYMENT_TURN_AROUND_TIME")
 public class CreditCardPaymentTurnAroundTime {
 	
 	@Id
 	private String creditCardPaymentTurnAroundTimeId;
 	
-	@NotNull(message = "Credit Card Mode Of Payment is required field.")
-	private String creditCardModeOfPaymentId;
+	@NotNull(message = "Credit Card Payment Type is required field.")
+	private CreditCardPaymentType ccPaymentType;
 	
 	private String availableLimitRelease;
 	private String paymentCreditToCardAccount;
-	/*
-	 * 1. This field contains links and some additional information regarding payment
-	 * 2. Contains Links to redirect payment gateways.
-	 */
-	private String loginAndAccess;
 	
 	/*
-	 * 1. This field contains image data in database or image link reference to display on UI
+	 * check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
-	private String loginAndAccessImage;
-	
-	private String comment;
+	@Field(value="CUSTOMER_ID", order = 6)
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

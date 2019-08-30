@@ -8,5 +8,8 @@ import com.spring.transaction.model.CreditCard;
 
 @RepositoryRestResource(collectionResourceRel = "creditCard", path = "creditCard")
 public interface CreditCardRepository extends MongoRepository<CreditCard, ObjectId> {
-
+	@Override
+	default <S extends CreditCard> S save(S entity) {
+		return entity;
+	}
 }
