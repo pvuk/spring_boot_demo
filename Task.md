@@ -53,6 +53,8 @@
 ===================================================================================================================================
 1. Write @annotation that reads all variable names and when insert into database columns should be created as capital letters.
 2. Implement default method functionality without breaking old code in interfaces.
+3. Read .html file from url / local., In this page word contains url link image., read the data then after.. until then next new word when synonym comes.
+	Ex:	Save it with file name Inquisitor +(Telugu Meaning).txt.
 
 ===================================================================================================================================
 ##MongoDB - Task																	
