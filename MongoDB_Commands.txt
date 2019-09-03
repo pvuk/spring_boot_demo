@@ -259,6 +259,13 @@ MongoDB Enterprise > db.BANK_BRANCH.remove({ "_id" : ObjectId("5c519d43ee4cea153
 WriteResult({ "nRemoved" : 1 })
 
 =========================================================================================================================================
+														Drop Document in collection
+														https://docs.mongodb.com/v3.2/tutorial/remove-documents/
+=========================================================================================================================================
+1. to drop the collection 
+>db.users.drop()
+
+=========================================================================================================================================
 db.<collectionName>.count();
 1.6. Administrative Commands
 Following are some of the administrative commands that can be helpful in finding collection details such as storage size, total size, and overall statistics.
