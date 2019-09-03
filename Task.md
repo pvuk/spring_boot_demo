@@ -55,6 +55,7 @@
 2. Implement default method functionality without breaking old code in interfaces.
 3. Read .html file from url / local., In this page word contains url link image., read the data then after.. until then next new word when synonym comes.
 	Ex:	Save it with file name Inquisitor +(Telugu Meaning).txt.
+4. When bill is calculated provide calculate button to know user before saving the record.
 
 ===================================================================================================================================
 ##MongoDB - Task																	
