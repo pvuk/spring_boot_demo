@@ -251,26 +251,6 @@
 						"comment": "RBL Bank Branch Locations \r\nOr\r\nCourier your cheques to: \r\nRBL Bank Limited,\r\nCards Operating Centre,\r\nUnit: 306 \u2013311, 3rd Floor,\r\nJMDMegapolis,\r\nSohna Road, Sector - 48,\r\nGurugram - 122 018, Haryana."
 					}
 				]
-			},
-			{
-				"creditCardModeOfPaymentId": "",
-				"type": "",
-				"convenienceFee": "",
-				"ccPaymentTurnAroundTime": {
-					"ccPaymentType": "",
-					"availableLimitRelease": "",
-					"paymentCreditToCardAccount": "",
-					"customerId": -1
-				},
-				"ccPaymentLoginAndAccessList": [
-					{
-						"creditCardPaymentTypeId": "",
-						"loginAndAccessLinkDescription": "",
-						"loginAndAccessLink": "",
-						"loginAndAccessImage": "",
-						"comment": ""
-					}
-				]
 			}
 		],
 		"modeOfPayment": "Cheque",
