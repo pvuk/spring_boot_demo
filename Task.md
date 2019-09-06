@@ -33,6 +33,7 @@
 	  @RestResource(exported = false)
 	  void delete(Person entity);
 	}`
+3. Post Data and using Repo (Spring REST) save it in database using postman. URL `http://localhost:8102/springbootmongo/api/creditCard`
 
 ===================================================================================================================================
 ##Maven - Task																	
