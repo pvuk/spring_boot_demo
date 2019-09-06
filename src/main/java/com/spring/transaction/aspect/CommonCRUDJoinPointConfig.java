@@ -21,4 +21,6 @@ public class CommonCRUDJoinPointConfig {
 	@Pointcut("within(@org.springframework.stereotype.Controller *)") public void controller() {}
 
 	@Pointcut("execution(* *.*(..))") protected void allMethod() {}
+	
+	@Pointcut("execution(* com.spring.transaction.controller.*.*()) && !@annotation(com.spring.transaction.aspect.NoLogging)") public void excludeMethods() {};
 }

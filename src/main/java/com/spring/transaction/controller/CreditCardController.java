@@ -2,6 +2,8 @@ package com.spring.transaction.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.transaction.aspect.TrackTime;
@@ -24,7 +27,7 @@ import com.spring.transaction.service.CreditCardService;
  *
  */
 @RestController
-@RequestMapping(value="/creditCard/custom/")
+@RequestMapping(value="/creditCard/custom")
 public class CreditCardController {
 
 	@Autowired private CreditCardService creditCardService;
@@ -36,11 +39,25 @@ public class CreditCardController {
 		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
 	}
 	
-	@TrackTime
+	/*
+	 * https://httpstatuses.com/304
+	 */
+//	@TrackTime
+//	@NoLogging
 	@PostMapping(path = "/saveAll")
-	public @ResponseBody ResponseEntity<Object> saveAll(@RequestBody(required=true) List<CreditCard> creditCards) throws Exception {
+	@ResponseStatus(HttpStatus.OK)
+	@ResponseBody
+	public ResponseEntity<List<CreditCard>> saveAll(HttpServletRequest request, @RequestBody(required=true) List<CreditCard> creditCards) throws Exception {
 		List<CreditCard> list = creditCardService.saveAll(creditCards);
-		return new ResponseEntity<Object>(list, HttpStatus.CREATED);
+		if (list != null && list.size() > 0) {
+			long count = list.stream().filter(cc->cc.getErrorMessageMap().hasErrorMsgs()).count();
+			if (count > 0) {
+				return new ResponseEntity<List<CreditCard>>(list, HttpStatus.BAD_REQUEST);
+				//try to send below response but data returning empty
+//				return new ResponseEntity<List<CreditCard>>(list, HttpStatus.NOT_MODIFIED);
+			}
+		}
+		return new ResponseEntity<List<CreditCard>>(list, HttpStatus.CREATED);
 	}
 
 	@PostMapping(path = "/update")

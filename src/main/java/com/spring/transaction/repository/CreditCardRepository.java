@@ -12,4 +12,8 @@ public interface CreditCardRepository extends MongoRepository<CreditCard, Object
 	default <S extends CreditCard> S save(S entity) {
 		return entity;
 	}
+	
+	public CreditCard findByCreditCardId(String creditCardId);
+
+	public CreditCard findByCode(String code);
 }

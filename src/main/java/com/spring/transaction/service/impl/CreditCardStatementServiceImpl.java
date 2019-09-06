@@ -35,4 +35,10 @@ public class CreditCardStatementServiceImpl implements CreditCardStatementServic
 		return null;
 	}
 
+	@Override
+	public String save(CreditCardStatement ccStatement) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

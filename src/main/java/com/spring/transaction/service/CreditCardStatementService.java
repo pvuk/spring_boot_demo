@@ -9,4 +9,6 @@ import com.spring.transaction.model.CreditCardStatement;
 public interface CreditCardStatementService {
 	
 	public CreditCardStatement uploadStatement(MultipartFile file, String password) throws IOException;
+	
+	public String save(CreditCardStatement ccStatement);
 }

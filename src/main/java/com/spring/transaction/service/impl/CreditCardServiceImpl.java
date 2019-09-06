@@ -1,6 +1,7 @@
 package com.spring.transaction.service.impl;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +41,21 @@ public class CreditCardServiceImpl implements CreditCardService {
 
 	@Override
 	public List<CreditCard> saveAll(List<CreditCard> creditCards) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+//		List<CreditCard> list = creditCardRepo.saveAll(creditCards);
+		creditCards.stream()
+		.filter(cc -> {
+			CreditCard code = creditCardRepo.findByCode(cc.getCode());
+			if(code != null) {
+				cc.getErrorMessageMap().putErrorMsg(cc.getCode(), cc.getDescription() +" Record already exist.");
+				return true;
+			} else {
+				cc = creditCardRepo.save(cc);
+			}
+			return false;
+		})
+			.collect(Collectors.toList())
+			;
+		return creditCards;
 	}
 
 	@Override

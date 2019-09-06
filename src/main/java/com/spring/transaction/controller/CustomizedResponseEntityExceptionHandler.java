@@ -26,6 +26,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  */
 @ControllerAdvice
+//@Order(Ordered.HIGHEST_PRECEDENCE)
 @RestController
 @Slf4j
 public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
@@ -37,6 +38,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		log.error("handleExceptionInternal: {}", getErrorDetails(ex, ex.getMessage(), status, null, request));
 		return super.handleExceptionInternal(ex, body, headers, status, request);
 	}
+	
 	@ExceptionHandler(NotFoundException.class)
 	public final ResponseEntity<ErrorDetails> handleUserNotFoundException(NotFoundException ex, WebRequest request) {
 		HttpStatus httpStatus = HttpStatus.NOT_FOUND;
