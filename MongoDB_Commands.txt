@@ -240,9 +240,6 @@ db.<collectionName>.find({"_id": ObjectId("someid")});
 //
 db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 1, field2: 1});
 db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 0}); // Exclude field1
-//
-// Collection count
-//
 =========================================================================================================================================
 														Delete Documents in a Collection
 Source: https://www.quackit.com/mongodb/tutorial/mongodb_delete_a_document.cfm
@@ -266,7 +263,18 @@ WriteResult({ "nRemoved" : 1 })
 >db.users.drop()
 
 =========================================================================================================================================
+=========================================================================================================================================
+														Count Document in collection
+=========================================================================================================================================
 db.<collectionName>.count();
+
+--To get count of all documents in mongodb
+> var documentCount = 0; db.getCollectionNames().forEach(function(collection) { documentCount++; }); print("Available Documents count: "+ documentCount);
+
+//To get all count of document results in a collection
+> db.getCollectionNames().forEach(function(collection) { resultCount = db[collection].count(); print("Results count for " + collection + ": "+ resultCount); });
+=========================================================================================================================================
+
 1.6. Administrative Commands
 Following are some of the administrative commands that can be helpful in finding collection details such as storage size, total size, and overall statistics.
 
@@ -280,14 +288,23 @@ db.printCollectionStats()
 // and related umber of operations performed
 //
 db.<collectionName>.latencyStats()
-//
+
+=========================================================================================================================================
+															DataSize for Collection
+=========================================================================================================================================
 // Get collection size for data and indexes
-//
-db.<collectionName>.dataSize() // Size of the collection
+>db.<collectionName>.dataSize() // Size of the collection
+
+//To get all dataSize of documents in a collection
+> db.getCollectionNames().forEach(function(collection) { size = db[collection].dataSize(); print("dataSize for " + collection + ": "+ size); });
+=========================================================================================================================================
+
 db.<collectionName>.storageSize() // Total size of document stored in the collection
 db.<collectionName>.totalSize() // Total size in bytes for both collection data and indexes
 db.<collectionName>.totalIndexSize() // Total size of all indexes in the collection
 
+=========================================================================================================================================
+															Index in Collection
 =========================================================================================================================================
 // Query for Indexes(https://docs.mongodb.com/manual/indexes/)
 
@@ -300,6 +317,18 @@ db.<collectionName>.totalIndexSize() // Total size of all indexes in the collect
 //Drops all indexes other than the required index on the _id field. Only call dropIndexes() as a method on a collection object.
 >db.collection.dropIndexes()
 
+> db.getCollectionNames().forEach(function(collection) {
+indexes = db[collection].getIndexes();
+print("Indexes for " + collection + ":");
+printjson(indexes);
+});
+
+=========================================================================================================================================
+															CREATE COLLECTION from JSON
+=========================================================================================================================================
+>var file = cat('C:/data/db/put-card_type_authorization.json'); var o = JSON.parse(file); db.CARD_TYPE_AUTHORIZATION.insert(o);
+
+//>mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file C:/spring_boot_demo/src/main/resources/json/put-card_type_authorization.json
 =========================================================================================================================================
 
 Use the following information to complete this form, but do not click "Connect" yet.
