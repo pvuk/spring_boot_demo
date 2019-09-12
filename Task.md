@@ -34,6 +34,8 @@
 	  void delete(Person entity);
 	}`
 3. Post Data and using Repo (Spring REST) save it in database using postman. URL `http://localhost:8102/springbootmongo/api/creditCard`
+4. Spring JPA - Fetch data by passing two parameters as input and order by param1Desc param2Asc
+	4.1 CurrencyRate findFirstByCurrencyIdAndFiscalPeriodIdOrderByFiscalPeriodIdDescCurrencyIdAsc(@Param("currencyId") Long currencyId, @Param("fiscalPeriodId") Long fiscalPeriodId);
 
 ===================================================================================================================================
 ##Maven - Task																	
