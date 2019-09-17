@@ -70,3 +70,26 @@
 ##Cartography - Task
 ===================================================================================================================================
 1. Implement location tag, location find(where the user stays more often), navigation, recent visited places.
+
+===================================================================================================================================
+#Statement - Task																	
+===================================================================================================================================
+1. If statement(s) generated on Sep 2019 month then some bills are on same month and some bills on Oct 2019 month 
+	show the user current month bills total due amount from 1st date to till last date of month i.e., 28th /30th /31st.
+	1.1. If Statement generated on 02-Sep-2019 and due date is 22-Sep-2019
+	1.2. If Statement generated on 25-Sep-2019 and due date is 12-Oct-2019
+	1.3. From 1.1. and 1.2. the statements are generated on Sep 2019 month but 1.2. statement due date on next month(Oct 2019),
+			  User should display default date from 01-Sep-2019 to 12-Oct-2019 with total amount due.
+	1.4. Show the user last month paid bills amount as notification. From 01-Sep-2019 to 30-Sep-2019.
+	1.5. Sometimes user have to pay Oct 2019 bills on same month, at that time notify the user as alert.
+		1.5.1. All the statements are generated on Sep 2019 month, payment of bills some are in same month and some are in next month,
+				notify the user how much amount he need to pay in Oct month(01-10-2019 to 31-10-2019).
+		1.5.2 Along with Sep bills(exclude paid bills of same month) which need to pay in next month(Oct 2019) + Oct generated bills(Need to pay in same month),
+				show the user current month paid bills(Sep bills + Oct bills)
+2. For example SBI bill ₹5,000.00 generated on 02-09-2019 due date 22-09-2019, ICICI bill ₹1,000.00 generated on 25-09-2019 due date 12-10-2019,
+	SBI bill ₹2,000.00 generated on 02-10-2019 due date 22-10-2019, in this case follow below steps
+	2.1. Total bill of Sep 2019 month: ₹5000 + ₹1000 = ₹6000.
+	2.2. Total payment of Sep 2019 month: ₹5000 = ₹5000.
+	2.3. Total payment of Oct 2019 month: ₹1000 + ₹2000 = ₹3000.
+	2.4. Total amount need to pay Sep 2019 bills: ₹5000. (exlude Oct 2019 bills)
+	2.5. Total amount need to pay Oct 2019 bills: ₹3000. (include Sep 2019 bills + Oct 2019 generated bill which need to pay in same month)
