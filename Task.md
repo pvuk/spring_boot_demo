@@ -9,6 +9,7 @@
 #Feature - Task																	
 ===================================================================================================================================
 1. Implement the feature to support multiple databases to handle CRUD operations.
+2. Delete - Use Response status as 204
 
 ===================================================================================================================================
 ##Notification																	
@@ -59,6 +60,7 @@
 3. Read .html file from url / local., In this page word contains url link image., read the data then after.. until then next new word when synonym comes.
 	Ex:	Save it with file name Inquisitor +(Telugu Meaning).txt.
 4. When bill is calculated provide calculate button to know user before saving the record.
+5. Implement GenericsMultipleTypeExample<T, U, K> type, it is useful in project
 
 ===================================================================================================================================
 ##MongoDB - Task																	
