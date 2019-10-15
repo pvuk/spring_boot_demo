@@ -1,0 +1,11 @@
+[
+	{
+		"bill_payment_id": null,
+		"parent_id": null,
+		"credit_card_code": null,
+		"debit_card_code": null,
+		"wallet_code": null,
+		"net_banking_code": null,
+		"upi_wallet_id": null
+	}
+]

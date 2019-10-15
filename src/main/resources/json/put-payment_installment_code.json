@@ -23,5 +23,15 @@
 		"code": "Deleted",
 		"position": 5,
 		"description": "Deleted"
+	},
+	{
+		"code": "pending",
+		"position": 6,
+		"description": "Pending"
+	},
+	{
+		"code": "processing",
+		"position": 7,
+		"description": "Processing"
 	}
 ]

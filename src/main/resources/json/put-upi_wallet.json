@@ -1,0 +1,30 @@
+[
+	{
+		"upi_wallet_id": null,
+		"upi_id": "PVUK@ICICI",
+		"mobile_number": "9603xx2x58",
+		"description": "",
+		"upi_app_code": "imobile"
+	},
+	{
+		"upi_wallet_id": null,
+		"upi_id": "UDAYKIRAN.PULIPATI@ICICI",
+		"mobile_number": "9703xx9x04",
+		"description": "",
+		"upi_app_code": "imobile"
+	},
+	{
+		"upi_wallet_id": null,
+		"upi_id": "PVUK@RBL",
+		"mobile_number": "9703xx9x04",
+		"description": "",
+		"upi_app_code": "rblmobank"
+	},
+	{
+		"upi_wallet_id": null,
+		"upi_id": "PVUK@SBI",
+		"mobile_number": "9603xx2x58",
+		"description": "",
+		"upi_app_code": "sbipaymentsbank"
+	}
+]

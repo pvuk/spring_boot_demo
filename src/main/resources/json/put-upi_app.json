@@ -1,0 +1,232 @@
+[
+	{
+		"upi_app_id": null,
+		"app_name": "Airtel Money",
+		"code": "airtelmoney",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Amazon Pay",
+		"code": "amazonpay",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "BHIM",
+		"code": "bhim",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "freecharge",
+		"code": "freecharge",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Google Pay",
+		"code": "googlepay",
+		"description": "Alias Tez",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "iMobile",
+		"code": "imobile",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Jio",
+		"code": "jio",
+		"description": "Jio Money",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Kotak Bank",
+		"code": "kotakbank",
+		"description": "Supports Netbanking, CC Bill Payment, \nKayMall - Shopping(Flipkart), Tickets Booking(Bus, Train, Flights, OLA, Hotel)\n and more",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Lazy Pay",
+		"code": "LazyPay",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Mobikwik",
+		"code": "mobikwik",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "NoBroker",
+		"code": "nobroker",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Ola Money",
+		"code": "olamoney",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Oxygen",
+		"code": "oxygen",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Pay Later",
+		"code": "paylater",
+		"description": "ICICI Pay Later",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Pay U Money",
+		"code": "payumoney",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Paytm",
+		"code": "paytm",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "PayZapp",
+		"code": "payzapp",
+		"description": "HDFC PayZapp",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "PhonePe",
+		"code": "phonepe",
+		"description": "Now Part of Flipkart",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Pockets By ICICI",
+		"code": "pocketsbyicici",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "RBL MoBank",
+		"code": "rblmobank",
+		"description": "",
+		"wallet_status_code": ""
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Samsung Pay",
+		"code": "samsungpay",
+		"description": "",
+		"wallet_status_code": ""
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "SBI Payments Bank",
+		"code": "sbipaymentsbank",
+		"description": "",
+		"wallet_status_code": ""
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Smart BUY",
+		"code": "smartbuy",
+		"description": "HDFC Smart BUY"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "sRide",
+		"code": "sride",
+		"description": "",
+		"wallet_status_code": ""
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "T Wallet",
+		"code": "twallet",
+		"description": "",
+		"wallet_status_code": ""
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Unimoni",
+		"code": "unimoni",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Vodafone M-Pesa",
+		"code": "vodafonempesa",
+		"description": "",
+		"wallet_status_code": "NotInUse"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Yes Pay",
+		"code": "yespay",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Yono by SBI",
+		"code": "yonobysbi",
+		"description": "",
+		"wallet_status_code": "Active"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Baroda M-Clip",
+		"code": "Barodamclip",
+		"description": "",
+		"wallet_status_code": "Terminated"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Pay Apt",
+		"code": "payapt",
+		"description": "IDBI Pay Apt",
+		"wallet_status_code": "Terminated"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "SBI Buddy",
+		"code": "sbibuddy",
+		"description": "",
+		"wallet_status_code": "Terminated"
+	},
+	{
+		"upi_app_id": null,
+		"app_name": "Citrus",
+		"code": "citrus",
+		"description": "Now Lazy Pay",
+		"wallet_status_code": "Terminated"
+	}
+]
