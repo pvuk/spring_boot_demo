@@ -1,0 +1,14 @@
+[
+	{
+		"code": "icicibank",
+		"position": 1,
+		"description": "ICICI BANK",
+		"isActive": true
+	},
+	{
+		"code": "statebankofindia",
+		"position": 2,
+		"description": "State Bank OF India",
+		"isActive": true
+	}
+]
