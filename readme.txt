@@ -18,7 +18,13 @@ Spring version upgraded from 2.0.4.RELEASE to 2.1.5.RELEASE(May 15, 2019) on May
 =========================================================================================================================
 													MongoDB Version settings
 =========================================================================================================================
-upgraded MongoDB version from 4.0.1 to 4.0.9 on May 27, 2019
+1. mongo-java-driver version 3.10.2
+2. upgrade to 4.2.0 on 15-Oct-2019
+Download `mongodb-win32-x86_64-enterprise-windows-64-4.2.0` zip file from https://www.mongodb.com/download-center/enterprise
+
+--Old Version
+upgraded MongoDB version from 
+4.0.1 to 4.0.9 on May 27, 2019
 Download below zip file from https://www.mongodb.com/download-center/v2/community
 mongodb-win32-x86_64-2008plus-ssl-4.0.9
 

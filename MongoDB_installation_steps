@@ -13,6 +13,9 @@ https://www.mongodb.com/download-center/v2/enterprise
 3.1.
 Open CMD (WIN + R)
 >F:\mongodb-win32-x86_64-2008plus-ssl-4.0.3\bin\mongo.exe
+or
+-> For enterprise edition
+	> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongod.exe
 
 4.to check how many db's available
 >show dbs

@@ -5,33 +5,38 @@
 1.1 https://www.mongodb.com/download-center?jmp=nav
 1.2 Select Platform -> Download -> select archive / msi
 2. Installation steps
-https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/?_ga=2.6718962.1782262180.1535102519-1561176774.1534941405#install-mdb-edition
+	https://docs.mongodb.com/manual/tutorial/install-mongodb-enterprise-on-windows/?_ga=2.6718962.1782262180.1535102519-1561176774.1534941405#install-mdb-edition
 2.1 Start your MongoDB database.
 To start MongoDB, invoke mongod.exe.
 
 EXAMPLE
 
+## Start The MongoDB Server
 From the Command Interpreter:
+-> For community edition
+	> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+	or
+	> "D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod.exe" --dbpath="D:\uday\data\db-new"
 
-> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
-or
-> "D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod.exe" --dbpath="D:\uday\data\db-new"
-or
-> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
+-> For enterprise edition
+	> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
+	or
+	> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongod.exe --dbpath="D:\data\4.2.0"
 
 2.2 If the MongoDB database server is running correctly, the Command Interpreter displays:
 
 =>[initandlisten] waiting for connections
 
-2.3 Connect to MongoDB.
-To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
-
-> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
-or
-> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
-or
-> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
-
+## Connect to MongoDB.
+	To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
+	
+	> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+	or
+	> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
+	or
+	> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
+	or
+	> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongo.exe
 ==========================================================================================================================================================
 															Enable MongoDB's free cloud-based monitoring service, which will then receive and display
 															metrics about your deployment (disk utilization, CPU, operation statistics, etc).
