@@ -12,8 +12,15 @@
     - Click on Install / Update button.
     - Click on Quit Installer.
 2. Goto lombok latest version downloaded folder in .m2
-     - Open cmd(Win+R) -> execute below command
+     - Open cmd(Win+R) -> Paste below path(Shift + Insert)
+     - `cd C:\Users\Priyanka\.m2\repository\org\projectlombok\lombok\1.18.2`
+     - execute below command
+     - `java -jar lombok-1.18.2.jar`
+     </br>OR
      - `C:\Users\Priyanka\.m2\repository\org\projectlombok\lombok\1.18.2>java -jar lombok-1.18.2.jar`
+3. open *eclipe.ini* file add below code
+     - `-javaagent:D:\Softwares\eclipse-jee-2019-09-R-win32-x86_64\lombok.jar`
+     - Makesure lombok.jar should exist in above path or change above path to `-javaagent:C:\Users\Priyanka\.m2\repository\org\projectlombok\lombok\1.18\lombok-1.18.2.jar`
 
 
 ## Syntax for writing markdown(.md) files
