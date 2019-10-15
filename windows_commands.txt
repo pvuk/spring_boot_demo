@@ -1,0 +1,5 @@
+1. How to stop server when port already in use
+	a. In windows (Win + R) -> cmd
+	b. > netstat -ano | findstr :4200
+	c. kill only port 4200 (kill the red PID):
+	   > taskkill /PID 15940 /F
