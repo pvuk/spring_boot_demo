@@ -95,3 +95,8 @@
 	2.3. Total payment of Oct 2019 month: ₹1000 + ₹2000 = ₹3000.
 	2.4. Total amount need to pay Sep 2019 bills: ₹5000. (exlude Oct 2019 bills)
 	2.5. Total amount need to pay Oct 2019 bills: ₹3000. (include Sep 2019 bills + Oct 2019 generated bill which need to pay in same month)
+	
+===================================================================================================================================
+#UI - Task
+===================================================================================================================================
+1. Load Country dropdown with reference of following url, http://bit.ly/35xEbyM. Dropdown contains Country flag with Dailing code.
