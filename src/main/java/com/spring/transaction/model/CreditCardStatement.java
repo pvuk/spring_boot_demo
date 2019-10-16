@@ -94,6 +94,8 @@ public class CreditCardStatement {
 	@Column(name = "EXPIRE_ON") 			private Date expireOn;
 	/*End of section - CreditCard RewardPoints Summary*/
 	
+	private String rewardPointsId;
+	
 	private Set<CreditCardStatementTransaction> ccStatementTransactionSet;
 	
 	@NotNull(message="Credit card is required field.")

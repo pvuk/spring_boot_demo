@@ -6,33 +6,35 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 
 @Data
-@Document(collection = "NETBANKING_PAYMENT")
-public class NetBankingPayment {
+@Document(collection = "PAYMENT_ON_REWARD_POINTS")
+public class PaymentOnRewardPoints {
 	
-	@Field(value="NET_BANKING_PAYMENT_ID", order = 1)
-	@Id private String netBankingPaymentId;
+	@Field(value = "PAYMENT_ON_REWARD_POINTS_ID", order = 1)
+	@Id private String paymentOnRewardPointsId;
 	
-	@Field(value = "TRANSACTION_ON", order = 2)
-	private Date transactionOn;
-	
-	@DBRef private BankPayment bankAccount;
+	@Field(value = "PAYMENT_BY_ID", order = 2)
+	private String paymentById;
 	
 	@Field(value="AMOUNT", order = 3)
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
-	@Field(value = "CONFIRM_PAYMENT", order =  4)
+	@Field(value = "TRANSACTION_ON", order = 4)
+	private Date transactionOn;
+	
+	@Field(value = "REWARD_CARD_ID", order = 5)
+	private String rewardCardId;
+	
+	@Field(value = "CONFIRM_PAYMENT", order =  6)
 	private Boolean confirmPayment;
 	
-	@Field(value="CUSTOMER_ID", order = 5)
+	@Field(value="CUSTOMER_ID", order = 7)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
-	
 }

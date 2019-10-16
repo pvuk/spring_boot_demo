@@ -13,12 +13,12 @@ import lombok.Data;
 @Builder
 @Data
 @AllArgsConstructor
-@Document(collection = "REWARD_POINTS")
-public class RewardPoints {
+@Document(collection = "REWARD_POINTS_DETAILS")
+public class RewardPointsDetails {
 	
-	@Field(value="REWARD_POINTS_ID", order = 1)
+	@Field(value="REWARD_POINTS_DETAILS_ID", order = 1)
 	@Id
-	private String rewardPointsId;
+	private String rewardPointsDetailsId;
 	
 	/*
 	 * 1. Only one record allows per card, per statement in REWARD_POINTS
@@ -43,9 +43,9 @@ public class RewardPoints {
 //	@NotNull(message = "Reward Points Redeemed To is required field.")
 	private String rewardPointsRedeemId;
 	
-	@Field(value = "STATEMENT_CREDIT_CARD_ID", order = 14)
-	@NotNull(message = "Statement Of Credit Card is required field.")
-	private String statementCreditCardId;
+	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 14)
+	@NotNull(message = "Credit Card Statement is required field.")
+	private String creditCardStatementId;
 	
 	@Field(value="CUSTOMER_ID", order = 15)
 	@NotNull(message="Customer is required field.")

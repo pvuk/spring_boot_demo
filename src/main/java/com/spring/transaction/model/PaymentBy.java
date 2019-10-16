@@ -14,7 +14,7 @@ import lombok.Data;
 @Document(collection = "PAYMENT_BY")
 public class PaymentBy {
 	
-	@Field(value="PAYMENTBY_ID", order = 1)
+	@Field(value="PAYMENT_BY_ID", order = 1)
 	@Id
 	private String paymentById;
 	
@@ -31,8 +31,8 @@ public class PaymentBy {
 	@Field(value="NETBANKING_PAYMENT_ID", order = 5)
 	private String netBankingPaymentId;
 	
-	@Field(value="REWARD_POINTS_REDEEM_ID", order = 6)
-	private String rewardPointsRedeemId;
+	@Field(value="PAYMENT_ON_REWARD_POINTSID", order = 6)
+	private String paymentOnRewardPointsId;
 	
 	@Field(value="MOVIE_OFFER_ID", order = 7)
 	private String movieOfferId;
