@@ -94,7 +94,7 @@ public class CreditCardStatement {
 	@Column(name = "EXPIRE_ON") 			private Date expireOn;
 	/*End of section - CreditCard RewardPoints Summary*/
 	
-	private String rewardPointsId;
+	private String rewardPointsDetailsId;
 	
 	private Set<CreditCardStatementTransaction> ccStatementTransactionSet;
 	
