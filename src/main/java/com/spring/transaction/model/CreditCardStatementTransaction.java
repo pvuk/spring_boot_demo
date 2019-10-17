@@ -3,6 +3,7 @@ package com.spring.transaction.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -34,7 +35,8 @@ public class CreditCardStatementTransaction {
 	@Id
 	private String creditCardStatementTransactionId;
 	
-	@NotNull(message = "Credit Card StatementId is required field.")
+	@Column(name = "CREDIT_CARD_STATEMENT_ID")
+	@NotNull(message = "Credit Card Statement is required field.")
 	private String creditCardStatementId;
 	
 	@Field(value = "REFERENCE_NO")
@@ -56,4 +58,8 @@ public class CreditCardStatementTransaction {
 	 * 1. Amount in Rs(INR)
 	 */
 	private BigDecimal amount;
+	
+	@Field(value="CUSTOMER_ID")
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

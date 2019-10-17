@@ -14,8 +14,14 @@
 ===================================================================================================================================
 ##Notification																	
 ===================================================================================================================================
-1*. Notify user before 3 / 2 / 1 - month / 15 days for MileStoneAcheivementFinalDate.
+1. * Notify user before 3 / 2 / 1 - month / 15 days for MileStoneAcheivementFinalDate.
 2. Notify friends available cc limit once payment is done those who are using cc.
+3. Once Rewards are added into REWARD_POINTS_EARNED table insert expire details in REMAINDER_REWARD_POINTS_EXPIRE table
+	* check whether reward points are redeemed or not. If not redeemed notify before 2 months / 1 month / 15 days / 1 week / 4 days / 2 days / 1 day.
+	* If userd redeemed at 15 days or in between any of above remainder notification stop notify the user.
+	* Notify user auto redeem option availble in Rewards Redeem Screen.
+	* Implement auto redeem option if user is forgot to redeem last day.
+		* User should select Merchents to auto redeem.	
 
 ===================================================================================================================================
 ##Spring - Task																	

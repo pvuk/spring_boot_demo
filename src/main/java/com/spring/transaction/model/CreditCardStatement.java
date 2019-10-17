@@ -8,6 +8,7 @@ import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -42,67 +43,64 @@ import lombok.Data;
 public class CreditCardStatement {
 	
 	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 1)
-	@Id
-	private String creditCardStatementId;
+	@Id																				private String creditCardStatementId;
 	
 	@Field(value = "IS_STATEMENT_CYCLE_CLOSED", order = 2)
-	@NotNull(message="Credit Card Statement Cycle Closed is required field.")
-	private Boolean isStatementCycleClosed = Boolean.FALSE;
+	@NotNull(message="Credit Card Statement Cycle Closed is required field.")		private Boolean isStatementCycleClosed = Boolean.FALSE;
+	
+	private Long currencyId;
 	
 	/*Start of section - CreditCard AccountSummary*/
-	@Column(name = "FULL_NAME") 			private String fullName;
-	@Column(name = "CARD_NUMBER") 			private String cardNumber;
-	@Column(name = "STATEMENT_PERIOD") 		private String statementPeriod;
-	@Column(name = "STATEMENT_DATE") 		private Date statementDate;
-	@Column(name = "MINIMUM_PAYMENT_DUE") 	private BigDecimal minimumPaymentDue;
-	@Column(name = "PAYMENT_DUE_DATE") 		private Date paymentDueDate;
+	@Column(name = "FULL_NAME") 													private String fullName;
+	@Column(name = "CARD_NUMBER") 													private String cardNumber;
+	@Column(name = "STATEMENT_PERIOD") 												private String statementPeriod;
+	@Column(name = "STATEMENT_DATE") 												private Date statementDate;
+	@Column(name = "MINIMUM_PAYMENT_DUE") 											private BigDecimal minimumPaymentDue;
+	@Column(name = "PAYMENT_DUE_DATE") 												private Date paymentDueDate;
 
 	/*
 	 * OPENING_BALANCE column also referred as Previous_Balance
 	 */
-	@Column(name = "OPENING_BALANCE") 			private BigDecimal openingBalance;
+	@Column(name = "OPENING_BALANCE") 												private BigDecimal openingBalance;
 	/*
 	 * PAYMENTS_AND_CREDITS column also referred as Last_Payments_Received
 	 */
-	@Column(name = "PAYMENTS_AND_CREDITS") 		private BigDecimal paymentsAndCredits;
+	@Column(name = "PAYMENTS_AND_CREDITS") 											private BigDecimal paymentsAndCredits;
 	/*
 	 * NEW_PURCHASES column also referred as CurrentPurchases_AND_OtherCharges
 	 */
-	@Column(name = "NEW_PURCHASES") 			private BigDecimal newPurchases;
-	@Column(name = "MONTHLY_EMI_DEBITS") 		private BigDecimal monthlyEMIDebits;
-	@Column(name = "GOODS_AND_SERVICES_TAX") 	private BigDecimal goodsAndServicesTax;
-	@Column(name = "TOTAL_AMOUNT_DUE") 			private BigDecimal totalAmountDue;
+	@Column(name = "NEW_PURCHASES") 												private BigDecimal newPurchases;
+	@Column(name = "MONTHLY_EMI_DEBITS") 											private BigDecimal monthlyEMIDebits;
+	@Column(name = "GOODS_AND_SERVICES_TAX") 										private BigDecimal goodsAndServicesTax;
+	@Column(name = "TOTAL_AMOUNT_DUE") 												private BigDecimal totalAmountDue;
 	
-	@Column(name = "UNBILLED_PRINCIPAL") 		private BigDecimal unbilledPrincipal;
-	@Column(name = "TOTAL_CREDIT_LIMIT") 		private BigDecimal totalCreditLimit;
-	@Column(name = "AVAILABLE_CREDIT_LIMIT") 	private BigDecimal availableCreditLimit;
-	@Column(name = "CURRENT_CASH_ADVANCE")		private BigDecimal currentCashAdvance;
-	@Column(name = "AVAILABLE_CASH_LIMIT") 		private BigDecimal availableCashLimit;
+	@Column(name = "UNBILLED_PRINCIPAL") 											private BigDecimal unbilledPrincipal;
+	@Column(name = "TOTAL_CREDIT_LIMIT") 											private BigDecimal totalCreditLimit;
+	@Column(name = "AVAILABLE_CREDIT_LIMIT") 										private BigDecimal availableCreditLimit;
+	@Column(name = "CURRENT_CASH_ADVANCE")											private BigDecimal currentCashAdvance;
+	@Column(name = "AVAILABLE_CASH_LIMIT") 											private BigDecimal availableCashLimit;
 	/*End of section - CreditCard AccountSummary*/
 	
 	
 	/*Start of section - CreditCard RewardPoints Summary*/
-	@Column(name = "OPENING_REWARD_POINTS") private BigDecimal openingRewardPoints;
+	@Column(name = "OPENING_REWARD_POINTS") 										private BigDecimal openingRewardPoints;
 	/*
 	 * EARNED column also referred as Turbo_Points_Earned
 	 */
-	@Column(name = "EARNED") 				private BigDecimal earned;
-	@Column(name = "ADJUSTED") 				private BigDecimal adjusted;
-	@Column(name = "REDEEMED") 				private BigDecimal redeemed;
-	@Column(name = "CLOSING_REWARD_POINTS") private BigDecimal closingRewardPoints;
-	@Column(name = "POINTS_TO_EXPIRE") 		private BigDecimal pointsToExpire;
-	@Column(name = "EXPIRE_ON") 			private Date expireOn;
+	@Column(name = "EARNED") 														private BigDecimal earned;
+	@Column(name = "ADJUSTED") 														private BigDecimal adjusted;
+	@Column(name = "REDEEMED") 														private BigDecimal redeemed;
+	@Column(name = "CLOSING_REWARD_POINTS") 										private BigDecimal closingRewardPoints;
+	@Column(name = "POINTS_TO_EXPIRE") 												private BigDecimal pointsToExpire;
+	@Column(name = "EXPIRE_ON") 													private Date expireOn;
 	/*End of section - CreditCard RewardPoints Summary*/
 	
-	private String rewardPointsDetailsId;
-	
-	private Set<CreditCardStatementTransaction> ccStatementTransactionSet;
+	@Column(name = "REWARD_POINTS_DETAILS_ID")										private String rewardPointsDetailsId;
 	
 	@NotNull(message="Credit card is required field.")
-	@DBRef
-	private CreditCard creditCardId;
+	@DBRef 																			private CreditCard creditCardId;
 	
-	private String creditCardModeOfPaymentId;
+	@Column(name = "CREDIT_CARD_MODE_OF_PAYMENT_ID")								private String creditCardModeOfPaymentId;
 	
 	/*
 	 * check how this field position is placed in MongoDB., because only few columns order are mentioned.
@@ -110,4 +108,6 @@ public class CreditCardStatement {
 	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Transient 																		private Set<CreditCardStatementTransaction> ccStatementTransactionSet;
 }
