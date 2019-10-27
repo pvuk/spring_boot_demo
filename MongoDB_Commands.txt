@@ -9,7 +9,7 @@ or
 > --"D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="D:\uday\data\db"
 > D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
 or
-> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod.exe" --dbpath="I:\data\db"
+> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
 
 1.1 If the MongoDB database server is running correctly, the Command Interpreter displays:
 
@@ -23,7 +23,7 @@ or
 > D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
 > --D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
 or
--> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+-> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
 
 1.3 Connect and Authenticate as the user administrator
 > mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "trans"
