@@ -18,38 +18,39 @@ public class PaymentReceived {
 	@Field(value="PAYMENT_RECEIVED_ID", order = 1)
 	@Id
 	private String paymentReceivedId;
+	
+	@Field(value="CUSTOMER_ID", order = 2)
+	@NotNull(message="Payment Received From Customer is required field.")
+	private String customerId;
 
-	@Field(value="ACTUAL_AMOUNT", order = 2)
+	@Field(value="ACTUAL_AMOUNT", order = 3)
 	private BigDecimal actualAmount;
 	
-	@Field(value="RECEIVED_AMOUNT", order = 3)
+	@Field(value="RECEIVED_AMOUNT", order = 4)
 	@NotNull(message="Received Amount is required field.")
 	private BigDecimal receivedAmount;
     
-	@Field(value="REMAINING_AMOUNT", order = 4)
+	@Field(value="REMAINING_AMOUNT", order = 5)
 	private BigDecimal remainingAmount;
 
-	@Field(value="PAYMENT_RECEIVED_ON", order = 5)
+	@Field(value="PAYMENT_RECEIVED_ON", order = 6)
     @NotNull(message="Payment Received On is required field.")
 	private Date paymentReceivedOn;
 	
-	@Field(value="PAYMENT_STATUS_ID", order = 6)
+	@Field(value="PAYMENT_STATUS_ID", order = 7)
 	private String paymentStatusId;
 	
-	@Field(value = "REFERENCE_NO")
+	@Field(value="CONFIRM_PAYMENT", order = 8)
+	private Boolean confirmPayment;
+	
+	@Field(value = "REFERENCE_NO", order = 9)
 	private String referenceNo;
 	
 	/*
 	 * 1. Where the transaction is done(Payment Description).
 	 */
-	@Field(value = "TRANSACTION_DETAILS")
+	@Field(value = "TRANSACTION_DETAILS", order = 10)
 	@NotNull(message="Transaction Details is required field.")
 	private String transactionDetails;
-	
-	@Field(value="CONFIRM_PAYMENT", order = 7)
-	private Boolean confirmPayment;
     
-    @Field(value="CUSTOMER_ID", order = 8)
-	@NotNull(message="Customer is required field.")
-	private String customerId;
 }

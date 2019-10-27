@@ -1,5 +1,7 @@
 package com.spring.transaction.model;
 
+import java.util.List;
+
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -18,9 +20,9 @@ public class PaymentBy {
 	@Id
 	private String paymentById;
 	
-	@Field(value="PAYMENT_RECEIVED_FROM_CUSTOMER_ID", order = 2)
+	@Field(value="PAYMENT_RECEIVED_ID", order = 2)
 	@NotNull(message = "Payment Received From Customer is required field.", groups = GroupCustomer.class)
-	private String customerId;
+	private List<String> paymentReceivedIds;
 	
 	@Field(value="CREDIT_CARD_PAYMENT_ID", order = 3)
 	private String creditCardPaymentId;
@@ -43,9 +45,15 @@ public class PaymentBy {
 	@Field(value="WALLET_PAYMENT_ID", order = 9)
 	private String walletPaymentId;
 	
-	@Field(value="PAYMENT_SHOW_TO_EXPENSER", order = 10)
+	@Field(value="EMI_PAYMENT_ID", order = 10)
+	private String emiPaymentId;
+	
+	@Field(value="CHEQUE_PAYMENT_ID", order = 11)
+	private String chequePaymentId;
+	
+	@Field(value="PAYMENT_SHOW_TO_EXPENSER", order = 12)
 	private boolean paymentShowToExpenser;
 	
-	@Field(value = "COMMENT", order = 11)
+	@Field(value = "COMMENT", order = 13)
 	private String comment;
 }
