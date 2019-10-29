@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.spring.transaction.model.BankBranch;
-import com.spring.transaction.service.BankBranchService;
 import com.spring.transaction.service.CRUDOperationService;
 
 /**
@@ -24,7 +23,7 @@ import com.spring.transaction.service.CRUDOperationService;
 @RequestMapping(value="/bankBranch/custom/")
 public class BankBranchController {
 	
-	@Autowired private BankBranchService bankBranchService;
+//	@Autowired private BankBranchService bankBranchService;
 	
 	@Qualifier(value="bankBranchService")
 	@Autowired private CRUDOperationService crudOperationService;

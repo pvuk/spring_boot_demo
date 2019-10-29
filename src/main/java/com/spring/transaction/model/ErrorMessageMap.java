@@ -12,6 +12,11 @@ import lombok.Data;
 @Data
 public class ErrorMessageMap implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	@Transient
 	@JsonIgnore
 	private HashMap<String, String> aErrorMsgsHM = new HashMap<>();

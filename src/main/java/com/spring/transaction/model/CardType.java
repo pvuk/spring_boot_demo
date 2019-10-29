@@ -40,6 +40,7 @@ public class CardType {
 	private String comments;
 
 	@Transient
+	@Builder.Default
 	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
 	
 	public CardType setErrorMessageMap(String aKey, String aValue) {
