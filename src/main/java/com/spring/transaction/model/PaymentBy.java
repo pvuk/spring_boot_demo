@@ -56,4 +56,7 @@ public class PaymentBy {
 	
 	@Field(value = "COMMENT", order = 13)
 	private String comment;
+	
+	@Field("RATE_YOUR_PURCHASE_ID")
+	private String rateYourPurchaseId;
 }
