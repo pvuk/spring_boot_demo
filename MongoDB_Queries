@@ -1,0 +1,33 @@
+db.getCollectionNames().forEach(function(collection) {
+indexes = db[collection].getIndexes();
+print("Indexes for " + collection + ":");
+printjson(indexes);
+});
+
+db.getCollectionNames().forEach(function(collection) {
+count = db[collection].count();
+print("count: "+ count +" for " + collection);
+});
+
+var documentCount = 0; 
+db.getCollectionNames().forEach(function(collection) { documentCount++; }); print("Available Documents count: "+ documentCount);
+
+//To get all dataSize of documents in a collection
+> db.getCollectionNames().forEach(function(collection) { size = db[collection].dataSize(); print("dataSize for " + collection + ": "+ size); });
+
+Results count for ADDRESS: 250 
+Results count for APPLICATION_DEVELOPER: 950
+Results count for COUNTRY: 10
+Results count for DATABASE_DEVELOPER: 1
+Results count for EMPLOYEE: 4500
+Results count for FULL_STACK_DEVELOPER: 2000
+Results count for PHONE_NUMBER: 110
+Results count for STATE: 0
+Results count for QA_DEVELOPER: 100
+
+
+
+put-card_type_authorization
+mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file I:/workspace/Eclipse2018-19/spring_boot_demo/src/main/resources/json/put-card_type_authorization.json
+
+mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file put-card_type_authorization.json
