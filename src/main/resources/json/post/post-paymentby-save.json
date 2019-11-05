@@ -1,0 +1,18 @@
+{
+    "paymentReceivedIds": [
+        ""
+    ],
+    "creditCardPaymentId": "",
+    "debitCardPaymentId": "",
+    "netBankingPaymentId": "",
+    "paymentOnRewardPointsId": "",
+    "movieOfferId": "",
+    "cashPaymentId": "",
+    "walletPaymentId": "",
+    "emiPaymentId": "",
+    "chequePaymentId": "",
+    "paymentShowToExpenser": false,
+    "comment": "",
+	"rateYourPurchaseId": "",
+	"url":"http://localhost:8102/springbootmongo/paymentBy/custom/save"
+}
