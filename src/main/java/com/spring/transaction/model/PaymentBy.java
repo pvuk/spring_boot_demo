@@ -20,6 +20,9 @@ public class PaymentBy {
 	@Id
 	private String paymentById;
 	
+	/**
+	 * 1. if payment received from more than one customer., we need to insert two records for single transaction.
+	 */
 	@Field(value="PAYMENT_RECEIVED_ID", order = 2)
 	@NotNull(message = "Payment Received From Customer is required field.", groups = GroupCustomer.class)
 	private List<String> paymentReceivedIds;
