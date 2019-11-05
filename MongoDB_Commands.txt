@@ -10,6 +10,8 @@ or
 > D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
 or
 > "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
+or
+> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongod.exe --dbpath="D:\data\4.2.0"
 
 1.1 If the MongoDB database server is running correctly, the Command Interpreter displays:
 
@@ -22,6 +24,8 @@ To connect to MongoDB through the mongo.exe shell, open another Command Interpre
 or
 > D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
 > --D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongo.exe
+or
+> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongo.exe
 or
 -> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
 

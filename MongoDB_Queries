@@ -26,7 +26,7 @@ Results count for STATE: 0
 Results count for QA_DEVELOPER: 100
 
 
-
+//Insert data into document from JSON
 put-card_type_authorization
 mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file I:/workspace/Eclipse2018-19/spring_boot_demo/src/main/resources/json/put-card_type_authorization.json
 
