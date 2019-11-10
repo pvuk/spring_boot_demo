@@ -1,0 +1,51 @@
+[
+	{
+		"code": "cash",
+		"position": 1,
+		"description": "Cash"
+	},
+	{
+		"code": "cheque",
+		"position": 2,
+		"description": "Cheque"
+	},
+	{
+		"code": "creditcard",
+		"position": 3,
+		"description": "Credit Card"
+	},
+	{
+		"code": "debitcard",
+		"position": 4,
+		"description": "Debit Card"
+	},
+	{
+		"code": "emi",
+		"position": 5,
+		"description": "EMI"
+	},
+	{
+		"code": "netbanking",
+		"position": 6,
+		"description": "Net Banking"
+	},
+	{
+		"code": "rewardpoints",
+		"position": 7,
+		"description": "Reward Points"
+	},
+	{
+		"code": "wallet",
+		"position": 8,
+		"description": "Wallet"
+	},
+	{
+		"code": "virtualcreditcard",
+		"position": 9,
+		"description": "Virtual Credit Card"
+	},{
+		"code": "other",
+		"position": 10,
+		"description": "Other"
+	}
+]

@@ -42,6 +42,9 @@ public class WalletPayment {
 	@DBRef
 	private Wallet wallet;
 	
+	@Field(value = "UPI_APP_ID")
+	private String upiAppId;
+	
 	@NotNull(message="PaymentBy is required field.")
 	@DBRef
 	private PaymentBy paymentBy;
@@ -62,4 +65,11 @@ public class WalletPayment {
 	
 	@Field(value = "CONFIRM_PAYMENT")
 	private Boolean confirmPayment;
+	
+	@Field(value = "PAYMENT_TYPE_ID")
+	@NotNull(message = "Payment Type is required field")
+	private String paymentTypeId;
+	
+	@Field(value = "PARENT_PAYMENT_ID")
+	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
 }

@@ -1,0 +1,62 @@
+[
+	{
+		"code": "electricity",
+		"position": 1,
+		"description": "Electricity"
+	},
+	{
+		"code": "landline",
+		"position": 2,
+		"description": "Landline"
+	},
+	{
+		"code": "prepaid",
+		"position": 3,
+		"description": "Prepaid"
+	},
+	{
+		"code": "postpaid",
+		"position": 4,
+		"description": "Postpaid"
+	},
+	{
+		"code": "broadband",
+		"position": 5,
+		"description": "Broadband"
+	},
+	{
+		"code": "gas",
+		"position": 6,
+		"description": "Gas"
+	},
+	{
+		"code": "water",
+		"position": 7,
+		"description": "Water"
+	},
+	{
+		"code": "dth",
+		"position": 8,
+		"description": "DTH"
+	},
+	{
+		"code": "insurancepremium",
+		"position": 9,
+		"description": "Insurance Premium"
+	},
+	{
+		"code": "loanpayment",
+		"position": 10,
+		"description": "Loan Payment"
+	},
+	{
+		"code": "donation",
+		"position": 11,
+		"description": "Donation"
+	},
+	{
+		"code": "other",
+		"position": 12,
+		"description": "Other"
+	}
+]

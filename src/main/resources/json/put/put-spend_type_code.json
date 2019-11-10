@@ -1,0 +1,67 @@
+[
+	{
+		"code": "entertainment",
+		"position": 1,
+		"description": "Entertainment"
+	},
+	{
+		"code": "travel",
+		"position": 25,
+		"description": "Travel"
+	},
+	{
+		"code": "utilitybillpayment",
+		"position": 3,
+		"description": "Utility Bill Payment"
+	},
+	{
+		"code": "creditcardbill",
+		"position": 4,
+		"description": "Credit Card Bill"
+	},
+	{
+		"code": "giftcard",
+		"position": 5,
+		"description": "GiftCard"
+	},
+	{
+		"code": "shopping",
+		"position": 6,
+		"description": "Shopping"
+	},
+	{
+		"code": "food",
+		"position": 7,
+		"description": "Food"
+	},
+	{
+		"code": "groceries",
+		"position": 8,
+		"description": "Groceries"
+	},
+	{
+		"code": "jewellery",
+		"position": 9,
+		"description": "Jewellery"
+	},
+	{
+		"code": "hotel",
+		"position": 10,
+		"description": "Hotel"
+	},
+	{
+		"code": "Health",
+		"position": 11,
+		"description": "Health"
+	},
+	{
+		"code": "store",
+		"position": 12,
+		"description": "store"
+	},
+	{
+		"code": "investment",
+		"position": 13,
+		"description": "Investment"
+	}
+]

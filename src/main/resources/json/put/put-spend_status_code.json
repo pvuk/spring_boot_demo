@@ -1,0 +1,32 @@
+[
+	{
+		"code": "defeat",
+		"position": 1,
+		"description": "Defeat"
+	},
+	{
+		"code": "notown",
+		"position": 2,
+		"description": "Not Own"
+	},
+	{
+		"code": "participate",
+		"position": 3,
+		"description": "Participate"
+	},
+	{
+		"code": "pending",
+		"position": 4,
+		"description": "Pending"
+	},
+	{
+		"code": "processing",
+		"position": 5,
+		"description": "Processing"
+	},
+	{
+		"code": "win",
+		"position": 6,
+		"description": "Win"
+	}
+]

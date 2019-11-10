@@ -1,0 +1,22 @@
+[
+	{
+		"code": "credit",
+		"position": 1,
+		"description": "Credit"
+	},
+	{
+		"code": "debit",
+		"position": 2,
+		"description": "Debit"
+	},
+	{
+		"code": "failed",
+		"position": 3,
+		"description": "Failed"
+	},
+	{
+		"code": "reverse",
+		"position": 4,
+		"description": "Reverse"
+	}
+]

@@ -1,0 +1,22 @@
+[
+	{
+		"code": "cashback",
+		"position": 1,
+		"description": "Cashback"
+	},
+	{
+		"code": "coupon",
+		"position": 2,
+		"description": "Coupon"
+	},
+	{
+		"code": "giftcard",
+		"position": 3,
+		"description": "GiftCard"
+	},
+	{
+		"code": "voucher",
+		"position": 4,
+		"description": "Voucher"
+	}
+]

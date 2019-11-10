@@ -1,6 +1,7 @@
 package com.spring.transaction.model;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 import javax.persistence.Embedded;
 import javax.validation.constraints.NotNull;
@@ -36,26 +37,45 @@ public class BankPayment {
 	@NotNull(message="Account Number is required field.")
 	private BigDecimal accountNumber;
 	
-	@Field(value="AMOUNT", order = 4)
-	@NotNull(message="Amount is required field.")
-	private BigDecimal amount;
-	
-	@Field(value = "REFERENCE_NO")
-	private String referenceNo;
+	@Field(value = "TRANSACTION_DATE", order = 4)
+	private Date transactionDate;
 	
 	/*
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_DETAILS")
+	@Field(value = "TRANSACTION_DETAILS", order = 5)
 	@NotNull(message="Transaction Details is required field.")
 	private String transactionDetails;
 	
-	@Field(value="CONFIRM_PAYMENT", order = 5)
+	@Field(value = "WITHDRAWAL_AMOUNT", order = 6)
+	private BigDecimal withdrawalAmount;
+	
+	@Field(value = "DEPOSIT_AMOUNT", order = 7)
+	private BigDecimal depositAmount;
+	
+	/*
+	 * 1. WITHDRAWAL_AMOUNT / DEPOSIT_AMOUNT should be enter to calculate BALANCE
+	 */
+	@Field(value="BALANCE", order = 8)
+	@NotNull(message="Amount is required field.")
+	private BigDecimal balance;
+	
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	@Field(value="CONFIRM_PAYMENT", order = 9)
 	private Boolean confirmPayment;
 	
-	@Field(value="CUSTOMER_ID", order = 6)
+	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Field(value = "PAYMENT_TYPE_ID")
+	@NotNull(message = "Payment Type is required field")
+	private String paymentTypeId;
+	
+	@Field(value = "PARENT_PAYMENT_ID")
+	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
 	
 	@Embedded
 	private AuditData auditData;

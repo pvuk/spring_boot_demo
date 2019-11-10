@@ -1,0 +1,22 @@
+[
+	{
+		"code": "sucess",
+		"position": 1,
+		"description": "Sucess"
+	},
+	{
+		"code": "failed",
+		"position": 2,
+		"description": "Failed"
+	},
+	{
+		"code": "hold",
+		"position": 3,
+		"description": "Hold"
+	},
+	{
+		"code": "pending",
+		"position": 4,
+		"description": "Pending"
+	}
+]

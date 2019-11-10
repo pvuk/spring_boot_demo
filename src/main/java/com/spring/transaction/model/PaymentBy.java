@@ -16,8 +16,8 @@ import lombok.Data;
 @Document(collection = "PAYMENT_BY")
 public class PaymentBy {
 	
-	@Field(value="PAYMENT_BY_ID", order = 1)
 	@Id
+	@Field(value="PAYMENT_BY_ID", order = 1)
 	private String paymentById;
 	
 	/**
@@ -60,6 +60,16 @@ public class PaymentBy {
 	@Field(value = "COMMENT", order = 13)
 	private String comment;
 	
+	@Field(value = "PARENT_PAYMENT_ID")
+	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	
 	@Field("RATE_YOUR_PURCHASE_ID")
 	private String rateYourPurchaseId;
+	
+	@Field(value = "OFFER_EXPENDITURE_ID")
+	private String offerExpenditureId;
+	
+	@Field(value="CUSTOMER_ID")
+	@NotNull(message="Customer is required field.")
+	private String customerId;
 }

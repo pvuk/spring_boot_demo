@@ -2,6 +2,8 @@ package com.spring.transaction.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -47,4 +49,13 @@ public class ChequePayment {
 	
 	private String chequeReceivedLocation;
 	
+	/*
+	 * 1. Display at UI side only Debit / Bounce
+	 */
+	@Field(value = "PAYMENT_TYPE_ID")
+	@NotNull(message = "Payment Type is required field")
+	private String paymentTypeId;
+	
+	@Field(value = "PARENT_PAYMENT_ID")
+	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
 }

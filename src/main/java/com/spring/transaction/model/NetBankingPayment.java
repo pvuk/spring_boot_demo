@@ -35,4 +35,10 @@ public class NetBankingPayment {
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	
+	@Field(value = "PAYMENT_TYPE_ID")
+	@NotNull(message = "Payment Type is required field")
+	private String paymentTypeId;
+	
+	@Field(value = "PARENT_PAYMENT_ID")
+	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
 }
