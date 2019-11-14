@@ -1,10 +1,10 @@
 ## Project Frameworks and APIs
 * This Project is using Java8 + Spring boot + Maven + Git + MongoDB
 
-## Download Project into local repository using git
+#### Download Project into local repository using git
 * This Project depends on lib project which is available at [GitHub - Lib](https://github.com/pvuk/lib.git)
 
-## Lombok jar mapping with eclipse.exe##
+#### Lombok jar mapping with eclipse.exe##
 Installation Type 1:
 1. lombok jars will be downloaded into .m2 folder in local Users folder.
     - Goto location -> `C:\Users\udaykiran\.m2\repository\org\projectlombok\lombok\1.18.2`.
@@ -33,4 +33,6 @@ Installation Type 2:
 * [Basic writing and formatting syntax](https://help.github.com/en/articles/basic-writing-and-formatting-syntax#lists)
 * [GitHub - Mastering-Markdown](https://guides.github.com/features/mastering-markdown/)
 * [Atlassian - Markdown syntax guide](https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)
+
+##### No.of increases size of font will decrease. Min 1 and Max 5
  
