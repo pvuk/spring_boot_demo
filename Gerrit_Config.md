@@ -1,6 +1,7 @@
 ## [How to install Gerrit on Windows](https://github.com/Sl0v3C/Install_Gerrit_4Windows_Guide)
 
 * [How to install Gerrit on Windows](https://github.com/Sl0v3C/Install_Gerrit_4Windows_Guide)
+* [Account - Login](https://gerrit.wikimedia.org/r/#/dashboard/self)
 
 * [Gerrit - Installation](https://www.tutorialspoint.com/gerrit/gerrit_add_ssh_key_to_gerrit_account.htm)
 
