@@ -23,3 +23,12 @@ While I’m in the Git username neighborhood, I’ll also add that you can view 
 And you can change your Git email address like this:
 
 `git config --global user.email [your email address here]`
+
+#### How to remove entry in global configuration
+>You can use the --unset flag of git config to do this like so:
+
+`git config --global --unset user.name`
+`git config --global --unset user.email`
+>If you have more variables for one config you can use:
+
+`git config --global --unset-all user.name`

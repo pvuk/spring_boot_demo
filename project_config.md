@@ -19,7 +19,7 @@ Installation Type 2:
      - `cd C:\Users\Priyanka\.m2\repository\org\projectlombok\lombok\1.18.2`
      - execute below command
      - `java -jar lombok-1.18.2.jar`
-     </br>OR
+     OR
      - `C:\Users\Priyanka\.m2\repository\org\projectlombok\lombok\1.18.2>java -jar lombok-1.18.2.jar`
 
 2. open *eclipe.ini* file add below code
