@@ -24,8 +24,8 @@ public class RemainderRewardPointsExpire {
 	
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH") 											private long rewardsExpireThisMonth;
 	
-	/*
-	 * Save column data as 16-10-2019 23:59:59
+	/**
+	 * 1. Save column data as 16-10-2019 23:59:59
 	 */
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH_ON") 										private Date rewardsExpireThisMonthOn;
 	

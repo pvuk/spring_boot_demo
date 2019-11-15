@@ -30,7 +30,7 @@ public class PaymentHistory {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 2)
 	private String paymentOnAccountId;
 	
-	/*
+	/**
 	 * 1. Count 1 period as 1 year.
 	 * 2. Every year period will increase to +1.
 	 */

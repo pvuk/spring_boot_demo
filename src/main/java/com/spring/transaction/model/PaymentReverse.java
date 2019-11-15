@@ -39,7 +39,7 @@ public class PaymentReverse {
 	@Field(value = "REFERENCE_NO")
 	private String referenceNo;
 	
-	/*
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@Field(value = "TRANSACTION_DETAILS")

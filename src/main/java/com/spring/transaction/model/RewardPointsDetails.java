@@ -20,7 +20,7 @@ public class RewardPointsDetails {
 	@Id
 	private String rewardPointsDetailsId;
 	
-	/*
+	/**
 	 * 1. Only one record allows per card, per statement in REWARD_POINTS
 	 */
 	@Field(value="REWARD_CARD_ID", order = 2)

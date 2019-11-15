@@ -67,7 +67,7 @@ public class Bank {
 	@Field(value = "REF_LINK", order = 12)
 	private String refLink;
 	
-	/*
+	/**
 	 * if not found user can add. Need to approve by Admin
 	 */
 	@Field(value = "IS_NEW", order = 13) 		private Boolean isNew;

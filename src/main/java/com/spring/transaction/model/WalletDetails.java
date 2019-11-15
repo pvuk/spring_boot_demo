@@ -29,8 +29,8 @@ public class WalletDetails {
 	@Type(type="yes_no")
 	private Boolean isActive;
 	
-	/*
-	 * if account is transferred to other number then new account is in
+	/**
+	 * 1. If account is transferred to other number then new account is in
 	 * active state. Transfer from number isActive false.
 	 */
 	@Field(value="IS_TRANSFERRED")

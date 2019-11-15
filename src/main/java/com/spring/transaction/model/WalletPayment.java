@@ -25,8 +25,8 @@ public class WalletPayment {
 	@Field(value = "WALLET_PAYMENT_ID", order = 1)
 	@Id private String walletPaymentId;
 	
-	/*
-	 * check if @Field is not mention how column name created in database
+	/**
+	 * 1. Check if @Field is not mention how column name created in database
 	 */
 	@NotNull(message="Wallet is required field.")
 	private String walletDetailsId;
@@ -52,7 +52,7 @@ public class WalletPayment {
 	@Field(value = "REFERENCE_NO")
 	private String referenceNo;
 	
-	/*
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@Field(value = "TRANSACTION_DETAILS")

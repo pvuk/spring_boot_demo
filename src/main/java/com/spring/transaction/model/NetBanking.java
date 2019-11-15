@@ -23,8 +23,8 @@ public class NetBanking {
 	@Field(value = "NET_BANKING_ID", order = 1)
 	@Id 												private String netBankingId;
 
-	/*
-	 * https://docs.mongodb.com/manual/core/index-unique/
+	/**
+	 * 1. <a href="https://docs.mongodb.com/manual/core/index-unique/">Unique Indexes</a>
 	 */
 	@Field(value="CODE", order = 2)
 	@Indexed(unique=true)								private String code;

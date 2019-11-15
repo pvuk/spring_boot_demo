@@ -26,49 +26,49 @@ public class PersonalLoan {
 	
 	private String employmentTypeId;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salariedemployee, salarieddoctor.
 	 */
 	private String companyEmployedWith;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salariedemployee, salarieddoctor.
 	 */
 	private BigDecimal netMonthlyIncome;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salariedemployee, salarieddoctor, selfemplprofessionaldoctororca, selfemplprofessionalothers.
 	 */
 	private String incomeReceivedIn;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salarieddoctor, selfemplprofessionaldoctororca, selfemplprofessionalothers.
 	 */
 	private String yearsOfExperienceId;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplprofessionalothers.
 	 */
 	private BigDecimal grossAnnualIncome;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplownbusn.
 	 */
 	private BigDecimal grossAnnualTurnover;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplownbusn.
 	 */
 	private BigDecimal netAnnualProfits;
 	
-	/*
+	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplownbusn.
 	 * 2. Refer YEARS_OF_EXPERIENCE_ID for insert / update

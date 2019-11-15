@@ -26,17 +26,18 @@ public class CreditCardModeOfPayment {
 	@Field(value="MODE_OF_PAYMENT")
 	private String modeOfPayment;
 	
-	/*
-	 * <p>* Available Limit Release is subject to bank’s policies and discretion.<p>
+	/**
+	 * <p>* 1. Available Limit Release is subject to bank’s policies and discretion.<p>
 	 */
 	private String noteAvailableLimitRelease;
-	/*
-	 * <p>* Turnaround Time is mentioned in Business Days.</p>
+	
+	/**
+	 * <p>* 1. Turnaround Time is mentioned in Business Days.</p>
 	 */
 	private String noteTurnaroundTime;
 	
-	/*
-	 * check how this field position is placed in MongoDB., because only few columns order are mentioned.
+	/**
+	 * 1. Check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
 	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")

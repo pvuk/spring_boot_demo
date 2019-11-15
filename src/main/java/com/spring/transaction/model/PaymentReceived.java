@@ -46,7 +46,7 @@ public class PaymentReceived {
 	@Field(value = "REFERENCE_NO", order = 9)
 	private String referenceNo;
 	
-	/*
+	/**
 	 * 1. Where the transaction is done(Payment Description).
 	 */
 	@Field(value = "TRANSACTION_DETAILS", order = 10)

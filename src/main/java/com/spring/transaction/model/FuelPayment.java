@@ -26,7 +26,8 @@ public class FuelPayment {
 	private Date paymentOn;
 	private BigDecimal waiverAmount;
 	private String paidAtLocation;
-	/*
+	
+	/**
 	 * 1. Google Location(Longitude, Latitude)
 	 */
 	private String tagLocation;
@@ -35,7 +36,7 @@ public class FuelPayment {
 	@NotNull(message = "Payment Type is required field")
 	private String paymentTypeId;
 	
-	/*
+	/**
 	 * 1. when cashback received insert fuelPaymentId into fuelPaymentParentId
 	 */
 	private String fuelPaymentParentId;

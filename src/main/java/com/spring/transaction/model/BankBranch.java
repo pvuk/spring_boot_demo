@@ -47,7 +47,7 @@ public class BankBranch {
 	@Field(value="ADDRESS", order = 9)
 	private Address address;
 	
-	/*
+	/**
 	 * if not found user can add. Need to approve by Admin
 	 */
 	@Field(value = "IS_NEW", order = 10) 		private Boolean isNew;

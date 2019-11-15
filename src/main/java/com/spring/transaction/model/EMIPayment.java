@@ -82,7 +82,7 @@ public class EMIPayment {
 	@Field(value = "REMAINING_EMI_MONTHS", order = 19)
 	private String remainingEMIMonths;
 	
-	/*
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@Field(value = "TRANSACTION_DETAILS", order = 20)

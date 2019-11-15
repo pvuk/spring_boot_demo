@@ -22,7 +22,7 @@ public class CardDetails {
 	@Field(value = "CARD_TYPE_ID", order = 2)
 	private String cardTypeId;
 	
-	/*
+	/**
 	 * Refer to CredtiCard, DebitCard, WalletCard etc.,
 	 */
 	@Field(value = "CARD_ID", order = 3)

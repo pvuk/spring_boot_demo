@@ -40,7 +40,7 @@ public class UPIWallet {
 	
 	private String upiAppCode;
 	
-	/*
+	/**
 	 * 1. If multiple UPI_ID exist, allow only one primary UPI to pay / receive the amount
 	 */
 	private Boolean isPrimary = false;

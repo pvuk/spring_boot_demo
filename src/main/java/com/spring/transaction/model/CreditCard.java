@@ -30,11 +30,12 @@ public class CreditCard implements Serializable{
 	@Field(value = "CREDIT_CARD_ID", order = 1)
 	@Id 												private String creditCardId;
 
-	/*
-	 * https://docs.mongodb.com/manual/core/index-unique/
+	/**
+	 * <a href="https://docs.mongodb.com/manual/core/index-unique/">Unique Indexes</a>
 	 */
 	@Field(value="CODE", order = 2)
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)								
+	private String code;
 	
 	@Field(value="POSITION", order = 3) 				private Long position;
 	

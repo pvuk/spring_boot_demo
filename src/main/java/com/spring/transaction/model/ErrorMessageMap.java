@@ -36,7 +36,7 @@ public class ErrorMessageMap implements Serializable {
 	public void clearErrorMsgs() {
 		aErrorMsgsHM.clear();
 	}
-	/*
+	/**
 	 * public Map getErrorMsgs() { return aErrorMsgsHM; }
 	 * 
 	 * public void setErrorMsgs( Map aErrorMsgs ) { aErrorMsgsHM = new HashMap( aErrorMsgs ); }

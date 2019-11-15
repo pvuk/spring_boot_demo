@@ -36,14 +36,14 @@ public class ProfilePassword {
 	@Field(value = "IS_ACTIVE")
 	private boolean isActive;
 	
-	/*
+	/**
 	 * 1. If the user forgot and try after 4 hours / next day before
 	 * next_success_login_date don't update loginFailedDate
 	 */
 	@Field(value="LOGIN_FAILED_DATE")
 	private Date loginFailedDate;
 	
-	/*
+	/**
 	 * 1. Allow the user upto 5 attempts to try.
 	 * 2. If no_of_times_login_failed count > 5. User have to wait 24 hours from loginFailedDate till next day.
 	 * 2.1 For example if 5th login fails at 22-Jul-2019 19:16:00.000. 
@@ -53,7 +53,7 @@ public class ProfilePassword {
 	@Field(value="NO_OF_TIMES_LOGIN_FAILED")
 	private Integer no_of_times_login_failed;
 	
-	/*
+	/**
 	 * 1. Show the user next_success_login_date if no_of_times_login_failed count > 5. 
 	 * 2. Send email to user when time exceeds next_success_login_date (Maintain
 	 * Thread when it completes "next second" mail should be sent)and provide

@@ -27,7 +27,7 @@ public class CreditCardModeOfPaymentController{
 		return null;
 	}
 
-	/*
+	/**
 	 * 1. REST WebService are that POST is often used to create a new entity.
 	 * 2. You should use POST to create new resources and PUT to update existing resources.
 	 * Example: POST /items create
@@ -44,7 +44,7 @@ public class CreditCardModeOfPaymentController{
 		return null;
 	}
 
-	/*
+	/**
 	 * 1. PUT is often used to update an existing entity
 	 * 2. Use PUT when you know the "id" of the object e.g. Order, Book, Employee
 	 * Example: PUT /items/1 update

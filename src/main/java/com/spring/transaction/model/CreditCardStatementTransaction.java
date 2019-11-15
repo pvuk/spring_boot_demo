@@ -42,19 +42,21 @@ public class CreditCardStatementTransaction {
 	@Field(value = "REFERENCE_NO")
 	private String referenceNo;
 	private Date transactionOn;
-	/*
+	
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@Field(value = "TRANSACTION_DESCRIPTION")
 	@NotNull(message="Transaction Details / Description is required field.")
 	private String transactionDescription;
 	
-	/*
+	/**
 	 * Supporting feature on
 	 * 1. Bajaj Finserv RBL Bank
 	 */
 	private BigDecimal foreignCurrenncyAmount;
-	/*
+	
+	/**
 	 * 1. Amount in Rs(INR)
 	 */
 	private BigDecimal amount;

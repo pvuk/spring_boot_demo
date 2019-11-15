@@ -17,14 +17,14 @@ public class Payment {
 	@Field(value = "PAYMENT_FROM_ID")							private String paymentFromId;
 	@Field(value = "PAYMENT_TO_ID")								private String paymentToId;
 	
-	/*
+	/**
 	 * 1. if payment is single / multiple PARENT_PAYMENT_ID is root of all transactions.
 	 * 
 	 */
 	@Field(value = "PARENT_PAYMENT_ID")
 	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
 	
-	/*
+	/**
 	 * 1. If fuel cashback / bank credited, this payment is refer as bank source(Ex: Yesbank, SBI CC)
 	 */
 	@Field(value = "FROM_SOURCE")								private Boolean fromSource;

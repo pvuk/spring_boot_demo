@@ -32,12 +32,12 @@ public class RewardPointsRedeem {
 	
 	@Field(value = "REFERENCE_NO", order = 6)							private String referenceNo;
 	
-	/*
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@Field(value = "TRANSACTION_DETAILS", order = 7) 					private String transactionDetails;
 	
-	/*
+	/**
 	 * Same login user not right to confirm the payment
 	 */
 	@Field(value = "CONFIRM_PAYMENT", order = 8) 						private Boolean confirmPayment;

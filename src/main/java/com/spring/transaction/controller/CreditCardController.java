@@ -39,8 +39,10 @@ public class CreditCardController {
 		return new ResponseEntity<Object>(message, HttpStatus.CREATED);
 	}
 	
-	/*
-	 * https://httpstatuses.com/304
+	/**
+	 * Response status: 
+	 * <a href="https://httpstatuses.com/400">HttpStatus.BAD_REQUEST</a> Or
+	 * <a href="https://httpstatuses.com/304">HttpStatus.NOT_MODIFIED</a>
 	 */
 //	@TrackTime
 //	@NoLogging

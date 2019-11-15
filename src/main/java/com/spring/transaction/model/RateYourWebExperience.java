@@ -14,8 +14,9 @@ import lombok.Data;
 public class RateYourWebExperience {
 
 	private String rateYourWebExperienceId;
-	/*
-	 * 1. once stars are selected, it should be saved automatically.
+	
+	/**
+	 * 1. Once stars are selected, it should be saved automatically.
 	 */
 	private int rating;
 	private Date ratingOn;

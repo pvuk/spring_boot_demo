@@ -21,7 +21,7 @@ public class FeesAndCharges {
 	@NotNull(message = "Card Details is required field.")
 	private String cardDetailsId;
 	
-	/*
+	/**
 	 * 1. Implement Dynamic multiple in-line grid feature, for enter multiple details of Late Payment
 	 * Ex: 	NIL for Total Amount due from Rs.0-Rs.200;
 	 * 		Rs. 100 for Total Amount due greater than Rs. 200 & up to Rs. 500;
@@ -35,7 +35,7 @@ public class FeesAndCharges {
 	@NotNull(message = "Cash Advance is required field.")
 	private String cashAdvanceId;
 	
-	/*
+	/**
 	 * 1. Source: SBI -> http://bit.ly/2KmboVh
 	 */
 	private BigDecimal annualFee;
@@ -45,7 +45,7 @@ public class FeesAndCharges {
 	private BigDecimal addOnFee;
 	private String addOnFeeDescription;
 	
-	/*
+	/**
 	 * 1. NIL for Total Amount due from Rs.0-Rs.200;
 	 * 2. Rs. 100 for Total Amount due greater than Rs. 200 & up to Rs. 500;
 	 * 3. Overlimit: 2.5% of overlimit amount subject to a minimum of Rs. 500 
@@ -53,18 +53,21 @@ public class FeesAndCharges {
 	private String description;
 
 	private BigDecimal penalty;
-	/*
+	
+	/**
 	 * 1. Total Amount due greater than Rs. 200 & up to Rs. 500;(><=)
 	 * 2. Total Amount due greater than Rs. 25,000;(>)
 	 */
 	private String condition;
 	private BigDecimal dueGreaterThan;
 	private BigDecimal dueUpto;
-	/*
+	
+	/**
 	 * 1. Overlimit: (2.5%) of overlimit amount subject to a minimum of Rs. 500
 	 */
 	private Float overLimitPercentage;
-	/*
+	
+	/**
 	 * 1. Overlimit: 2.5% of overlimit amount subject to a minimum of (Rs. 500)
 	 * 2. Convert to other currencies if user change it to USD, AUR
 	 * 3. Site Reference for Multiple Currencies: https://coinmill.com/AUR_calculator.html
@@ -75,7 +78,8 @@ public class FeesAndCharges {
 	private String emergencyCardReplacementCostDescription;
 	private BigDecimal cashPaymentFee;
 	private BigDecimal chequeFee;
-	/*
+	
+	/**
 	 * 1. Payments made via cheque upto Rs. 10,000 
 	 */
 	private BigDecimal chequeFeeCondition;

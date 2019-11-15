@@ -59,7 +59,7 @@ public class CurrentAddress {
 	@NotNull(message = "Address is required field.")
 	private String addressId;
 	
-	/*
+	/**
 	 * 1. Only one IS_ACTIVE_CURRENT_ADDRESS should be active
 	 * 2. Which is recently inserted or updated is going to be IS_ACTIVE_CURRENT_ADDRESS true
 	 */

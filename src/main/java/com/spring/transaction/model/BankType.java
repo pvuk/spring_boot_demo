@@ -25,11 +25,10 @@ import lombok.NoArgsConstructor;
 @Document(collection = "BANK_TYPE_CODE")
 public class BankType {
 	
-	/*
-	 * https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo-template.id-handling
-	 * MongoDB supports autogenerate java types String or BigInteger.
-	 * 
-	 * If possible, an id property or field declared as a String in the Java class is converted to and stored as an ObjectId by using a Spring Converter<String, ObjectId>. 
+	/**
+	 * 1. <a href="https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#mongo-template.id-handling">10.5.1. How the _id Field is Handled in the Mapping Layer</a></br>
+	 * 2. MongoDB supports autogenerate java types String or BigInteger.
+	 * 3. If possible, an id property or field declared as a String in the Java class is converted to and stored as an ObjectId by using a Spring Converter<String, ObjectId>. 
 	 */
 	@Id
 	@Field(value = "BANK_TYPE_ID", order = 1)
@@ -57,7 +56,7 @@ public class BankType {
 	@Field(value = "COMMENT", order = 7)
 	private String comment;
 	
-	/*
+	/**
 	 * if not found user can add. Need to approve by Admin
 	 */
 	@Field(value = "IS_NEW", order = 8) 		private Boolean isNew;

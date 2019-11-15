@@ -28,8 +28,8 @@ public class CreditCardPaymentTurnAroundTime {
 	private String availableLimitRelease;
 	private String paymentCreditToCardAccount;
 	
-	/*
-	 * check how this field position is placed in MongoDB., because only few columns order are mentioned.
+	/**
+	 * 1. check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
 	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")

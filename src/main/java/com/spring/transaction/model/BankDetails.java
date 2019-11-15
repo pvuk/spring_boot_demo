@@ -35,7 +35,7 @@ public class BankDetails {
 	@Type(type="yes_no")
 	private Boolean isActive;
 	
-	/*
+	/**
 	 * if bank account is transferred to other branch then new branch account is in
 	 * active state. Transfer from branch isActive false.
 	 */

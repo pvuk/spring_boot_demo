@@ -26,19 +26,19 @@ public class CreditCardPaymentLoginAndAccess {
 	@NotNull(message = "Credit Card Payment Type is required field.")
 	private String creditCardPaymentTypeId;
 	
-	/*
+	/**
 	 * 1. This field contains link description
 	 * 
 	 */
 	private String loginAndAccessLinkDescription;
 	
-	/*
+	/**
 	 * 1. This field contains link
 	 * 2. Contains Links to redirect payment gateways.
 	 */
 	private String loginAndAccessLink;
 	
-	/*
+	/**
 	 * 1. This field contains image data in database or image link reference to display on UI
 	 */
 	private String loginAndAccessImage;

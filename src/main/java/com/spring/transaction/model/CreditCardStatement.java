@@ -50,7 +50,7 @@ public class CreditCardStatement {
 	
 	private Long currencyId;
 	
-	/*Start of section - CreditCard AccountSummary*/
+/**** Start of section - CreditCard AccountSummary ****/
 	@Column(name = "FULL_NAME") 													private String fullName;
 	@Column(name = "CARD_NUMBER") 													private String cardNumber;
 	@Column(name = "STATEMENT_PERIOD") 												private String statementPeriod;
@@ -58,16 +58,16 @@ public class CreditCardStatement {
 	@Column(name = "MINIMUM_PAYMENT_DUE") 											private BigDecimal minimumPaymentDue;
 	@Column(name = "PAYMENT_DUE_DATE") 												private Date paymentDueDate;
 
-	/*
-	 * OPENING_BALANCE column also referred as Previous_Balance
+	/**
+	 * 1. OPENING_BALANCE column also referred as Previous_Balance
 	 */
 	@Column(name = "OPENING_BALANCE") 												private BigDecimal openingBalance;
-	/*
-	 * PAYMENTS_AND_CREDITS column also referred as Last_Payments_Received
+	/**
+	 * 1. PAYMENTS_AND_CREDITS column also referred as Last_Payments_Received
 	 */
 	@Column(name = "PAYMENTS_AND_CREDITS") 											private BigDecimal paymentsAndCredits;
-	/*
-	 * NEW_PURCHASES column also referred as CurrentPurchases_AND_OtherCharges
+	/**
+	 * 1. NEW_PURCHASES column also referred as CurrentPurchases_AND_OtherCharges
 	 */
 	@Column(name = "NEW_PURCHASES") 												private BigDecimal newPurchases;
 	@Column(name = "MONTHLY_EMI_DEBITS") 											private BigDecimal monthlyEMIDebits;
@@ -79,13 +79,13 @@ public class CreditCardStatement {
 	@Column(name = "AVAILABLE_CREDIT_LIMIT") 										private BigDecimal availableCreditLimit;
 	@Column(name = "CURRENT_CASH_ADVANCE")											private BigDecimal currentCashAdvance;
 	@Column(name = "AVAILABLE_CASH_LIMIT") 											private BigDecimal availableCashLimit;
-	/*End of section - CreditCard AccountSummary*/
+/**** End of section - CreditCard AccountSummary ****/
 	
 	
-	/*Start of section - CreditCard RewardPoints Summary*/
+/**** Start of section - CreditCard RewardPoints Summary ****/
 	@Column(name = "OPENING_REWARD_POINTS") 										private BigDecimal openingRewardPoints;
-	/*
-	 * EARNED column also referred as Turbo_Points_Earned
+	/**
+	 * 1. EARNED column also referred as Turbo_Points_Earned
 	 */
 	@Column(name = "EARNED") 														private BigDecimal earned;
 	@Column(name = "ADJUSTED") 														private BigDecimal adjusted;
@@ -93,7 +93,7 @@ public class CreditCardStatement {
 	@Column(name = "CLOSING_REWARD_POINTS") 										private BigDecimal closingRewardPoints;
 	@Column(name = "POINTS_TO_EXPIRE") 												private BigDecimal pointsToExpire;
 	@Column(name = "EXPIRE_ON") 													private Date expireOn;
-	/*End of section - CreditCard RewardPoints Summary*/
+/**** End of section - CreditCard RewardPoints Summary ****/
 	
 	@Column(name = "REWARD_POINTS_DETAILS_ID")										private String rewardPointsDetailsId;
 	
@@ -102,8 +102,8 @@ public class CreditCardStatement {
 	
 	@Column(name = "CREDIT_CARD_MODE_OF_PAYMENT_ID")								private String creditCardModeOfPaymentId;
 	
-	/*
-	 * check how this field position is placed in MongoDB., because only few columns order are mentioned.
+	/**
+	 * 1. check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
 	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")

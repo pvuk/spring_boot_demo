@@ -24,20 +24,20 @@ public class RateYourDebit {
 	
 	private String paymentById;
 	
-	/*
-	 * Debited from
+	/**
+	 * 1. Debited from
 	 */
 	public String borrowerId;
 	
-	/*
-	 * Credited to
+	/**
+	 * 1. Credited to
 	 */
 	private String lenderId;
 	
 	private int overalRatingScore;
 	
-	/*
-	 * 1. once stars are selected, it should be saved automatically.
+	/**
+	 * 1. Once stars are selected, it should be saved automatically.
 	 */
 	private int rating;
 	private Date ratingOn;

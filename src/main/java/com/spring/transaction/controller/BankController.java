@@ -28,8 +28,8 @@ public class BankController {
 	
 	@Autowired private BankService bankService;
 	
-	/*
-	 * We inject a CRUDOperationService bean into the crudOperationService field.
+	/**
+	 * We are injecting a CRUDOperationService bean into the crudOperationService field.
 	 * The @Qualifier("bankService") specifies that it is a BankServiceImpl bean.
 	 * 
 	 * <a href="http://appsdeveloperblog.com/autowired-and-qualifier-in-spring/">

@@ -59,7 +59,7 @@ public class PermanentAddress {
 	@NotNull(message = "Address is required field.")
 	private String addressId;
 	
-	/*
+	/**
 	 * 1. IS_ACTIVE_PERMANENT_ADDRESS should be one record for single user
 	 * 2. Which is recently inserted or updated is going to be IS_ACTIVE_PERMANENT_ADDRESS true
 	 */

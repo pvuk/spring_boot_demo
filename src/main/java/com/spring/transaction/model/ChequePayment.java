@@ -18,12 +18,12 @@ public class ChequePayment {
 	@Field(value = "CHEQUE_PAYMENT_ID", order = 1)
 	private String chequePaymentId;
 	
-	/*
+	/**
 	 * Display MM/DD/YYYY format at UI side
 	 */
 	private Date dateOfIssue;
 	
-	/*
+	/**
 	 * Send alert 1 month / 2 week / 1 week / 4 days before to user when he/she didn't claim the amount 
 	 */
 	private Date validUpTo;
@@ -36,11 +36,12 @@ public class ChequePayment {
 	
 	private Long accountNumber;
 	
-	/*
+	/**
 	 * 6 digit
 	 */
 	private Long chequeNumber;
-	/*
+	
+	/**
 	 * 9 digit
 	 */
 	private Long micrCode;
@@ -49,7 +50,7 @@ public class ChequePayment {
 	
 	private String chequeReceivedLocation;
 	
-	/*
+	/**
 	 * 1. Display at UI side only Debit / Bounce
 	 */
 	@Field(value = "PAYMENT_TYPE_ID")

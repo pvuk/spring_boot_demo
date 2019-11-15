@@ -26,7 +26,7 @@ public class MileStoneAchievement {
 	@Field(value="FEE_WAIVER_ID")
 	private String feeWaiverId;
 	
-	/*
+	/**
 	 * 1. It should be equal to Annual Year Fee Waiver date, 
 	 * 2. Alert the user before 2 months, 1 month, 1 week, 1 day to achieve milestone.
 	 */

@@ -23,7 +23,7 @@ public class RewardPointsEarned {
 	@Id
 	private String rewardPointsEarnedId;
 	
-	/*
+	/**
 	 * 1. if no records found previous balance should be 0 otherwise bring the last statement closing balance.
 	 * 2. Trigger every month Thread cycle after statement date. Then user will know it in current statement.
 	 * 3. If card is in inActive state don't run Thread cycle.
@@ -34,7 +34,7 @@ public class RewardPointsEarned {
 	@Field(value="REWARDS_EARNED", order = 3)
 	@NotNull(message = "Rewards Earned is required field.") 										private long rewardsEarned;
 	
-	/*
+	/**
 	 * 1. This Field is main for anyone of the following transactions Redeemed/Expired/Adjusted
 	 * 2. All individual transactions will be shown in REWARD_POINTS_REDEEM
 	 */
@@ -50,7 +50,7 @@ public class RewardPointsEarned {
 	
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH", order = 9) 											private long rewardsExpireThisMonth;
 	
-	/*
+	/**
 	 * Save column data as 16-10-2019 23:59:59
 	 */
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH_ON", order = 10) 										private Date rewardsExpireThisMonthOn;
@@ -62,19 +62,19 @@ public class RewardPointsEarned {
 	@Field(value="POINTS_EXPIRE_NEXT_MONTH_ON", order = 13) 										private Date pointsExpireNextMonthOn;
 	@Field(value="POINTS_EXPIRE_NEXT_THREE_MONTH_ON", order = 14) 									private Date pointsExpireNextThreeMonthOn;
 
-	/*
+	/**
 	 * totalPointsExpire(Previous month) + rewardsExpireThisMonth
 	 */
 	@Field(value="TOTAL_POINTS_EXPIRE", order = 15) 												private long totalPointsExpire;
 
 	@Field(value="POINTS_EXPIRE_DETAILS", order = 16) 												private String pointsExpireDetails;
 
-	/*
+	/**
 	 * 1. If user wish to see points in cash value EACH_POINT_VALUE value should be mandatory. 
 	 */
 	@Field(value="EACH_POINT_VALUE", order = 17) 													private long eachPointValue;
 	
-	/*
+	/**
 	 * if isRewardPointsCalculationAvailableInStatement is checked false disable
 	 * fields: this year / From the card issue date
 	 */
@@ -98,7 +98,7 @@ public class RewardPointsEarned {
 	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 28)
 	@NotNull(message = "Credit Card Statement is required field.") 									private String creditCardStatementId;
 	
-	/*
+	/**
 	 * 1. Extra / Bonus Points are under this category
 	 */
 	//HDFC CC feature
@@ -110,20 +110,20 @@ public class RewardPointsEarned {
 	
 	@Field(value="PARTNER_SHIP_ID", order = 32) 													private String partnerShipId;
 	
-	/*
+	/**
 	 * 1. If data is inserted / updated in REWARD_POINTS table, save / update in REWARD_POINTS_EARNED table.
 	 * 2. Only one record allows per card, per statement in REWARD_POINTS and REWARD_POINTS_EARNED
 	 */
 	@NotNull(message = "Statement Reward Points is required field.")
 	@Field(value="REWARD_POINTS_DETAILS_ID", order = 33) 											private String rewardPointsDetailsId;
 
-	/*
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@Field(value = "TRANSACTION_DETAILS", order = 34)
 	@NotNull(message="Transaction Details is required field.") 										private String transactionDetails;
 	
-	/*
+	/**
 	 * Same login user not right to confirm the payment
 	 */
 	@Field(value="CONFIRM_PAYMENT", order = 35) 													private Boolean confirmPayment;

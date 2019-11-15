@@ -15,7 +15,7 @@ public class RateYourAndroidExperience {
 	
 	private String rateYourAndroidExperienceId;
 	
-	/*
+	/**
 	 * 1. once stars are selected, it should be saved automatically.
 	 */
 	private int rating;

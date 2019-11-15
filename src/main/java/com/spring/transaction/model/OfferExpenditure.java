@@ -37,12 +37,12 @@ public class OfferExpenditure {
 	
 	private Date spendOn;
 	
-	/*
+	/**
 	 * 1. Calculate Current Spend Expenditure is Percentage(5% / 10% /.... / 100%)
 	 */
 	private Double spendPercentage;
 	
-	/*
+	/**
 	 * 1. Send user notification everyday how much percentage they completed and how much percentage left.
 	 * 2. Once offer completed show warning to user, if they tries to doing transaction on offer expenditure.
 	 * 3. Once offer expenditure completed send user notification first time / week / month, not more than one month.
@@ -50,7 +50,7 @@ public class OfferExpenditure {
 	 */
 	private Boolean isOfferExpenditureCompleted;
 	
-	/*
+	/**
 	 * 1. Don't allow user to change option to YES if isOfferExpenditureCompleted to yes.
 	 * 2. After biller release the offer as cashback / coupon / voucher / giftcard, mark this option true.
 	 * 3. Once option is marked to true, offerDetailsId should be inserted as per OfferDetails.

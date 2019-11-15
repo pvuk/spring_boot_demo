@@ -22,8 +22,8 @@ public class Profession {
 	
 	private boolean isApproved;
 	
-	/*
-	 * 1. insert customer_id
+	/**
+	 * 1. Insert customer_id
 	 */
 	private String approvedBy;
 	
