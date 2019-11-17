@@ -64,6 +64,9 @@ public class BankPayment {
 	@Field(value = "REFERENCE_NO")
 	private String referenceNo;
 
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value = "CONFIRM_PAYMENT", order = 9)
 	private Boolean confirmPayment;
 

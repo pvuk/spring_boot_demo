@@ -19,12 +19,12 @@ public class ChequePayment {
 	private String chequePaymentId;
 	
 	/**
-	 * Display MM/DD/YYYY format at UI side
+	 * 1. Display MM/DD/YYYY format at UI side
 	 */
 	private Date dateOfIssue;
 	
 	/**
-	 * Send alert 1 month / 2 week / 1 week / 4 days before to user when he/she didn't claim the amount 
+	 * 1. Send alert 1 month / 2 week / 1 week / 4 days before to user when he/she didn't claim the amount 
 	 */
 	private Date validUpTo;
 	
@@ -37,12 +37,12 @@ public class ChequePayment {
 	private Long accountNumber;
 	
 	/**
-	 * 6 digit
+	 * 1. Length / size of control should be 6 digits
 	 */
 	private Long chequeNumber;
 	
 	/**
-	 * 9 digit
+	 * 1. Length / size of control should be 9 digits
 	 */
 	private Long micrCode;
 	private Long accountId;

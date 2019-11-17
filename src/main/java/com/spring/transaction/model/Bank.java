@@ -68,7 +68,7 @@ public class Bank {
 	private String refLink;
 	
 	/**
-	 * if not found user can add. Need to approve by Admin
+	 * 1. If not found user can add. Need to approve by Admin
 	 */
 	@Field(value = "IS_NEW", order = 13) 		private Boolean isNew;
 	@Field(value = "APPROVED", order = 14) 		private Boolean approved;

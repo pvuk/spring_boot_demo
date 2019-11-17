@@ -21,7 +21,7 @@ public class PaymentBy {
 	private String paymentById;
 
 	/**
-	 * 1. if payment received from more than one customer., we need to insert two
+	 * 1. If payment received from more than one customer., we need to insert two
 	 * records for single transaction.
 	 */
 	@Field(value = "PAYMENT_RECEIVED_ID", order = 2)

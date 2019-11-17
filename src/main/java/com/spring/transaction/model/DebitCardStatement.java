@@ -30,6 +30,7 @@ public class DebitCardStatement {
 	private Boolean isStatementCycleClosed = Boolean.FALSE;
 	
 /****Start of section - Savings Account / Current Account AccountSummary ****/
+	
 	/**
 	 * As per ICICI monthly Statement
 	 */

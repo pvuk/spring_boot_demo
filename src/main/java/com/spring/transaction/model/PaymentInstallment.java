@@ -43,6 +43,9 @@ public class PaymentInstallment {
 	@Size(max = 3000)
 	private String transactionDetails;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value="CONFIRM_PAYMENT", order = 10)
 	private Boolean confirmPayment;
 	

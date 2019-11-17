@@ -51,8 +51,11 @@ public class CreditCardStatementTransaction {
 	private String transactionDescription;
 	
 	/**
-	 * Supporting feature on
-	 * 1. Bajaj Finserv RBL Bank
+	 * <ul>
+	 * 	<li>Supporting feature on
+	 * 		<ol>1. Bajaj Finserv RBL Bank</ol>
+	 * 	</li>
+	 * </ul>
 	 */
 	private BigDecimal foreignCurrenncyAmount;
 	

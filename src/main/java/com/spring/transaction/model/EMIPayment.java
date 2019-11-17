@@ -101,6 +101,9 @@ public class EMIPayment {
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value = "CONFIRM_PAYMENT", order = 25)
 	private Boolean confirmPayment;
 	

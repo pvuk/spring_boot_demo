@@ -43,6 +43,9 @@ public class PaymentRefund {
 	@NotNull(message="Transaction Details is required field.")
 	private String transactionDetails;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value="CONFIRM_PAYMENT", order = 7)
 	private Boolean confirmPayment;
 	

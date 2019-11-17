@@ -24,7 +24,7 @@ public class RewardPointsEarned {
 	private String rewardPointsEarnedId;
 	
 	/**
-	 * 1. if no records found previous balance should be 0 otherwise bring the last statement closing balance.
+	 * 1. If no records found previous balance should be 0 otherwise bring the last statement closing balance.
 	 * 2. Trigger every month Thread cycle after statement date. Then user will know it in current statement.
 	 * 3. If card is in inActive state don't run Thread cycle.
 	 */
@@ -51,7 +51,7 @@ public class RewardPointsEarned {
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH", order = 9) 											private long rewardsExpireThisMonth;
 	
 	/**
-	 * Save column data as 16-10-2019 23:59:59
+	 * 1. Save column data as 16-10-2019 23:59:59
 	 */
 	@Field(value="REWARDS_EXPIRE_THIS_MONTH_ON", order = 10) 										private Date rewardsExpireThisMonthOn;
 	
@@ -63,7 +63,7 @@ public class RewardPointsEarned {
 	@Field(value="POINTS_EXPIRE_NEXT_THREE_MONTH_ON", order = 14) 									private Date pointsExpireNextThreeMonthOn;
 
 	/**
-	 * totalPointsExpire(Previous month) + rewardsExpireThisMonth
+	 * 1. TotalPointsExpire(Previous month) + rewardsExpireThisMonth
 	 */
 	@Field(value="TOTAL_POINTS_EXPIRE", order = 15) 												private long totalPointsExpire;
 
@@ -75,7 +75,7 @@ public class RewardPointsEarned {
 	@Field(value="EACH_POINT_VALUE", order = 17) 													private long eachPointValue;
 	
 	/**
-	 * if isRewardPointsCalculationAvailableInStatement is checked false disable
+	 * 1. If isRewardPointsCalculationAvailableInStatement is checked false disable
 	 * fields: this year / From the card issue date
 	 */
 	@Field(value="IS_REWARD_POINTS_CALCULATION_AVAILABLE_IN_STATEMENT", order = 18) 				private Boolean isRewardPointsCalculationAvailableInStatement;
@@ -124,7 +124,7 @@ public class RewardPointsEarned {
 	@NotNull(message="Transaction Details is required field.") 										private String transactionDetails;
 	
 	/**
-	 * Same login user not right to confirm the payment
+	 * 1. Same login user not right to confirm the payment
 	 */
 	@Field(value="CONFIRM_PAYMENT", order = 35) 													private Boolean confirmPayment;
 	

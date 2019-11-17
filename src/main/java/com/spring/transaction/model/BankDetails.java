@@ -36,7 +36,7 @@ public class BankDetails {
 	private Boolean isActive;
 	
 	/**
-	 * if bank account is transferred to other branch then new branch account is in
+	 * 1. If bank account is transferred to other branch then new branch account is in
 	 * active state. Transfer from branch isActive false.
 	 */
 	@Field(value="IS_TRANSFERRED", order = 5)

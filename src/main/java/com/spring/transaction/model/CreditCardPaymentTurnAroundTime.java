@@ -10,9 +10,10 @@ import lombok.Data;
 
 /**
  * 
+ * Source: <a href="https://www.rblbank.com/credit-card-payments">Make your Credit Card Payments Instantly</a>
+ * 
  * @author venkataudaykiranp
  * 
- * Source: <a href="https://www.rblbank.com/credit-card-payments>Make your Credit Card Payments Instantly</a>
  *
  */
 @Data
@@ -29,7 +30,7 @@ public class CreditCardPaymentTurnAroundTime {
 	private String paymentCreditToCardAccount;
 	
 	/**
-	 * 1. check how this field position is placed in MongoDB., because only few columns order are mentioned.
+	 * 1. Check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
 	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")

@@ -40,6 +40,9 @@ public class PaymentReceived {
 	@Field(value="PAYMENT_STATUS_ID", order = 7)
 	private String paymentStatusId;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value="CONFIRM_PAYMENT", order = 8)
 	private Boolean confirmPayment;
 	

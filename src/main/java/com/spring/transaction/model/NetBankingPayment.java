@@ -28,6 +28,9 @@ public class NetBankingPayment {
 	@NotNull(message="Amount is required field.")
 	private BigDecimal amount;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value = "CONFIRM_PAYMENT", order =  4)
 	private Boolean confirmPayment;
 	

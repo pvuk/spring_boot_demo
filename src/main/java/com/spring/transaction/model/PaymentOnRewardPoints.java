@@ -31,6 +31,9 @@ public class PaymentOnRewardPoints {
 	@Field(value = "REWARD_CARD_ID", order = 5)
 	private String rewardCardId;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 */
 	@Field(value = "CONFIRM_PAYMENT", order =  6)
 	private Boolean confirmPayment;
 	
