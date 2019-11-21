@@ -33,10 +33,16 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 //	@Autowired TransErrorLogReportRepo transErrorLogReportRepo;
 	@Override
-	protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers,
-			HttpStatus status, WebRequest request) {
+	protected ResponseEntity<Object> handleExceptionInternal(Exception ex, Object body, HttpHeaders headers, HttpStatus status, WebRequest request) {
+		Date date = new Date();
+		String message = ex.getMessage() + ". " + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
+		
 		log.error("handleExceptionInternal: {}", getErrorDetails(ex, ex.getMessage(), status, null, request));
-		return super.handleExceptionInternal(ex, body, headers, status, request);
+//		return super.handleExceptionInternal(ex, body, headers, status, request);
+		
+		ErrorDetails errorDetails = new ErrorDetails(date, message.split(":")[0], request.getDescription(false));//send only Error reason
+
+		return new ResponseEntity<>(errorDetails, HttpStatus.NOT_FOUND);
 	}
 	
 	@ExceptionHandler(NotFoundException.class)
@@ -67,8 +73,9 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 
 	private Object getErrorDetails(Exception ex, String message, HttpStatus httpStatus, Date date, WebRequest request) {
 		StackTraceElement ste = ex.getStackTrace()[0];
+		StackTraceElement ste2 = ex.getStackTrace()[2];//for method reference
 		String className = ste.getClassName();
-		String methodName = ste.getMethodName();
+		String methodName = ste2.getMethodName();
 		int lineNumber = ste.getLineNumber();
 		String fileName = ste.getFileName();
 		int statusCode = httpStatus.value();
@@ -77,7 +84,7 @@ public class CustomizedResponseEntityExceptionHandler extends ResponseEntityExce
 		String requestURL = httpServletRequest.getRequestURL().toString();
 		String queryString = httpServletRequest.getQueryString();
 		queryString = queryString != null ? ", Parameters: "+ queryString : "";
-		Object errorDetails = "Error: " + message + ", occured at class :" + className + ", methodName: " + methodName
+		Object errorDetails = "Exception Message: " + message + ", occured at class :" + className + ", methodName: " + methodName
 				+ ", lineNumber: " + lineNumber + ", fileName: " + fileName + ", StatusCode: " + statusCode
 				+ ", StatusName: " + statusName +", requestURL: "+ requestURL + queryString;
 		

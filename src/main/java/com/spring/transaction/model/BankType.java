@@ -69,7 +69,8 @@ public class BankType {
 	private AuditData auditData;
 	
 	@Transient
-	private ErrorMessageMap errorMessageMap;
+	@Builder.Default
+	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();;
 
 	@Override
 	public String toString() {

@@ -12,6 +12,8 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.transaction.exception.NotFoundException;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.repository.BankRepository;
@@ -67,17 +69,29 @@ public class BankServiceImpl implements CRUDOperationService, BankService {
 
 	@Override
 	public List<Object> saveAll(List<Object> list) throws Exception {
-		list.forEach(obj -> {
-			Bank bank = (Bank) obj;
+		List<Bank> banks = new ObjectMapper().convertValue(list, new TypeReference<List<Bank>>() {
+		});
+		banks.forEach(obj -> {
+			Bank bank = obj;
 			Query query = Query.query(Criteria.where("BANK_NAME").is(bank.getBankName()));
 			boolean exists = mongoTemplate.exists(query, Bank.class);
 			if (!exists) {
-				bankMongoRepo.insert(bank);
+				bank = bankMongoRepo.insert(bank);
 			} else {
-				log.info(bank.getBankName() +" already exist.");
+				log.info("saveAll: {} already exist.", bank.getBankName());
 				bank.getErrorMessageMap().putErrorMsg(MessageConstants.Status.WARNING, bank.getBankName() +" already exist.");
 			}
 		});
+//		Map<String, Bank> bankMap = banks.stream().filter(b -> b.getBankId() != null).collect(Collectors.toMap(Bank::getBankId, b -> b));
+////		list.stream().collect(Collectors.to)
+//		list.forEach(b->{
+//			LinkedHashMap<String, Object> lhm = (LinkedHashMap<String, Object>) b;
+//			lhm.entrySet().forEach(entry-> {
+//				if(lhm.containsKey("bankName")) {
+//					lhm.put("id", bankMap.get(entry.getKey()).getBankId());
+//				}
+//			});
+//		});
 		return list;
 	}
 

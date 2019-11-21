@@ -87,6 +87,7 @@ public class Bank {
 	@Embedded
 	private AuditData auditData;
 	
+	@Transient
 	@Builder.Default
 	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();
 	

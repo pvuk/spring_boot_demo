@@ -21,6 +21,8 @@ import com.spring.transaction.aspect.TrackTime;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.service.BankService;
 import com.spring.transaction.service.CRUDOperationService;
+import com.spring.transaction.service.data.BankDataService;
+import com.spring.transaction.util.CodeTableConstants;
 
 @BasePathAwareController
 @RequestMapping("/bank/custom")
@@ -40,6 +42,12 @@ public class BankController {
 	 */
 	@Qualifier(value="bankService")
 	@Autowired private CRUDOperationService crudOperationService;
+	
+	@Autowired
+	@Qualifier(value = CodeTableConstants.Bean.PUBLIC_BANK_BANKTYPE) private BankDataService publicBankDataService;
+	
+	@Autowired
+	@Qualifier(value = CodeTableConstants.Bean.PRIVATE_BANK_BANKTYPE) private BankDataService privateBankDataService;
 	
 	@TrackTime
 	@PostMapping(path = "/save")
@@ -77,5 +85,17 @@ public class BankController {
 	public @ResponseBody ResponseEntity<Object> getAllBanks(){
 		List<Bank> banks = bankService.getAllBanks();
 		return new ResponseEntity<Object>(banks, HttpStatus.OK);
+	}
+	
+	@RequestMapping(path="/getPublicBanks", method = RequestMethod.GET)
+	public ResponseEntity<List<Bank>> getPublicBanks(){
+		List<Bank> list = publicBankDataService.getBanks();
+		return new ResponseEntity<List<Bank>>(list, HttpStatus.OK);
+	}
+	
+	@RequestMapping(path="/getPrivateBanks", method = RequestMethod.GET)
+	public ResponseEntity<Object> getPrivateBanks(){
+		List<Bank> list = privateBankDataService.getBanks();
+		return new ResponseEntity<Object>(list, HttpStatus.OK);
 	}
 }

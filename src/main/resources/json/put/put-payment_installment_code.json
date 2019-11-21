@@ -33,5 +33,10 @@
 		"code": "processing",
 		"position": 7,
 		"description": "Processing"
+	},
+	{
+		"code": "Success",
+		"position": 8,
+		"description": "Success"
 	}
 ]

@@ -1,5 +1,6 @@
 [
 	{
+		"id": "5cecfaab3d495818d0bd9f82",
 		"code": "public",
 		"position": 1,
 		"description": "Public Sector Banks",
@@ -8,6 +9,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5cece8c83d495818d0bd9f80",
 		"code": "private",
 		"position": 2,
 		"description": "Private Sector Banks",
@@ -16,6 +18,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525dfa",
 		"code": "regionalrural",
 		"position": 3,
 		"description": "Regional Rural Banks(RRB)",
@@ -24,6 +27,7 @@
 		"comment": ""
 	},
 	{
+		"id": "",
 		"code": "foreign",
 		"position": 4,
 		"description": "Foreign Banks",
@@ -32,6 +36,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525dfc",
 		"code": "rural",
 		"position": 5,
 		"description": "State(Rural)",
@@ -40,6 +45,7 @@
 		"comment": ""
 	},
 	{
+		"id": "",
 		"code": "urban",
 		"position": 6,
 		"description": "Urban",
@@ -48,6 +54,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525dfe",
 		"code": "nonscheduled",
 		"position": 7,
 		"description": "",
@@ -55,6 +62,7 @@
 		"category": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525dff",
 		"code": "paymentsbank",
 		"position": 8,
 		"description": "Payments Bank",
@@ -63,6 +71,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525e00",
 		"code": "smallfinancebanks",
 		"position": 9,
 		"description": "Small Finance Banks",
@@ -71,6 +80,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525e01",
 		"code": "wallet",
 		"position": 10,
 		"description": "wallet",
@@ -79,6 +89,7 @@
 		"comment": ""
 	},
 	{
+		"id": "5dd6c8827b34d04604525e02",
 		"code": "new",
 		"position": 11,
 		"description": "New",

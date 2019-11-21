@@ -1,5 +1,7 @@
 package com.spring.transaction.repository;
 
+import java.util.List;
+
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.query.Param;
@@ -14,5 +16,7 @@ public interface BankRepository extends MongoRepository<Bank, ObjectId> {
 //	List<Bank> findAll();
 
 	Bank findByBankName(@Param(value = "bankName") String bankName);
+
+	List<Bank> findByBankTypeId(@Param(value = "bankTypeId") String bankTypeId);
 
 }

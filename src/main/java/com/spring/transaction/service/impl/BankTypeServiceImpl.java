@@ -14,7 +14,7 @@ import com.spring.transaction.model.BankType;
 import com.spring.transaction.model.ErrorMessageMap;
 import com.spring.transaction.repository.BankTypeRepository;
 import com.spring.transaction.service.BankTypeService;
-import com.spring.transaction.validator.CodeTableConstants;
+import com.spring.transaction.util.CodeTableConstants;
 import com.spring.transaction.validator.MessageConstants;
 
 import lombok.extern.slf4j.Slf4j;
@@ -56,9 +56,9 @@ public class BankTypeServiceImpl implements BankTypeService {
 	@Override
 	public List<BankType> saveAll(List<BankType> bankTypes) throws Exception {
 		bankTypes.forEach(bankType -> {
-			Query query = Query.query(Criteria.where(CodeTableConstants.Column.CODE).is(bankType.getCode()));
-			boolean exists = mongoTemplate.exists(query, BankType.class);
-			log.info(query.toString());
+			Query queryCode = Query.query(Criteria.where(CodeTableConstants.Column.CODE).is(bankType.getCode()));
+			boolean exists = mongoTemplate.exists(queryCode, BankType.class);
+			log.info("saveAll: {}", queryCode.toString());
 			if (!exists) {
 //				int projectId = 100;
 //		        if (projectId != 0) {
@@ -66,6 +66,13 @@ public class BankTypeServiceImpl implements BankTypeService {
 //		            mongoTemplate.setSessionSynchronization(SessionSynchronization.ALWAYS);
 //		            log.info("mongoTemplate <{}>", mongoTemplate.getDb().getName());
 //		        }
+				
+				Query queryBankTypeId = Query.query(Criteria.where(CodeTableConstants.Column.BANK_TYPE_ID).is(bankType.getId()));
+				log.info("saveALl: {}", queryBankTypeId.toString());
+				boolean existsBankTypeId = mongoTemplate.exists(queryBankTypeId, BankType.class);
+				if(!existsBankTypeId) {
+					log.info("saveAll: Using BANK_TYPE_ID: {}, for CODE: {}", bankType.getId(), bankType.getCode());//If BankTypeId exist updating BankType with BankTypeId
+				}
 				bankTypeMongoRepo.insert(bankType);
 			} else {
 				log.info(bankType.getDescription() +" already exist.");
