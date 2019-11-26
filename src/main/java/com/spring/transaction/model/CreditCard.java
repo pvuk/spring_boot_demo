@@ -1,7 +1,5 @@
 package com.spring.transaction.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
@@ -20,12 +18,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Document(collection = "CREDIT_CARD_CODE")
-public class CreditCard implements Serializable{
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 5336834937743445753L;
+public class CreditCard {
 
 	@Field(value = "CREDIT_CARD_ID", order = 1)
 	@Id 												private String creditCardId;

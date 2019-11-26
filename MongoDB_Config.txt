@@ -37,6 +37,25 @@ From the Command Interpreter:
 	> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
 	or
 	> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongo.exe
+	
+==========================================================================================================================================================
+															Run mongodb commands on Windows add Environment path variable
+==========================================================================================================================================================
+Click on Windows icon from keyboard -> type environment.. you will get "Edit the system environment variables" option will come -> Select that opion.
+or
+Open Control Panel -> System -> Left menu options select Advanced system settings -> 
+
+Follow below steps:
+> Open Advanced tab-> Environment Variables -> System Variables Block -> 
+Step1 : 
+Click on New -> Variable name: Path, Variable value: D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin
+Or Step2: 
+Select Path -> Click on Edit -> Click on New -> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin
+
+//Example1: You need to navigate in command prompt where mongoimport.exe file exist. 
+//Then try running below command, you should also put .json file in the same direcotry.
+>mongoimport --jsonArray --db trans --collection NET_BANKING_CODE --file put-net_banking_code.json
+
 ==========================================================================================================================================================
 															Enable MongoDB's free cloud-based monitoring service, which will then receive and display
 															metrics about your deployment (disk utilization, CPU, operation statistics, etc).
