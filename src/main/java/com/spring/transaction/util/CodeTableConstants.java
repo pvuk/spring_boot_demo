@@ -18,7 +18,8 @@ public final class CodeTableConstants {
 	}
 	
 	public interface Bean {
-		public static final String PUBLIC_BANK_BANKTYPE = "publicBank";
-		public static final String PRIVATE_BANK_BANKTYPE = "privateBank";
+		public static final String PUBLIC_BANK_BANKTYPE 								= "publicBank";
+		public static final String PRIVATE_BANK_BANKTYPE 								= "privateBank";
+		public static final String BANK_SERVICE 										= "bankService";
 	}
 }
