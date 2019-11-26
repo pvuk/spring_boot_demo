@@ -1,0 +1,131 @@
+================================================================================================================
+								Mongodb scripts to Insert Json documents data
+================================================================================================================
+>var file = cat('D:/Workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-card_type_authorization.json'); var o = JSON.parse(file); db.CARD_TYPE_AUTHORIZATION.insert(o);
+
+>db.CARD_TYPE_CODE.insert([
+	{
+		"id": "5cecfaab3d495818d0bd9f82",
+		"code": "public",
+		"position": 1,
+		"description": "Public Sector Banks",
+		"section": "Scheduled",
+		"category": "Commercial",
+		"comment": ""
+	},
+	{
+		"id": "5cece8c83d495818d0bd9f80",
+		"code": "private",
+		"position": 2,
+		"description": "Private Sector Banks",
+		"section": "Scheduled",
+		"category": "Commercial",
+		"comment": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525dfa",
+		"code": "regionalrural",
+		"position": 3,
+		"description": "Regional Rural Banks(RRB)",
+		"section": "Scheduled",
+		"category": "Commercial",
+		"comment": ""
+	},
+	{
+		"id": "",
+		"code": "foreign",
+		"position": 4,
+		"description": "Foreign Banks",
+		"section": "Scheduled",
+		"category": "Commercial",
+		"comment": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525dfc",
+		"code": "rural",
+		"position": 5,
+		"description": "State(Rural)",
+		"section": "Scheduled",
+		"category": "State Co-operative",
+		"comment": ""
+	},
+	{
+		"id": "",
+		"code": "urban",
+		"position": 6,
+		"description": "Urban",
+		"section": "Scheduled",
+		"category": "Urban Co-operative",
+		"comment": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525dfe",
+		"code": "nonscheduled",
+		"position": 7,
+		"description": "",
+		"section": "Non-Scheduled",
+		"category": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525dff",
+		"code": "paymentsbank",
+		"position": 8,
+		"description": "Payments Bank",
+		"section": "",
+		"category": "",
+		"comment": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525e00",
+		"code": "smallfinancebanks",
+		"position": 9,
+		"description": "Small Finance Banks",
+		"section": "",
+		"category": "",
+		"comment": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525e01",
+		"code": "wallet",
+		"position": 10,
+		"description": "wallet",
+		"section": "",
+		"category": "",
+		"comment": ""
+	},
+	{
+		"id": "5dd6c8827b34d04604525e02",
+		"code": "new",
+		"position": 11,
+		"description": "New",
+		"section": "",
+		"category": "",
+		"comment": ""
+	}
+]);
+================================================================================================================
+						In command prompt of Windows 
+================================================================================================================
+//Example1: You need to navigate in command prompt where mongoimport.exe file exist. 
+//Then try running below command, you should also put .json file in the same direcotry.
+>mongoimport --jsonArray --db trans --collection CARD_TYPE_CODE --file put-card_type_code.json
+
+//Example2: add following path D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin to environment path variables.
+//>mongoimport --jsonArray --db trans --collection DEBIT_CARD_CODE --file=D:/Workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put-debit_card_code.json
+================================================================================================================
+						In shell command
+================================================================================================================
+>db.CREDIT_CARD_CODE.insertMany([ { "code": "icicicoralhp", "position": 1, "description": "ICICI CORAL HP PETROLIUM", "isActive": tru
+e }, { "code": "sbisimplyclick", "position": 2, "description": "SBI SIMPLY CLICK", "isActive": true }, { "code": "citiplatinumcashback", "position": 3, "
+description": "Citi Platinum Cashback", "isActive": true }, { "code": "rblmovieblockbuster", "position": 4, "description": "RBL MOVIE BLOCKBUSTER", "isAc
+tive": true }, { "code": "hdfctimestitanium", "position": 5, "description": "HDFC TIEMS TITANIUM", "isActive": true }, { "code": "citiindianoil", "positi
+on": 6, "description": "CITI INDIAN OIL", "isActive": true }, { "code": "kotakroyale", "position": 7, "description": "KOTAK ROYALE", "isActive": true },
+{ "code": "yesrewardsplus", "position": 8, "description": "YES REWARDS PLUS", "isActive": true }, { "code": "sbiprimepro", "position": 9, "description":
+"SBI PRIME PRO", "isActive": true }, { "code": "amexeverdaygoldcreditcard", "position": 10, "description": "AMEX EVERDAY GOLD CREDIT CARD", "isActive": t
+rue }, { "code": "paytmpostpaid", "position": 11, "description": "PAYTM POSTPAID", "isActive": false }, { "code": "indusindauraplatinum", "position": 12,
+ "description": "INDUSIND AURA PLATINUM", "isActive": false }, { "code": "bajajfinservemi", "position": 13, "description": "BAJAJ FINSERV EMI", "isActive
+": true }, { "code": "icicipaylaterxx1985", "position": 14, "description": "ICICI PAY LATER XX1985", "isActive": true }, { "code": "bajajfinservrblbanksu
+percard", "position": 15, "description": "BAJAJ FINSERV RBL BANK SUPERCARD", "isActive": true }, { "code": "icicipaylaterxx2159 ", "position": 16, "descr
+iption": "ICICI PAY LATER XX2159", "isActive": false }, { "code": "indusindnexxt", "position": 17, "description": "INDUSIND NEXXT", "isActive": true }, {
+ "code": "amazonpayicicibank", "position": 18, "description": "AMAZON PAY ICICI BANK", "isActive": true } ]);
+================================================================================================================
