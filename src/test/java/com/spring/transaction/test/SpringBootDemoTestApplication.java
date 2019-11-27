@@ -69,11 +69,10 @@ public class SpringBootDemoTestApplication {
 //				return f.toFile().listFiles((filterCodeDocuments)->{return filterCodeDocuments.toString().contains("code");}) != null;
 //			})
 			.forEach(f -> {
-				
 				for(File jsonFile : f.toFile().listFiles()) {
 					String fileName = jsonFile.getName();
 //					if(fileName.contains("code")) {
-						System.out.println(fileName.substring(4, fileName.lastIndexOf(".json")));
+						System.out.println(fileName.substring(fileName.indexOf("-") + 1, fileName.lastIndexOf(".")));
 //					}
 				}
 			});
