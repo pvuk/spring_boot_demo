@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
@@ -20,6 +21,7 @@ import lombok.Data;
  * @Date Sun 10-Nov-2019 12:25
  */
 @Data
+@Document(collection = "UPI_WALLET")
 public class UPIWallet {
 
 	/**

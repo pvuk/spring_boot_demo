@@ -10,7 +10,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 @Data
-@Document(collection = "PAYMENT_TO")
+@Document(collection = "PAYMENT_TO_CODE")
 public class PaymentTo {
 
 	@Id

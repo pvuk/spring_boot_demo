@@ -3,6 +3,8 @@ package com.spring.transaction.test;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,30 +28,80 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class SpringBootDemoTestApplication {
 
+	@Autowired private static WalletService walletService;
+	
 	public static void main(String[] args) {
 
 		// For XML
-		// ApplicationContext ctx = new
-		// GenericXmlApplicationContext("SpringConfig.xml");
+//		ApplicationContext ctx = new GenericXmlApplicationContext("SpringConfig.xml");
 
 		// For Annotation
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig1.class);
 		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 
+		insertCodeDocumentsFromJSON(mongoOperation);
 //		crudOperationsOfUser(mongoOperation);
 		
-		insertBankDocumentsFromJSON(mongoOperation);
+//		insertBankDocumentsFromJSON(mongoOperation);
 		
 //		insertWalletDocumentsFromJSON();
 		
 		((AnnotationConfigApplicationContext) ctx).close();//simple casting
 	}
 	
-	@Autowired private static WalletService walletService;
+	private static void insertCodeDocumentsFromJSON(MongoOperations mongoOperation) {
+		String resourceLocation = "classpath:json/";
+		try {
+			File file = ResourceUtils.getFile(resourceLocation);
+			String insertFilesFolder = "put";
+			Files.walk(Paths.get(file.toURI()))
+			.filter(Files::isDirectory)
+			.filter(f-> {
+				String jsonSubFolder = f.toFile().getPath();
+				//lastIndexOf("\\") gets \json. lastIndexOf("\\")+1 gets json.
+				if(insertFilesFolder.equals(jsonSubFolder.substring(jsonSubFolder.lastIndexOf("\\")+1))) {
+					return true;
+				}
+				return false;
+			})
+//			.filter(f->{
+			//filter code files
+//				return f.toFile().listFiles((filterCodeDocuments)->{return filterCodeDocuments.toString().contains("code");}) != null;
+//			})
+			.forEach(f -> {
+				
+				for(File jsonFile : f.toFile().listFiles()) {
+					String fileName = jsonFile.getName();
+//					if(fileName.contains("code")) {
+						System.out.println(fileName.substring(4, fileName.lastIndexOf(".json")));
+//					}
+				}
+			});
+			
+//			List<Bank> list = new ObjectMapper().readValue(file, new TypeReference<List<Bank>>() {});
+//			list.forEach(bank->{
+//				if (bank.getBankId()==null) {
+//					Bank findOne = mongoOperation.findOne(new Query(Criteria.where("BANK_NAME").is(bank.getBankName())), Bank.class);
+//					if (findOne == null || findOne.getBankId() == null) {
+//						mongoOperation.insert(bank);
+//						log.warn("insertBankDocumentsFromJSON: {} is inserted", bank);
+//					} else {
+//						log.warn("BankName: {} is trying to insert again", bank.getBankName());
+//					}
+//				} else {
+//					log.warn("BankName: {} is trying to update", bank.getBankName());
+//				}
+//			});
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void insertWalletDocumentsFromJSON() {
 		try {
-			List<Wallet> wallets = new ObjectMapper().readValue(ResourceUtils.getFile("classpath:json/put-wallet_code.json"), new TypeReference<List<Wallet>>() {});
+			List<Wallet> wallets = new ObjectMapper().readValue(ResourceUtils.getFile("classpath:json/put/put-wallet_code.json"), new TypeReference<List<Wallet>>() {});
 			walletService.saveAll(wallets);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -59,7 +111,7 @@ public class SpringBootDemoTestApplication {
 	}
 
 	private static void insertBankDocumentsFromJSON(MongoOperations mongoOperation) {
-		String resourceLocation = "classpath:json/put-bank_code.json";
+		String resourceLocation = "classpath:json/put/put-bank_code.json";
 		try {
 			File file = ResourceUtils.getFile(resourceLocation);
 			List<Bank> list = new ObjectMapper().readValue(file, new TypeReference<List<Bank>>() {});

@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 @Data
-@Document(collection="CARD_TYPE_AUTHORIZATION")
+@Document(collection="CARD_TYPE_AUTHORIZATION_CODE")
 public class CardTypeAuthorization {
 	
 	@Field(value = "CARD_TYPE_AUTHORIZATION_ID", order = 1)

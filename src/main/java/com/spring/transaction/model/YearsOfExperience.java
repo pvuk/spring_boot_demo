@@ -7,7 +7,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import lombok.Data;
 
 @Data
-@Document(collection = "YEARS_OF_EXPERIENCE")
+@Document(collection = "YEARS_OF_EXPERIENCE_CODE")
 public class YearsOfExperience {
 
 	@Column(name = "YEARS_OF_EXPERIENCE_ID")
