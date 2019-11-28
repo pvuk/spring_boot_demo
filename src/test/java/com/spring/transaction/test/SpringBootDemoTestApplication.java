@@ -1,29 +1,34 @@
 package com.spring.transaction.test;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.mongodb.core.MongoOperations;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.util.ResourceUtils;
 
-import com.fasterxml.jackson.core.JsonFactory;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.BasicDBObject;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.mongodb.client.MongoCollection;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.test.model.User;
 import com.spring.transaction.test.model.Wallet;
@@ -36,6 +41,8 @@ public class SpringBootDemoTestApplication {
 
 	@Autowired private static WalletService walletService;
 	
+	String basePackage = "com.spring.transaction.model";
+	
 	public static void main(String[] args) {
 
 		// For XML
@@ -44,8 +51,9 @@ public class SpringBootDemoTestApplication {
 		// For Annotation
 		ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringMongoConfig1.class);
 		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
-
-		insertCodeDocumentsFromJSON(mongoOperation);
+		MongoTemplate mongoTemplate = (MongoTemplate) ctx.getBean("mongoTemplate");
+		
+		insertCodeDocumentsFromJSON(mongoOperation, mongoTemplate);
 //		crudOperationsOfUser(mongoOperation);
 		
 //		insertBankDocumentsFromJSON(mongoOperation);
@@ -55,7 +63,7 @@ public class SpringBootDemoTestApplication {
 		((AnnotationConfigApplicationContext) ctx).close();//simple casting
 	}
 	
-	private static void insertCodeDocumentsFromJSON(MongoOperations mongoOperation) {
+	private static void insertCodeDocumentsFromJSON(MongoOperations mongoOperation, MongoTemplate mongoTemplate) {
 		String resourceLocation = "classpath:json/";
 		try {
 			File file = ResourceUtils.getFile(resourceLocation);
@@ -80,11 +88,68 @@ public class SpringBootDemoTestApplication {
 					//insert JSON data into Documents
 					if(fileName.contains("code")) {
 						String collectionName = fileName.substring(fileName.indexOf("-") + 1, fileName.lastIndexOf(".")).toUpperCase();
-						System.out.println("Reading JSON file: "+ jsonFile +", Insert data into: "+ collectionName);
+						System.out.println("Reading JSON file: "+ jsonFile +", Insert data into collection: "+ collectionName);
 						
-//						BasicDBObject basicDBObject = BasicDBObject.parse(new ObjectMapper().readValues(new JsonFactory().createJsonParser(jsonFile), valueType));
-//						String json = basicDBObject.toJson();
-//						System.out.println(json);
+						InputStream inputStream = null;
+						InputStreamReader inputStreamReader = null;
+						BufferedReader bufferedReader = null;
+						try {
+							inputStream = new FileInputStream(jsonFile);
+							inputStreamReader = new InputStreamReader(inputStream);
+							bufferedReader = new BufferedReader(inputStreamReader);
+
+							String jsonString = bufferedReader.lines().collect(Collectors.joining());
+//							String jsonString = FileUtils.readFileToString(new File("data/newclicklogs.json"), "UTF-8");
+							
+							List<Document> documents = new ArrayList<>();
+//						    String jsonString;
+//						    while ((jsonString = bufferedReader.readLine()) != null) {
+					            documents.add(Document.parse(jsonString));
+//					        }
+						    
+							System.out.println("JSON Data: "+ jsonString);
+							mongoTemplate.insert(documents, collectionName);
+							
+
+//							List<String> list = new ArrayList<String>();
+//							list.add(jsonString);
+//							try {
+//								MongoCollection<Document> collection = mongoOperation.getCollection(collectionName);
+//								list.stream().map(Document::parse).forEach(collection::insertOne);
+////								collection.insertMany(list.stream().map(Document::parse).collect(Collectors.toList()));//bulk
+//							} catch (Exception e) {
+//								e.printStackTrace();
+//							}
+							
+//							Document document = Document.parse(jsonString);
+//							mongoOperation.insert(document);
+						} catch (FileNotFoundException e) {
+							e.printStackTrace();
+						} catch (IOException e1) {
+							e1.printStackTrace();
+						} finally {
+							try {
+								if(inputStream != null) {
+									inputStream.close();
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							try {
+								if(inputStream != null) {
+									inputStreamReader.close();
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+							try {
+								if(inputStream != null) {
+									bufferedReader.close();
+								}
+							} catch (IOException e) {
+								e.printStackTrace();
+							}
+						}
 						
 //						Mongo mongo = new Mongo("localhost", 27017);
 //						DB db = mongo.getDB("trans");
@@ -144,6 +209,18 @@ public class SpringBootDemoTestApplication {
 		}
 	}
 
+	/**
+	 * <a href="https://www.programcreek.com/java-api-examples/?api=com.fasterxml.jackson.databind.JavaType>Java Code Examples for com.fasterxml.jackson.databind.JavaType</a>
+	 */
+	JavaType typeFromId(String id, TypeFactory typeFactory) throws IllegalStateException {
+		String className = basePackage + "." + id;
+	    try {
+	        return typeFactory.constructType(typeFactory.findClass(className));
+	    } catch (ClassNotFoundException ex) {
+	        throw new IllegalStateException("Could not find event class for type " + id, ex);
+	    }
+	}
+	
 	public static void insertWalletDocumentsFromJSON() {
 		try {
 			List<Wallet> wallets = new ObjectMapper().readValue(ResourceUtils.getFile("classpath:json/put/put-wallet_code.json"), new TypeReference<List<Wallet>>() {});
