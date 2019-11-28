@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,8 +17,13 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.util.ResourceUtils;
 
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.mongodb.BasicDBObject;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.test.model.User;
 import com.spring.transaction.test.model.Wallet;
@@ -53,7 +59,7 @@ public class SpringBootDemoTestApplication {
 		String resourceLocation = "classpath:json/";
 		try {
 			File file = ResourceUtils.getFile(resourceLocation);
-			String insertFilesFolder = "put";
+			String insertFilesFolder = "put";//Insert Documents Folder
 			Files.walk(Paths.get(file.toURI()))
 			.filter(Files::isDirectory)
 			.filter(f-> {
@@ -71,9 +77,49 @@ public class SpringBootDemoTestApplication {
 			.forEach(f -> {
 				for(File jsonFile : f.toFile().listFiles()) {
 					String fileName = jsonFile.getName();
-//					if(fileName.contains("code")) {
-						System.out.println(fileName.substring(fileName.indexOf("-") + 1, fileName.lastIndexOf(".")));
-//					}
+					//insert JSON data into Documents
+					if(fileName.contains("code")) {
+						String collectionName = fileName.substring(fileName.indexOf("-") + 1, fileName.lastIndexOf(".")).toUpperCase();
+						System.out.println("Reading JSON file: "+ jsonFile +", Insert data into: "+ collectionName);
+						
+//						BasicDBObject basicDBObject = BasicDBObject.parse(new ObjectMapper().readValues(new JsonFactory().createJsonParser(jsonFile), valueType));
+//						String json = basicDBObject.toJson();
+//						System.out.println(json);
+						
+//						Mongo mongo = new Mongo("localhost", 27017);
+//						DB db = mongo.getDB("trans");
+//						DBCollection collection = db.getCollection(collectionName);
+						
+								/*
+								 * //Example 1 
+								 * Runtime r = Runtime.getRuntime();
+								 * File dir=new
+								 * File("D:/uday/backup/mongodb-win32-x86_64-enterprise-windows-64-4.0.1/bin/");
+								 * //dir is the path to where your mongoimport is. try { Process p =
+								 * r.exec("C:/windows/system32/cmd.exe /c mongoimport --db mydb --collection "+
+								 * collectionName +" --type json --file "+ fileName +" --headerline" ,null,
+								 * dir); } catch (IOException e) { e.printStackTrace(); }
+								 */
+						
+//						mongoOperation.execute(collectionName, action)
+						
+						//Example 2
+//						try {
+//							JsonParser jsonParser = new JsonFactory().createParser(jsonFile);
+//							Class valueType = Bank.class;
+//							Iterator<?> iterator = new ObjectMapper().readValues(jsonParser, valueType);
+//							while(iterator.hasNext()) {
+//								Object next = iterator.next();
+////								mongoOperation.save(next);
+//							}
+//						} catch (JsonParseException e) {
+//							e.printStackTrace();
+//					    } catch (JsonMappingException e) {
+//					    	e.printStackTrace();
+//					    } catch (IOException e) {
+//					    	e.printStackTrace();
+//					    }
+					}
 				}
 			});
 			
