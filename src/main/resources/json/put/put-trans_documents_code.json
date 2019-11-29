@@ -1,0 +1,74 @@
+[
+	{
+		"collection_name": "BANK_BRANCH_CODE"
+	},
+	{
+		"collection_name": "BANK_CODE"
+	},
+	{
+		"collection_name": "BANK_TYPE_CODE"
+	},
+	{
+		"collection_name": "CARD_TYPE_AUTHORIZATION_CODE"
+	},
+	{
+		"collection_name": "CARD_TYPE_CODE"
+	},
+	{
+		"collection_name": "CREDIT_CARD_CODE"
+	},
+	{
+		"collection_name": "DEBIT_CARD_CODE"
+	},
+	{
+		"collection_name": "EMPLOYMENT_TYPE_CODE"
+	},
+	{
+		"collection_name": "LEGEND_CODE"
+	},
+	{
+		"collection_name": "NET_BANKING_CODE"
+	},
+	{
+		"collection_name": "OFFER_STATUS_CODE"
+	},
+	{
+		"collection_name": "OFFER_TYPE_CODE"
+	},
+	{
+		"collection_name": "PAYMENT_FROM_CODE"
+	},
+	{
+		"collection_name": "PAYMENT_INSTALLMENT_CODE"
+	},
+	{
+		"collection_name": "PAYMENT_STATUS_CODE"
+	},
+	{
+		"collection_name": "PAYMENT_TO_CODE"
+	},
+	{
+		"collection_name": "PAYMENT_TYPE_CODE"
+	},
+	{
+		"collection_name": "SPEND_STATUS_CODE"
+	},
+	{
+		"collection_name": "SPEND_TYPE_CODE"
+	},
+	{
+		"collection_name": "TRANSACTION_STATUS_CODE"
+	},
+	{
+		"collection_name": "UTILITY_PAYMENT_CODE"
+	},
+	{
+		"collection_name": "WALLET_CODE"
+	},
+	{
+		"collection_name": "WALLET_STATUS_CODE"
+	},
+	{
+		"collection_name": "YEARS_OF_EXPERIENCE_CODE"
+	}
+]

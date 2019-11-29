@@ -327,9 +327,28 @@ printjson(indexes);
 =========================================================================================================================================
 															CREATE COLLECTION from JSON
 =========================================================================================================================================
+//Insert data into single collection from JSON file
 >var file = cat('C:/data/db/put-card_type_authorization.json'); var o = JSON.parse(file); db.CARD_TYPE_AUTHORIZATION.insert(o);
+//Example2:
+>var trans_collections = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
+>var o = JSON.parse(trans_collections);
+>db.TRANS_DOCUMENTS_CODE.insert(o);
 
-//>mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file C:/spring_boot_demo/src/main/resources/json/put-card_type_authorization.json
+//>mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file C:/spring_boot_demo/src/main/resources/json/put/put-card_type_authorization.json
+
+//Read All collections from array and Read all JSON files from resource folder and insert data into collection
+>var collections = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
+>var show = function(value, index, collections){print(value)};
+//>collections.forEach(function(collection){print(collection)});
+>collections.forEach(function(collection){
+var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ collection.toLowerCase() +".json";
+print("Reading file: "+ jsonFile);
+var file = cat(jsonFile);
+print("Inserting data into: "+ collection.toLowerCase() +", Data: "+ file);
+var o = JSON.parse(file); db[collection].insert(o);
+});
+
+
 =========================================================================================================================================
 
 Use the following information to complete this form, but do not click "Connect" yet.
