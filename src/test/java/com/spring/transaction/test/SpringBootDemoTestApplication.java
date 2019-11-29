@@ -53,8 +53,8 @@ public class SpringBootDemoTestApplication {
 		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 		MongoTemplate mongoTemplate = (MongoTemplate) ctx.getBean("mongoTemplate");
 		
-		insertCodeDocumentsFromJSON(mongoOperation, mongoTemplate);
-//		crudOperationsOfUser(mongoOperation);
+//		insertCodeDocumentsFromJSON(mongoOperation, mongoTemplate);
+		crudOperationsOfUser(mongoOperation);
 		
 //		insertBankDocumentsFromJSON(mongoOperation);
 		
