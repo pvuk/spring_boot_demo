@@ -18,8 +18,8 @@ import lombok.Data;
  * 
  * BIL/0022222222/abcd
  * 
- * In above example BIL is an abbreviation or Legend for “Internet Bill payment
- * or funds transfer to Third party”.
+ * In above example BIL is an abbreviation or Legend for "Internet Bill payment
+ * or funds transfer to Third party".
  * 
  * @author venkataudaykiranp
  *
