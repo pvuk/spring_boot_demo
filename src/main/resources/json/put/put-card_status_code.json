@@ -1,0 +1,47 @@
+[
+	{
+		"code": "active",
+		"position": 1,
+		"description": "Active"
+	},
+	{
+		"code": "stolen",
+		"position": 2,
+		"description": "Stolen"
+	},
+	{
+		"code": "upgraded",
+		"position": 3,
+		"description": "Upgraded"
+	},
+	{
+		"code": "downgraded",
+		"position": 4,
+		"description": "Downgraded"
+	},
+	{
+		"code": "closed",
+		"position": 5,
+		"description": "Closed"
+	},
+	{
+		"code": "lost",
+		"position": 6,
+		"description": "Lost"
+	},
+	{
+		"code": "notworking",
+		"position": 7,
+		"description": "NotWorking"
+	},
+	{
+		"code": "expired",
+		"position": 8,
+		"description": "Expired"
+	},
+	{
+		"code": "renewal",
+		"position": 9,
+		"description": "Renewal"
+	}
+]

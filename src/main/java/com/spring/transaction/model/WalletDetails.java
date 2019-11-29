@@ -1,6 +1,5 @@
 package com.spring.transaction.model;
 
-import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.validation.constraints.NotNull;
@@ -25,9 +24,8 @@ public class WalletDetails {
 	@NotNull(message = "Wallet is required field.")
 	private String walletId;
 	
-	@Field(value="IS_ACTIVE")
-	@Type(type="yes_no")
-	private Boolean isActive;
+	@Field(value = "WALLET_STATUS_ID")
+	private String walletStatusId;
 	
 	/**
 	 * 1. If account is transferred to other number then new account is in
@@ -40,18 +38,6 @@ public class WalletDetails {
 	
 	@Field(value="ACCOUNT_CREATED_ON")
 	private Date accountCreatedOn;
-	
-	@Field(value = "TransferOn")
-	private Date transferOn;
-	
-	@Field(value="BALANCE")
-	private BigDecimal balance;
-	
-	@Field(value="DEBIT")
-	private BigDecimal debit;
-	
-	@Field(value="CREDIT")
-	private BigDecimal credit;
 	
 	@Field(value="CARD_LIMIT_ID")
 	private String cardLimitId;

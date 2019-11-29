@@ -1,0 +1,32 @@
+[
+	{
+		"code": "savings",
+		"position": 1,
+		"description": "Savings"
+	},
+	{
+		"code": "joint",
+		"position": 2,
+		"description": "Joint"
+	},
+	{
+		"code": "fixeddeposit",
+		"position": 3,
+		"description": "Fixed Deposit(FD)"
+	},
+	{
+		"code": "recurringdeposit",
+		"position": 4,
+		"description": "Recurring Deposit(eRD)"
+	},
+	{
+		"code": "current",
+		"position": 5,
+		"description": "Current"
+	},
+	{
+		"code": "salary",
+		"position": 6,
+		"description": "Salary"
+	}
+]

@@ -10,28 +10,28 @@
 		"description": "InActive"
 	},
 	{
-		"code": "hold",
+		"code": "pending",
 		"position": 3,
-		"description": "Hold"
-	},
-	{
-		"code": "terminated",
-		"position": 4,
-		"description": "Terminated"
-	},
-	{
-		"code": "fullKYC",
-		"position": 5,
-		"description": "Full KYC"
-	},
-	{
-		"code": "minkyc",
-		"position": 6,
-		"description": "Min KYC"
+		"description": "Pending"
 	},
 	{
 		"code": "closed",
-		"position": 7,
+		"position": 4,
 		"description": "Closed"
+	},
+	{
+		"code": "upgraded",
+		"position": 5,
+		"description": "Upgraded"
+	},
+	{
+		"code": "merged",
+		"position": 6,
+		"description": "Merged"
+	},
+	{
+		"code": "moved",
+		"position": 6,
+		"description": "Moved"
 	}
 ]

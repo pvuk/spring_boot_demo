@@ -55,32 +55,26 @@ public class Bank {
 	@Transient
 	private String strRevenues;
 	
-	@Field(value = "TOTAL_ASSETS", order = 9)
+	@Field(value = "TOTAL_ASSETS", order = 8)
 	private BigDecimal totalAssets;
 	
 	@Transient
 	private String strTotalAssets;
 	
-	@Field(value = "NOTES", order = 11)
+	@Field(value = "NOTES", order = 9)
 	private String notes;
 	
-	@Field(value = "REF_LINK", order = 12)
+	@Field(value = "REF_LINK", order = 10)
 	private String refLink;
 	
-	/**
-	 * 1. If not found user can add. Need to approve by Admin
-	 */
-	@Field(value = "IS_NEW", order = 13) 		private Boolean isNew;
-	@Field(value = "APPROVED", order = 14) 		private Boolean approved;
-	@Field(value = "APPROVED_BY", order = 15) 	private Boolean approvedBy;
-	@Field(value = "REJECTED", order = 16) 		private Boolean rejected;
-	@Field(value = "REJECTED_BY", order = 17) 	private Boolean rejectedBy;
-	
 	@DBRef
-	@Field(value="BANK_TYPE", order = 18)
+	@Field(value="BANK_TYPE", order = 11)
 	private BankType bankType;
 
-	@Field(value="CUSTOMER_ID", order = 19)
+	/**
+	 * 1. BANK_NAME added by
+	 */
+	@Field(value="CUSTOMER_ID", order = 12)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	
@@ -97,7 +91,8 @@ public class Bank {
 				+ ", establishedYear=" + establishedYear + ", headQuarter=" + headQuarter + ", branches=" + branches
 				+ ", revenues=" + revenues + ", strRevenues=" + strRevenues + ", totalAssets=" + totalAssets
 				+ ", strTotalAssets=" + strTotalAssets + ", notes=" + notes + ", refLink=" + refLink + ", bankType="
-				+ bankType + ", errorMessageMap=" + errorMessageMap + "]";
+				+ bankType + ", customerId=" + customerId + ", auditData=" + auditData + ", errorMessageMap="
+				+ errorMessageMap + "]";
 	}
 	
 }

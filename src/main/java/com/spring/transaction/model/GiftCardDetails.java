@@ -30,10 +30,9 @@ public class GiftCardDetails {
 	private Date receivedOn;
 	private Date validFrom;
 	private Date validTo;
-	private Boolean isActive;
-	private Boolean isExpire;
-	private Boolean isRedeem;
-	private Boolean isShared;
+	private String giftCardStatusId;
+	private String giftCardTypeId;
+	private String cardCategoryId;
 
 	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")

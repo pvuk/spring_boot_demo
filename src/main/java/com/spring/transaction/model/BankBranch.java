@@ -40,26 +40,17 @@ public class BankBranch {
 	@Field(value="MICR_CODE", order = 4) 				private long micrCode;
 	@Field(value="BRANCH_CODE", order = 5) 				private long branchCode;
 	@Field(value="BRANCH_CODE_DESCRIPTION", order = 6) 	private String branchCodeDescription;
-	@Field(value="BRANCH", order = 7) 					private String branch;
+	@Field(value="BRANCH_NAME", order = 7) 				private String branchName;
 	@Field(value="CONTACT_NUMBER", order = 8) 			private String contactNumber;
 	
 	@DBRef
 	@Field(value="ADDRESS", order = 9)
 	private Address address;
 	
-	/**
-	 * 1. If not found user can add. Need to approve by Admin
-	 */
-	@Field(value = "IS_NEW", order = 10) 		private Boolean isNew;
-	@Field(value = "APPROVED", order = 11) 		private Boolean approved;
-	@Field(value = "APPROVED_BY", order = 12) 	private Boolean approvedBy;
-	@Field(value = "REJECTED", order = 13) 		private Boolean rejected;
-	@Field(value = "REJECTED_BY", order = 14) 	private Boolean rejectedBy;
+	@Field(value="BANK_BRANCH_STATUS_ID", order = 10)
+	private String bankBranchStatusId;
 	
-	@Field(value="IS_ACTIVE", order = 15)
-	private boolean isActive;
-	
-	@Field(value="CUSTOMER_ID", order = 16)
+	@Field(value="CUSTOMER_ID", order = 11)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	

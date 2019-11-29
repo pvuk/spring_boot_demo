@@ -12,28 +12,29 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 /**
+ * <p>Some branches operated all types loans and some are operate only personal loan.<p>
  * 
  * @author venkataudaykiranp
- *
+ * @Date Fri 29-Nov-2019 20:43
  */
 @Data
-@Document(collection = "ACCOUNT_TYPE")
-public class AccountType {
+@Document(collection = "BRANCH_OPERATIONS_CODE")
+public class BranchOperations {
 	
-	@Field(value = "ACCOUNT_TYPE_ID", order = 1)
+	@Field(value = "BRANCH_OPERATIONS_ID")
 	@Id
-	private String accountTypeId;
+	private String branchOperationsId;
 	
 	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@TextIndexed
-	@NotNull(message = "Account Type Code is required field.")
+	@NotNull(message = "Bank Operations Code is required field.")
 	private String code;
 	
 	@Field(value = "POSITION", order = 3)
 	private int position;
 	
 	@Field(value = "DESCRIPTION", order = 4)
-	@NotNull(message = "Bank Type is required field.")
+	@NotNull(message = "Bank Operations is required field.")
 	private String description;
 }

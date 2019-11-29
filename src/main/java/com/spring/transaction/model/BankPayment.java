@@ -34,40 +34,45 @@ public class BankPayment {
 	@DBRef
 	private Bank bank;
 
-	@Field(value = "ACCOUNT_NUMBER", order = 3)
-	@NotNull(message = "Account Number is required field.")
-	private BigDecimal accountNumber;
-
-	@Field(value = "TRANSACTION_DATE", order = 4)
+	@Field(value = "REFERENCE_NO", order = 3)
+	private String referenceNo;
+	
+	/**
+	 * 1. The date when the entry to an account is considered effective in accounting
+	 */
+	@Field(value = "VALUE_DATE", order = 4)
+	private Date valueDate;
+	
+	@Field(value = "TRANSACTION_DATE", order = 5)
 	private Date transactionDate;
 
 	/**
-	 * 1. Where the transaction is done.
+	 * 1. Where the transaction is done / transaction details.
 	 */
-	@Field(value = "TRANSACTION_DETAILS", order = 5)
+	@Field(value = "TRANSACTION_DETAILS", order = 6)
 	@NotNull(message = "Transaction Details is required field.")
 	private String transactionDetails;
+	
+	@Field(value="CHECK_BOOK_ID", order = 7)
+	private String checkBookId;
 
-	@Field(value = "WITHDRAWAL_AMOUNT", order = 6)
+	@Field(value = "WITHDRAWAL_AMOUNT", order = 8)
 	private BigDecimal withdrawalAmount;
 
-	@Field(value = "DEPOSIT_AMOUNT", order = 7)
+	@Field(value = "DEPOSIT_AMOUNT", order = 9)
 	private BigDecimal depositAmount;
 
 	/**
 	 * 1. WITHDRAWAL_AMOUNT / DEPOSIT_AMOUNT should be enter to calculate BALANCE
 	 */
-	@Field(value = "BALANCE", order = 8)
+	@Field(value = "BALANCE", order = 10)
 	@NotNull(message = "Amount is required field.")
 	private BigDecimal balance;
-
-	@Field(value = "REFERENCE_NO")
-	private String referenceNo;
 
 	/**
 	 * 1. Same login user not right to confirm the payment
 	 */
-	@Field(value = "CONFIRM_PAYMENT", order = 9)
+	@Field(value = "CONFIRM_PAYMENT", order = 11)
 	private Boolean confirmPayment;
 
 	@Field(value = "CUSTOMER_ID")
@@ -78,8 +83,19 @@ public class BankPayment {
 	@NotNull(message = "Payment Type is required field")
 	private String paymentTypeId;
 
+	@Field(value="PAYMENT_BY_ID", order = 12)
+	private String paymentById;
+	
+	/**
+	 * payee name
+	 */
+	@Field(value="TRANSFER_TO_ID")
+	@NotNull(message = "Transfer To is required field.")
+	private String transferToId;
+	
 	@Field(value = "PARENT_PAYMENT_ID")
-	/* @NotNull(message = "Parent Payment Id is required field.") */ private String parentPaymentId;
+	/* @NotNull(message = "Parent Payment Id is required field.") */
+	private String parentPaymentId;
 
 	@Embedded
 	private AuditData auditData;

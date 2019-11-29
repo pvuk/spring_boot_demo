@@ -1,0 +1,27 @@
+[
+	{
+		"code": "giftcard",
+		"position": 1,
+		"description": "Gift Card"
+	},
+	{
+		"code": "voucher",
+		"position": 2,
+		"description": "Voucher"
+	},
+	{
+		"code": "evoucher",
+		"position": 3,
+		"description": "E-Voucher"
+	},
+	{
+		"code": "egiftcard",
+		"position": 4,
+		"description": "E-Gift Card"
+	},
+	{
+		"code": "giftedbyothers",
+		"position": 5,
+		"description": "Gifted By Others"
+	}
+]

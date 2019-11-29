@@ -59,8 +59,8 @@ public class CreditCardDetails {
 	@NotNull(message="Reward Card is required field.")
 	private Long rewardCardId;
 	
-	@Field(value = "IS_ACTIVE", order=14)
-	private Boolean isActive;
+	@Field(value = "CARD_STATUS_ID", order=14)
+	private String cardStatusId;
 	
 	@Field(value = "IS_SEMI_CLOSED", order=15)
 	private Boolean isSemiClosed;

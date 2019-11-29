@@ -1,0 +1,47 @@
+[
+	{
+		"entity_name": "Bank",
+		"collection": "BANK_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "BankBranch",
+		"collection": "BANK_BRANCH_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "BankType",
+		"collection": "BANK_TYPE_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "CreditCard",
+		"collection": "CREDIT_CARD_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "Profession",
+		"collection": "PROFESSION",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "DebitCard",
+		"collection": "DEBIT_CARD_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "NetBanking",
+		"collection": "NET_BANKING_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "RewardCard",
+		"collection": "REWARD_CARD",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "Wallet",
+		"collection": "WALLET_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	}
+]

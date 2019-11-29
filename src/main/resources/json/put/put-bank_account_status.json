@@ -1,0 +1,32 @@
+[
+	{
+		"code": "active",
+		"position": 1,
+		"description": "Active"
+	},
+	{
+		"code": "inactive",
+		"position": 2,
+		"description": "InActive"
+	},
+	{
+		"code": "transferred",
+		"position": 3,
+		"description": "Transferred"
+	},
+	{
+		"code": "closed",
+		"position": 4,
+		"description": "Closed"
+	},
+	{
+		"code": "upgraded",
+		"position": 5,
+		"description": "Upgraded"
+	},
+	{
+		"code": "merged",
+		"position": 6,
+		"description": "Merged"
+	}
+]

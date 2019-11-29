@@ -1,0 +1,17 @@
+[
+	{
+		"code": "physicalcard",
+		"position": 1,
+		"description": "PhysicalCard"
+	},
+	{
+		"code": "digitalcard",
+		"position": 2,
+		"description": "DigitalCard"
+	},
+	{
+		"code": "voucher",
+		"position": 3,
+		"description": "Voucher"
+	}
+]

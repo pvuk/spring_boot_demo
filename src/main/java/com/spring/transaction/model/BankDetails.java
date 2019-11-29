@@ -31,9 +31,15 @@ public class BankDetails {
 	@Field(value="BANK_BRANCH_ID", order = 3)
 	private String bankBranchId;
 	
-	@Field(value="IS_ACTIVE", order = 4)
-	@Type(type="yes_no")
-	private Boolean isActive;
+	@Field(value = "ACCOUNT_NUMBER")
+	@NotNull(message = "Account Number is required field.")
+	private BigDecimal accountNumber;
+	
+	/**
+	 * 1. Only one account should be Active per ACCOUNT_NUMBER
+	 */
+	@Field(value="BANK_ACCOUNT_STATUS_ID", order = 4)
+	private String bankAccountStatusId;
 	
 	/**
 	 * 1. If bank account is transferred to other branch then new branch account is in
@@ -47,37 +53,17 @@ public class BankDetails {
 	@Field(value="ACCOUNT_CREATED_ON", order = 6)
 	private Date accountCreatedOn;
 	
-	@Field(value="CHECK_BOOK_ID", order = 7)
-	private String checkBookId;
-	
+	/**
+	 * 1. TransferOn: Account transfer from one branch to other branch.
+	 */
 	@Field(value = "TransferOn", order = 8)
 	private Date transferOn;
 	
-	@Field(value="BALANCE", order = 9)
-	private BigDecimal balance;
-	
-	@Field(value="DEBIT", order = 10)
-	private BigDecimal debit;
-	
-	@Field(value="CREDIT", order = 11)
-	private BigDecimal credit;
-	
-	@Field(value="TRANSFER_DESCRIPTION", order = 12)
-	private String transferDescription;
-	
-	/**
-	 * payee name
-	 */
-	@Field(value="TRANSFER_TO_ID", order = 13)
-	@NotNull(message = "Transfer To is required field.")
-	private String transferToId;
-	
-	@Field(value="PAYMENT_BY_ID", order = 14)
-	private String paymentById;
-	
-	@Field(value="CUSTOMER_ID", order = 15)
+	@Field(value="CUSTOMER_ID", order = 9)
 	@NotNull(message = "Customer is required field.")
 	private String customerId;
+	
+	private String bankAccountTypeId;
 	
 	@Embedded
 	private AuditData auditData;

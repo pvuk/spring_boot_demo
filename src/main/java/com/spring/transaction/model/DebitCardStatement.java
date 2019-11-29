@@ -58,7 +58,7 @@ public class DebitCardStatement {
 	/**
 	 * 1. As Per ICICI monthly statement. Current Account, Savings Account
 	 */
-	private String accountTypeId;
+	private String bankAccountTypeId;
 	
 	private BigDecimal accountBalance;
 	private BigDecimal fixedDeposits_linked_balance;

@@ -70,7 +70,7 @@ public class BankBranchServiceImpl implements CRUDOperationService, BankBranchSe
 			}
 			bankBranch.setBank(bank);
 			
-			String branch = bankBranch.getBranch();
+			String branch = bankBranch.getBranchName();
 			if (bankBranch != null && !StringUtils.isEmpty(branch)) {
 				BankBranch findByBranch = bankBranchMongoRepo.findByBranch(branch);
 				if (findByBranch != null) {

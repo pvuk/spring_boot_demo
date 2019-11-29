@@ -27,15 +27,12 @@ public class CreditCard {
 	 * 1. <a href="https://docs.mongodb.com/manual/core/index-unique/">Unique Indexes</a>
 	 */
 	@Field(value="CODE", order = 2)
-	@Indexed(unique=true)								
-	private String code;
+	@Indexed(unique=true)								private String code;
 	
 	@Field(value="POSITION", order = 3) 				private Long position;
 	
 	@NotNull(message="Card Name is required field.")
 	@Field(value="DESCRIPTION", order = 4) 				private String description;
-	
-	@Field(value="IS_ACTIVE", order = 5) 				private boolean isActive;
 	
 	@Transient
 	@Builder.Default

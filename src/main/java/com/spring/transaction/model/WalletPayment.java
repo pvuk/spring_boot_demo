@@ -25,20 +25,33 @@ public class WalletPayment {
 	@Field(value = "WALLET_PAYMENT_ID", order = 1)
 	@Id private String walletPaymentId;
 	
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	@Field(value = "TRANSACTION_DATE")
+	private Date transactionDate;
+	
+	/**
+	 * 1. Where the transaction is done.
+	 */
+	@Field(value = "TRANSACTION_REMARKS")
+	@NotNull(message="Transaction Remarks is required field.")
+	private String transactionRemarks;
+	
+	@Field(value="WITHDRAWAL_AMOUNT")
+	private BigDecimal withdrawalAmount;
+	
+	@Field(value="DEPOSIT_AMOUNT")
+	private BigDecimal depositAmount;
+	
+	@Field(value="BALANCE")
+	private BigDecimal balance;
+	
+	
 	/**
 	 * 1. Check if @Field is not mention how column name created in database
 	 */
-	@NotNull(message="Wallet is required field.")
-	private String walletDetailsId;
-	
-	@Field(value="AMOUNT", order = 2)
-	@NotNull(message="Amount is required field.")
-	private BigDecimal amount;
-	
-	@Field(value = "TRANSACTION_ON", order = 3)
-	private Date transactionOn;
-	
-	@NotNull(message="Wallet is required field.")
+	@NotNull(message="Wallet Name is required field.")
 	@DBRef
 	private Wallet wallet;
 	
@@ -49,17 +62,14 @@ public class WalletPayment {
 	@DBRef
 	private PaymentBy paymentBy;
 
-	@Field(value = "REFERENCE_NO")
-	private String referenceNo;
-	
 	/**
-	 * 1. Where the transaction is done.
+	 * payee name
 	 */
-	@Field(value = "TRANSACTION_DETAILS")
-	@NotNull(message="Transaction Details is required field.")
-	private String transactionDetails;
+	@Field(value="TRANSFER_TO_ID")
+	@NotNull(message = "Transfer To is required field.")
+	private String transferToId;
 	
-	@Field(value="CUSTOMER_ID", order = 4)
+	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	

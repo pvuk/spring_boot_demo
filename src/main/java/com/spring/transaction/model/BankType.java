@@ -56,15 +56,6 @@ public class BankType {
 	@Field(value = "COMMENT", order = 7)
 	private String comment;
 	
-	/**
-	 * if not found user can add. Need to approve by Admin
-	 */
-	@Field(value = "IS_NEW", order = 8) 		private Boolean isNew;
-	@Field(value = "APPROVED", order = 9) 		private Boolean approved;
-	@Field(value = "APPROVED_BY", order = 10) 	private Boolean approvedBy;
-	@Field(value = "REJECTED", order = 11) 		private Boolean rejected;
-	@Field(value = "REJECTED_BY", order = 12) 	private Boolean rejectedBy;
-	
 	@Embedded
 	private AuditData auditData;
 	
@@ -75,8 +66,8 @@ public class BankType {
 	@Override
 	public String toString() {
 		return "BankType [id=" + id + ", code=" + code + ", position=" + position + ", description=" + description
-				+ ", section=" + section + ", category=" + category + ", comment=" + comment + ", errorMessageMap="
-				+ errorMessageMap + "]";
+				+ ", section=" + section + ", category=" + category + ", comment=" + comment + ", auditData="
+				+ auditData + ", errorMessageMap=" + errorMessageMap + "]";
 	}
 	
 }

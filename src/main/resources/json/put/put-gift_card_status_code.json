@@ -1,0 +1,32 @@
+[
+	{
+		"code": "active",
+		"position": 1,
+		"description": "Active"
+	},
+	{
+		"code": "redeemed",
+		"position": 2,
+		"description": "Redeemed"
+	},
+	{
+		"code": "expired",
+		"position": 3,
+		"description": "Expired"
+	},
+	{
+		"code": "processing",
+		"position": 4,
+		"description": "Processing"
+	},
+	{
+		"code": "inactive",
+		"position": 5,
+		"description": "InActive"
+	},
+	{
+		"code": "swiped",
+		"position": 6,
+		"description": "Swiped"
+	}
+]
