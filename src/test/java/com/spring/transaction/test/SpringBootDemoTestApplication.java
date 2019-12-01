@@ -105,6 +105,7 @@ public class SpringBootDemoTestApplication {
 			e.printStackTrace();
 		} finally {
 			System.out.println("Total Collections Available: "+ collections.size());
+//			System.out.println("Collections: "+ collections);
 		}
 		return collections;
 	}
