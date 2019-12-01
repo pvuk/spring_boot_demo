@@ -341,11 +341,12 @@ printjson(indexes);
 >var show = function(value, index, collections){print(value)};
 //>collections.forEach(function(collection){print(collection)});
 >collections.forEach(function(collection){
-var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ collection.toLowerCase() +".json";
-print("Reading file: "+ jsonFile);
-var file = cat(jsonFile);
-print("Inserting data into: "+ collection.toLowerCase() +", Data: "+ file);
-var o = JSON.parse(file); db[collection].insert(o);
+	var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ collection.toLowerCase() +".json";
+	print("Reading file: "+ jsonFile);
+	var file = cat(jsonFile);
+	print("Inserting data into collection: "+ collection.toLowerCase() +", Data: "+ file);
+	var o = JSON.parse(file);
+	db[collection].insert(o);
 });
 
 

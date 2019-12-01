@@ -1,12 +1,30 @@
 [
 	{
+		"collection_name": "BANK_ACCOUNT_STATUS_CODE"
+	},
+	{
+		"collection_name": "BANK_ACCOUNT_TYPE_CODE"
+	},
+	{
 		"collection_name": "BANK_BRANCH_CODE"
+	},
+	{
+		"collection_name": "BANK_BRANCH_STATUS_CODE"
 	},
 	{
 		"collection_name": "BANK_CODE"
 	},
 	{
+		"collection_name": "BANK_STATUS_CODE"
+	},
+	{
 		"collection_name": "BANK_TYPE_CODE"
+	},
+	{
+		"collection_name": "CARD_CATEGORY_CODE"
+	},
+	{
+		"collection_name": "CARD_STATUS_CODE"
 	},
 	{
 		"collection_name": "CARD_TYPE_AUTHORIZATION_CODE"
@@ -22,6 +40,12 @@
 	},
 	{
 		"collection_name": "EMPLOYMENT_TYPE_CODE"
+	},
+	{
+		"collection_name": "GIFT_CARD_STATUS_CODE"
+	},
+	{
+		"collection_name": "GIFT_CARD_TYPE_CODE"
 	},
 	{
 		"collection_name": "LEGEND_CODE"
@@ -51,6 +75,9 @@
 		"collection_name": "PAYMENT_TYPE_CODE"
 	},
 	{
+		"collection_name": "PROFESSION_CODE"
+	},
+	{
 		"collection_name": "SPEND_STATUS_CODE"
 	},
 	{
@@ -58,6 +85,15 @@
 	},
 	{
 		"collection_name": "TRANSACTION_STATUS_CODE"
+	},
+	{
+		"collection_name": "TRANS_DOCUMENTS_CODE"
+	},
+	{
+		"collection_name": "UPI_APP_CODE"
+	},
+	{
+		"collection_name": "USER_STATUS_CODE"
 	},
 	{
 		"collection_name": "UTILITY_PAYMENT_CODE"

@@ -1,0 +1,42 @@
+[
+	{
+		"code": "active",
+		"position": 1,
+		"description": "Active"
+	},
+	{
+		"code": "inactive",
+		"position": 2,
+		"description": "InActive"
+	},
+	{
+		"code": "closed",
+		"position": 3,
+		"description": "Closed"
+	},
+	{
+		"code": "merged",
+		"position": 4,
+		"description": "Merged"
+	},
+	{
+		"code": "moved",
+		"position": 5,
+		"description": "Moved"
+	},
+	{
+		"code": "bankruptcy",
+		"position": 6,
+		"description": "Bankruptcy"
+	},
+	{
+		"code": "new",
+		"position": 7,
+		"description": "New"
+	},
+	{
+		"code": "old",
+		"position": 8,
+		"description": "Old"
+	}
+]

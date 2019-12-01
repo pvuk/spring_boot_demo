@@ -67,7 +67,7 @@ public class UserAccount {
 	@Field(value = "ACCESSIBLE_COMMENT")				private String accessibleComment;
 	@Field(value = "ACCESSIBLE_REJECTED_ON")			private Date accessibleRejectedOn;
 	/**
-	 * 1. If user do Miscellaneous entries to OPTION_NAME(document NEW_OPTION_REQUEST) then ACCESSIBLE_NEW_OPTION is 'N'.
+	 * 1. If user do Miscellaneous entries to OPTION_NAME(document NEW_OPTION_REQUEST_DETAILS) then ACCESSIBLE_NEW_OPTION is 'N'.
 	 */
 	@Field(value = "ACCESSIBLE_REJECTED_COMMENT")		private String accessibleRejectedComment;
 	

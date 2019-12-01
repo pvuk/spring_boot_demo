@@ -14,6 +14,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.bson.Document;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -28,7 +31,6 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.TypeFactory;
-import com.mongodb.client.MongoCollection;
 import com.spring.transaction.model.Bank;
 import com.spring.transaction.test.model.User;
 import com.spring.transaction.test.model.Wallet;
@@ -53,8 +55,10 @@ public class SpringBootDemoTestApplication {
 		MongoOperations mongoOperation = (MongoOperations) ctx.getBean("mongoTemplate");
 		MongoTemplate mongoTemplate = (MongoTemplate) ctx.getBean("mongoTemplate");
 		
+		System.out.println(convertListToJsonArray(readCollectionsFromResource()));
+//		readCollectionsFromResource();
 //		insertCodeDocumentsFromJSON(mongoOperation, mongoTemplate);
-		crudOperationsOfUser(mongoOperation);
+//		crudOperationsOfUser(mongoOperation);
 		
 //		insertBankDocumentsFromJSON(mongoOperation);
 		
@@ -63,21 +67,67 @@ public class SpringBootDemoTestApplication {
 		((AnnotationConfigApplicationContext) ctx).close();//simple casting
 	}
 	
+	private static JSONArray convertListToJsonArray(List<String> list) {
+		JSONArray jsonArray = new JSONArray();
+		list.stream().forEach(collection->{
+			JSONObject jsonObject = new JSONObject();
+			try {
+				jsonObject.put("collection_name", collection);
+				jsonArray.put(jsonObject);
+			} catch (JSONException e) {
+				log.error("Exception while converting collection: {} to JSONArray", collection);
+				e.printStackTrace();
+			}
+		});
+		return jsonArray;
+	}
+	
+	private static List<String> readCollectionsFromResource() {
+		List<String> collections = new ArrayList<String>();
+		String resourceLocation = "classpath:json/", readFilesFromFolder = "put", readTypeOfFile = "code";
+		try {
+			File file = ResourceUtils.getFile(resourceLocation);
+			Files.walk(Paths.get(file.toURI())).filter(Files::isDirectory)
+					.filter(f -> readFilesFromFolder
+							.equals(f.toFile().getPath().substring(f.toFile().getPath().lastIndexOf("\\") + 1)))
+					.forEach(f -> {
+						System.out.println("Reading file From: "+ f);
+						for(File jsonFile : f.toFile().listFiles()) {
+							String fileName = jsonFile.getName();
+							//reading only 'readTypeOfFile'
+							if(fileName.contains(readTypeOfFile)) {
+								String collectionName = fileName.substring(fileName.indexOf("-") + 1, fileName.lastIndexOf(".")).toUpperCase();
+								collections.add(collectionName);
+							}
+						}
+					});
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			System.out.println("Total Collections Available: "+ collections.size());
+		}
+		return collections;
+	}
+
 	private static void insertCodeDocumentsFromJSON(MongoOperations mongoOperation, MongoTemplate mongoTemplate) {
 		String resourceLocation = "classpath:json/";
 		try {
+			/*
+			 * reads json folder from class path. Ex: D:\Workspace\2019-09\Practice\spring_boot_demo\target\classes\json
+			 */
 			File file = ResourceUtils.getFile(resourceLocation);
-			String insertFilesFolder = "put";//Insert Documents Folder
+			String readFilesFrom = "put";//Insert Documents Folder
 			Files.walk(Paths.get(file.toURI()))
 			.filter(Files::isDirectory)
-			.filter(f-> {
-				String jsonSubFolder = f.toFile().getPath();
-				//lastIndexOf("\\") gets \json. lastIndexOf("\\")+1 gets json.
-				if(insertFilesFolder.equals(jsonSubFolder.substring(jsonSubFolder.lastIndexOf("\\")+1))) {
-					return true;
-				}
-				return false;
-			})
+			.filter(f -> readFilesFrom.equals(f.toFile().getPath().substring(f.toFile().getPath().lastIndexOf("\\")+1)))
+			//or
+					/*
+					 * .filter(f-> { String jsonSubFolder = f.toFile().getPath();
+					 * //lastIndexOf("\\") gets \json. lastIndexOf("\\")+1 gets json. //reading json
+					 * folders
+					 * if(readFilesFrom.equals(jsonSubFolder.substring(jsonSubFolder.lastIndexOf
+					 * ("\\")+1))) { return true; } return false; })
+					 */
 //			.filter(f->{
 			//filter code files
 //				return f.toFile().listFiles((filterCodeDocuments)->{return filterCodeDocuments.toString().contains("code");}) != null;

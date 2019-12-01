@@ -7,22 +7,23 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 @Data
-@Document(collection = "UPI_APP")
+@Document(collection = "UPI_APP_CODE")
 public class UPIApp {
 
 	@Id
 	@Field("UPI_APP_ID")
 	private String upiAppId;
-	
-	@Field("APP_NAME")
-	private String appName;
-	
+
 	@Field("CODE")
 	private String code;
 	
+	@Field(value = "POSITION")
+	private int position;
+
 	@Field("DESCRIPTION")
 	private String description;
 	
-	@Field("WALLET_STATUS_ID")
-	private String walletStatusId;
+	@Field("COMMENT")
+	private String comment;
+
 }
