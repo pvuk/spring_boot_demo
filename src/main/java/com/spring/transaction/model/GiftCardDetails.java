@@ -26,12 +26,24 @@ public class GiftCardDetails {
 	@Id
 	@Field(value = "GIFT_CARD_DETAILS_ID")						private String giftCardDetailsId;
 	
+	@Field(value="NAME_ON_CARD")
+	private String nameOnCard;
+	
+	@Field(value="CARD_NUMBER")
+	@NotNull(message = "Card Number is required field.")
+	private String cardNumber;
+	
+	@Field(value="PIN")
+	@NotNull(message = "Pin is required field.")
+	private String pin;
+	
 	private String description;
 	private Date receivedOn;
 	private Date validFrom;
 	private Date validTo;
 	private String giftCardStatusId;
 	private String giftCardTypeId;
+	private String giftCardId;
 	private String cardCategoryId;
 
 	@Field(value = "CUSTOMER_ID")

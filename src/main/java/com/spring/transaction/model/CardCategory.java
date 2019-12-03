@@ -11,6 +11,21 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 
+/**
+ * <p>
+ * 	<ol> Card Category
+ * 		<li>CREDIT_CARD_CODE</li>
+ * 		<li>DEBIT_CARD_CODE</li>
+ * 		<li>GIFT_CARD_CODE</li>
+ * 		<li>GIFT_CARD_CODE</li>
+ * 		<li>REWARD_CARD</li>
+ * 	</ol>
+ * </p>
+ * @author P V UdayKiran
+ *
+ * @Date: Tue 03-Dec-2019 21:52
+ * @version 2
+ */
 @Data
 @Document(collection = "CARD_CATEGORY_CODE")
 public class CardCategory {

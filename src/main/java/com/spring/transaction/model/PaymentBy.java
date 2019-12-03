@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -12,6 +13,18 @@ import com.spring.transaction.validation.group.GroupCustomer;
 
 import lombok.Data;
 
+/**
+ * <p>
+ * 	<ol>
+ * 		<li>This Collection contains all the transactions details.</li>
+ * 		<li>ASSIGN_PAYMENT_BY if any CC / other payment done, user want to pay particular transaction using dc / netbanking / upi in feature.</li>
+ * 		<li>If payment is single / multiple settlements use PAYMENT(payments field) to track from source and to source of payment modes </li>
+ * 	</ol>
+ * </p>
+ * @author P V UdayKiran
+ *
+ * @Date: Tue 03-Dec-2019 19:21
+ */
 @Data
 @Document(collection = "PAYMENT_BY")
 public class PaymentBy {
@@ -60,17 +73,27 @@ public class PaymentBy {
 
 	@Field(value = "COMMENT", order = 13)
 	private String comment;
+	
+	/**
+	 * 1. If user tries to pay using other payment modes restrict the user and pay using previous what selected.
+	 */
+	@Field(value = "ASSIGN_PAYMENT_BY_ID")
+	private String assignPaymentById;
+	
+	@Transient
+	private List<Payment> payments;
 
 	/**
 	 * 1. PARENT_PAYMENT_ID is mandatory when user payment is less than actual payment.</br>
 	 * 2. If user paid 10000 as single payment PAYMENT_BY_ID = 1, PARENT_PAYMENT_ID = null 
 	 * </br>
-	 * 3. If user payment is 10000, then they paid less then 10000 i.e 9999.99,
-	 * insert payment record as child if amount received is than actual amount.
+	 * 3. If user payment is 10000, if the payment is less than 10000 i.e 9999.99,
+	 * insert PAYMENT record as child if amount received payment is less than actual payment.
 	 * </br>
-	 * 4. If user paid 10000 as two payments PAYMENT_BY_ID = 2 AND PARENT_PAYMENT_ID = null, 
-	 * PAYMENT_BY_ID = 3 AND PARENT_PAYMENT_ID = 2, PAYMENT_BY_ID = 4 AND
-	 * PARENT_PAYMENT_ID = 2
+	 * 4. If user paid 10000 in more than two payments,
+	 *  PAYMENT_BY_ID = 1 AND PARENT_PAYMENT_ID = null, 
+	 * 	PAYMENT_BY_ID = 2 AND PARENT_PAYMENT_ID = 1,
+	 *  PAYMENT_BY_ID = 3 AND PARENT_PAYMENT_ID = 1
 	 * </br>
 	 */
 	@Field(value = "PARENT_PAYMENT_ID")

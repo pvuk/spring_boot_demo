@@ -116,7 +116,7 @@
 	},
 	{
 		"code": "abpbwallet",
-		"position": 24,
+		"position": 29,
 		"description": "ABPB Wallet"
 	},
 	{
@@ -138,5 +138,15 @@
 		"code": "bookmyshow",
 		"position": 28,
 		"description": "BookMyShow"
+	},
+	{
+		"code": "cred",
+		"position": 29,
+		"description": "CRED"
+	},
+	{
+		"code": "epaylater",
+		"position": 30,
+		"description": "ePayLater"
 	}
 ]
