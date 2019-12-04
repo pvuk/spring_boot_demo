@@ -5,7 +5,7 @@ EXAMPLE: From the Command Interpreter(Win + R)
 
 -> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or
-> D:\uday\backup\mongodb-win32-x86_64-enterprise-windows-64-4.0.1\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
+> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
 or
 > "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
 or
@@ -205,7 +205,9 @@ The following commands can be used to retrieve collection records:
 =========================================================================================================================================
 															Update Record
 =========================================================================================================================================
+
 >db.BANK_TYPE.update({"_id" : ObjectId("5cbeb52bda1faf34488362c1")},  {$set: { "position" : 3}});
+
 =========================================================================================================================================
 															Get Records
 =========================================================================================================================================
@@ -257,23 +259,33 @@ MongoDB Enterprise > db.BANK_BRANCH.remove({ "_id" : ObjectId("5c519d43ee4cea153
 WriteResult({ "nRemoved" : 1 })
 
 =========================================================================================================================================
-														Drop Document in collection
-														https://docs.mongodb.com/v3.2/tutorial/remove-documents/
+														Drop / Remove Commands</br>
+													[Delete Documents](https://docs.mongodb.com/v3.2/tutorial/remove-documents/)</br>
+													[db.collection.remove()](https://docs.mongodb.com/manual/reference/method/db.collection.remove/)</br>
+													[db.collection.drop()](https://docs.mongodb.com/manual/reference/method/db.collection.drop/)
 =========================================================================================================================================
 1. to drop the collection 
 >db.users.drop()
-
+2. drop database
+>db.dropDatabase();
+3. drop all collections from database
+//Removes a collection or view from the database. The method also removes any indexes associated with the dropped collection.
+>db.getCollectionNames().forEach(function(e){print(db[e].drop())});
+or
+//Removes documents from a collection.
+>db.getCollectionNames().forEach(function(e){print(db[e].remove())});
 =========================================================================================================================================
 =========================================================================================================================================
 														Count Document in collection
 =========================================================================================================================================
 db.<collectionName>.count();
 
---To get count of all documents in mongodb
+//To get count of all documents in mongodb
 > var documentCount = 0; db.getCollectionNames().forEach(function(collection) { documentCount++; }); print("Available Documents count: "+ documentCount);
 
 //To get all count of document results in a collection
 > db.getCollectionNames().forEach(function(collection) { resultCount = db[collection].count(); print("Results count for " + collection + ": "+ resultCount); });
+
 =========================================================================================================================================
 
 1.6. Administrative Commands
@@ -298,6 +310,7 @@ db.<collectionName>.latencyStats()
 
 //To get all dataSize of documents in a collection
 > db.getCollectionNames().forEach(function(collection) { size = db[collection].dataSize(); print("dataSize for " + collection + ": "+ size); });
+
 =========================================================================================================================================
 
 db.<collectionName>.storageSize() // Total size of document stored in the collection
@@ -328,27 +341,33 @@ printjson(indexes);
 															CREATE COLLECTION from JSON
 =========================================================================================================================================
 //Insert data into single collection from JSON file
->var file = cat('C:/data/db/put-card_type_authorization.json'); var o = JSON.parse(file); db.CARD_TYPE_AUTHORIZATION.insert(o);
+>var file = cat('D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json'); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
 //Example2:
 >var trans_collections = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
 >var o = JSON.parse(trans_collections);
 >db.TRANS_DOCUMENTS_CODE.insert(o);
 
-//>mongoimport --jsonArray --db trans --collection CARD_TYPE_AUTHORIZATION --file C:/spring_boot_demo/src/main/resources/json/put/put-card_type_authorization.json
+//>mongoimport --jsonArray --db trans --collection TRANS_DOCUMENTS_CODE --file D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json
 
-//Read All collections from array and Read all JSON files from resource folder and insert data into collection
->var collections = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
->var show = function(value, index, collections){print(value)};
-//>collections.forEach(function(collection){print(collection)});
->collections.forEach(function(collection){
-	var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ collection.toLowerCase() +".json";
+//Read All collection_name's from JSON Array from collection, while iterating collection set file path from resource folder and insert data into collection
+>var collection = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
+>var show = function(value, index, collection){print(value)};
+
+//read all data from collection
+//>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){print(e.collection_name)});
+>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){
+	var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ e.collection_name.toUpperCase() +".json";
 	print("Reading file: "+ jsonFile);
 	var file = cat(jsonFile);
-	print("Inserting data into collection: "+ collection.toLowerCase() +", Data: "+ file);
+	print("Inserting data into collection: "+ e.collection_name.toUpperCase() +", From JSON File Data: "+ file);
 	var o = JSON.parse(file);
 	db[collection].insert(o);
 });
-
+>collection.forEach(function(collection_name){
+	
+	print("Reading file: "+ collection_name);
+	
+});
 
 =========================================================================================================================================
 
