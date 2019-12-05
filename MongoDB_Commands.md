@@ -1,4 +1,4 @@
-####Markdown content. For more [https://fileinfo.com/extension/md](.MDFile Extension)
+####Markdown language file. For more [https://fileinfo.com/extension/md](.MDFile Extension). Live Preview [http://bit.ly/362Naax](Compare markdown implementations). Examples [http://bit.ly/2PcyIGp](Markdown-Cheatsheet)
 
 #MongoDB Commands
 
@@ -7,7 +7,7 @@ To start MongoDB, invoke mongod.exe.
 
 EXAMPLE: From the Command Interpreter(Win + R)
 
--> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
 or
 > D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
 or
@@ -75,39 +75,38 @@ If you want to check your databases list, use the command show dbs.
 local     0.78125GB
 test      0.23012GB
 
-1.6
-Your created database (mydb) is not present in list. To display database, you need to insert at least one document into it.
->db.movie.insert({"name":"tutorials point"})
->show dbs
-local      0.78125GB
-mydb       0.23012GB
-test       0.23012GB
+##### 1.6 Your created database (mydb) is not present in list. To display database, you need to insert at least one document into it.
+`>db.movie.insert({"name":"tutorials point"})`
+`>show dbs`
+
+[comment]: #(Below table can be designed in https://johnmacfarlane.net/babelmark2/)
+
+| Database	| Size |
+----- | -----
+| local        | 0.78125GB		|
+| mydb         | 0.23012GB		|
+| test         | 0.23012GB		|
+ 
 In MongoDB default database is test. If you didn't create any database, then collections will be stored in test database.
 
-2 To create user in db
-//https://docs.mongodb.com/manual/tutorial/enable-authentication/
+##2. To create user in db 
+Reference: [https://docs.mongodb.com/manual/tutorial/enable-authentication/](Enabling access control on a MongoDB deployment enforces authentication, requiring users to identify themselves)
 
-2.1 Add user to DB
->db.createUser({user:"admin", pwd:"admin",roles:["readWrite","dbAdmin"]})
-or
->db.createUser({user:"mongo --port 27017  --authenticationDatabase "admin" -u "myUserAdmin" -ptest", pwd:"test", roles:["readWrite", "dbAdmin"]})--for test user
-or
->db.createUser({user:"m001-student",pwd:"m001-mongodbbasics",roles:["readWrite","dbAdmin"]})
-or
->use admin
-db.createUser(
-  {
-    user: "myUserAdmin",
-    pwd: "admin123", 
-    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
-  }
-)
+#####2.1 Add user to DB
 
-2.2 if you want to add without roles
->db.createUser({user:"admin", pwd:"admin", roles:[]})
+`>db.createUser({user:"admin", pwd:"admin",roles:["readWrite","dbAdmin"]})`
+#####or
+`>db.createUser({user:"mongo --port 27017  --authenticationDatabase "admin" -u "myUserAdmin" -ptest", pwd:"test", roles:["readWrite", "dbAdmin"]})--for test user`
+#####or
+`>db.createUser({user:"m001-student",pwd:"m001-mongodbbasics",roles:["readWrite","dbAdmin"]})`
+#####or
+`>db.createUser({ user: "myUserAdmin", pwd: "admin123", roles: [{ role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ] });`
 
-2.3 To check Authenticated or not
->db.auth("admin_name", "1234")
+#####2.2 if you want to add without roles
+`>db.createUser({user:"admin", pwd:"admin", roles:[]})`
+
+#####2.3 To check Authenticated or not
+`>db.auth("admin_name", "1234")`
 
 it should give you:
 1
@@ -115,9 +114,10 @@ else :
 Error: Authentication failed.
 0
 
-2.4 To find MongoDB version
-> db.version()
+#####2.4 To find MongoDB version
+`> db.version()`
 
+`
 =========================================================================================================================================
 												LOGIN COMMANDS
 =========================================================================================================================================
@@ -353,12 +353,25 @@ printjson(indexes);
 
 //>mongoimport --jsonArray --db trans --collection TRANS_DOCUMENTS_CODE --file D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json
 
-//Read All collection_name's from JSON Array from collection, while iterating collection set file path from resource folder and insert data into collection
->var collection = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
->var show = function(value, index, collection){print(value)};
 
-//read all data from collection
-//>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){print(e.collection_name)});
+##### Read All collection_name's from JSON Array from collection, while iterating collection set file path from resource folder and insert data into collection
+
+
+```
+>var collection = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
+```
+~~~
+>var show = function(value, index, collection){print(value)};
+~~~
+
+##### read all data from collection
+
+
+[comment]: # (>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){print(e.collection_name)});)
+
+[comment]: # (for code display use ``` in before and after the code.)
+
+```
 >db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){
 	var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ e.collection_name.toUpperCase() +".json";
 	print("Reading file: "+ jsonFile);
@@ -367,12 +380,16 @@ printjson(indexes);
 	var o = JSON.parse(file);
 	db[collection].insert(o);
 });
+```
+
+##### Print all collection names in a database
+```
 >collection.forEach(function(collection_name){
 	
 	print("Reading file: "+ collection_name);
 	
 });
-
+```
 =========================================================================================================================================
 
 Use the following information to complete this form, but do not click "Connect" yet.
