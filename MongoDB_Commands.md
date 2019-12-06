@@ -344,12 +344,19 @@ printjson(indexes);
 =========================================================================================================================================
 															CREATE COLLECTION from JSON
 =========================================================================================================================================
-//Insert data into single collection from JSON file
+####Insert data into single collection from JSON file
+#####Example1:
+```
 >var file = cat('D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json'); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
-//Example2:
+or
+>var file = cat('D:/Workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-trans_documents_code.json'); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
+````
+#####Example2:
+```
 >var trans_collections = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
 >var o = JSON.parse(trans_collections);
 >db.TRANS_DOCUMENTS_CODE.insert(o);
+````
 
 //>mongoimport --jsonArray --db trans --collection TRANS_DOCUMENTS_CODE --file D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json
 
@@ -359,7 +366,18 @@ printjson(indexes);
 
 ```
 >var collection = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
+or
+> var jsonCollectionsPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json";
+
 ```
+
+#####Json collections dynamic readpath
+```
+> var jsonPath = "\"D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-\"";
+or
+> var jsonPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-";
+```
+
 ~~~
 >var show = function(value, index, collection){print(value)};
 ~~~
@@ -373,10 +391,11 @@ printjson(indexes);
 
 ```
 >db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){
-	var jsonFile = "D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-"+ e.collection_name.toUpperCase() +".json";
+	var collection = e.collection_name;
+	var jsonFile = jsonPath + collection.toLowerCase() +".json";
 	print("Reading file: "+ jsonFile);
 	var file = cat(jsonFile);
-	print("Inserting data into collection: "+ e.collection_name.toUpperCase() +", From JSON File Data: "+ file);
+	print("Inserting data into collection: "+ collection.toUpperCase() +", From JSON File Data: "+ file);
 	var o = JSON.parse(file);
 	db[collection].insert(o);
 });
@@ -385,11 +404,10 @@ printjson(indexes);
 ##### Print all collection names in a database
 ```
 >collection.forEach(function(collection_name){
-	
 	print("Reading file: "+ collection_name);
-	
 });
 ```
+
 =========================================================================================================================================
 
 Use the following information to complete this form, but do not click "Connect" yet.
