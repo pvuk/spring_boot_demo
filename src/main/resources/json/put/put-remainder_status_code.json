@@ -1,0 +1,47 @@
+[
+	{
+		"code": "active",
+		"position": 1,
+		"description": "Active"
+	},
+	{
+		"code": "completed",
+		"position": 2,
+		"description": "Completed"
+	},
+	{
+		"code": "defeat",
+		"position": 3,
+		"description": "Defeat"
+	},
+	{
+		"code": "failed",
+		"position": 4,
+		"description": "Failed"
+	},
+	{
+		"code": "inprogress",
+		"position": 5,
+		"description": "In Progress"
+	},
+	{
+		"code": "participate",
+		"position": 6,
+		"description": "Participate"
+	},
+	{
+		"code": "pending",
+		"position": 7,
+		"description": "Pending"
+	},
+	{
+		"code": "success",
+		"position": 8,
+		"description": "Success"
+	},
+	{
+		"code": "win",
+		"position": 9,
+		"description": "Win"
+	}
+]

@@ -78,6 +78,9 @@
 		"collection_name": "PROFESSION_CODE"
 	},
 	{
+		"collection_name": "REMAINDER_STATUS_CODE"
+	},
+	{
 		"collection_name": "SPEND_STATUS_CODE"
 	},
 	{
