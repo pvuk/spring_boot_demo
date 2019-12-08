@@ -10,7 +10,7 @@ public interface CRUDOperationService {
 
 	List<Object> saveAll(List<Object> list) throws Exception;
 
-	String update(Object update) throws Exception;
+	String update(Object id, Object bank) throws Exception;
 
 	String deleteById(ObjectId id) throws Exception;
 

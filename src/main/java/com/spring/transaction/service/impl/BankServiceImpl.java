@@ -96,7 +96,7 @@ public class BankServiceImpl implements CRUDOperationService, BankService {
 	}
 
 	@Override
-	public String update(Object update) throws Exception {
+	public String update(Object id, Object update) throws Exception {
 		Bank bank = (Bank) update;
 		if (bank != null && bank.getBankId() != null) {
 			bank = bankMongoRepo.save(bank);

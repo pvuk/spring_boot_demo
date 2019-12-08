@@ -123,7 +123,7 @@ public class BankBranchServiceImpl implements CRUDOperationService, BankBranchSe
 	}
 
 	@Override
-	public String update(Object update) throws Exception {
+	public String update(Object id, Object update) throws Exception {
 
 		return MessageConstants.WORKING_IN_PROGRESS + MessageConstants.PLEASE_CONTACT_TRANS_IT_SUPPORT;
 	}
