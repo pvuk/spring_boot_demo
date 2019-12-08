@@ -288,7 +288,7 @@ db.<collectionName>.count();
 > var documentCount = 0; db.getCollectionNames().forEach(function(collection) { documentCount++; }); print("Available Documents count: "+ documentCount);
 
 //To get all count of document results in a collection
-> db.getCollectionNames().forEach(function(collection) { resultCount = db[collection].count(); print("Results count for " + collection + ": "+ resultCount); });
+>db.getCollectionNames().forEach(function(collection) { resultCount = db[collection].count(); print("Documents count: "+ resultCount +" for collection "+ collection); });
 
 =========================================================================================================================================
 
