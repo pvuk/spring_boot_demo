@@ -22,13 +22,13 @@ or
 1.2 Connect to MongoDB.
 To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
 
--> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
 or
 > D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
 or
-> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongo.exe
+> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
 or
--> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
+> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongo.exe
 
 1.3 Connect and Authenticate as the user administrator
 > mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "trans"
