@@ -313,7 +313,7 @@ db.<collectionName>.latencyStats()
 >db.<collectionName>.dataSize() // Size of the collection
 
 //To get all dataSize of documents in a collection
-> db.getCollectionNames().forEach(function(collection) { size = db[collection].dataSize(); print("dataSize for " + collection + ": "+ size); });
+>db.getCollectionNames().forEach(function(collection) { size = db[collection].dataSize(); print("collection: " + collection + ", Contains dataSize: "+ size); });
 
 =========================================================================================================================================
 
@@ -341,6 +341,11 @@ print("Indexes for " + collection + ":");
 printjson(indexes);
 });
 
+##### Print all collection names in a database
+```
+>db.getCollectionNames().forEach(function(collection_name){print(collection_name);});
+```
+
 =========================================================================================================================================
 															CREATE COLLECTION from JSON
 =========================================================================================================================================
@@ -348,6 +353,8 @@ printjson(indexes);
 #####Example1:
 ```
 >var file = cat('D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json'); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
+or
+>var file = cat("I:/workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-trans_documents_code.json"); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
 or
 >var file = cat('D:/Workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-trans_documents_code.json'); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
 ````
@@ -373,9 +380,11 @@ or
 
 #####Json collections dynamic readpath
 ```
-> var jsonPath = "\"D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-\"";
+>var jsonPath = "I:/workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-";
 or
-> var jsonPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-";
+>var jsonPath = "\"D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-\"";
+or
+>var jsonPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-";
 ```
 
 ~~~
@@ -398,13 +407,6 @@ or
 	print("Inserting data into collection: "+ collection.toUpperCase() +", From JSON File Data: "+ file);
 	var o = JSON.parse(file);
 	db[collection].insert(o);
-});
-```
-
-##### Print all collection names in a database
-```
->collection.forEach(function(collection_name){
-	print("Reading file: "+ collection_name);
 });
 ```
 
