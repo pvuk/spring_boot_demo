@@ -273,7 +273,7 @@ WriteResult({ "nRemoved" : 1 })
 2. drop database
 >db.dropDatabase();
 3. drop all collections from database
-//Removes a collection or view from the database. The method also removes any indexes associated with the dropped collection.
+//Drop a collection or view from the database. The method also removes any indexes associated with the dropped collection.
 >db.getCollectionNames().forEach(function(e){print(db[e].drop())});
 or
 //Removes documents from a collection.
