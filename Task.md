@@ -15,13 +15,14 @@
 ##Notification																	
 ===================================================================================================================================
 1. * Notify user before 3 / 2 / 1 - month / 15 days for MileStoneAcheivementFinalDate.
-2. Notify friends available cc limit once payment is done those who are using cc.
+2. Once payment is done Notify / BlockNotification to Family / friends available cc limit those who are using cc.
+	* If BlockNotification enable don't show payment details and available limit.
 3. Once Rewards are added into REWARD_POINTS_EARNED table insert expire details in REMAINDER_REWARD_POINTS_EXPIRE table
 	* check whether reward points are redeemed or not. If not redeemed notify before 2 months / 1 month / 15 days / 1 week / 4 days / 2 days / 1 day.
-	* If userd redeemed at 15 days or in between any of above remainder notification stop notify the user.
-	* Notify user auto redeem option availble in Rewards Redeem Screen.
+	* If user redeemed at 15 days or in between any of above remainder notification stop notify the user.
+	* Notify user auto redeem option available in Rewards Redeem Screen.
 	* Implement auto redeem option if user is forgot to redeem last day.
-		* User should select Merchents to auto redeem.	
+		* User should select Merchants to auto redeem.	
 
 ===================================================================================================================================
 ##Spring - Task																	
@@ -105,13 +106,13 @@
 	2.1. Total bill of Sep 2019 month: ₹5000 + ₹1000 = ₹6000.
 	2.2. Total payment of Sep 2019 month: ₹5000 = ₹5000.
 	2.3. Total payment of Oct 2019 month: ₹1000 + ₹2000 = ₹3000.
-	2.4. Total amount need to pay Sep 2019 bills: ₹5000. (exlude Oct 2019 bills)
+	2.4. Total amount need to pay Sep 2019 bills: ₹5000. (exclude Oct 2019 bills)
 	2.5. Total amount need to pay Oct 2019 bills: ₹3000. (include Sep 2019 bills + Oct 2019 generated bill which need to pay in same month)
 	
 ===================================================================================================================================
 #UI - Task
 ===================================================================================================================================
-1. Load Country dropdown with reference of following url, http://bit.ly/35xEbyM. Dropdown contains Country flag with Dailing code.
+1. Load Country dropdown with reference of following url, http://bit.ly/35xEbyM. Dropdown contains Country flag with Dialing code.
 
 ===================================================================================================================================
 #REST - Task
