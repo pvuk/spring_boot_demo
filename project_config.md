@@ -34,5 +34,5 @@ Installation Type 2:
 * [GitHub - Mastering-Markdown](https://guides.github.com/features/mastering-markdown/)
 * [Atlassian - Markdown syntax guide](https://confluence.atlassian.com/bitbucketserver/markdown-syntax-guide-776639995.html)
 
-##### No.of increases size of font will decrease. Min 1 and Max 5
+##### Font size depends upon the increase / decrease of HashTags. Min 1 and Max 5
  
