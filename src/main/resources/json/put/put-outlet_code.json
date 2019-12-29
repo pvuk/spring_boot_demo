@@ -1,0 +1,32 @@
+[
+	{
+		"code": "entertainment",
+		"position": 1,
+		"description": "Entertainment"
+	},
+	{
+		"code": "food",
+		"position": 2,
+		"description": "Food"
+	},
+	{
+		"code": "fuel",
+		"position": 3,
+		"description": "Fuel"
+	},
+	{
+		"code": "hotel",
+		"position": 4,
+		"description": "Hotel"
+	},
+	{
+		"code": "shopping",
+		"position": 5,
+		"description": "Shopping"
+	},
+	{
+		"code": "travel",
+		"position": 6,
+		"description": "Travel"
+	}
+]

@@ -1,0 +1,27 @@
+[
+	{
+		"code": "defeat",
+		"position": 1,
+		"description": "Defeat"
+	},
+	{
+		"code": "notown",
+		"position": 2,
+		"description": "Not Own"
+	},
+	{
+		"code": "pending",
+		"position": 3,
+		"description": "Pending"
+	},
+	{
+		"code": "processing",
+		"position": 4,
+		"description": "Processing"
+	},
+	{
+		"code": "win",
+		"position": 5,
+		"description": "Win"
+	}
+]

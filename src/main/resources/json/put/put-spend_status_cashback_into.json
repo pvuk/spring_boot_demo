@@ -1,0 +1,27 @@
+[
+	{
+		"code": "bank",
+		"position": 1,
+		"description": "Bank"
+	},
+	{
+		"code": "cash",
+		"position": 2,
+		"description": "Cash"
+	},
+	{
+		"code": "cc",
+		"position": 3,
+		"description": "CC"
+	},
+	{
+		"code": "dc",
+		"position": 4,
+		"description": "DC"
+	},
+	{
+		"code": "wallet",
+		"position": 5,
+		"description": "Wallet"
+	}
+]

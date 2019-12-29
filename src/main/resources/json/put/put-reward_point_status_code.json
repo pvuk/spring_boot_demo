@@ -1,0 +1,32 @@
+[
+	{
+		"code": "active",
+		"position": 1,
+		"description": "Active"
+	},
+	{
+		"code": "expired",
+		"position": 2,
+		"description": "Expired"
+	},
+	{
+		"code": "neverexpire",
+		"position": 3,
+		"description": "NeverExpire"
+	},
+	{
+		"code": "pending",
+		"position": 4,
+		"description": "Pending"
+	},
+	{
+		"code": "processing",
+		"position": 5,
+		"description": "Processing"
+	},
+	{
+		"code": "warning",
+		"position": 6,
+		"description": "Warning"
+	}
+]
