@@ -1,0 +1,37 @@
+[
+	{
+		"code": "balancetransfer",
+		"position": 1,
+		"description": "Balance Transfer"
+	},
+	{
+		"code": "creditcard",
+		"position": 2,
+		"description": "CreditCard"
+	},
+	{
+		"code": "homeloan",
+		"position": 3,
+		"description": "Home Loan"
+	},
+	{
+		"code": "personalloan",
+		"position": 4,
+		"description": "Personal Loan"
+	},
+	{
+		"code": "pre-approvedloan",
+		"position": 5,
+		"description": "Pre-Approved Loan"
+	},
+	{
+		"code": "transfer",
+		"position": 6,
+		"description": "Transfer"
+	},
+	{
+		"code": "wallet",
+		"position": 7,
+		"description": "Wallet"
+	}
+]

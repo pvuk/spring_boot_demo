@@ -1,0 +1,86 @@
+[
+	{
+		"code": "balancetransfer",
+		"position": 1,
+		"description": "Balance Transfer",
+		"loan_code": [
+			{
+				"code": "creditcard"
+			},
+			{
+				"code": "homeloan"
+			}
+		]
+	},
+	{
+		"code": "bike",
+		"position": 2,
+		"description": "Bike"
+	},
+	{
+		"code": "car",
+		"position": 3,
+		"description": "Car",
+		"loan_code": [
+			{
+				"code": "pre-approvedloan"
+			}
+		]
+	},
+	{
+		"code": "consumer",
+		"position": 4,
+		"description": "Consumer",
+		"loan_code": [
+			{
+				"code": "pre-approvedloan"
+			}
+		]
+	},
+	{
+		"code": "homeLoan",
+		"position": 5,
+		"description": "HomeLoan",
+		"loan_code": [
+			{
+				"code": "insurance"
+			},
+			{
+				"code": "pre-approvedloan"
+			}
+		]
+	},
+	{
+		"code": "insurance",
+		"position": 6,
+		"description": "Insurance",
+		"loan_code": [
+			{
+				"code": "pre-approvedloan"
+			}
+		]
+	},
+	{
+		"code": "creditlimit",
+		"position": 7,
+		"description": "Credit Limit",
+		"loan_code": [
+			{
+				"code": "creditcard"
+			}
+		]
+	},
+	{
+		"code": "personalloan",
+		"position": 8,
+		"description": "Personal Loan",
+		"loan_code": [
+			{
+				"code": "creditcard"
+			},
+			{
+				"code": "pre-approvedloan"
+			}
+		]
+	}
+]
