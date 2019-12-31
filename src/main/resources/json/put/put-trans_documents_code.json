@@ -51,6 +51,12 @@
 		"collection_name": "LEGEND_CODE"
 	},
 	{
+		"collection_name": "LOAN_CODE"
+	},
+	{
+		"collection_name": "LOAN_TYPE_CODE"
+	},
+	{
 		"collection_name": "NET_BANKING_CODE"
 	},
 	{
@@ -58,6 +64,9 @@
 	},
 	{
 		"collection_name": "OFFER_TYPE_CODE"
+	},
+	{
+		"collection_name": "OUTLET_CODE"
 	},
 	{
 		"collection_name": "PAYMENT_FROM_CODE"
@@ -79,6 +88,9 @@
 	},
 	{
 		"collection_name": "REMAINDER_STATUS_CODE"
+	},
+	{
+		"collection_name": "REWARD_POINT_STATUS_CODE"
 	},
 	{
 		"collection_name": "SPEND_STATUS_CODE"

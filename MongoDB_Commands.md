@@ -329,6 +329,40 @@ db.<collectionName>.totalIndexSize() // Total size of all indexes in the collect
 //The unique property for an index causes MongoDB to reject duplicate values for the indexed field
 >db.members.createIndex( { "user_id": 1 }, { unique: true } )
 
+--
+== 
+Create Indexes for all collections in db
+==
+##Insert code tables into single collection to do bulk operations.
+````
+>var file = cat('D:/Workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-trans_documents_code.json'); var o = JSON.parse(file); db.TRANS_DOCUMENTS_CODE.insert(o);
+````
+##Json collection path to insert documents
+``
+>var jsonPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-";
+``
+## read all data from TRANS_DOCUMENTS_CODE collection
+```
+>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){
+	var collection = e.collection_name;
+	print("Creating Collection: "+ collection);
+	db.createCollection(collection);
+	
+	var collection_name_lowercase = collection.toLowerCase();
+	print("Creating unique index for column 'code' in Collection: "+ collection);
+	db.collection_name_lowercase.createIndex({"code":1},{unique: true});
+	
+	var jsonFile = jsonPath + collection_name_lowercase +".json";
+	print("Reading file: "+ jsonFile);
+	
+	var file = cat(jsonFile);
+	print("Inserting data into collection: "+ collection.toUpperCase() +", From JSON File Data: "+ file);
+	var o = JSON.parse(file);
+	db[collection].insert(o);
+});
+```
+===
+
 //Returns an array that holds a list of documents that identify and describe the existing indexes on the collection. You must call db.collection.getIndexes() on a collection. For example:
 > db.BANK_TYPE_CODE.getIndexes();
 
@@ -375,10 +409,9 @@ or
 >var collection = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
 or
 > var jsonCollectionsPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json";
-
 ```
 
-#####Json collections dynamic readpath
+#####Json collection path to insert documents
 ```
 >var jsonPath = "I:/workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-";
 or
@@ -391,7 +424,7 @@ or
 >var show = function(value, index, collection){print(value)};
 ~~~
 
-##### read all data from collection
+##### read all data from TRANS_DOCUMENTS_CODE collection
 
 
 [comment]: # (>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){print(e.collection_name)});)
