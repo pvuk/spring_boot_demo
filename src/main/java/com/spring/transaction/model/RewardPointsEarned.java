@@ -28,7 +28,7 @@ public class RewardPointsEarned {
 	 * 2. Trigger every month Thread cycle after statement date. Then user will know it in current statement.
 	 * 3. If card is in inActive state don't run Thread cycle.
 	 */
-	@Field(value="previous_Balance", order = 2)
+	@Field(value="PREVIOUS_BALANCE", order = 2)
 	@NotNull(message = "Previous Balance / Opening Balance is required field.") 					private long previousBalance;
 	
 	@Field(value="REWARDS_EARNED", order = 3)

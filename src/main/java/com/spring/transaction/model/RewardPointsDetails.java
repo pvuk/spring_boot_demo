@@ -47,7 +47,10 @@ public class RewardPointsDetails {
 	@NotNull(message = "Credit Card Statement is required field.")
 	private String creditCardStatementId;
 	
-	@Field(value="CUSTOMER_ID", order = 15)
+	@Field(value = "REWARD_POINTS_BONUS_ID", order = 15)
+	private String rewardPointsBonusId;
+	
+	@Field(value="CUSTOMER_ID", order = 16)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
 	
