@@ -1,0 +1,86 @@
+[
+	{
+		"bank_id": "5c8f4d65dc344c3814f25d2e",
+		"credit_card_id": "",
+		"emi_tenure": "3 Months",
+		"interest_rate_per_annum": 13%,
+		"emi_type": {
+			"code": [
+				"Instant EMI",
+				"EMIonCall"
+			],
+			"comment": "effective 1st Jan, 2020"
+		},
+		"comment": "All YES BANK Credit Cards"
+	},
+	{
+		"bank_id": "5c8f4d65dc344c3814f25d2e",
+		"credit_card_id": "",
+		"emi_tenure": "6 Months",
+		"interest_rate_per_annum": 13%,
+		"emi_type": {
+			"code": [
+				"Instant EMI",
+				"EMI on Call"
+			],
+			"comment": "effective 1st Jan, 2020"
+		},
+		"comment": "All YES BANK Credit Cards"
+	},
+	{
+		"bank_id": "5c8f4d65dc344c3814f25d2e",
+		"credit_card_id": "",
+		"emi_tenure": "9 Months",
+		"interest_rate_per_annum": 14%,
+		"emi_type": {
+			"code": [
+				"Instant EMI",
+				"EMI on Call"
+			],
+			"comment": "effective 1st Jan, 2020"
+		},
+		"comment": "All YES BANK Credit Cards"
+	},
+	{
+		"bank_id": "5c8f4d65dc344c3814f25d2e",
+		"credit_card_id": "",
+		"emi_tenure": "12 Months",
+		"interest_rate_per_annum": 14%,
+		"emi_type": {
+			"code": [
+				"Instant EMI",
+				"EMI on Call"
+			],
+			"comment": "effective 1st Jan, 2020"
+		},
+		"comment": "All YES BANK Credit Cards"
+	},
+	{
+		"bank_id": "5c8f4d65dc344c3814f25d2e",
+		"credit_card_id": "",
+		"emi_tenure": "18 Months",
+		"interest_rate_per_annum": 15%,
+		"emi_type": {
+			"code": [
+				"Instant EMI",
+				"EMI on Call"
+			],
+			"comment": "effective 1st Jan, 2020"
+		},
+		"comment": "All YES BANK Credit Cards"
+	},
+	{
+		"bank_id": "5c8f4d65dc344c3814f25d2e",
+		"credit_card_id": "",
+		"emi_tenure": "24 Months",
+		"interest_rate_per_annum": 15%,
+		"emi_type": {
+			"code": [
+				"Instant EMI",
+				"EMI on Call"
+			],
+			"comment": "effective 1st Jan, 2020"
+		},
+		"comment": "All YES BANK Credit Cards"
+	}
+]
