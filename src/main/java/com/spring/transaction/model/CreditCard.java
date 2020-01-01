@@ -3,6 +3,7 @@ package com.spring.transaction.model;
 import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -33,6 +34,28 @@ public class CreditCard {
 	
 	@NotNull(message="Card Name is required field.")
 	@Field(value="DESCRIPTION", order = 4) 				private String description;
+	
+	@Type(type = "yes_no")
+	@Field(value="ACTIVE", order = 5)					private	Boolean active;
+	
+	@Type(type = "yes_no")
+	@Field(value="UPGRADED", order = 6)					private Boolean upgraded;
+	
+	/**
+	 * 1. once Credit Card is CLOSED true, the value of ACTIVE should be set to false.
+	 * 2. if UPGRADED true value of CLOSED set to true.
+	 */
+	@Type(type = "yes_no")
+	@Field(value="CLOSED", order = 7)					private Boolean closed;
+	
+	/**
+	 * 1. When Credit Card is upgraded update CREDIT_CARD_ID with UPGRADE_CREDIT_CARD_ID.
+	 * 2. ACTIVE set false, UPGRADED true.
+	 */
+	@Field(value="UPGRADE_CREDIT_CARD_ID", order = 8)	private String upgradeCreditCardId;
+	
+	@Field(value="CUSTOMER_ID", order = 9)
+	@NotNull(message = "Customer is required field.")	private String customerId;
 	
 	@Transient
 	@Builder.Default

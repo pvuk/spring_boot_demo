@@ -1,110 +1,233 @@
 [
 	{
-		"code": "icicicoralhp",
+		"credit_card_id": "5dea6f855755437bb5f29d20",
+		"code": "icicibankcoralhp",
 		"position": 1,
-		"description": "ICICI CORAL HP PETROLIUM",
-		"isActive": true
+		"description": "ICICI BANK CORAL HP PETROLIUM",
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d21",
 		"code": "sbisimplyclick",
 		"position": 2,
 		"description": "SBI SIMPLY CLICK",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d22",
 		"code": "citiplatinumcashback",
 		"position": 3,
 		"description": "Citi Platinum Cashback",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d23",
 		"code": "rblmovieblockbuster",
 		"position": 4,
 		"description": "RBL MOVIE BLOCKBUSTER",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d24",
 		"code": "hdfctimestitanium",
 		"position": 5,
 		"description": "HDFC TIEMS TITANIUM",
-		"isActive": true
+		"active": false,
+		"upgraded": true,
+		"closed": true,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d25",
 		"code": "citiindianoil",
 		"position": 6,
 		"description": "CITI INDIAN OIL",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d26",
 		"code": "kotakroyale",
 		"position": 7,
 		"description": "KOTAK ROYALE",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d27",
 		"code": "yesrewardsplus",
 		"position": 8,
 		"description": "YES REWARDS PLUS",
-		"isActive": true
+		"active": false,
+		"upgraded": true,
+		"closed": true,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d28",
 		"code": "sbiprimepro",
 		"position": 9,
 		"description": "SBI PRIME PRO",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d29",
 		"code": "amexeverdaygoldcreditcard",
 		"position": 10,
 		"description": "AMEX EVERDAY GOLD CREDIT CARD",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d2a",
 		"code": "paytmpostpaid",
 		"position": 11,
 		"description": "PAYTM POSTPAID",
-		"isActive": false
+		"active": false,
+		"upgraded": false,
+		"closed": true,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d2b",
 		"code": "indusindauraplatinum",
 		"position": 12,
 		"description": "INDUSIND AURA PLATINUM",
-		"isActive": false
+		"active": false,
+		"upgraded": true,
+		"closed": true,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d2c",
 		"code": "bajajfinservemi",
 		"position": 13,
 		"description": "BAJAJ FINSERV EMI",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": true,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
-		"code": "icicipaylaterxx1985",
+		"credit_card_id": "5dea6f855755437bb5f29d2d",
+		"code": "icicibankpaylaterxx1985",
 		"position": 14,
-		"description": "ICICI PAY LATER XX1985",
-		"isActive": true
+		"description": "ICICI BANK PAY LATER XX1985",
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d2e",
 		"code": "bajajfinservrblbanksupercard",
 		"position": 15,
 		"description": "BAJAJ FINSERV RBL BANK SUPERCARD",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
-		"code": "icicipaylaterxx2159 ",
+		"credit_card_id": "5dea6f855755437bb5f29d2f",
+		"code": "icicibankpaylaterxx2159 ",
 		"position": 16,
-		"description": "ICICI PAY LATER XX2159",
-		"isActive": false
+		"description": "ICICI BANK PAY LATER XX2159",
+		"active": false,
+		"upgraded": false,
+		"closed": true,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
 	},
 	{
+		"credit_card_id": "5dea6f855755437bb5f29d30",
 		"code": "indusindnexxt",
 		"position": 17,
 		"description": "INDUSIND NEXXT",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": "5dea6f855755437bb5f29d2b",
+		"customer_id": ""
 	},
 	{
-		"code": "amazonpayicicibank",
+		"credit_card_id": "5dea6f855755437bb5f29d31",
+		"code": "icicibankamazonpay",
 		"position": 18,
 		"description": "AMAZON PAY ICICI BANK",
-		"isActive": true
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
+	},
+	{
+		"credit_card_id": "5e0c76df562892b6141a7817",
+		"code": "icicibankplatinum",
+		"position": 19,
+		"description": "ICICI BANK Platinum",
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": null,
+		"customer_id": ""
+	},
+	{
+		"credit_card_id": "",
+		"code": "yespremia",
+		"position": 20,
+		"description": "YES PREMIA",
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": "5dea6f855755437bb5f29d27",
+		"customer_id": ""
+	},
+	{
+		"credit_card_id": "5e0c787c5fc651df9c06a2a0",
+		"code": "hdfcregaliafirst",
+		"position": 21,
+		"description": "HDFC REGALIA FIRST",
+		"active": true,
+		"upgraded": false,
+		"closed": false,
+		"upgrade_credit_card_id": "5dea6f855755437bb5f29d24",
+		"customer_id": ""
 	}
 ]
