@@ -81,6 +81,8 @@ Liquibase helps teams track, version, and deploy database schema and logic chang
 ===================================================================================================================================
 1. Implement the feature that MongoDB support of Long primaryKey
 1.1 Maintain SequenceGenerator
+2. Before insert create index on collections through JSON.insert(file);
+3. Insert CREDIT_CARD_ID as primary key if exist else MongoDB take care of create new _id.
 
 ===================================================================================================================================
 ##Threading - Task
