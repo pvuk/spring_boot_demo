@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -34,6 +35,7 @@ public class RewardPointsCap {
 	@Field(value="COMMENT")
 	@Size(max = 3000)											private String comment;
 	
+	@Type(type="yes_no")
 	@Field(value = "monthlyCapReached")							private boolean monthlyCapReached;
 	
 	@Field(value="CUSTOMER_ID")
