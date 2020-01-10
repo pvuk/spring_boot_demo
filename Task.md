@@ -126,3 +126,9 @@ Liquibase helps teams track, version, and deploy database schema and logic chang
 #REST - Task
 ===================================================================================================================================
 1. work on Status types 200 (OK) or 204 (No Content).
+
+===================================================================================================================================
+#Pending Document Relation Task
+===================================================================================================================================
+1. Relate PAYMENT_ON_REWARD_POINTS with REWARD_POINTS_CATALOGUE and REWARD_POINTS_CAP when capping arises(SBI Debit card capping).
+	1.1 Remove unnecessary columns.

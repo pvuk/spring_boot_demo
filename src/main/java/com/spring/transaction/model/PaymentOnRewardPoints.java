@@ -28,8 +28,8 @@ public class PaymentOnRewardPoints {
 	@Field(value = "TRANSACTION_ON", order = 4)
 	private Date transactionOn;
 	
-	@Field(value = "REWARD_CARD_ID", order = 5)
-	private String rewardCardId;
+	@Field(value = "CARD_DETAILS_ID", order = 5)							
+	@NotNull(message = "Card is required field.")							private String cardDetailsId;
 	
 	/**
 	 * 1. Same login user not right to confirm the payment
@@ -40,4 +40,6 @@ public class PaymentOnRewardPoints {
 	@Field(value="CUSTOMER_ID", order = 7)
 	@NotNull(message="Customer is required field.")
 	private String customerId;
+	
+	@Field(value = "REWARD_POINTS_CAP_ID")									private String rewardPointsCapId;
 }

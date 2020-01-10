@@ -21,7 +21,7 @@ public class RewardPointsDetails {
 	private String rewardPointsDetailsId;
 	
 	/**
-	 * 1. Only one record allows per card, per statement in REWARD_POINTS
+	 * 1. Only one record allows per card, per statement in REWARD_POINTS_DETAILS
 	 */
 	@Field(value="REWARD_CARD_ID", order = 2)
 	@NotNull(message = "Reward Card is required field.")

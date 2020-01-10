@@ -32,7 +32,10 @@ public class CreditCardModeOfPayment {
 	private String noteAvailableLimitRelease;
 	
 	/**
-	 * <p>* 1. Turnaround Time is mentioned in Business Days.</p>
+	 * <p>
+	 *	*1. Turn around Time is mentioned in Business Days.
+	 * 	2. In span of ? days available limit will be shown. 
+	 * </p>
 	 */
 	private String noteTurnaroundTime;
 	

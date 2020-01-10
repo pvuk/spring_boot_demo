@@ -27,6 +27,9 @@ public class WalletDetails {
 	@Field(value = "WALLET_STATUS_ID")
 	private String walletStatusId;
 	
+	@Field(value = "WALLET_CARD_ID")
+	private String walletCardId;
+	
 	/**
 	 * 1. If account is transferred to other number then new account is in
 	 * active state. Transfer from number isActive false.

@@ -20,12 +20,14 @@ public class CardDetails {
 	private String cardDetailsId;
 	
 	@Field(value = "CARD_TYPE_ID", order = 2)
+	@NotNull(message = "Card Type is required field.")
 	private String cardTypeId;
 	
 	/**
-	 * 1. Refer to CredtiCard, DebitCard, WalletCard etc.,
+	 * 1. Refer to CREDIT_CARD_ID, DEBIT_CARD_ID, WALLET_CARD_ID, GIFT_CARD_ID, REWARD_CARD_ID etc.,
 	 */
 	@Field(value = "CARD_ID", order = 3)
+	@NotNull(message = "Card is required field.")
 	private String cardId;
 	
 	private String feesAndChargesId;
