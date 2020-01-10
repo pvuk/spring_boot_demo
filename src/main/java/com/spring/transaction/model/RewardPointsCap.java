@@ -36,7 +36,7 @@ public class RewardPointsCap {
 	@Size(max = 3000)											private String comment;
 	
 	@Type(type="yes_no")
-	@Field(value = "monthlyCapReached")							private boolean monthlyCapReached;
+	@Field(value = "MONTHLY_CAP_REACHED")							private boolean monthlyCapReached;
 	
 	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")				private String customerId;

@@ -51,7 +51,7 @@ public class RewardPointsCatalogue {
 	 * 5. Warn user if he reaches >=900 monthly cap, to use another card.
 	 * 6. If user reaches monthly cap suggest another card to earn more reward points.
 	 */
-	@Field(value = "maxPointsPerTransaction")								private Long maxPointsPerTransaction;
+	@Field(value = "MAX_POINTS_PER_TRANSACTION")							private Long maxPointsPerTransaction;
 	
 	/**
 	 * <h1>As Per SBI DebitCard</h1>
@@ -60,7 +60,7 @@ public class RewardPointsCatalogue {
 	 * 3. On ₹ 1,00,000(₹ 10,000 x 10) transaction get 1,000 Reward points, beyond no reward points.
 	 * 4. If the transaction ₹ 10,001 or greater user can get only 100 points. "Transactional Capping is reached" message will display.
 	 */
-	@Field(value = "maxPaymentCap")											private BigDecimal maxPaymentCap;
+	@Field(value = "MAX_PAYMENT_CAP")											private BigDecimal maxPaymentCap;
 	
 	@Field(value="CUSTOMER_ID", order = 8)
 	@NotNull(message="Customer is required field.")							private String customerId;
