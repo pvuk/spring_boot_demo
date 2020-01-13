@@ -21,7 +21,7 @@ import lombok.Data;
  * </p>
  * 
  * @author venkataudaykiranp
- * @Date Fri 29-Nov-2019 15:26
+ * @since Fri 29-Nov-2019 15:26
  */
 @Data
 @Document(collection = "CARD_STATUS_CODE")

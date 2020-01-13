@@ -15,7 +15,7 @@ import lombok.Data;
  * <p>Some branches operated all types loans and some are operate only personal loan.<p>
  * 
  * @author venkataudaykiranp
- * @Date Fri 29-Nov-2019 20:43
+ * @since Fri 29-Nov-2019 20:43
  */
 @Data
 @Document(collection = "BRANCH_OPERATIONS_CODE")

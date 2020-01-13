@@ -39,7 +39,7 @@ import lombok.Data;
  * </ul>
  * 
  * @author venkataudaykiranp
- * @Date Fri 29-Nov-2019 17:46
+ * @since Fri 29-Nov-2019 17:46
  */
 @Data
 @Document(collection = "NEW_OPTION_REQUEST_DETAILS")

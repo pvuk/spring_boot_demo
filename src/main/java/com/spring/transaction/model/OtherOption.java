@@ -17,7 +17,7 @@ import lombok.Data;
  * 	<li>follow steps in Document NEW_OPTION_REQUEST_DETAILS</li>
  * </ul>
  * @author venkataudaykiranp
- * @Date Fri 29-Nov-2019 19:47
+ * @since Fri 29-Nov-2019 19:47
  */
 @Data
 @Document(collection = "OTHER_OPTION")
