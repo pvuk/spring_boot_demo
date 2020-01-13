@@ -15,12 +15,12 @@ import lombok.Data;
 @Document(collection="MILESTONE_ACHIEVEMENT")
 public class MileStoneAchievement {
 	
-	@Field(value = "MILESTONE_ACHIEVEMENT_ID")
 	@Id
+	@Field(value = "MILESTONE_ACHIEVEMENT_ID")
 	private Long mileStoneAchievementId;
 	
-	@Field(value="CARD_DETAILS_ID")
 	@NotNull(message = "Card is required field.")
+	@Field(value="CARD_DETAILS_ID")
 	private String cardDetailsId;
 	
 	@Field(value="FEE_WAIVER_ID")

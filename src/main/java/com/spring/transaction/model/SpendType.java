@@ -16,8 +16,8 @@ public class SpendType {
 	@Id
 	@Field(value = "SPEND_TYPE_ID")						private String spendTypeId;
 
-	@Field(value="CODE")
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)
+	@Field(value="CODE")								private String code;
 	
 	@Field(value="POSITION") 							private Long position;
 	

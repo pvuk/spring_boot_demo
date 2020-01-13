@@ -12,8 +12,8 @@ import lombok.Data;
 @Document(collection="PARTNER_SHIP")
 public class PartnerShip {
 	
-	@Field(value="PARTNER_SHIP_ID", order = 1)
 	@Id
+	@Field(value="PARTNER_SHIP_ID", order = 1)
 	private String partnerShipId;
 	
 	@Field(value="MERCHANT_DETAILS_ID", order = 2)

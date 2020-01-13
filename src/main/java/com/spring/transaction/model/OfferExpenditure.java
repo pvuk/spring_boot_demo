@@ -26,20 +26,29 @@ public class OfferExpenditure {
 	private String offerExpenditureId;
 	
 	@NotNull(message = "Offer Release is required field.")
+	@Field(value = "OFFER_RELEASE_ID")
 	private String offerReleaseId;
 	
+	@Field(value = "PAYMENT_BY_ID")
 	private String paymentById;
 	
 	@NotNull(message = "Spend Amount is required filed.")
+	@Field(value = "SPEND")
 	private BigDecimal spend;
+	
+	@Field(value = "REMAINING_SPEND")
 	private BigDecimal remainingSpend;
+	
+	@Field(value = "TOTAL_SPEND")
 	private BigDecimal totalSpend;
 	
+	@Field(value = "SPEND_ON")
 	private Date spendOn;
 	
 	/**
 	 * 1. Calculate Current Spend Expenditure is Percentage(5% / 10% /.... / 100%)
 	 */
+	@Field(value = "SPEND_PERCENTAGE")
 	private Double spendPercentage;
 	
 	/**
@@ -48,6 +57,7 @@ public class OfferExpenditure {
 	 * 3. Once offer expenditure completed send user notification first time / week / month, not more than one month.
 	 * 4. Once he / she claim the offer, mark the claim offer from no / yes.
 	 */
+	@Field(value = "IS_OFFER_EXPENDITURE_COMPLETED")
 	private Boolean isOfferExpenditureCompleted;
 	
 	/**
@@ -55,12 +65,14 @@ public class OfferExpenditure {
 	 * 2. After biller release the offer as cashback / coupon / voucher / giftcard, mark this option true.
 	 * 3. Once option is marked to true, offerDetailsId should be inserted as per OfferDetails.
 	 */
+	@Field(value = "OFFER_CLAIMED")
 	private Boolean offerClaimed;
 	
+	@Field(value = "OFFER_DETAILS_ID")
 	private String offerDetailsId;
 	
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
+	@Field(value = "CUSTOMER_ID")
 	private String customerId;
 	
 }

@@ -30,20 +30,20 @@ import lombok.Data;
 @Document(collection = "GIFT_CARD_TYPE_CODE")
 public class GiftCardType {
 	
-	@Field(value = "GIFT_CARD_TYPE_ID", order = 1)
 	@Id
+	@Field(value = "GIFT_CARD_TYPE_ID", order = 1)
 	private String giftCardTypeId;
 
-	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@TextIndexed
 	@NotNull(message = "Gift Card Type Code is required field.")
+	@Field(value = "CODE", order = 2)
 	private String code;
 
 	@Field(value = "POSITION", order = 3)
 	private int position;
 
-	@Field(value = "DESCRIPTION", order = 4)
 	@NotNull(message = "Gift Card Type is required field.")
+	@Field(value = "DESCRIPTION", order = 4)
 	private String description;
 }

@@ -16,8 +16,8 @@ public class PaymentTo {
 	@Id
 	@Field(value = "PAYMENT_TO_ID")						private String paymentToId;
 	
-	@Field(value="CODE")
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)
+	@Field(value="CODE")								private String code;
 	
 	@Field(value="POSITION") 							private Long position;
 	

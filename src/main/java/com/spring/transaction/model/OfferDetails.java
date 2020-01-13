@@ -15,15 +15,14 @@ public class OfferDetails {
 	@Id
 	@Field(value = "OFFER_DETAILS_ID")						private String offerDetailsId;
 	
-	private String giftCardDetailsId;
+	@Field(value = "GIFT_CARD_DETAILS_ID")					private String giftCardDetailsId;
 	
-	private String cashbackId;
+	@Field(value = "CASHBACK_ID")							private String cashbackId;
 	
-	private String couponDetailsId;
+	@Field(value = "COUPON_DETAILS_ID")						private String couponDetailsId;
 	
-	private String voucherDetailsId;
+	@Field(value = "VOUCHER_DETAILS_ID")					private String voucherDetailsId;
 	
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
-	private String customerId;
+	@Field(value = "CUSTOMER_ID")							private String customerId;
 }

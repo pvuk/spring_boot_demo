@@ -14,8 +14,8 @@ import lombok.Data;
 @Document(collection = "WELCOME_BENIFIT")
 public class WelcomeBenifit {
 	
-	@Field(value="CARD_DETAILS_ID")
 	@Id
+	@Field(value="CARD_DETAILS_ID")
 	private String welcomeBenifitId;
 	
 	@Field(value="DESCRIPTION")
@@ -24,11 +24,11 @@ public class WelcomeBenifit {
 	@Field(value="USE_BEFORE")
 	private Date useBefore;
 	
-	@Field(value="CARD_DETAILS_ID")
 	@NotNull(message = "Card is required field.")
+	@Field(value="CARD_DETAILS_ID")
 	private String cardDetailsId;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")
 	private String customerId;
 }

@@ -19,16 +19,16 @@ public class RemainderStatus {
 	@Field(value="REMAINDER_STATUS_ID", order = 1)
 	private String remainderStatusId;
 
-	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@TextIndexed
 	@NotNull(message = "Card Status Code is required field.")
+	@Field(value = "CODE", order = 2)
 	private String code;
 
 	@Field(value = "POSITION", order = 3)
 	private int position;
 
-	@Field(value = "DESCRIPTION", order = 4)
 	@NotNull(message = "Card Status is required field.")
+	@Field(value = "DESCRIPTION", order = 4)
 	private String description;
 }

@@ -23,11 +23,11 @@ import lombok.NoArgsConstructor;
 @Document(collection="LOAN_TYPE_CODE")
 public class LoanType {
 
-	@Field(value = "LOAN_TYPE_ID", order = 1)
-	@Id 															private String loanTypeId;
+	@Id
+	@Field(value = "LOAN_TYPE_ID", order = 1)						private String loanTypeId;
 	
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)								private String code;
 	
 	@Field(value = "POSITION", order = 3) 							private Long position;
 	
@@ -37,7 +37,7 @@ public class LoanType {
 	/**
 	 * 1. Based on CODE selection of LOAN_CODE document depended options should be visible with DESCRIPTION in LOAN_TYPE_CODE dropdown
 	 */
-	@Field(value = "LOAN_CODE", order = 5)
-	@Indexed(unique = true)											private String loanCode;
+	@Indexed(unique = true)
+	@Field(value = "LOAN_CODE", order = 5)							private String loanCode;
 	
 }

@@ -16,8 +16,8 @@ import lombok.Data;
 @Document(collection="MOVIE_OFFER")
 public class MovieOffer {
 	
-	@Field(value="MOVIE_OFFER_ID", order = 1)
 	@Id
+	@Field(value="MOVIE_OFFER_ID", order = 1)
 	private String movieOfferId;
 	
 	@Field(value="PARTNER_SHIP_ID", order = 2)
@@ -35,10 +35,14 @@ public class MovieOffer {
 	@Field(value="REWARD_CARD_ID", order = 6)
 	private String rewardCardId;
 	
-	@Field(value="CUSTOMER_ID", order = 7)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 7)
 	private String customerId;
 	
+	/**
+	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
+	 */
 	@Field(value = "CONFIRM_PAYMENT")
 	private Boolean confirmPayment;
 }

@@ -15,16 +15,16 @@ import lombok.Data;
 @Document(collection="PAYMENT_FAILED")
 public class PaymentFailed {
 	
-	@Field(value="PAYMENT_FAILED_ID", order = 1)
 	@Id
+	@Field(value="PAYMENT_FAILED_ID", order = 1)
 	private String paymentFailedId;
 	
-	@Field(value="FAILED_AMOUNT", order = 2)
 	@NotNull(message="Failed Amount is required field.")
+	@Field(value="FAILED_AMOUNT", order = 2)
 	private BigDecimal failedAmount;
 	
-	@Field(value="PAYMENT_FAILED_ON", order = 3)
 	@NotNull(message="Payment Failed On is required field.")
+	@Field(value="PAYMENT_FAILED_ON", order = 3)
 	private Date paymentFailedOn;
 	
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 4)
@@ -36,14 +36,14 @@ public class PaymentFailed {
 	/**
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_DETAILS")
 	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS")
 	private String transactionDetails;
 	
 	@Field(value="IS_PAYMENT_ROLLBACK_TO_SOURCE")
 	private Boolean isPaymentRollbackToSource;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")
 	private String customerId;
 }

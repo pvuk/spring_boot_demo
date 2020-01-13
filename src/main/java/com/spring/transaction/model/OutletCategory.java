@@ -25,11 +25,11 @@ import lombok.NoArgsConstructor;
 @Document(collection="OUTLET_CATEGORY_CODE")
 public class OutletCategory {
 
-	@Field(value = "OUTLET_CATEGORY_ID", order = 1)
-	@Id 															private String outletCategoryId;
+	@Id
+	@Field(value = "OUTLET_CATEGORY_ID", order = 1)					private String outletCategoryId;
 	
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)								private String code;
 	
 	@Field(value = "POSITION", order = 3) 							private Long position;
 	

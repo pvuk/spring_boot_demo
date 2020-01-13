@@ -1,6 +1,8 @@
 package com.spring.transaction.model;
 
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 
@@ -16,13 +18,14 @@ import lombok.Data;
 @Document(collection = "STATEMENT")
 public class Statement {
 	
-	private String statementId;
+	@Id
+	@Field(value = "STATEMENT_ID")							private String statementId;
 	
-	private String debitCardStatementId;
+	@Field(value = "DEBIT_CARD_STATEMENT_ID")				private String debitCardStatementId;
 	
-	private String creditCardStatementId;
+	@Field(value = "CREDIT_CARD_STATEMENT_ID")				private String creditCardStatementId;
 	
-	private String rewardPointsStatementId;
+	@Field(value = "REWARD_POINTS_STATEMENT_ID")			private String rewardPointsStatementId;
 	
-	private String walletStatementId;
+	@Field(value = "WALLET_STATEMENT_ID")					private String walletStatementId;
 }

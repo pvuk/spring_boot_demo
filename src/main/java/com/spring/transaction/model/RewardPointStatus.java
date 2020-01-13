@@ -24,11 +24,11 @@ import lombok.NoArgsConstructor;
 @Document(collection="REWARD_POINT_STATUS_CODE")
 public class RewardPointStatus {
 
-	@Field(value = "REWARD_POINT_STATUS_ID", order = 1)
-	@Id 															private String rewardPointStatusId;
+	@Id
+	@Field(value = "REWARD_POINT_STATUS_ID", order = 1)				private String rewardPointStatusId;
 	
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)								private String code;
 	
 	@Field(value = "POSITION", order = 3) 							private Long position;
 	

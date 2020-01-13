@@ -15,8 +15,8 @@ import lombok.Data;
 @Document(collection="PAYMENT_RECEIVED")
 public class PaymentReceived {
 	
-	@Field(value="PAYMENT_RECEIVED_ID", order = 1)
 	@Id
+	@Field(value="PAYMENT_RECEIVED_ID", order = 1)
 	private String paymentReceivedId;
 	
 	@Field(value="CUSTOMER_ID", order = 2)
@@ -26,15 +26,15 @@ public class PaymentReceived {
 	@Field(value="ACTUAL_AMOUNT", order = 3)
 	private BigDecimal actualAmount;
 	
-	@Field(value="RECEIVED_AMOUNT", order = 4)
 	@NotNull(message="Received Amount is required field.")
+	@Field(value="RECEIVED_AMOUNT", order = 4)
 	private BigDecimal receivedAmount;
     
 	@Field(value="REMAINING_AMOUNT", order = 5)
 	private BigDecimal remainingAmount;
 
-	@Field(value="PAYMENT_RECEIVED_ON", order = 6)
     @NotNull(message="Payment Received On is required field.")
+    @Field(value="PAYMENT_RECEIVED_ON", order = 6)
 	private Date paymentReceivedOn;
 	
 	@Field(value="PAYMENT_STATUS_ID", order = 7)
@@ -42,6 +42,7 @@ public class PaymentReceived {
 	
 	/**
 	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
 	 */
 	@Field(value="CONFIRM_PAYMENT", order = 8)
 	private Boolean confirmPayment;
@@ -52,8 +53,8 @@ public class PaymentReceived {
 	/**
 	 * 1. Where the transaction is done(Payment Description).
 	 */
-	@Field(value = "TRANSACTION_DETAILS", order = 10)
 	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS", order = 10)
 	private String transactionDetails;
     
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -37,8 +38,8 @@ public class PaymentBy {
 	 * 1. If payment received from more than one customer., we need to insert two
 	 * records for single transaction.
 	 */
-	@Field(value = "PAYMENT_RECEIVED_ID", order = 2)
 	@NotNull(message = "Payment Received From Customer is required field.", groups = GroupCustomer.class)
+	@Field(value = "PAYMENT_RECEIVED_ID", order = 2)
 	private List<String> paymentReceivedIds;
 
 	@Field(value = "CREDIT_CARD_PAYMENT_ID", order = 3)
@@ -68,6 +69,7 @@ public class PaymentBy {
 	@Field(value = "CHEQUE_PAYMENT_ID", order = 11)
 	private String chequePaymentId;
 
+	@Type(type="yes_no")
 	@Field(value = "PAYMENT_SHOW_TO_EXPENSER", order = 12)
 	private boolean paymentShowToExpenser;
 
@@ -80,9 +82,6 @@ public class PaymentBy {
 	@Field(value = "ASSIGN_PAYMENT_BY_ID")
 	private String assignPaymentById;
 	
-	@Transient
-	private List<Payment> payments;
-
 	/**
 	 * 1. PARENT_PAYMENT_ID is mandatory when user payment is less than actual payment.</br>
 	 * 2. If user paid 10000 as single payment PAYMENT_BY_ID = 1, PARENT_PAYMENT_ID = null 
@@ -97,7 +96,6 @@ public class PaymentBy {
 	 * </br>
 	 */
 	@Field(value = "PARENT_PAYMENT_ID")
-//	@NotNull(message = "Parent Payment Id is required field.")
 	private String parentPaymentId;
 
 	@Field("RATE_YOUR_PURCHASE_ID")
@@ -109,4 +107,7 @@ public class PaymentBy {
 	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
 	private String customerId;
+	
+	@Transient
+	private List<Payment> payments;
 }

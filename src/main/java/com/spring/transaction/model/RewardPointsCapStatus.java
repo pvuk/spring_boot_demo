@@ -16,15 +16,15 @@ import lombok.Data;
 public class RewardPointsCapStatus {
 
 	@Id
-	@Field(value = "REWARD_POINTS_CAP_STATUS_ID")								private String rewardPointsCapStatusId;
+	@Field(value = "REWARD_POINTS_CAP_STATUS_ID")											private String rewardPointsCapStatusId;
 	
-	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@TextIndexed
-	@NotNull(message = "Reward Points Cap Status Code is required field.")		private String code;
+	@NotNull(message = "Reward Points Cap Status Code is required field.")
+	@Field(value = "CODE", order = 2)														private String code;
 
-	@Field(value = "POSITION", order = 3)										private int position;
+	@Field(value = "POSITION", order = 3)													private int position;
 
-	@Field(value = "DESCRIPTION", order = 4)
-	@NotNull(message = "Reward Points Cap Status is required field.")			private String description;
+	@NotNull(message = "Reward Points Cap Status is required field.")
+	@Field(value = "DESCRIPTION", order = 4)												private String description;
 }

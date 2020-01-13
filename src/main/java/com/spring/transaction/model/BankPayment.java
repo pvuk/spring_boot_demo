@@ -71,6 +71,7 @@ public class BankPayment {
 
 	/**
 	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
 	 */
 	@Field(value = "CONFIRM_PAYMENT", order = 11)
 	private Boolean confirmPayment;

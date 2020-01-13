@@ -5,6 +5,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -40,9 +41,9 @@ public class OfferRelease {
 													
 	@Field(value = "OFFER_DETAILS_ID")					private String offerDetailsId;
 	
+	@Type(type="yes_no")
 	@Field(value = "OFFER_VISIBLE_TO_OTHERS")			private Boolean offerVisibleToOthers;
 	
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
-	private String customerId;
+	@Field(value = "CUSTOMER_ID")						private String customerId;
 }

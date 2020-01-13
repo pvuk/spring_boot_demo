@@ -20,8 +20,8 @@ import lombok.Data;
 @Document(collection = "TRANS_DOCUMENTS_CODE")
 public class TransDocuments {
 	
-	@Field(value = "TRANS_DOCUMENTS_ID")
 	@Id
+	@Field(value = "TRANS_DOCUMENTS_ID")
 	private String transDocumentsId;
 	
 	@Indexed(unique = true, name = "COLLECTION_NAME_INDEX", direction = IndexDirection.ASCENDING)

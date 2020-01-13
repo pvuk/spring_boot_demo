@@ -22,19 +22,19 @@ import lombok.Data;
 @Document(collection = "DOWNLOAD_LINK")
 public class DowanloadLink {
 	
-	@Field(value="DOWNLOAD_LINK_ID", order = 1)
-	@Id 													private String dowanloadLinkId;
+	@Id
+	@Field(value="DOWNLOAD_LINK_ID", order = 1)												private String dowanloadLinkId;
 	
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@NotNull(message = "Download Load Code is required field.")
-	@Field(value="CODE", order = 2) 						private String code;
+	@Field(value="CODE", order = 2) 														private String code;
 	
-	@Field(value="POSITION", order = 3) 					private Long position;
+	@Field(value="POSITION", order = 3) 													private Long position;
 	
 	@NotNull(message="Download Load Link Description is required field.")
-	@Field(value="DESCRIPTION", order = 4) 					private String description;
+	@Field(value="DESCRIPTION", order = 4) 													private String description;
 	
-	@Field(value = "ANDROID_LINK", order = 5)				private String androidLink;
-	@Field(value = "IOS_LINK", order = 6)					private String iosLink;
-	@Field(value = "WEB_LINK", order = 7)					private String webLink;
+	@Field(value = "ANDROID_LINK", order = 5)												private String androidLink;
+	@Field(value = "IOS_LINK", order = 6)													private String iosLink;
+	@Field(value = "WEB_LINK", order = 7)													private String webLink;
 }

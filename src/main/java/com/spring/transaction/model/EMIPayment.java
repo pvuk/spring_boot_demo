@@ -20,27 +20,28 @@ import lombok.Data;
 @Document(collection="EMI_PAYMENT", value="EQUATED_MONTHLY_INSTALLMENT")
 public class EMIPayment {
 	
+	@Id
 	@Field(value="EMI_PAYMENT_ID", order = 1)
-	@Id private String emiPaymentId;
+	private String emiPaymentId;
 	
-	@Field(value="PAYMENT_BY_ID", order = 2)
 	@NotNull(message="Payment By is required field.")
+	@Field(value="PAYMENT_BY_ID", order = 2)
 	private String paymentById;
 	
-	@Field(value="EMI_START_ON", order = 3)
 	@NotNull(message="EMI Start On is required field.")
+	@Field(value="EMI_START_ON", order = 3)
 	private Date emiStartOn;
 	
-	@Field(value="EMI_ENDS_ON", order = 4)
 	@NotNull(message="EMI Ends On is required field.")
+	@Field(value="EMI_ENDS_ON", order = 4)
 	private Date emiEndsOn;
 	
-	@Field(value="EMI_DUE_DATE", order = 5)
 	@NotNull(message="EMI Due Date is required field.")
+	@Field(value="EMI_DUE_DATE", order = 5)
 	private Date emiDueDate;
 	
-	@Field(value="LOAN_AMOUNT", order = 6)
 	@NotNull(message="Loan Amount required field.")
+	@Field(value="LOAN_AMOUNT", order = 6)
 	private BigDecimal loanAmount;
 	
 	@Field(value="TOTAL_EMI_PAYMENT_WITH_INTEREST", order = 7)
@@ -85,7 +86,8 @@ public class EMIPayment {
 	/**
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_DETAILS", order = 20)
+	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS")
 	private String transactionDetails;
 	
 	@Field(value="OVERAL_EMI_PAID", order = 21)
@@ -97,20 +99,22 @@ public class EMIPayment {
 	@Field(value = "REFERENCE_NO", order = 23)
 	private String referenceNo;
 	
-	@Field(value="CUSTOMER_ID", order = 24)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 24)
 	private String customerId;
 	
 	/**
 	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
 	 */
 	@Field(value = "CONFIRM_PAYMENT", order = 25)
 	private Boolean confirmPayment;
 	
-	@Field(value = "PAYMENT_TYPE_ID")
 	@NotNull(message = "Payment Type is required field")
+	@Field(value = "PAYMENT_TYPE_ID", order = 26)
 	private String paymentTypeId;
 	
-	@Field(value = "PARENT_PAYMENT_ID")
-	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	@NotNull(message = "Parent Payment Id is required field.")
+	@Field(value = "PARENT_PAYMENT_ID", order = 27)
+	private String parentPaymentId;
 }

@@ -20,8 +20,9 @@ import lombok.NoArgsConstructor;
 @Document(collection="TRANS_ERROR_LOG_REPORT")
 public class TransErrorLogReport {
 	
+	@Id
 	@Field(value = "TRANS_ERROR_LOG_REPORT_ID", order = 1)
-	@Id private String transErrorLogReportId;
+	private String transErrorLogReportId;
 	
 	@Field(value = "MESSAGE", order = 2)
 	private String message;
@@ -56,8 +57,8 @@ public class TransErrorLogReport {
 	@Field(value = "PARAMETERS_ALIAS_QUERY_STRING")
 	private String parameters;
 	
-	@Field(value="CUSTOMER_ID", order = 12)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 12)
 	private String customerId;
 
 	@Override

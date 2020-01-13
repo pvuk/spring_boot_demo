@@ -23,11 +23,11 @@ import lombok.NoArgsConstructor;
 @Document(collection="LOAN_CODE")
 public class Loan {
 
-	@Field(value = "LOAN_ID", order = 1)
-	@Id 															private String loanId;
+	@Id
+	@Field(value = "LOAN_ID", order = 1)							private String loanId;
 	
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)								private String code;
 	
 	@Field(value = "POSITION", order = 3) 							private Long position;
 	

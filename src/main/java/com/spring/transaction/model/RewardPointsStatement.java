@@ -15,12 +15,13 @@ import lombok.Data;
 @Document(collection = "REWARD_POINTS_STATEMENT")
 public class RewardPointsStatement {
 	
-	@Id private String rewardPointsStatementId;
+	@Id
+	@Field(value="REWARD_POINTS_STATEMENT_ID")				private String rewardPointsStatementId;
 	
-	private String rewardPointsDetailsId;
+	@Field(value="REWARD_POINTS_DETAILS_ID")				private String rewardPointsDetailsId;
 	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.") 								private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")								private String customerId;
 	
-	@Transient 																		private Set<RewardPointsStatementTransaction> rpStatementTransactionSet;
+	@Transient 												private Set<RewardPointsStatementTransaction> rpStatementTransactionSet;
 }

@@ -16,15 +16,15 @@ import lombok.Data;
 @Document(collection="FEE_WAIVER")
 public class FeeWaiver {
 	
-	@Field(value="FEE_WAIVER_ID")
 	@Id
+	@Field(value="FEE_WAIVER_ID")
 	private String feeWaiverId;
 	
 	@Field(value="PAYMENT_HISTORY_ID")
 	private String paymentHistoryId;
 	
-	@Field(value="CARD_DETAILS_ID")
 	@NotNull(message = "Card is required field.")
+	@Field(value="CARD_DETAILS_ID")
 	private String cardDetailsId;
 	
 	@Field(value = "MILESTONE_ACHIEVEMENT_ID")
@@ -63,8 +63,8 @@ public class FeeWaiver {
 	@Field("ANNUAL_FEE_WAIVER_ON")
 	private Date annualFeeWaiverOn;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")
 	private String customerId;
 
 	@Transient

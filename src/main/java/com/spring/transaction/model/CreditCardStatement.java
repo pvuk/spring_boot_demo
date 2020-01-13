@@ -7,6 +7,7 @@ import java.util.Set;
 import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -45,6 +46,7 @@ public class CreditCardStatement {
 	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 1)
 	@Id																				private String creditCardStatementId;
 	
+	@Type(type="yes_no")
 	@Field(value = "IS_STATEMENT_CYCLE_CLOSED", order = 2)
 	@NotNull(message="Credit Card Statement Cycle Closed is required field.")		private Boolean isStatementCycleClosed = Boolean.FALSE;
 	

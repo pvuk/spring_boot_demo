@@ -22,8 +22,8 @@ import lombok.Data;
 @Document(collection="PAYMENT_HISTORY")
 public class PaymentHistory {
 	
-	@Field(value="PAYMENT_HISTORY_ID", order = 1)
 	@Id
+	@Field(value="PAYMENT_HISTORY_ID", order = 1)
 	private String paymentHistoryId;
 	
 	@NotNull(message="Payment On Account is required field.")
@@ -51,11 +51,11 @@ public class PaymentHistory {
 	@Field(value = "MILESTONE_ACHIEVEMENT_ID")
 	private Long mileStoneAchievementId;
 	
-	@Field(value="COMMENT", order = 6)
 	@Size(max = 3000)
+	@Field(value="COMMENT", order = 6)
 	private String comment;
 	
-	@Field(value="CUSTOMER_ID", order = 7)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 7)
 	private String customerId;
 }

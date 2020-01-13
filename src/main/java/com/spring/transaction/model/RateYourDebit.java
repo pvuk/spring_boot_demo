@@ -4,6 +4,8 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
@@ -14,14 +16,20 @@ import lombok.Data;
  * 2. Selft rating is not possible. 
  * 
  * @author Priyanka
+ * 
+ * 3. Check in database how column names are created., if @Field not mentioned on variable declaration.
  *
  */
 @Data
 @Document(value = "RATE_YOUR_DEBIT")
 public class RateYourDebit {
 	
+	@Id
 	private String rateYourDebitId;
 	
+	/**
+	 * NOTE: Check in database how column names are created., if @Field not mentioned on variable declaration.
+	 */
 	private String paymentById;
 	
 	/**
@@ -43,6 +51,7 @@ public class RateYourDebit {
 	private Date ratingOn;
 	private String comment;
 	
+	@Type(type="yes_no")
 	private boolean approveRating;
 	
 	@Field(value = "CUSTOMER_ID")

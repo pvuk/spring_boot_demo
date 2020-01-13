@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -36,15 +37,20 @@ public class UPIWallet {
 	@Field(value = "UPI_ID")
 	private String upiId;
 	
+	@Field(value = "MOBILE_NUMBER")
 	private String mobileNumber;
 	
+	@Field(value = "DESCRIPTION")
 	private String description;
 	
+	@Field(value = "UPI_APP_CODE")
 	private String upiAppCode;
 	
 	/**
 	 * 1. If multiple UPI_ID exist, allow only one primary UPI to pay / receive the amount
 	 */
+	@Type(type = "yes_no")
+	@Field(value = "IS_PRIMARY")
 	private Boolean isPrimary = false;
 	
 	/**
@@ -53,7 +59,7 @@ public class UPIWallet {
 	@Field("PRIMARY_ACCOUNT_UPDATED_ON")
 	private Date primaryAccountUpdatedOn;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")
 	private String customerId;
 }

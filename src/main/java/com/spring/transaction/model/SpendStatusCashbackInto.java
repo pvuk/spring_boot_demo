@@ -24,14 +24,14 @@ import lombok.NoArgsConstructor;
 @Document(collection="SPEND_STATUS_CASHBACK_INTO_CODE")
 public class SpendStatusCashbackInto {
 
-	@Field(value = "SPEND_STATUS_CASHBACK_INTO_ID", order = 1)
-	@Id 															private String spendStatusCashbackIntoId;
+	@Id
+	@Field(value = "SPEND_STATUS_CASHBACK_INTO_ID", order = 1)				private String spendStatusCashbackIntoId;
 	
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)										private String code;
 	
-	@Field(value = "POSITION", order = 3) 							private Long position;
+	@Field(value = "POSITION", order = 3) 									private Long position;
 	
-	@NotNull(message = "Spend Status Cashback Into is required field.")
-	@Field(value = "DESCRIPTION", order = 4) 						private String description;
+	@NotNull(message = "'Spend Status Cashback Into' is required field.")
+	@Field(value = "DESCRIPTION", order = 4) 								private String description;
 }

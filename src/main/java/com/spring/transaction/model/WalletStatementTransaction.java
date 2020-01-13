@@ -16,19 +16,22 @@ import lombok.Data;
 @Document(collection = "WALLET_STATEMENT_TRANSACTION")
 public class WalletStatementTransaction {
 	
-	@Id																	private String walletStatementTransactionId;
-	@Column(name = "WALLET_STATEMENT_ID")
-	@NotNull(message = "Wallet Statement is required field.")			private String walletStatementId;
+	@Id
+	@Column(name = "WALLET_STATEMENT_TRANSACTION_ID")					private String walletStatementTransactionId;
+	
+	@NotNull(message = "Wallet Statement is required field.")
+	@Column(name = "WALLET_STATEMENT_ID")								private String walletStatementId;
+	
 	@Column(name = "date") 												private Date date;
 	@Column(name = "mode") 												private String mode;
 	@Column(name = "PARTICULARS") 										private String particulars;
 	@Column(name = "DEPOSITS") 											private BigDecimal deposits;
 	@Column(name = "WITHDRAWALS") 										private BigDecimal withdrawals;
 	@Column(name = "BALANCE") 											private BigDecimal balance;
-	@Column(name =	"STATEMENT_TOTAL_DEPOSITS")							private BigDecimal statementTotalDeposits;
-	@Column(name =	"STATEMENT_TOTAL_WITHDRAWALS")						private BigDecimal statementTotalWithdrawals;
-	@Column(name =	"STATEMENT_TOTAL_BALANCE")							private BigDecimal statementTotalBalance;
+	@Column(name = "STATEMENT_TOTAL_DEPOSITS")							private BigDecimal statementTotalDeposits;
+	@Column(name = "STATEMENT_TOTAL_WITHDRAWALS")						private BigDecimal statementTotalWithdrawals;
+	@Column(name = "STATEMENT_TOTAL_BALANCE")							private BigDecimal statementTotalBalance;
 	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.") 					private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")											private String customerId;
 }

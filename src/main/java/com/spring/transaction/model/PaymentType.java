@@ -14,13 +14,13 @@ import lombok.Data;
 public class PaymentType {
 	
 	@Id
-	@Field(value = "payment_Type_Id")					private String paymentTypeId;
+	@Field(value = "payment_Type_Id")						private String paymentTypeId;
 	
 	@Field(value="CODE")
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)									private String code;
 	
-	@Field(value="POSITION") 							private Long position;
+	@Field(value="POSITION") 								private Long position;
 	
 	@NotNull(message="Payment Type is required field.")
-	@Field(value="DESCRIPTION") 						private String description;
+	@Field(value="DESCRIPTION") 							private String description;
 }

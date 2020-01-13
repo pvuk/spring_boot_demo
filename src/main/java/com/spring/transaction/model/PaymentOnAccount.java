@@ -12,8 +12,8 @@ import lombok.Data;
 @Document(collection="PAYMENT_ON_ACCOUNT")
 public class PaymentOnAccount {
 
-	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 1)
 	@Id
+	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 1)
 	private String paymentOnAccountId;
 	
 	@Field(value="PAYMENT_RECEIVED_ID", order = 2)
@@ -37,7 +37,7 @@ public class PaymentOnAccount {
 	@Field(value="PAYMENT_STATUS_ID", order = 8)
 	private String paymentStatusId;
 	
-	@Field(value="CUSTOMER_ID", order = 9)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 9)
 	private String customerId;
 }

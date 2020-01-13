@@ -19,20 +19,19 @@ import lombok.Data;
 @Document(collection = "REWARD_POINTS_EARNED")
 public class RewardPointsEarned {
 	
-	@Field(value="REWARD_POINTS_EARNED_ID", order = 1)
 	@Id
-	private String rewardPointsEarnedId;
+	@Field(value="REWARD_POINTS_EARNED_ID", order = 1)												private String rewardPointsEarnedId;
 	
 	/**
 	 * 1. If no records found previous balance should be 0 otherwise bring the last statement closing balance.
 	 * 2. Trigger every month Thread cycle after statement date. Then user will know it in current statement.
 	 * 3. If card is in inActive state don't run Thread cycle.
 	 */
-	@Field(value="PREVIOUS_BALANCE", order = 2)
-	@NotNull(message = "Previous Balance / Opening Balance is required field.") 					private long previousBalance;
+	@NotNull(message = "Previous Balance / Opening Balance is required field.")
+	@Field(value="PREVIOUS_BALANCE", order = 2)														private long previousBalance;
 	
-	@Field(value="REWARDS_EARNED", order = 3)
-	@NotNull(message = "Rewards Earned is required field.") 										private long rewardsEarned;
+	@NotNull(message = "Rewards Earned is required field.")
+	@Field(value = "REWARDS_EARNED", order = 3)														private long rewardsEarned;
 	
 	/**
 	 * 1. This Field is main for anyone of the following transactions Redeemed/Expired/Adjusted
@@ -48,7 +47,7 @@ public class RewardPointsEarned {
 	
 	@Field(value = "REWARD_POINTS_REDEEM_ID", order = 8) 											private String rewardPointsRedeemId;
 	
-	@Field(value="REWARDS_EXPIRE_THIS_MONTH", order = 9) 											private long rewardsExpireThisMonth;
+	@Field(value = "REWARDS_EXPIRE_THIS_MONTH", order = 9) 											private long rewardsExpireThisMonth;
 	
 	/**
 	 * 1. Save column data as 16-10-2019 23:59:59
@@ -92,11 +91,11 @@ public class RewardPointsEarned {
 	@Field(value="FROM_THE_CARD_ISSUE_DATE_REWARD_POINTS_FOR_ONLINE_PARTNERS", order = 25) 			private long rewardPointsForOnlinePartnersFromTheCardIssueDate;
 	@Field(value="FROM_THE_CARD_ISSUE_DATE_REWARD_POINTS_FOR_ALL_OTHER_ONLINE_SPENDS", order = 26)	private long rewardPointsForAllOtherOnlineSpendsFromTheCardIssueDate;
 	
-	@Field(value = "REWARD_CARD_ID", order = 27)
-	@NotNull(message = "Reward Card is required field.") 											private String rewardCardId;
+	@NotNull(message = "Reward Card is required field.")
+	@Field(value = "REWARD_CARD_ID", order = 27)													private String rewardCardId;
 	
-	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 28)
-	@NotNull(message = "Credit Card Statement is required field.") 									private String creditCardStatementId;
+	@NotNull(message = "Credit Card Statement is required field.")
+	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 28)											private String creditCardStatementId;
 	
 	/**
 	 * 1. Extra / Bonus Points are under this category
@@ -120,14 +119,15 @@ public class RewardPointsEarned {
 	/**
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_DETAILS", order = 34)
-	@NotNull(message="Transaction Details is required field.") 										private String transactionDetails;
+	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS", order = 34)												private String transactionDetails;
 	
 	/**
 	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
 	 */
 	@Field(value="CONFIRM_PAYMENT", order = 35) 													private Boolean confirmPayment;
 	
-	@Field(value="CUSTOMER_ID", order = 36)
-	@NotNull(message="Customer is required field.") 												private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 36)															private String customerId;
 }

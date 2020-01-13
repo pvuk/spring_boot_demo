@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import lombok.Data;
 
@@ -12,11 +13,12 @@ import lombok.Data;
 public class Tags {
 	
 	@Id
-	private String tagsId;
+	@Field(value = "TAGS_ID")									private String tagsId;
 	
-	private String name;
+	@NotNull(message = "Code is required field.")
+	@Field(value = "NAME")										private String name;
 	
 	@NotNull(message="Customer is required field.")
-	private String customerId;
+	@Field(value = "CUSTOMER_ID")								private String customerId;
 	
 }

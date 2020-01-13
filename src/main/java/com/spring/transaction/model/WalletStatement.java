@@ -19,20 +19,20 @@ import lombok.Data;
 public class WalletStatement {
 	
 	@Id
-	private String walletStatementId;
+	@Column(name = "WALLET_STATEMENT_ID")								private String walletStatementId;
 	
-	@Column(name = "date") 												private Date date;
-	@Column(name = "mode") 												private String mode;
+	@Column(name = "DATE") 												private Date date;
+	@Column(name = "MODE") 												private String mode;
 	@Column(name = "PARTICULARS") 										private String particulars;
 	@Column(name = "DEPOSITS") 											private BigDecimal deposits;
 	@Column(name = "WITHDRAWALS") 										private BigDecimal withdrawals;
 	@Column(name = "BALANCE") 											private BigDecimal balance;
-	@Column(name =	"STATEMENT_TOTAL_DEPOSITS")							private BigDecimal statementTotalDeposits;
-	@Column(name =	"STATEMENT_TOTAL_WITHDRAWALS")						private BigDecimal statementTotalWithdrawals;
-	@Column(name =	"STATEMENT_TOTAL_BALANCE")							private BigDecimal statementTotalBalance;
+	@Column(name = "STATEMENT_TOTAL_DEPOSITS")							private BigDecimal statementTotalDeposits;
+	@Column(name = "STATEMENT_TOTAL_WITHDRAWALS")						private BigDecimal statementTotalWithdrawals;
+	@Column(name = "STATEMENT_TOTAL_BALANCE")							private BigDecimal statementTotalBalance;
 	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.") 					private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")											private String customerId;
 	
 	@Transient 															private Set<WalletStatementTransaction> wStatementTransactionSet;
 }

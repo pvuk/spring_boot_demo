@@ -4,6 +4,7 @@ import java.util.Date;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -25,17 +26,28 @@ import lombok.Data;
 public class VoucherDetails {
 
 	@Id
-	private String voucherDetailsId;
-	private String description;
-	private Date receivedOn;
-	private Date validFrom;
-	private Date validTo;
-	private Boolean isActive;
-	private Boolean isExpire;
-	private Boolean isRedeem;
-	private Boolean isShared;
+	@Field(value = "VOUCHER_DETAILS_ID")						private String voucherDetailsId;
+	
+	@Field(value = "DESCRIPTION")								private String description;
+	
+	@Field(value = "RECEIVED_ON")								private Date receivedOn;
+	
+	@Field(value = "VALID_FROM")								private Date validFrom;
+	
+	@Field(value = "VALID_TO")									private Date validTo;
+	
+	@Type(type="yes_no")
+	@Field(value = "IS_ACTIVE")									private Boolean isActive;
+	
+	@Type(type="yes_no")
+	@Field(value = "IS_EXPIRE")									private Boolean isExpire;
+	
+	@Type(type="yes_no")
+	@Field(value = "IS_REDEEM")									private Boolean isRedeem;
+	
+	@Type(type="yes_no")
+	@Field(value = "IS_SHARED")									private Boolean isShared;
 
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
-	private String customerId;
+	@Field(value = "CUSTOMER_ID")								private String customerId;
 }

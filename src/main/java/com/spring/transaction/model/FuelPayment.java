@@ -16,34 +16,37 @@ import lombok.Data;
 public class FuelPayment {
 	
 	@Id
-	@Field(value = "FUEL_PAYMENT_ID")						private String fuelPaymentId;
+	@Field(value = "FUEL_PAYMENT_ID")								private String fuelPaymentId;
 	
 	@NotNull(message = "Payment By is required field.")
-	private String paymentById;
+	@Field(value = "PAYMENT_BY_ID")									private String paymentById;
 	
 	@NotNull(message = "Bill Amount is required field.")
-	private BigDecimal billAmount;
-	private Date paymentOn;
-	private BigDecimal waiverAmount;
-	private String paidAtLocation;
+	@Field(value = "BILL_AMOUNT")									private BigDecimal billAmount;
+	
+	@Field(value = "PAYMENT_ON")									private Date paymentOn;
+	@Field(value = "WAIVER_AMOUNT")									private BigDecimal waiverAmount;
+	@Field(value = "PAID_AT_LOCATION")								private String paidAtLocation;
 	
 	/**
 	 * 1. Google Location(Longitude, Latitude)
 	 */
-	private String tagLocation;
+	@Field(value = "TAG_LOCATION")									private String tagLocation;
 	
-	@Field(value = "PAYMENT_TYPE_ID")
+	@Field(value = "LATITUDE")										private Double latitude;
+	@Field(value = "LONGITUDE")										private Double longitude;
+	
 	@NotNull(message = "Payment Type is required field")
-	private String paymentTypeId;
+	@Field(value = "PAYMENT_TYPE_ID")								private String paymentTypeId;
 	
 	/**
 	 * 1. when cashback received insert fuelPaymentId into fuelPaymentParentId
 	 */
-	private String fuelPaymentParentId;
+	@Field(value = "FUEL_PAYMENT_PARENT_ID")						private String fuelPaymentParentId;
 	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.")				private String customerId;
+	@NotNull(message = "Parent Payment Id is required field.")
+	@Field(value = "PARENT_PAYMENT_ID")								private String parentPaymentId;
 	
-	@Field(value = "PARENT_PAYMENT_ID")
-	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")										private String customerId;
 }

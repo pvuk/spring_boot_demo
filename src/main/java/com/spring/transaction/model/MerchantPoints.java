@@ -18,18 +18,24 @@ import lombok.NoArgsConstructor;
 @Document(collection = "MERCHANT_POINTS")
 public class MerchantPoints {
 	
-	@Field(value="MERCHANT_POINTS_ID", order = 1)
 	@Id
+	@Field(value="MERCHANT_POINTS_ID", order = 1)
 	private String merchantPointsId;
 	
-	@Field(value="EACH_POINT_VALUE", order = 2)
 	@NotNull(message = "Point Value is required field.")
+	@Field(value="EACH_POINT_VALUE", order = 2)
 	private long eachPointValue;
 	
 	@Field(value="POINTS_ON_EVERY", order = 3)
 	private long pointsOnEvery;
 	
-	//10x
+	/**
+	 * 1. 10x
+	 * 2. 20x
+	 * 3. 2x
+	 * 4. 4x
+	 * 5. 5x
+	 */
 	@Field(value="DESCRIPTION", order = 4)
 	private String description;
 	

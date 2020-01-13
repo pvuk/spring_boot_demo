@@ -2,6 +2,7 @@ package com.spring.transaction.model;
 
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.Type;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -14,6 +15,7 @@ public class Payment {
 	
 	@Id
 	@Field(value = "PAYMENT_ID")								private String paymentId;
+	
 	@Field(value = "PAYMENT_FROM_ID")							private String paymentFromId;
 	@Field(value = "PAYMENT_TO_ID")								private String paymentToId;
 	
@@ -27,8 +29,9 @@ public class Payment {
 	/**
 	 * 1. If fuel cashback / bank credited, this payment is refer as bank source(Ex: Yesbank, SBI CC)
 	 */
+	@Type(type="yes_no")
 	@Field(value = "FROM_SOURCE")								private Boolean fromSource;
 	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.")				private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")									private String customerId;
 }

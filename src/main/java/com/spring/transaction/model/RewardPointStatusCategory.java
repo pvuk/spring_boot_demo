@@ -24,17 +24,17 @@ import lombok.NoArgsConstructor;
 @Document(collection="REWARD_POINT_STATUS_CATEGORY")
 public class RewardPointStatusCategory {
 
-	@Field(value = "REWARD_POINT_STATUS_CATEGORY_ID", order = 1)
-	@Id 															private String rewardPointStatusCategoryId;
+	@Id
+	@Field(value = "REWARD_POINT_STATUS_CATEGORY_ID", order = 1)			private String rewardPointStatusCategoryId;
 	
 	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)													private String code;
 	
-	@Field(value = "POSITION", order = 3) 							private Long position;
+	@Field(value = "POSITION", order = 3) 									private Long position;
 	
 	@NotNull(message = "Reward Point Status Category is required field.")
-	@Field(value = "DESCRIPTION", order = 4) 						private String description;
+	@Field(value = "DESCRIPTION", order = 4) 								private String description;
 	
 	@NotNull(message = "Reward Point Status is required field.")
-	@Field(value = "REWARD_POINT_STATUS_ID", order = 1)				private String rewardPointStatusId;
+	@Field(value = "REWARD_POINT_STATUS_ID", order = 1)						private String rewardPointStatusId;
 }

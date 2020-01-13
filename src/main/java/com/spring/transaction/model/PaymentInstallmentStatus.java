@@ -13,18 +13,19 @@ import lombok.Data;
 @Document(collection = "PAYMENT_INSTALLMENT_STATUS_CODE")
 public class PaymentInstallmentStatus {
 	
-	@Field(value="PAYMENT_INSTALLMENT_STATUS_ID", order = 1)
 	@Id
+	@Field(value="PAYMENT_INSTALLMENT_STATUS_ID", order = 1)
 	private String paymentInstallmentStatusId;
 	
-	@Field(value="CODE", order = 2)
 	@Indexed(unique = true)
 	@NotNull(message = "Code is required field.")
+	@Field(value="CODE", order = 2)
 	private String code;
 	
-	@Field(value="POSITION", order = 3) private int position;
+	@Field(value="POSITION", order = 3)
+	private int position;
 	
-	@Field(value="DESCRIPTION", order = 4)
 	@NotNull(message = "Status is required field.")
+	@Field(value="DESCRIPTION", order = 4)
 	private String description;
 }

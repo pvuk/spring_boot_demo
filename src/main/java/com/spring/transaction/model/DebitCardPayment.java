@@ -15,15 +15,16 @@ import lombok.Data;
 @Document(collection="Debit_Card_Payment")
 public class DebitCardPayment {
 	
+	@Id
 	@Field(value="DEBIT_CARD_PAYMENT_ID", order = 1)
-	@Id private String debitCardPaymentId;
+	private String debitCardPaymentId;
 
-	@Field(value="DEBIT_CARD_ID", order = 2)
 	@NotNull(message="Debit Card is required field.")
+	@Field(value="DEBIT_CARD_ID", order = 2)
 	private String debitCardId;
 	
-	@Field(value="AMOUNT", order = 3)
 	@NotNull(message="Amount is required field.")
+	@Field(value="AMOUNT", order = 3)
 	private BigDecimal amount;
 	
 	@Field(value = "TRANSACTION_ON", order = 4)
@@ -35,24 +36,26 @@ public class DebitCardPayment {
 	/**
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_DETAILS")
 	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS")
 	private String transactionDetails;
 	
-	@Field(value = "CUSTOMER_ID", order = 5)
 	@NotNull(message="Customer is required field.")
+	@Field(value = "CUSTOMER_ID", order = 5)
 	private String customerId;
 	
 	/**
 	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
 	 */
 	@Field(value = "CONFIRM_PAYMENT")
 	private Boolean confirmPayment;
 	
-	@Field(value = "PAYMENT_TYPE_ID")
 	@NotNull(message = "Payment Type is required field")
+	@Field(value = "PAYMENT_TYPE_ID")
 	private String paymentTypeId;
 	
+	@NotNull(message = "Parent Payment Id is required field.")
 	@Field(value = "PARENT_PAYMENT_ID")
-	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	private String parentPaymentId;
 }

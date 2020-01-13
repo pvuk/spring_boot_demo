@@ -31,14 +31,14 @@ public class RewardPointsCap {
 	@Field(value="REWARD_POINTS_CATALOGUE_ID")					private String rewardPointsCatalogueId;
 	
 	@Field(value = "REWARD_POINTS_CAP_STATUS_ID")				private String rewardPointsCapStatusId;
+	
+	@Type(type="yes_no")
+	@Field(value = "MONTHLY_CAP_REACHED")						private boolean monthlyCapReached;
 
 	@Field(value="COMMENT")
 	@Size(max = 3000)											private String comment;
 	
-	@Type(type="yes_no")
-	@Field(value = "MONTHLY_CAP_REACHED")							private boolean monthlyCapReached;
-	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.")				private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")									private String customerId;
 	
 }

@@ -45,11 +45,12 @@ import lombok.Data;
 @Document(collection = "NEW_OPTION_REQUEST_DETAILS")
 public class NewOptionRequestDetails {
 	
-	@Field(value = "NEW_OPTION_REQUEST_DETAILS_ID")
-	@Id															private String newOptionRequestDetailsId;
+	@Id															
+	@Field(value = "NEW_OPTION_REQUEST_DETAILS_ID")				private String newOptionRequestDetailsId;
 
 	@NotNull(message = "Option Name is required field.")
 	@Field(value = "OPTION_NAME")								private String optionName;
+	
 	@Field(value = "APPROVED_OPTION_NAME")						private String approvedOptionName;
 	
 	@Field(value = "SCREEN_NAME")								private String screenName;
@@ -57,12 +58,14 @@ public class NewOptionRequestDetails {
 	
 	@NotNull(message = "Collection Name is required field.")
 	@Field(value = "COLLECTION_NAME")							private String collectionName;
+	
 	@NotNull(message = "Entity Name is required field.")
 	@Field(value = "ENTITY_NAME")								private String entityName;
 	
 	/**
 	 * 1. If OPTION_NAME is REJECTED then TEMPORARY_OPTION should be accessible only to REQUESTED_BY
 	 */
+	@Type(type = "yes_no")
 	@Field(value = "TEMPORARY_OPTION")							private Boolean temporaryOption;
 	
 	/**
@@ -70,14 +73,19 @@ public class NewOptionRequestDetails {
 	 */
 	@Type(type = "yes_no")
 	@Field(value = "CONFIRM") 									private Boolean confirm;
+	
 	@Field(value = "CONFIRM_ON")								private Date confirmOn;
 	@Field(value = "CONFIRM_BY") 								private String confirmBy;
+	
 	@Type(type = "yes_no")
 	@Field(value = "APPROVED") 									private Boolean approved;
+	
 	@Field(value = "APPROVED_BY") 								private String approvedBy;
 	@Field(value = "APPROVED_ON")								private Date approvedOn;
+	
 	@Type(type = "yes_no")
 	@Field(value = "REJECTED") 									private Boolean rejected;
+	
 	@Field(value = "REJECTED_BY") 								private String rejectedBy;
 	@Field(value = "REJECTED_ON")								private Date rejectedOn;
 	@Field(value = "REJECTED_COMMENT")							private String rejectedComment;
@@ -85,6 +93,6 @@ public class NewOptionRequestDetails {
 	/**
 	 * 1. Use CUSTOMER_ID to insert.
 	 */
-	@Field(value="REQUESTED_BY")
-	@NotNull(message="Requested By is required field.")			private String requestedBy;
+	@NotNull(message="Requested By is required field.")
+	@Field(value="REQUESTED_BY")								private String requestedBy;
 }

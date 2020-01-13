@@ -29,6 +29,7 @@ import lombok.Data;
 public class Legend {
 
 	@Id
+	@Field(value = "LEGEND_ID", order = 1)
 	private String legendId;
 	
 	@Field(value = "CODE", order = 2)
@@ -37,8 +38,8 @@ public class Legend {
 	@Field(value = "POSITION", order = 3)
 	private Long position;
 	
-	@Field(value="DESCRIPTION", order = 4)
 	@NotNull(message = "Legend is required field.")
+	@Field(value="DESCRIPTION", order = 4)
 	private String description;
 	
 	@Field(value="DETAILS", order = 5)

@@ -14,12 +14,12 @@ import lombok.Data;
 @Document(collection="EMPLOYEER")
 public class Employeer {
 
-	@Field(value="EMPLOYEER_ID", order = 1)
 	@Id
+	@Field(value="EMPLOYEER_ID", order = 1)
 	private String employeerId;
 
-	@Field(value = "EMPLOYEER_NAME", order = 2)
 	@NotNull(message = "Employeer Name is required field.")
+	@Field(value = "EMPLOYEER_NAME", order = 2)
 	private String empolyeerName;
 	
 	@Field(value = "NUMBER_OF_EMPLOYEES", order = 3)

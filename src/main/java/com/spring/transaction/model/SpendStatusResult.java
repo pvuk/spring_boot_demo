@@ -24,11 +24,11 @@ import lombok.NoArgsConstructor;
 @Document(collection="SPEND_STATUS_RESULT_CODE")
 public class SpendStatusResult {
 
-	@Field(value = "SPEND_STATUS_RESULT_ID", order = 1)
-	@Id 															private String spendStatusResultId;
+	@Id
+	@Field(value = "SPEND_STATUS_RESULT_ID", order = 1)				private String spendStatusResultId;
 	
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)											private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)								private String code;
 	
 	@Field(value = "POSITION", order = 3) 							private Long position;
 	

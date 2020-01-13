@@ -11,8 +11,8 @@ import lombok.Data;
 @Document(collection="REFERENCE_DATA")
 public class ReferenceData {
 	
-	@Field(value = "REFERENCE_DATA_ID")
 	@Id
+	@Field(value = "REFERENCE_DATA_ID")
 	private ObjectId referenceDataId;
 	
 	@Field(value = "CLASS_NAME")

@@ -16,8 +16,8 @@ public class OfferType {
 	@Id
 	@Field(value = "OFFER_TYPE_ID")						private String offerTypeId;
 	
-	@Field(value="CODE")
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)
+	@Field(value="CODE")								private String code;
 	
 	@Field(value="POSITION") 							private Long position;
 	

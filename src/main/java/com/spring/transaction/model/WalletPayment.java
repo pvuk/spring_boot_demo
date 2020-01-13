@@ -22,67 +22,55 @@ import lombok.NoArgsConstructor;
 @Document(collection = "WALLET_PAYMENT")
 public class WalletPayment {
 	
-	@Field(value = "WALLET_PAYMENT_ID", order = 1)
-	@Id private String walletPaymentId;
+	@Id
+	@Field(value = "WALLET_PAYMENT_ID", order = 1)									private String walletPaymentId;
 	
-	@Field(value = "REFERENCE_NO")
-	private String referenceNo;
+	@Field(value = "REFERENCE_NO")													private String referenceNo;
 	
-	@Field(value = "TRANSACTION_DATE")
-	private Date transactionDate;
+	@Field(value = "TRANSACTION_DATE")												private Date transactionDate;
 	
 	/**
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_REMARKS")
-	@NotNull(message="Transaction Remarks is required field.")
-	private String transactionRemarks;
+	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS", order = 7) 								private String transactionDetails;
 	
-	@Field(value="WITHDRAWAL_AMOUNT")
-	private BigDecimal withdrawalAmount;
+	@Field(value="WITHDRAWAL_AMOUNT")												private BigDecimal withdrawalAmount;
 	
-	@Field(value="DEPOSIT_AMOUNT")
-	private BigDecimal depositAmount;
+	@Field(value="DEPOSIT_AMOUNT")													private BigDecimal depositAmount;
 	
-	@Field(value="BALANCE")
-	private BigDecimal balance;
+	@Field(value="BALANCE")															private BigDecimal balance;
 	
 	
 	/**
 	 * 1. Check if @Field is not mention how column name created in database
 	 */
-	@NotNull(message="Wallet Name is required field.")
 	@DBRef
-	private Wallet wallet;
+	@NotNull(message="Wallet Name is required field.")								private Wallet wallet;
 	
-	@Field(value = "UPI_APP_ID")
-	private String upiAppId;
+	@Field(value = "UPI_APP_ID")													private String upiAppId;
 	
-	@NotNull(message="PaymentBy is required field.")
 	@DBRef
-	private PaymentBy paymentBy;
+	@NotNull(message="PaymentBy is required field.")								private PaymentBy paymentBy;
 
 	/**
 	 * payee name
 	 */
-	@Field(value="TRANSFER_TO_ID")
 	@NotNull(message = "Transfer To is required field.")
-	private String transferToId;
+	@Field(value="TRANSFER_TO_ID")													private String transferToId;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
-	private String customerId;
+	@Field(value="CUSTOMER_ID")														private String customerId;
 	
 	/**
 	 * 1. Same login user not right to confirm the payment
+	 * 2. Default value should be null.
 	 */
-	@Field(value = "CONFIRM_PAYMENT")
-	private Boolean confirmPayment;
+	@Field(value = "CONFIRM_PAYMENT")												private Boolean confirmPayment;
 	
-	@Field(value = "PAYMENT_TYPE_ID")
 	@NotNull(message = "Payment Type is required field")
-	private String paymentTypeId;
+	@Field(value = "PAYMENT_TYPE_ID")												private String paymentTypeId;
 	
-	@Field(value = "PARENT_PAYMENT_ID")
-	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	@NotNull(message = "Parent Payment Id is required field.")
+	@Field(value = "PARENT_PAYMENT_ID")												private String parentPaymentId;
 }

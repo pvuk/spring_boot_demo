@@ -17,11 +17,12 @@ import lombok.Data;
 @Document(collection = "WALLET_DETAILS")
 public class WalletDetails {
 	
-	@Field(value = "WALLET_DETAILS_ID")
 	@Id
+	@Field(value = "WALLET_DETAILS_ID")
 	private String walletDetailsId;
 	
 	@NotNull(message = "Wallet is required field.")
+	@Field(value = "WALLET_ID")
 	private String walletId;
 	
 	@Field(value = "WALLET_STATUS_ID")
@@ -34,9 +35,9 @@ public class WalletDetails {
 	 * 1. If account is transferred to other number then new account is in
 	 * active state. Transfer from number isActive false.
 	 */
-	@Field(value="IS_TRANSFERRED")
 	@Type(type="yes_no")
 	@Builder.Default
+	@Field(value="IS_TRANSFERRED")
 	private Boolean isTransferred = false;
 	
 	@Field(value="ACCOUNT_CREATED_ON")
@@ -45,7 +46,7 @@ public class WalletDetails {
 	@Field(value="CARD_LIMIT_ID")
 	private String cardLimitId;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")
 	private String customerId;
 }

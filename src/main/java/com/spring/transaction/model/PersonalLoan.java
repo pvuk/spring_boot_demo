@@ -20,52 +20,60 @@ import lombok.Data;
 @Document(collection = "PERSONAL_LOAN")
 public class PersonalLoan {
 	
-	@Column(name = "PERSONAL_LOAN_ID")
 	@BsonId
+	@Column(name = "PERSONAL_LOAN_ID")
 	private String personalLoanId;
 	
+	@Column(name = "EMPLOYMENT_TYPE_ID")
 	private String employmentTypeId;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salariedemployee, salarieddoctor.
 	 */
+	@Column(name = "COMPANY_EMPLOYED_WITH")
 	private String companyEmployedWith;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salariedemployee, salarieddoctor.
 	 */
+	@Column(name = "NET_MONTHLY_INCOME")
 	private BigDecimal netMonthlyIncome;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salariedemployee, salarieddoctor, selfemplprofessionaldoctororca, selfemplprofessionalothers.
 	 */
+	@Column(name = "INCOME_RECEIVED_IN")
 	private String incomeReceivedIn;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		salarieddoctor, selfemplprofessionaldoctororca, selfemplprofessionalothers.
 	 */
+	@Column(name = "YEARS_OF_EXPERIENCE_ID")
 	private String yearsOfExperienceId;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplprofessionalothers.
 	 */
+	@Column(name = "GROSS_ANNUAL_INCOME")
 	private BigDecimal grossAnnualIncome;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplownbusn.
 	 */
+	@Column(name = "GROSS_ANNUAL_TURN_OVER")
 	private BigDecimal grossAnnualTurnover;
 	
 	/**
 	 * 1. This field should be visible only when employmentTypeId 'code' value equal to 
 	 * 		selfemplownbusn.
 	 */
+	@Column(name = "NET_ANNUAL_PROFITS")
 	private BigDecimal netAnnualProfits;
 	
 	/**
@@ -73,5 +81,6 @@ public class PersonalLoan {
 	 * 		selfemplownbusn.
 	 * 2. Refer YEARS_OF_EXPERIENCE_ID for insert / update
 	 */
+	@Column(name = "YEARS_IN_CURRENT_BUSINESS_ID")
 	private String yearsInCurrentBusinessId;
 }

@@ -18,8 +18,8 @@ import lombok.NoArgsConstructor;
 @Document(collection = "MERCHANT_DETAILS")
 public class MerchantDetails {
 	
-	@Field(value="MERCHANT_DETAILS_ID", order = 1)
 	@Id
+	@Field(value="MERCHANT_DETAILS_ID", order = 1)
 	private String merchantDetailsId;
 	
 	@Field(value="CODE", order = 2)
@@ -28,8 +28,8 @@ public class MerchantDetails {
 	@Field(value="POSITION", order = 3)
 	private int position;
 	
-	@Field(value="DESCRIPTION", order = 4)
 	@NotNull(message = "Merchant Name is required field.")
+	@Field(value="DESCRIPTION", order = 4)
 	private String description;
 	
 	@Field(value="MERCHANT_POINTS_ID", order = 5)

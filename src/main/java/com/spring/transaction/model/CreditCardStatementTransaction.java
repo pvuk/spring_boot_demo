@@ -3,7 +3,6 @@ package com.spring.transaction.model;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
@@ -33,22 +32,25 @@ import lombok.Data;
 public class CreditCardStatementTransaction {
 	
 	@Id
+	@Field(value = "CREDIT_CARD_STATEMENT_TRANSACTION_ID")
 	private String creditCardStatementTransactionId;
 	
-	@Column(name = "CREDIT_CARD_STATEMENT_ID")
 	@NotNull(message = "Credit Card Statement is required field.")
+	@Field(value = "CREDIT_CARD_STATEMENT_ID")
 	private String creditCardStatementId;
 	
 	@Field(value = "REFERENCE_NO")
 	private String referenceNo;
+	
+	@Field(value = "TRANSACTION_ON")
 	private Date transactionOn;
 	
 	/**
 	 * 1. Where the transaction is done.
 	 */
-	@Field(value = "TRANSACTION_DESCRIPTION")
-	@NotNull(message="Transaction Details / Description is required field.")
-	private String transactionDescription;
+	@NotNull(message="Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS")
+	private String transactionDetails;
 	
 	/**
 	 * <ul>
@@ -57,14 +59,16 @@ public class CreditCardStatementTransaction {
 	 * 	</li>
 	 * </ul>
 	 */
+	@Field(value = "FOREIGN_CURRENNCY_AMOUNT")
 	private BigDecimal foreignCurrenncyAmount;
 	
 	/**
 	 * 1. Amount in Rs(INR)
 	 */
+	@Field(value = "AMOUNT")
 	private BigDecimal amount;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
+	@Field(value = "CUSTOMER_ID")
 	private String customerId;
 }

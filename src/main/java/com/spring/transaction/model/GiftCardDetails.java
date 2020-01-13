@@ -24,29 +24,32 @@ import lombok.Data;
 public class GiftCardDetails {
 
 	@Id
-	@Field(value = "GIFT_CARD_DETAILS_ID")						private String giftCardDetailsId;
+	@Field(value = "GIFT_CARD_DETAILS_ID")								private String giftCardDetailsId;
 	
-	@Field(value="NAME_ON_CARD")
-	private String nameOnCard;
+	@Field(value="NAME_ON_CARD")										private String nameOnCard;
 	
-	@Field(value="CARD_NUMBER")
 	@NotNull(message = "Card Number is required field.")
-	private String cardNumber;
+	@Field(value="CARD_NUMBER")											private String cardNumber;
 	
-	@Field(value="PIN")
 	@NotNull(message = "Pin is required field.")
-	private String pin;
+	@Field(value="PIN")													private String pin;
 	
-	private String description;
-	private Date receivedOn;
-	private Date validFrom;
-	private Date validTo;
-	private String giftCardStatusId;
-	private String giftCardTypeId;
-	private String giftCardId;
-	private String cardCategoryId;
+	@Field(value="DESCRIPTION")											private String description;
+	
+	@Field(value="RECEIVED_ON")											private Date receivedOn;
+	
+	@Field(value="VALID_FROM")											private Date validFrom;
+	
+	@Field(value="VALID_TO")											private Date validTo;
+	
+	@Field(value="GIFT_CARD_STATUS_ID")									private String giftCardStatusId;
+	
+	@Field(value="GIFT_CARD_TYPE_ID")									private String giftCardTypeId;
+	
+	@Field(value="GIFT_CARD_ID")										private String giftCardId;
+	
+	@Field(value="CARD_CATEGORY_ID")									private String cardCategoryId;
 
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
-	private String customerId;
+	@Field(value = "CUSTOMER_ID")										private String customerId;
 }

@@ -25,8 +25,8 @@ import lombok.NoArgsConstructor;
 @Document(collection="OUTLET_CODE")
 public class Outlet {
 
-	@Field(value = "OUTLET_ID", order = 1)
-	@Id 													private String outletId;
+	@Id
+	@Field(value = "OUTLET_ID", order = 1)					private String outletId;
 
 	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true)									private String code;

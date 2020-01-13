@@ -20,14 +20,14 @@ import lombok.NoArgsConstructor;
 @Document(collection = "NET_BANKING_CODE")
 public class NetBanking {
 	
-	@Field(value = "NET_BANKING_ID", order = 1)
-	@Id 												private String netBankingId;
+	@Id
+	@Field(value = "NET_BANKING_ID", order = 1)			private String netBankingId;
 
 	/**
 	 * 1. <a href="https://docs.mongodb.com/manual/core/index-unique/">Unique Indexes</a>
 	 */
-	@Field(value="CODE", order = 2)
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)
+	@Field(value="CODE", order = 2)						private String code;
 	
 	@Field(value="POSITION", order = 3) 				private Long position;
 	

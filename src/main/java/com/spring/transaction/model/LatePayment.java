@@ -14,20 +14,22 @@ import lombok.Data;
 public class LatePayment {
 
 	@Id
-	@Column(name = "LATE_PAYMENT_ID")							private String latePaymentId;
+	@Column(name = "LATE_PAYMENT_ID")									private String latePaymentId;
 	
-	@NotNull(message = "Fees And Charges is required field.")	private String feesAndChargesId;
+	@NotNull(message = "Fees And Charges is required field.")
+	@Field(value = "FEES_AND_CHARGES_ID")								private String feesAndChargesId;
 	
-	@NotNull(message = "Card Details is required field.")		private String cardDetailsId;
+	@NotNull(message = "Card Details is required field.")
+	@Field(value = "CARD_DETAILS_ID")									private String cardDetailsId;
 	
-	@Field(value = "DESCRIPTION")								private String description;
-	
-	@Field(value="CUSTOMER_ID")
-	@NotNull(message="Customer is required field.")				private String customerId;
+	@Field(value = "DESCRIPTION")										private String description;
 	
 	@Field(value = "PAYMENT_TYPE_ID")
-	@NotNull(message = "Payment Type is required field")		private String paymentTypeId;
+	@NotNull(message = "Payment Type is required field")				private String paymentTypeId;
 	
 	@Field(value = "PARENT_PAYMENT_ID")
-	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	@NotNull(message = "Parent Payment Id is required field.")			private String parentPaymentId;
+	
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID")											private String customerId;
 }
