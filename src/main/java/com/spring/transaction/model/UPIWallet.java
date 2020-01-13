@@ -19,7 +19,7 @@ import lombok.Data;
  * 
  * @author Priyanka
  *
- * @since Sun 10-Nov-2019 12:25
+ * @Date Sun 10-Nov-2019 12:25
  */
 @Data
 @Document(collection = "UPI_WALLET")

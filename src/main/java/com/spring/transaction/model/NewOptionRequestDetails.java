@@ -20,7 +20,7 @@ import lombok.Data;
  * 	</ol>
  * </p>
  * 
- * <ul><b>Following are conditions regarding OPTION_NAME would be processed by TechnicalTeam.</b>
+ * <ul><h1>Following are conditions regarding OPTION_NAME would be processed by TechnicalTeam.</h1>
  * 	<li>when new option is requested by user give temporary OPTION_NAME access to user.</li>
  * 	<li>Send notification to user when CONFIRM_BY(Mail notification only! not who confirmed), need approval from APPROVED_BY / REJECTED_BY for further proceeding.</li>
  * 	<li><b>**** Once APPROVED_OPTION_NAME is APPROVED_BY, then insert this requested APPROVED_OPTION_NAME in foreign_key documents.</b></li>
@@ -39,7 +39,7 @@ import lombok.Data;
  * </ul>
  * 
  * @author venkataudaykiranp
- * @since Fri 29-Nov-2019 17:46
+ * @Date Fri 29-Nov-2019 17:46
  */
 @Data
 @Document(collection = "NEW_OPTION_REQUEST_DETAILS")

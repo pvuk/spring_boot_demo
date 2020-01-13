@@ -17,7 +17,7 @@ import lombok.Data;
  * 
  * @author Priyanka
  *
- * @since Sun 10-Nov-2019 15:28
+ * @Date Sun 10-Nov-2019 15:28
  */
 @Data
 @Document(collection = "GIFT_CARD_DETAILS")

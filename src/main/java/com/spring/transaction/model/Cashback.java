@@ -21,7 +21,7 @@ import lombok.Data;
  * 
  * @author Priyanka
  *
- * @since Sun 10-Nov-2019 15:29
+ * @Date Sun 10-Nov-2019 15:29
  */
 @Data
 @Document(collection = "CASHBACK")

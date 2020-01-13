@@ -16,7 +16,7 @@ import lombok.Data;
  * </p>
  * @author P V UdayKiran
  *
- * @since Tue 03-Dec-2019 21:38
+ * @Date Tue 03-Dec-2019 21:38
  */
 @Data
 @Document(collection = "DOWNLOAD_LINK")

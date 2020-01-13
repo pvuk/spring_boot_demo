@@ -15,7 +15,7 @@ import lombok.Data;
  * There should be 3 status only. They are Active, InActive, Hold.
  * 
  * @author venkataudaykiranp
- * @since Fri 29-Nov-2019 20:15
+ * @Date Fri 29-Nov-2019 20:15
  */
 @Data
 @Document(collection = "USER_STATUS_CODE")

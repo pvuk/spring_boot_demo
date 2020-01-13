@@ -13,7 +13,7 @@ import lombok.Data;
  * <p> Present Reward Card applies to Payback.in cards</p>
  * @author P V UdayKiran
  *
- * @since Tue 03-Dec-2019 21:54
+ * @Date Tue 03-Dec-2019 21:54
  */
 @Data
 @Document(collection = "REWARD_CARD")

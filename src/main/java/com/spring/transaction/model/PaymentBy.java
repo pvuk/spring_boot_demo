@@ -24,7 +24,7 @@ import lombok.Data;
  * </p>
  * @author P V UdayKiran
  *
- * @since Tue 03-Dec-2019 19:21
+ * @Date Tue 03-Dec-2019 19:21
  */
 @Data
 @Document(collection = "PAYMENT_BY")
