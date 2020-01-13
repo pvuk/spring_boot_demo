@@ -14,7 +14,7 @@ import lombok.Data;
  * 
  * @author P V UdayKiran
  *
- * @Date: Sun 01-Dec-2019 15:04
+ * @since Sun 01-Dec-2019 15:04
  */
 @Data
 @Document(collection = "BANK_STATUS_CODE")

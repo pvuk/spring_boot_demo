@@ -14,7 +14,7 @@ import lombok.Data;
  * 
  * @author P V UdayKiran
  *
- * @Date: Fri 06-Dec-2019 20:45
+ * @since Fri 06-Dec-2019 20:45
  */
 @Data
 @Document(collection = "TRANS_DOCUMENTS_CODE")
