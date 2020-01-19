@@ -13,5 +13,10 @@
 		"code": "processing",
 		"position": 3,
 		"description": "Processing"
+	},
+	{
+		"code": "completed",
+		"position": 4,
+		"description": "Completed"
 	}
 ]
