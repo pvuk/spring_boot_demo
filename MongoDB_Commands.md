@@ -1,8 +1,53 @@
-####Markdown language file. For more [https://fileinfo.com/extension/md](.MDFile Extension). Live Preview [http://bit.ly/362Naax](Compare markdown implementations). Examples [http://bit.ly/2PcyIGp](Markdown-Cheatsheet)
+#### MongoDB (Markdown[Format language] file).
 
-#MongoDB Commands
+For more [https://fileinfo.com/extension/md](.MDFile Extension). Live Preview [http://bit.ly/362Naax](Compare markdown implementations). Examples [http://bit.ly/2PcyIGp](
+
+## MongoDB Commands
 
 1. Start your MongoDB database.
+	To start MongoDB, invoke mongod.exe.
+
+EXAMPLE: From the Command Interpreter(Win + R)
+
+> "C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="c:\data\db"
+> or
+> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongod --port 27017 --dbpath="D:\uday\data\db"
+> or
+> "I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongod.exe" --dbpath="I:\data\4.0.9"
+> or
+> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongod.exe --dbpath="D:\data\4.2.0"
+
+1.1 If the MongoDB database server is running correctly, the Command Interpreter displays:
+
+=>[initandlisten] waiting for connections
+
+1.2 Connect to MongoDB.
+To connect to MongoDB through the mongo.exe shell, open another Command Interpreter.
+
+> "C:\Program Files\MongoDB\Server\4.0\bin\mongo.exe"
+> or
+> D:\uday\backup\mongodb-win32-x86_64-2008plus-ssl-4.0.9\bin\mongo.exe
+> or
+> I:\mongodb-win32-x86_64-enterprise-windows-64-4.0.9\bin\mongo.exe
+> or
+> D:\Softwares\mongodb-win32-x86_64-enterprise-windows-64-4.2.0\bin\mongo.exe
+
+1.3 Connect and Authenticate as the user administrator
+
+> mongo --port 27017 -u "admin" -p "admin" --authenticationDatabase "trans"
+> mongo --port 27017 -u "test" -p "test" --authenticationDatabase "trans"
+
+Start a standalone mongod instance without access control.
+
+> mongod --port 27017 --dbpath="D:\uday\data\db"
+
+1.4 Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+	metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+1.4.1 To enable free monitoring, run the following command: 
+
+> db.enableFreeMonitoring()
+> 1.4.2 To permanently disable this reminder, run the following command: 
+> db.disableFreeMonitoring()
 To start MongoDB, invoke mongod.exe.
 
 EXAMPLE: From the Command Interpreter(Win + R)
@@ -44,11 +89,7 @@ Start a standalone mongod instance without access control.
 1.4.2 To permanently disable this reminder, run the following command: 
 > db.disableFreeMonitoring()
 
-==========================================================================================================================================================
-
-==========================================================================================================================================================
-															How to create a database in MongoDB
-==========================================================================================================================================================
+## How to create a database in MongoDB
 
 1.3.How to create a database in MongoDB. / Select Database to Work With
 The use Command
@@ -61,21 +102,25 @@ use DATABASE_NAME
 Example
 
 If you want to use a database with name <mydb>, then use DATABASE statement would be as follows −
+
 >use mydb
-switched to db mydb
+>switched to db mydb
 
 1.4
 To check your currently selected database, use the command db
+
 >db
-mydb
+>mydb
 
 1.5
 If you want to check your databases list, use the command show dbs.
+
 >show dbs
-local     0.78125GB
-test      0.23012GB
+>local     0.78125GB
+>test      0.23012GB
 
 ##### 1.6 Your created database (mydb) is not present in list. To display database, you need to insert at least one document into it.
+
 `>db.movie.insert({"name":"tutorials point"})`
 `>show dbs`
 
@@ -86,10 +131,11 @@ test      0.23012GB
 | local        | 0.78125GB		|
 | mydb         | 0.23012GB		|
 | test         | 0.23012GB		|
- 
+
 In MongoDB default database is test. If you didn't create any database, then collections will be stored in test database.
 
-##2. To create user in db 
+## To create user in db 
+
 Reference: [https://docs.mongodb.com/manual/tutorial/enable-authentication/](Enabling access control on a MongoDB deployment enforces authentication, requiring users to identify themselves)
 
 #####2.1 Add user to DB
@@ -117,134 +163,157 @@ Error: Authentication failed.
 #####2.4 To find MongoDB version
 `> db.version()`
 
-`
-=========================================================================================================================================
-												LOGIN COMMANDS
-=========================================================================================================================================
+## LOGIN COMMANDS
 
-//https://dzone.com/articles/top-10-most-common-commands-for-beginners
+Reference: https://dzone.com/articles/top-10-most-common-commands-for-beginners
 
 1. Log Into MongoDB
-The following command can be used to log into the MongoDB database. Make sure that the user with credentials such as username and password exist in the database mentioned in place of dbname.
+   The following command can be used to log into the MongoDB database. Make sure that the user with credentials such as username and password exist in the database mentioned in place of dbname.
 
 mongo -u <username> -p <password> --authenticationDatabase <dbname>
 
-1.1 Authenticate and Log Out From Database
+###### 1.1 Authenticate and Log Out From Database
+
 When switching to a different database using the use dbName command, the user is required to authenticate using a valid database user for that database. The following command can be used for authentication:
 
-//
 // Authenticate
-//
-db.auth("username", "password");
-//
-// Logout
-//
-db.logout()
 
-1.2 List Down Collections, Users, Roles, etc.
+```
+db.auth("username", "password");
+```
+
+// Logout
+
+```
+db.logout()
+```
+
+###### 1.2 List Down Collections, Users, Roles, etc.
+
 The following commands can be used to check existing collections, users, etc.
 
-//
-// List down collections of the current database
-//
->show collections;
->db.getCollectionNames();
-//
-// List down all the users of current database
-//
->show users;
->db.getUsers();
-//
-// List down all the roles
-//
->show roles
+List down collections of the current database
 
-=========================================================================================================================================
-															CREATE COLLECTION
-=========================================================================================================================================
+> db.getCollectionNames();
 
-Create a Collection
+List down all the users of current database
+
+> db.getUsers();
+
+List down all the roles
+
+> db.getRoles();
+
+## CREATE COLLECTION
+
 The following command can be used to create a collection. The details on this command can be found on this page.
 
 >db.createCollection("collectionName");
-1.3. Insert a Document in a Collection
-Once a collection is created, the next step is to insert one or more documents. Following is a sample command for inserting a document in a collection.
+>1.3. Insert a Document in a Collection
+>Once a collection is created, the next step is to insert one or more documents. Following is a sample command for inserting a document in a collection.
 
 //
 // Insert single document
 //
 db.<collectionName>.insert({field1: "value", field2: "value"})
+
+```
 >db.BANK_CODE.insert({"bankName" : "RBL Bank",
-      "establishedOn" : null,
-      "establishedYear" : 1943,
-      "headQuarter" : "Mumbai, Maharashtra",
-      "branches" : 342,
-      "revenues" : null,
-      "strRevenues" : "â‚¹44.68 billion (US$620 million)",
-      "totalAssets" : null,
-      "strTotalAssets" : "â‚¹486.74 billion (US$6.8 billion)",
-      "notes" : null,
-      "refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
-      "bankType": {
-	  	       "id": "5c8f4406dc344c0e6c19a369",
-               "code": "private",
-                "position": 2,
-                "description": "Private-sector banks"
-      }});
-//
-// Insert multiple documents
-//
-db.<collectionName>.insert([{field1: "value1"}, {field1: "value2"}])
-db.<collectionName>.insertMany([{field1: "value1"}, {field1: "value2"}])
+"establishedOn" : null,
+"establishedYear" : 1943,
+"headQuarter" : "Mumbai, Maharashtra",
+"branches" : 342,
+"revenues" : null,
+"strRevenues" : "â‚¹44.68 billion (US$620 million)",
+"totalAssets" : null,
+"strTotalAssets" : "â‚¹486.74 billion (US$6.8 billion)",
+"notes" : null,
+"refLink" : "https://en.wikipedia.org/wiki/List_of_banks_in_India",
+"bankType": {
+	       "id": "5c8f4406dc344c0e6c19a369",
+         "code": "private",
+          "position": 2,
+          "description": "Private-sector banks"
+}});
+```
+
+Insert multiple documents
+
+````
+>db.<collectionName>.insert([{field1: "value1"}, {field1: "value2"}]);
+````
+
+````
+>db.<collectionName>.insertMany([{field1: "value1"}, {field1: "value2"}]);
+````
+
 1.4. Save or Update Document
 The save command can be used to either update an existing document or insert a new one depending on the document parameter passed to it. If the _id passed matches an existing document, the document is updated. Otherwise, a new document is created. Internally, thesave method uses either the insert or the update command.
 
-//
 // Matching document will be updated; In case, no document matching the ID is found, a new document is created
-//
+
+````
 db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", field2: "value"});
+````
+
 
 =========================================================================================================================================
-															Update Record
-=========================================================================================================================================
-
+##Update Record
+````
 >db.BANK_TYPE.update({"_id" : ObjectId("5cbeb52bda1faf34488362c1")},  {$set: { "position" : 3}});
+````
 
 =========================================================================================================================================
-															Get Records
-=========================================================================================================================================
+##Get Records
+
 Display Collection doucments
 The following commands can be used to retrieve collection records:
 
+````
 db.<collectionName>.find();
-//
-// Retrieve limited number of records; Following command will print 10 results;
-//
-db.<collectionName>.find().limit(10);
+````
 
---Fetch selective field from collection based on a criteria
+Retrieve limited number of records; Following command will print 10 results;
+
+````
+db.<collectionName>.find().limit(10);
+````
+
+###Fetch selective field from collection based on a criteria
 If we want to fetch only the "user_id" for all documents from the collection 'userdetails' which hold the educational qualification "M.C.A.", the following mongodb command can be used :
 
+````
 >db.userdetails.find({"education":"M.C.A."},{"user_id" : 1}).pretty();
+````
+
 Copy
 N.B. find() method displays the documents in a non structured format but to display the results in a formatted way, the pretty() method can be used.
 
-The SQL equivalent code is
-SELECT user_id 
+###The SQL equivalent code is
+
+````SELECT user_id 
 FROM userdetails 
 WHERE education="M.C.A."; 
+````
 
-//
-// Retrieve records by id
-//
+Retrieve records by id
+
+````
 db.<collectionName>.find({"_id": ObjectId("someid")});
-//
-// Retrieve values of specific collection attributes by passing an object having 
-// attribute names assigned to 1 or 0 based on whether that attribute value needs 
-// to be included in the output or not, respectively.
-//
+````
+
+Retrieve values of specific collection attributes by passing an object having attribute names assigned to 1 or 0 based on whether that attribute value needs 
+to be included in the output or not, respectively.
+
+````
 db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 1, field2: 1});
-db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 0}); // Exclude field1
+````
+Exclude field1
+
+````
+db.<collectionName>.find({"_id": ObjectId("someid")}, {field1: 0}); // 
+````
+
 =========================================================================================================================================
 														Delete Documents in a Collection
 Source: https://www.quackit.com/mongodb/tutorial/mongodb_delete_a_document.cfm
