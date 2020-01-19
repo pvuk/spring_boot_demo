@@ -203,8 +203,6 @@ The save command can be used to either update an existing document or insert a n
 // Matching document will be updated; In case, no document matching the ID is found, a new document is created
 //
 db.<collectionName>.save({"_id": new ObjectId("jhgsdjhgdsf"), field1: "value", field2: "value"});
-1.5. Display Collection Records
-The following commands can be used to retrieve collection records:
 
 =========================================================================================================================================
 															Update Record
@@ -215,9 +213,9 @@ The following commands can be used to retrieve collection records:
 =========================================================================================================================================
 															Get Records
 =========================================================================================================================================
-//
-// Retrieve all records
-//
+Display Collection doucments
+The following commands can be used to retrieve collection records:
+
 db.<collectionName>.find();
 //
 // Retrieve limited number of records; Following command will print 10 results;
@@ -361,8 +359,6 @@ Create Indexes for all collections in db
 	db[collection].insert(o);
 });
 ```
-===
-
 //Returns an array that holds a list of documents that identify and describe the existing indexes on the collection. You must call db.collection.getIndexes() on a collection. For example:
 > db.BANK_TYPE_CODE.getIndexes();
 
@@ -455,4 +451,44 @@ Password: m001-mongodb-basics
 
 Replica Set Name: Cluster0-shard-0
 
-Read Preference: Primary Preferred
+Read Preference: Primary Preferred### Read All collection_name's from JSON Array from collection, while iterating collection set file path from resource folder and insert data into collection
+
+
+```
+>var collection = cat("D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json");
+or
+> var jsonCollectionsPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-trans_documents_code.json";
+```
+
+#####Json collection path to insert documents
+
+```
+>var jsonPath = "I:/workspace/2019-09/Practice/spring_boot_demo/src/main/resources/json/put/put-";
+or
+>var jsonPath = "\"D:/uday/Workspace/2019-09/learn git/spring_boot_demo/target/classes/json/put/put-\"";
+or
+>var jsonPath = "D:/Workspace/2019-09/Practice/spring_boot_demo/target/classes/json/put/put-";
+```
+
+~~~
+>var show = function(value, index, collection){print(value)};
+~~~
+
+##### read all data from TRANS_DOCUMENTS_CODE collection
+
+
+[comment]: # ">db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){print(e.collection_name)});"
+
+[comment]: # "for code display use ``` in before and after the code."
+
+```
+>db.TRANS_DOCUMENTS_CODE.find().forEach(function(e){
+	var collection = e.collection_name;
+	var jsonFile = jsonPath + collection.toLowerCase() +".json";
+	print("Reading file: "+ jsonFile);
+	var file = cat(jsonFile);
+	print("Inserting data into collection: "+ collection.toUpperCase() +", From JSON File Data: "+ file);
+	var o = JSON.parse(file);
+	db[collection].insert(o);
+});
+```
