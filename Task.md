@@ -133,3 +133,8 @@ Liquibase helps teams track, version, and deploy database schema and logic chang
 1. Relate PAYMENT_ON_REWARD_POINTS with REWARD_POINTS_CATALOGUE and REWARD_POINTS_CAP when capping arises(SBI Debit card capping).
 	1.1 Remove unnecessary columns.
 2. Remove unnecessary / wrong naming columns in WALLET_STATEMENT_TRANSACTION
+
+===================================================================================================================================
+#Error Tracking In Project
+===================================================================================================================================
+1. [Java error tracking with Sentry](https://sentry.io/for/java/).<sub>Debug Java apps and prevent crashes across your entire stack.</sub>

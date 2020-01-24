@@ -13,6 +13,27 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/**
+ * 
+ * <p>
+ * 		<a href="https://opensource.com/article/18/9/open-source-log-aggregation-tools">A handful of rules for logging:</a>
+
+		<ul>
+			<li>DO include a timestamp</li>
+			<li>DO format in JSON</li>
+			<li>DON’T log insignificant events</li>
+			<li>DO log all application errors</li>
+			<li>MAYBE log warnings</li>
+			<li>DO turn on logging</li>
+			<li>DO write messages in a human-readable form</li>
+			<li>DON’T log informational data in production</li>
+			<li>DON’T log anything a human can’t read or react to</li>
+		</ul>
+ * </p>
+ * 
+ * @author venkataudaykiranp
+ * @Date Fri 24-Jan-2020 14:29
+ */
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
