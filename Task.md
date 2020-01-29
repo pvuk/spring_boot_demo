@@ -55,7 +55,7 @@ Liquibase helps teams track, version, and deploy database schema and logic chang
 ===================================================================================================================================
 ##Maven - Task																	
 ===================================================================================================================================
-1. Execute every operation using available maven commands
+1. Execute every operation using available Maven commands
 
 ===================================================================================================================================
 ##UI: Validation - Task																	

@@ -20,39 +20,40 @@ import lombok.Data;
 @Document(collection = "DEBIT_CARD_STATEMENT")
 public class DebitCardStatement {
 
-
-	
-	@Field(value = "DEBIT_CARD_STATEMENT_ID", order = 1)
 	@Id
+	@Field(value = "DEBIT_CARD_STATEMENT_ID", order = 1)
 	private String debitCardStatementId;
 	
 	@Type(type="yes_no")
 	@Field(value = "IS_STATEMENT_CYCLE_CLOSED", order = 2)
 	private Boolean isStatementCycleClosed = Boolean.FALSE;
 	
-/****Start of section - Savings Account / Current Account AccountSummary ****/
+/**=============================Start of section - Savings Account / Current Account AccountSummary =============================**/
 	
 	/**
 	 * As per ICICI monthly Statement
 	 */
 	private String statementReferenceNo;
 	
-	@Field(value = "PAGE_REFERENCE")
 	@NotNull(message = "Page Reference is required field.")
+	@Field(value = "PAGE_REFERENCE")
 	private String pageReference;
+	
+	@Field(value = "WEB_SITE_LINK")
 	private String webSiteLink;
 	
 	/**
 	 * 1. save as following format 1860 120 7777
 	 */
+	@Field(value = "CONTACT_NUMBER")
 	private String contactNumber;
 	
 	
 	/**** Start of section - CreditCard AccountSummary ****/
-	@Column(name = "FULL_NAME") 			private String fullName;
-	@Column(name = "ADDRESS") 				private String address;
-	@Column(name ="STATEMENT_SUMMARY")		private String statementSummary;
-	@Column(name = "STATEMENT_SUMMARY_DATE")private Date statementSummaryDate;
+	@Column(name = "FULL_NAME") 							private String fullName;
+	@Column(name = "ADDRESS") 								private String address;
+	@Column(name ="STATEMENT_SUMMARY")						private String statementSummary;
+	@Column(name = "STATEMENT_SUMMARY_DATE")				private Date statementSummaryDate;
 	
 	private Long currencyId;
 	
@@ -71,12 +72,13 @@ public class DebitCardStatement {
 	/**
 	 * 1. Statement Period should be saved as August 01, 2019 - August 31, 2019
 	 */
-	@Column(name = "STATEMENT_PERIOD") 					private String statementPeriod; 
+	@Column(name = "STATEMENT_PERIOD") 						private String statementPeriod; 
 	
-/**** End of section - Savings Account / Current Account AccountSummary ****/
+/**============================= End of section - Savings Account / Current Account AccountSummary =============================**/
 	
 	
-/**** Start of section - Savings Account / Current Account RewardPoints Summary ****/
+/**============================= Start of section - Savings Account / Current Account RewardPoints Summary =============================**/
+	
 	private String savingsAccountNumber;
 	
 	/**
@@ -105,7 +107,8 @@ public class DebitCardStatement {
 	@Column(name = "POINT_BALANCE") private BigDecimal pointBalance;
 	
 	private String pointsSummaryComment;
-/**** End of section - CreditCard RewardPoints Summary ****/
+	
+/**============================= End of section - CreditCard RewardPoints Summary =============================**/
 	
 	private String bankBranchId;
 	

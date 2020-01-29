@@ -19,8 +19,8 @@ import lombok.NoArgsConstructor;
 @Document(collection = "CARD_TYPE_CODE")
 public class CardType {
 
-	@Field(value = "CARD_TYPE_ID", order = 1)
 	@Id
+	@Field(value = "CARD_TYPE_ID", order = 1)
 	private String cardTypeId;
 
 	@Field(value = "CODE", order = 2)
@@ -29,8 +29,8 @@ public class CardType {
 	@Field(value = "POSITION", order = 3)
 	private int position;
 	
-	@Field(value = "DESCRIPTION", order = 4)
 	@NotNull(message = "Card Type is required field.")
+	@Field(value = "DESCRIPTION", order = 4)
 	private String description;
 	
 	@Field(value = "IS_VERTUAL_CARD", order = 5)

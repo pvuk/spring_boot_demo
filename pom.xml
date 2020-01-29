@@ -27,7 +27,7 @@
 		<maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 		<spring-cloud.version>Greenwich.SR1</spring-cloud.version><!-- Mar 09, 2019 --><!-- http://bit.ly/2WrvAvV -->
-		<!-- <spring-cloud.version>Finchley.SR1</spring-cloud.version> -->
+		<!-- <spring-cloud.version>Finchley.SR1</spring-cloud.version> --> <!-- Aug, 2018 -->
 		<mongo.java.driver.version>3.8.2</mongo.java.driver.version>
 		<swagger2.version>2.9.2</swagger2.version>
 		<hibernate.version>5.4.3.Final</hibernate.version>

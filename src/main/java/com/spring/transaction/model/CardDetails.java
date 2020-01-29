@@ -15,8 +15,8 @@ import lombok.Data;
 @Document(collection="CARD_DETAILS")
 public class CardDetails {
 
-	@Field(value = "CARD_DETAILS_ID", order = 1)
 	@Id
+	@Field(value = "CARD_DETAILS_ID", order = 1)
 	private String cardDetailsId;
 	
 	@Field(value = "CARD_TYPE_ID", order = 2)
@@ -30,6 +30,7 @@ public class CardDetails {
 	@NotNull(message = "Card is required field.")
 	private String cardId;
 	
+	@Field(value = "FEES_AND_CHARGES_ID")
 	private String feesAndChargesId;
 	
 	@Field(value="CUSTOMER_ID", order = 4)
