@@ -34,6 +34,7 @@ public class PaymentOnAccount {
 	@Field(value = "PAYMENT_BY_ID", order = 7)
 	private String paymentById;
 	
+	@NotNull(message = "Payment Status is required field")
 	@Field(value="PAYMENT_STATUS_ID", order = 8)
 	private String paymentStatusId;
 	

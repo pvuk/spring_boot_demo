@@ -1,32 +1,47 @@
 [
 	{
-		"code": "success",
+		"code": "accept",
 		"position": 1,
-		"description": "Success"
+		"description": "Accept"
+	},
+	{
+		"code": "bounce",
+		"position": 2,
+		"description": "Bounce"
+	},
+	{
+		"code": "decline",
+		"position": 3,
+		"description": "Decline"
 	},
 	{
 		"code": "failed",
-		"position": 2,
+		"position": 4,
 		"description": "Failed"
 	},
 	{
 		"code": "hold",
-		"position": 3,
-		"description": "Hold"
-	},
-	{
-		"code": "decline",
-		"position": 4,
-		"description": "Decline"
-	},
-	{
-		"code": "processing",
 		"position": 5,
-		"description": "Processing"
+		"description": "Hold"
 	},
 	{
 		"code": "pending",
 		"position": 6,
 		"description": "Pending"
+	},
+	{
+		"code": "processing",
+		"position": 7,
+		"description": "Processing"
+	},
+	{
+		"code": "reverse",
+		"position": 8,
+		"description": "Reverse"
+	},
+	{
+		"code": "success",
+		"position": 9,
+		"description": "Success"
 	}
 ]

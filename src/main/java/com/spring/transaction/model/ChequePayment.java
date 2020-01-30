@@ -57,6 +57,10 @@ public class ChequePayment {
 	@NotNull(message = "Payment Type is required field")
 	private String paymentTypeId;
 	
+	@NotNull(message = "Payment Status is required field")
+	@Field(value="PAYMENT_STATUS_ID")
+	private String paymentStatusId;
+	
 	@Field(value = "PARENT_PAYMENT_ID")
 	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
 }

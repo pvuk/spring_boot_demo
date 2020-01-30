@@ -33,6 +33,7 @@ public class PaymentReverse {
 	@Field(value="PAYMENT_ON_ACCOUNT_ID", order = 5)
 	private String paymentOnAccountId;
 	
+	@NotNull(message = "Payment Status is required field")
 	@Field(value="PAYMENT_STATUS_ID", order = 6)
 	private String paymentStatusId;
 	

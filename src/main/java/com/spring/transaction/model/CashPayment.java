@@ -62,6 +62,10 @@ public class CashPayment {
 	@Field(value = "PAYMENT_TYPE_ID")
 	private String paymentTypeId;
 	
+	@NotNull(message = "Payment Status is required field")
+	@Field(value="PAYMENT_STATUS_ID")
+	private String paymentStatusId;
+	
 	@NotNull(message = "Parent Payment Id is required field.")
 	@Field(value = "PARENT_PAYMENT_ID")
 	private String parentPaymentId;

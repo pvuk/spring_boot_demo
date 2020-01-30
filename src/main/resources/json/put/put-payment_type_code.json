@@ -10,13 +10,13 @@
 		"description": "Debit"
 	},
 	{
-		"code": "failed",
+		"code": "deposited",
 		"position": 3,
-		"description": "Failed"
+		"description": "Deposited"
 	},
 	{
-		"code": "reverse",
+		"code": "withdrawal",
 		"position": 4,
-		"description": "Reverse"
+		"description": "Withdrawal"
 	}
 ]

@@ -39,6 +39,9 @@ public class FuelPayment {
 	@NotNull(message = "Payment Type is required field")
 	@Field(value = "PAYMENT_TYPE_ID")								private String paymentTypeId;
 	
+	@NotNull(message = "Payment Status is required field")
+	@Field(value="PAYMENT_STATUS_ID")								private String paymentStatusId;
+	
 	/**
 	 * 1. when cashback received insert fuelPaymentId into fuelPaymentParentId
 	 */

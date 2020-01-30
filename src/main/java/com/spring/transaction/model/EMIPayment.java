@@ -114,6 +114,10 @@ public class EMIPayment {
 	@Field(value = "PAYMENT_TYPE_ID", order = 26)
 	private String paymentTypeId;
 	
+	@NotNull(message = "Payment Status is required field")
+	@Field(value="PAYMENT_STATUS_ID")
+	private String paymentStatusId;
+	
 	@NotNull(message = "Parent Payment Id is required field.")
 	@Field(value = "PARENT_PAYMENT_ID", order = 27)
 	private String parentPaymentId;

@@ -83,6 +83,10 @@ public class BankPayment {
 	@Field(value = "PAYMENT_TYPE_ID")
 	@NotNull(message = "Payment Type is required field")
 	private String paymentTypeId;
+	
+	@NotNull(message = "Payment Status is required field")
+	@Field(value="PAYMENT_STATUS_ID")
+	private String paymentStatusId;
 
 	@Field(value="PAYMENT_BY_ID", order = 12)
 	private String paymentById;

@@ -37,6 +37,7 @@ public class PaymentReceived {
     @Field(value="PAYMENT_RECEIVED_ON", order = 6)
 	private Date paymentReceivedOn;
 	
+    @NotNull(message = "Payment Status is required field")
 	@Field(value="PAYMENT_STATUS_ID", order = 7)
 	private String paymentStatusId;
 	
