@@ -1,0 +1,57 @@
+[
+	{
+		"code": "autopay",
+		"position": 1,
+		"description": "Auto Pay"
+	},
+	{
+		"code": "cashpay",
+		"position": 2,
+		"description": "Cash Pay"
+	},
+	{
+		"code": "creditcardcreditpay",
+		"position": 3,
+		"description": "Credit Card Credit Pay"
+	},
+	{
+		"code": "debitcardcreditpay",
+		"position": 4,
+		"description": "Debit Card Credit Pay"
+	},
+	{
+		"code": "featurepay",
+		"position": 5,
+		"description": "Feature Pay"
+	},
+	{
+		"code": "latepay",
+		"position": 6,
+		"description": "Late Pay"
+	},
+	{
+		"code": "maximumpay",
+		"position": 7,
+		"description": "Maximum Pay"
+	},
+	{
+		"code": "minimumpay",
+		"position": 8,
+		"description": "Minimum Pay"
+	},
+	{
+		"code": "overpay",
+		"position": 9,
+		"description": "Over Pay"
+	},
+	{
+		"code": "repay",
+		"position": 10,
+		"description": "Re Pay"
+	},
+	{
+		"code": "rewardpointspay",
+		"position": 11,
+		"description": "Reward Points Pay"
+	}
+]
