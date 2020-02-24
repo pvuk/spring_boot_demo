@@ -9,7 +9,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "",
 				"convenienceFee": "",
 				"ccPaymentTurnAroundTime": {
@@ -20,7 +20,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "",
 						"loginAndAccessLink": "",
 						"loginAndAccessImage": "",
@@ -29,7 +29,7 @@
 				]
 			},
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "",
 				"convenienceFee": "",
 				"ccPaymentTurnAroundTime": {
@@ -40,7 +40,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "",
 						"loginAndAccessLink": "",
 						"loginAndAccessImage": "",

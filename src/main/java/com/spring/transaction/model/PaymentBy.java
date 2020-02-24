@@ -42,8 +42,8 @@ public class PaymentBy {
 	@Field(value = "PAYMENT_RECEIVED_ID", order = 2)
 	private List<String> paymentReceivedIds;
 
-	@Field(value = "CREDIT_CARD_PAYMENT_ID", order = 3)
-	private String creditCardPaymentId;
+	@Field(value = "CREDIT_CARD_BILL_PAYMENT_ID", order = 3)
+	private String creditCardBillPaymentId;
 
 	@Field(value = "DEBIT_CARD_PAYMENT_ID", order = 4)
 	private String debitCardPaymentId;

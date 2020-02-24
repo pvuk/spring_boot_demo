@@ -1,0 +1,42 @@
+[
+	{
+		"code": "atmtransfer",
+		"position": 1,
+		"description": "ATM Transfer"
+	},
+	{
+		"code": "cash",
+		"position": 2,
+		"description": "Cash"
+	},
+	{
+		"code": "cheque",
+		"position": 3,
+		"description": "Cheque"
+	},C
+	{
+		"code": "debitcard",
+		"position": 4,
+		"description": "DebitCard"
+	},
+	{
+		"code": "neftpayment",
+		"position": 5,
+		"description": "NEFT Payment"
+	},
+	{
+		"code": "netbanking",
+		"position": 6,
+		"description": "Net Banking"
+	},
+	{
+		"code": "upi",
+		"position": 7,
+		"description": "UPI"
+	},
+	{
+		"code": "wallet",
+		"position": 8,
+		"description": "Wallet"
+	}
+]

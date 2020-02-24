@@ -17,14 +17,14 @@ import lombok.Data;
  *
  */
 @Data
-@Document(collection="CREDIT_CARD_PAYMENT_TURN_AROUND_TIME")
-public class CreditCardPaymentTurnAroundTime {
+@Document(collection="CREDIT_CARD_BILL_PAYMENT_TURN_AROUND_TIME")
+public class CreditCardBillPaymentTurnAroundTime {
 	
 	@Id
-	private String creditCardPaymentTurnAroundTimeId;
+	private String creditCardBillPaymentTurnAroundTimeId;
 	
-	@NotNull(message = "Credit Card Payment Type is required field.")
-	private CreditCardPaymentType ccPaymentType;
+	@NotNull(message = "Credit Card Bill Payment Type is required field.")
+	private CreditCardBillPaymentType ccBillPaymentType;
 	
 	private String availableLimitRelease;
 	private String paymentCreditToCardAccount;

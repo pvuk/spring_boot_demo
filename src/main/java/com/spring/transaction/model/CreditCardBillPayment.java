@@ -12,16 +12,25 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 @Data
-@Document(collection = "CREDIT_CARD_PAYMENT")
-public class CreditCardPayment {
+@Document(collection = "CREDIT_CARD_BILL_PAYMENT")
+public class CreditCardBillPayment {
 	
 	@Id
-	@Field(value="CREDIT_CARD_PAYMENT_ID", order = 1)
-	private String creditCardPaymentId;
+	@Field(value="CREDIT_CARD_BILL_PAYMENT_ID", order = 1)
+	private String creditCardBillPaymentId;
 	
 	@NotNull(message="Credit Card is required field.")
 	@Field(value="CREDIT_CARD_ID", order = 2)
 	private String creditCardId;
+	
+	@Field(value = "CREDIT_CARD_STATEMENT_ID")
+	private String creditCardStatementId;
+	
+	/**
+	 * 1. CREDIT_CARD_STATEMENT_DATE should be display in DropDown as FromDate To ToDate [03-Jan-2020 To 02-Feb-2020](Reference: CREDIT_CARD_STATEMENT -> STATEMENT_PERIOD).
+	 */
+	@Field(value = "CREDIT_CARD_STATEMENT_DATE")
+	private String creditCardStatementDate;
 	
 	@NotNull(message="Amount is required field.")
 	@Field(value="AMOUNT", order = 3)
@@ -45,11 +54,15 @@ public class CreditCardPayment {
 	private String customerId;
 	
 	/**
-	 * 1. Same login user not right to confirm the payment
+	 * 1. Same login user not authorize to CONFIRM_PAYMENT.
 	 * 2. Default value should be null.
+	 * 3. CONFIRM_PAYMENT in the sense NetBanking / UPI / CASH / DebitCard / Wallet / Cheque. 
 	 */
 	@Field(value = "CONFIRM_PAYMENT")
 	private Boolean confirmPayment;
+	
+	@Field(value = "CONFIRM_CREDIT_CARD_CREDIT_AMOUNT")
+	private Boolean confirmCreditCardCreditAmount;
 	
 	@NotNull(message = "Payment Type is required field")
 	@Field(value = "PAYMENT_TYPE_ID")
@@ -59,6 +72,9 @@ public class CreditCardPayment {
 	@Field(value="PAYMENT_STATUS_ID")
 	private String paymentStatusId;
 	
+	/**
+	 * CREDIT_CARD_STATEMENT STATEMENT_DATE
+	 */
 	@NotNull(message = "Parent Payment Id is required field.")
 	@Field(value = "PARENT_PAYMENT_ID")
 	private String parentPaymentId;

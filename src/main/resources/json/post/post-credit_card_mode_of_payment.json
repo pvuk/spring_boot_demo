@@ -5,7 +5,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Using RBL Bank Account",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -16,7 +16,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Pay Now",
 						"loginAndAccessLink": "https://online.rblbank.com/corp/AuthenticationController?FORMSGROUP_ID__=AuthenticationFG&__START_TRAN_FLAG__=Y&__FG_BUTTONS__=LOAD&ACTION.LOAD=Y&AuthenticationFG.LOGIN_FLAG=1&BANK_ID=176",
 						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/rblV1.png",
@@ -25,7 +25,7 @@
 				]
 			},
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Using Other Bank Account (Non - RBL Bank)",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -36,21 +36,21 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Pay Now",
 						"loginAndAccessLink": "https://ccservices.rblbank.com/RblPayU/",
 						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/Payu.jpg",
 						"comment": ""
 					},
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Pay Now",
 						"loginAndAccessLink": "https://ccservices.rblbank.com/rblrazorpay/",
 						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/rzp-logo-RBL_Bank.png",
 						"comment": ""
 					},
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Pay Now",
 						"loginAndAccessLink": "https://pgi.billdesk.com/pgidsk/pgmerc/rtncard/index.jsp",
 						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/Billdesk_logo.jpg",
@@ -68,7 +68,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "All Bank Debit Cards accepted",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -79,7 +79,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Pay Now",
 						"loginAndAccessLink": "https://ccservices.rblbank.com/rblrazorpay/",
 						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/rzp-logo-RBL_Bank.png",
@@ -88,7 +88,7 @@
 				]
 			},
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Debit Cards accepted",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -99,7 +99,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Pay Now",
 						"loginAndAccessLink": "https://pgi.billdesk.com/pgidsk/pgmerc/rtncard/index.jsp",
 						"loginAndAccessImage": "https://drws17a9qx558.cloudfront.net/website/images/onlineCardPayment/Billdesk_logo.jpg",
@@ -117,7 +117,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Using Virtual Payment Address (VPA)",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -128,7 +128,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "RBL MyCard App",
 						"loginAndAccessLink": "https://www.rblbank.com/product/credit-cards/rbl-mycard-app",
 						"loginAndAccessImage": "",
@@ -146,7 +146,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Using any Bank Account",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -157,7 +157,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "",
 						"loginAndAccessLink": "",
 						"loginAndAccessImage": "",
@@ -175,7 +175,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Any Bank Account",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -186,7 +186,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "Click here",
 						"loginAndAccessLink": "https://www.rblbank.com/api/v1/doc/document/Credit%20Cards/NACH-Mandate-form-I.pdf",
 						"loginAndAccessImage": "",
@@ -204,7 +204,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Deposit at RBL Bank Branches",
 				"convenienceFee": "Rs. 250/- + GST Per Transaction",
 				"ccPaymentTurnAroundTime": {
@@ -215,7 +215,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "RBL Bank Branch Locations",
 						"loginAndAccessLink": "https://www.rblbank.com/locate-branch",
 						"loginAndAccessImage": "",
@@ -233,7 +233,7 @@
 		},
 		"ccPaymentTypeList": [
 			{
-				"creditCardModeOfPaymentId": "",
+				"creditCardBillPaymentModeId": "",
 				"type": "Deposit at RBL Bank Branches / Courier",
 				"convenienceFee": "FREE",
 				"ccPaymentTurnAroundTime": {
@@ -244,7 +244,7 @@
 				},
 				"ccPaymentLoginAndAccessList": [
 					{
-						"creditCardPaymentTypeId": "",
+						"creditCardBillPaymentTypeId": "",
 						"loginAndAccessLinkDescription": "RBL Bank Branch Locations",
 						"loginAndAccessLink": "https://www.rblbank.com/locate-branch",
 						"loginAndAccessImage": "",

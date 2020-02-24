@@ -56,6 +56,9 @@ public class CreditCardStatement {
 	@Column(name = "FULL_NAME") 													private String fullName;
 	@Column(name = "CARD_NUMBER") 													private String cardNumber;
 	@Column(name = "STATEMENT_PERIOD") 												private String statementPeriod;
+	/**
+	 * 1. Check if user changed their STATEMENT_DATE with previous month to process payment of CREDIT_CARD_BILL_PAYMENT -> PARENT_PAYMENT_ID
+	 */
 	@Column(name = "STATEMENT_DATE") 												private Date statementDate;
 	@Column(name = "MINIMUM_PAYMENT_DUE") 											private BigDecimal minimumPaymentDue;
 	@Column(name = "PAYMENT_DUE_DATE") 												private Date paymentDueDate;
@@ -102,7 +105,7 @@ public class CreditCardStatement {
 	@NotNull(message="Credit card is required field.")
 	@DBRef 																			private CreditCard creditCardId;
 	
-	@Column(name = "CREDIT_CARD_MODE_OF_PAYMENT_ID")								private String creditCardModeOfPaymentId;
+	@Column(name = "CREDIT_CARD_Bill_PAYMENT_MODE_ID")								private String creditCardBillPaymentModeId;
 	
 	/**
 	 * 1. check how this field position is placed in MongoDB., because only few columns order are mentioned.

@@ -2,7 +2,7 @@
     "paymentReceivedIds": [
         ""
     ],
-    "creditCardPaymentId": "",
+    "creditCardBillPaymentId": "",
     "debitCardPaymentId": "",
     "netBankingPaymentId": "",
     "paymentOnRewardPointsId": "",
