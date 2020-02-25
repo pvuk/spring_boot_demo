@@ -51,7 +51,7 @@
 	{
 		"code": "neft",
 		"description": "NEFT",
-		"details": "National Electronic Fund Transfer",
+		"details": "National Electronic Funds Transfer (NEFT) is a system that facilitates an individual or company to electronically transfer funds from any bank branch to any individual or company having an account with any other bank branch in the country.",
 		"position": 8,
 		"format_type": "Universal"
 	},
@@ -93,14 +93,14 @@
 	{	
 		"code": "int.pd.",
 		"description": "Int. Pd.",
-		"details": "Interest paid to customer",
+		"details": "Interest paid to Universaler",
 		"position": 14,
 		"format_type": "Universal"
 	},
 	{	
 		"code": "int.coll.",
 		"description": "Int. Coll.",
-		"details": "Interest collected from the customer",
+		"details": "Interest collected from the Universaler",
 		"position": 15,
 		"format_type": "Universal"
 	},
@@ -116,6 +116,188 @@
 		"description": "PUR",
 		"details": "Purchase using the debit card",
 		"position": 17,
-		"format_type": "Custom"
+		"format_type": "Universal"
+	},
+	{
+		"code": "add__on_card",
+		"description": "Add-on Card",
+		"details": "Extend the benefits of your primary credit card to your family. Get an additional card for their use that is linked to your primary credit card.",
+		"position": 18,
+		"format_type": "Universal"
+	},
+	{
+		"code": "chip",
+		"description": "Chip",
+		"details": "This is a small microchip embedded in your debit card. It is encrypted so your debit card transactions are more secure.",
+		"position": 19,
+		"format_type": "Universal"
+	},
+	{
+		"code": "cvv",
+		"description": "CVV",
+		"details": "The CVV (Card Verification Value) on credit or debit cards is a 3-digit code at the back of VISA, MasterCard and Discover branded credit and debit cards, and a 4 digit code on American Express credit and debit cards.",
+		"position": 20,
+		"format_type": "Universal"
+	},
+	{
+		"code": "e__com",
+		"description": "E-com",
+		"details": "E-com is short for of electronic commerce or ecommerce. Ecommerce is an umbrella term that covers the buying and selling of goods online through shopping portals and a variety of other channels. You can use your HDFC Bank credit and debit cards to purchase goods online.",
+		"position": 21,
+		"format_type": "Universal"
+	},
+	{
+		"code": "ecs",
+		"description": "ECS",
+		"details": "Stands for Electronic Clearing Service. It is a mode by which funds are automatically debited to your account every month to pay recurring bills or fees. ECS is activated by giving standing instructions to the bank.",
+		"position": 22,
+		"format_type": "Universal"
+	},
+	{
+		"code": "epfo",
+		"description": "EPFO",
+		"details": "EPFO is the Employees Provident Fund Organisation. It is a statutory body of the Government of India under the Ministry of Labour and Employment. It administers a compulsory contributory Provident Fund Scheme, Pension Scheme and Insurance Scheme. It is one of the largest social security organisations in the world in terms of the number of covered beneficiaries and the volume of financial transactions undertaken.",
+		"position": 23,
+		"format_type": "Universal"
+	},
+	{
+		"code": "fc_charges",
+		"description": "FC Charges",
+		"details": "FC or Foreclosure charges are to be paid when a loan is closed before the tenure is completed. The bank will levy a certain percentage on outstanding loan amount as the penalty for foreclosing the loans. These penalty rates vary from bank to bank.",
+		"position": 24,
+		"format_type": "Universal"
+	},
+	{
+		"code": "First_In___First_Out",
+		"description": "First In, First Out",
+		"details": "This means that fund transfer requests received after 10 PM on one banking day will be dealt with on the next banking day based on the time they are received. The first request after 10 PM will be dealt with first and so on till the last request received is dealt with.",
+		"position": 25,
+		"format_type": "Universal"
+	},
+	{
+		"code": "fixed_rate",
+		"description": "Fixed Rate",
+		"details": "An interest rate that remains at a predetermined rate for the entire term of the loan.",
+		"position": 26,
+		"format_type": "Universal"
+	},
+	{
+		"code": "floating_rate",
+		"description": "Floating rate",
+		"details": "An interest rate that moves up or down with the rest of the market or an index.",
+		"position": 27,
+		"format_type": "Universal"
+	},
+	{
+		"code": "gold_etf",
+		"description": "Gold ETF",
+		"details": "An ETF is an Exchange Traded Fund, which means that it is traded on the stock exchange. Through a Gold ETF, you can purchase a large amount of gold in the form of shares, maintaining the physical metal in storage. Gold ETF is a way of removing logistical hassles of purchasing gold physically, such as insurance, storage, moving, and reselling.",
+		"position": 28,
+		"format_type": "Universal"
+	},
+	{
+		"code": "guarantor",
+		"description": "Guarantor",
+		"details": "A guarantor is a person who guarantees payment by another. The guarantor becomes a co-endorser and assumes liability in event of default.",
+		"position": 29,
+		"format_type": "Universal"
+	},
+	{
+		"code": "ipin",
+		"description": "IPIN",
+		"details": "IPIN is the Internet Personal Identification Number. It is a code or password that the customer sets to access NetBanking.",
+		"position": 30,
+		"format_type": "Universal"
+	},
+	{
+		"code": "ivr",
+		"description": "IVR",
+		"details": "Interactive Voice Response (IVR) is a technology that allows a computer to interact with humans through voice and keypad inputs.",
+		"position": 31,
+		"format_type": "Universal"
+	},
+	{
+		"code": "kyc",
+		"description": "KYC",
+		"details": "Know Your Customer (KYC) is a form and a process by which a bank gets to know its customers better – and seeks details such as a customer’s address and financial and occupational status.",
+		"position": 32,
+		"format_type": "Universal"
+	},
+	{
+		"code": "liquid_funds",
+		"description": "Liquid Funds",
+		"details": "These are investments in short-term vehicles that mature in less than one year. You can access your money in liquid funds any time you need it with no penalty.",
+		"position": 33,
+		"format_type": "Universal"
+	},
+	{
+		"code": "loan_reschedulment",
+		"description": "Loan Reschedulment",
+		"details": "Loan Reschedulement refers to the revised timetable for loan repayments, usually granting longer repayment periods.",
+		"position": 34,
+		"format_type": "Universal"
+	},
+	{
+		"code": "otp",
+		"description": "OTP",
+		"details": "OTP is a one-time password that is valid for only one specific transaction and is used as an additional factor of authentication for online transactions.",
+		"position": 35,
+		"format_type": "Universal"
+	},
+	{
+		"code": "personal_assurance_message",
+		"description": "Personal Assurance Message",
+		"details": "When you register for the Verified by Visa service, you are asked to create a Personal Assurance Message. When you pay online, always look for this Personal Assurance Message or Personal Message – it is your guarantee that you are being authenticated by HDFC Bank.",
+		"position": 36,
+		"format_type": "Universal"
+	},
+	{
+		"code": "pos",
+		"description": "POS",
+		"details": "POS is the short for Point of Sale, and usually refers to a retail outlet.",
+		"position": 37,
+		"format_type": "Universal"
+	},
+	{
+		"code": "ppo",
+		"description": "PPO",
+		"details": "Stands for Pension Payment Order. The pension is authorised through a Pension Payment Order that consists of two booklets. One is meant for the disbursing authority and the other for the individual. The rate of monthly pension, amount commuted, reduced pension payable (i.e. after commutation) to a Government Servant and the rate of family pension payable to a spouse (where the spouse of the individual is alive) are mentioned in the Pension Payment Order.",
+		"position": 38,
+		"format_type": "Universal"
+	},
+	{
+		"code": "rm_or_relationship_manager",
+		"description": "RM or Relationship Manager",
+		"details": "The person who manages your relationship with the bank.",
+		"position": 39,
+		"format_type": "Universal"
+	},
+	{
+		"code": "rtgs",
+		"description": "RTGS",
+		"details": "It stands for Real Time Gross Settlement. And is a way of instantly transferring large sums of money It means that funds transfers happen immediately, in real time. Instructions are processed at the time they are received rather than later. 'Gross Settlement' means the settlement of funds transfers occur on an instruction by instruction basis.",
+		"position": 40,
+		"format_type": "Universal"
+	},
+	{
+		"code": "Secure_Sockets_Layer_(SSL)",
+		"description": "Secure Sockets Layer (SSL)",
+		"details": "Secure Sockets Layer (SSL) is a commonly-used protocol for the security of messages transmitted on the Internet.",
+		"position": 41,
+		"format_type": "Universal"
+	},
+	{
+		"code": "tds",
+		"description": "TDS",
+		"details": "TDS is short for Tax Deducted at Source. TDS is certain percentage of payment that is collected by the entity making a payment and deposited with the tax authorities. For example, the tax you have to pay on your salary is already deducted by your company and the net amount is paid to you.",
+		"position": 42,
+		"format_type": "Universal"
+	},
+	{
+		"code": "telegraphic_transfer_(t/t)",
+		"description": "Telegraphic Transfer (T/T)",
+		"details": "A Telegraphic Transfer also called a Telex Transfer is an electronic means of transferring funds overseas.",
+		"position": 43,
+		"format_type": "Universal"
 	}
 ]
