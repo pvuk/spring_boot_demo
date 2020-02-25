@@ -54,5 +54,13 @@
 		"description": "Virtual Card",
 		"isVertualCard": true,
 		"comments": "Most virtual cards can be used for making purchases internationally as well as on domestic websites. However, a few banks might issue virtual cards that can be used only in India."
+	},
+	{
+		"code": "secured_credit_cards",
+		"position": 9,
+		"description": "Secured Credit Cards",
+		"isVertualCard": false,
+		"comments": "Unlike unsecured credit cards, these are cards that require you to offer collateral or security. At ICICI Bank, such security is required in the form of a Fixed Deposit. Secured credit cards are recommended for newcomers with no credit history or those who are trying to improve their credit rating.",
+		"sub_code": "creditcard"
 	}
 ]

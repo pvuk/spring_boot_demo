@@ -299,5 +299,348 @@
 		"details": "A Telegraphic Transfer also called a Telex Transfer is an electronic means of transferring funds overseas.",
 		"position": 43,
 		"format_type": "Universal"
+	},
+	{
+		"code": "apin",
+		"description": "APIN",
+		"details": "The Personal Identification Number allocated to you by the Bank or chosen by you which is used for authenticating the Card member.",
+		"position": 44,
+		"format_type": "Universal"
+	},
+	{
+		"code": "auto_debit",
+		"description": "Auto Debit",
+		"details": "An instruction given by you for automatically transferring payments from your savings account to your Credit Card account.",
+		"position": 45,
+		"format_type": "Universal"
+	},
+	{
+		"code": "bad_credit",
+		"description": "Bad Credit",
+		"details": "This usually means a poor credit score or credit rating. Many things can damage your credit score, like missed payments, late payments or default on payments.",
+		"position": 46,
+		"format_type": "Universal"
+	},
+	{
+		"code": "cash_advance",
+		"description": "Cash Advance",
+		"details": "The amount of cash your withdraw using your credit card at a bank or ATM. This cash is withdrawn from your Card account and draws interest from the day of withdrawal itself – there is no grace period or interest holiday on this amount.",
+		"position": 47,
+		"format_type": "Universal"
+	},
+	{
+		"code": "cash_limit",
+		"description": "Cash Limit",
+		"details": "The maximum amount of cash that you can withdraw on your credit card account. Cash-Limit forms a subset of your overall Credit Limit.",
+		"position": 48,
+		"format_type": "Universal"
+	},
+	{
+		"code": "card_member",
+		"description": "Card member",
+		"details": "The person that the credit card was issued to, or another person who is authorized to use the card.",
+		"position": 49,
+		"format_type": "Universal"
+	},
+	{
+		"code": "supplementary_card_member",
+		"description": "Supplementary Card member",
+		"details": "Another person who shares your credit account – usually a family member. As the main card member, you will still be responsible for all transactions, usage and payments.",
+		"position": 50,
+		"format_type": "Universal"
+	},
+	{
+		"code": "chargeback",
+		"description": "Chargeback",
+		"details": "If you find a fraudulent or unauthorized transaction on your card account, you need to report the same to the card issuing company. They may temporarily reverse the transaction in your account till the investigation into fraud charges are completed. This reversal is often referred to as a \"chargeback\".",
+		"position": 51,
+		"format_type": "Universal"
+	},
+	{
+		"code": "chargeslip",
+		"description": "Chargeslip",
+		"details": "A paper slip generated when your transaction is authorized using a swipe machine at a shop or store. You will be asked to sign the chargeslip as proof of your acceptance and authorization of such transaction on your card account. Also see swipe machines.",
+		"position": 52,
+		"format_type": "Universal"
+	},
+	{
+		"code": "collateral",
+		"description": "Collateral",
+		"details": "Money or assets (such as property) that you put down as security to prove to a lender that you're able to pay back what you owe. In case of default on payments, lenders are likely to take possession of the collateral to make good their dues.",
+		"position": 53,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit",
+		"description": "Credit",
+		"details": "Credit means buying something now and paying for it at a later date with or without interest.",
+		"position": 54,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit_bureau",
+		"description": "Credit Bureau",
+		"details": "An organization that collects details of credit behaviour from various sources to create your credit score or credit rating. These credit scores and ratings create your credit history overtime.",
+		"position": 55,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit_card_number",
+		"description": "Credit Card Number",
+		"details": "The number stamped or embossed on your credit card. Also see Account number.",
+		"position": 56,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit_history",
+		"description": "Credit History",
+		"details": "The history of your credit use. It lists whether or not you've made your payments on time, stayed within your limit and practiced good credit habits.",
+		"position": 57,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit_limit",
+		"description": "Credit Limit",
+		"details": "The highest amount of money you are authorized to spend on your credit card account. Going over your credit limit often can affect your credit score and you may be charged a fee.",
+		"position": 58,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit_report",
+		"description": "Credit Report",
+		"details": "A report showing a \"snapshot\" of your credit history in Canada that you can request from the credit bureaus. Detailed reports can be purchased for a reasonable fee, but simpler versions can often be ordered by mail for free.",
+		"position": 59,
+		"format_type": "Universal"
+	},
+	{
+		"code": "credit_score",
+		"description": "Credit Score",
+		"details": "This is a number that reflects your general \"credit worthiness\". Created by credit bureaus, it's one of the factors lenders use when deciding to give you credit. Also see Credit Bureau.",
+		"position": 60,
+		"format_type": "Universal"
+	},
+	{
+		"code": "default",
+		"description": "Default",
+		"details": "Generally, the failure to make your payments. When you don't make your payments on time, you're said to have \"defaulted\".",
+		"position": 61,
+		"format_type": "Universal"
+	},
+	{
+		"code": "delinquent_account",
+		"description": "Delinquent account",
+		"details": "When you don't make your payments against loans or credit cards on time, your loan or card account is termed as \"Delinquent account\"",
+		"position": 62,
+		"format_type": "Universal"
+	},
+	{
+		"code": "emi",
+		"description": "EMI",
+		"details": "EMI refers to Equated Monthly Installments. When you make a large purchase or take a large loan, you can choose to pay back over a fixed period of time. The amount to be paid back (principal + interest) is divided into equal parts that you need to pay every month. This is termed as an \"Equated Monthly Installment\".",
+		"position": 63,
+		"format_type": "Universal"
+	},
+	{
+		"code": "fraudulent_transaction",
+		"description": "Fraudulent Transaction",
+		"details": "An unauthorized use of your account or credit card without your knowledge or consent.",
+		"position": 64,
+		"format_type": "Universal"
+	},
+	{
+		"code": "fraudulent_user",
+		"description": "Fraudulent User",
+		"details": "Someone other than you who uses your card or account without your consent.",
+		"position": 65,
+		"format_type": "Universal"
+	},
+	{
+		"code": "grace_period",
+		"description": "Grace Period",
+		"details": "A length of time in which a lender will allow you to pay your credit balance without paying interest and/or late fees. This is a feature of most credit cards except in case of Cash advances.",
+		"position": 66,
+		"format_type": "Universal"
+	},
+	{
+		"code": "interest_rate",
+		"description": "Interest Rate",
+		"details": "The percentage rate of interest charged when a balance outstanding is held (i.e not re-paid) on a credit card. This is usually stated as a monthly or yearly rate.",
+		"position": 67,
+		"format_type": "Universal"
+	},
+	{
+		"code": "lender",
+		"description": "Lender",
+		"details": "In reference to the world of credit, \"Lender\" usually means any financial institution or company that gives you access to credit, such as credit cards, lines of credit, or mortgages.",
+		"position": 68,
+		"format_type": "Universal"
+	},
+	{
+		"code": "lpc",
+		"description": "Late Payment Charges or LPC",
+		"details": "Most Credit cards allow a fixed time or grace period towards credit card outstanding. A failure to make the payment on time often attracts a penalty in the form of Late Payment Charges. This is usually a fixed amount and not related to the amount of outstanding payment due. Also see Grace period.",
+		"position": 69,
+		"format_type": "Universal"
+	},
+	{
+		"code": "mad",
+		"description": "Minimum Amount Due or MAD",
+		"details": "The absolute minimum amount you need to pay on your credit card balance every month to keep your account in good standing and to avoid LPC. This is usually a percentage of the total amount outstanding on your card account.",
+		"position": 70,
+		"format_type": "Universal"
+	},
+	{
+		"code": "network",
+		"description": "Network",
+		"details": "VISA, MasterCard and American Express are key \"network\" companies that allow information exchange between merchant establishments and credit card issuing companies to authorize and track transactions all over the world.",
+		"position": 71,
+		"format_type": "Universal"
+	},
+	{
+		"code": "overlimit",
+		"description": "Overlimit",
+		"details": "Any credit used on a credit account that has gone over the credit limit. Most credit card companies will allow, rather than decline such transactions to avoid inconvenience of a declined transaction. You may be charged extra fees for this.",
+		"position": 72,
+		"format_type": "Universal"
+	},
+	{
+		"code": "Overlimit_Charges____Fee",
+		"description": "Overlimit Charges / Fee",
+		"details": "A fee you may be charged for allowing your balance to go above your credit limit.",
+		"position": 73,
+		"format_type": "Universal"
+	},
+	{
+		"code": "payment_due_date",
+		"description": "Payment Due Date",
+		"details": "This refers to the date every month, on which the payment towards your card or loan account is due. If payments are missed on this date, your account will attract penalty or interest charges or both.",
+		"position": 74,
+		"format_type": "Universal"
+	},
+	{
+		"code": "phishing",
+		"description": "Phishing",
+		"details": "E-mail fraud, or \"phishing\", is an Internet scam in the form of an e-mail. The e-mails link to sites that look like well-known legitimate businesses and ask you to provide or confirm personal, financial, or password information. Always check the url displayed before filling up information online – the urls will not be those of your financial institution in case of a phishing scam.",
+		"position": 75,
+		"format_type": "Universal"
+	},
+	{
+		"code": "principal",
+		"description": "Principal",
+		"details": "Principal or principal amount refers to the base amount of money that has been lent to you. Any charges or interest are calculated on this base amount and together principal, interest and charges form the total amount you may need to pay back to the lenders.",
+		"position": 76,
+		"format_type": "Universal"
+	},
+	{
+		"code": "revolving_credit",
+		"description": "Revolving Credit",
+		"details": "Payment towards your credit card account is normally due on a set date or payment due date. If you make partial or no payments on this date, you access \"revolving credit\" as the outstanding on your card account has now exceeded the grace period and has \"revolved\" into a new payment cycle. Revolving credit will attract interest charges.",
+		"position": 77,
+		"format_type": "Universal"
+	},
+	{
+		"code": "secured_credit_cards",
+		"description": "Secured Credit Cards",
+		"details": "Unlike unsecured credit cards, these are cards that require you to offer collateral or security. At ICICI Bank, such security is required in the form of a Fixed Deposit. Secured credit cards are recommended for newcomers with no credit history or those who are trying to improve their credit rating.",
+		"position": 78,
+		"format_type": "Universal"
+	},
+	{
+		"code": "security_deposit",
+		"description": "Security Deposit",
+		"details": "A sum of money, paid up front, as security in case a borrower defaults on their credit. In case of Secured Credit Cards, this is usually in the form of a Fixed Deposit with the issuing Bank.",
+		"position": 79,
+		"format_type": "Universal"
+	},
+	{
+		"code": "statement",
+		"description": "Statement",
+		"details": "A document from your lender that lists all the transactions you have made on your account or your payment schedules. This is usually sent once a month.",
+		"position": 80,
+		"format_type": "Universal"
+	},
+	{
+		"code": "swiping_machine",
+		"description": "Swiping machine",
+		"details": "Electronic data capturing machines that you see at stores and shops which are used to swipe your card in order to access information to authorize your transaction",
+		"position": 81,
+		"format_type": "Universal"
+	},
+	{
+		"code": "Terms_____Conditions",
+		"description": "Terms & Conditions",
+		"details": "The terms and conditions applicable to the product or service or line of credit that you have taken from a bank or lender. The most updated Terms & Conditions are mostly available on the lender's website.",
+		"position": 82,
+		"format_type": "Universal"
+	},
+	{
+		"code": "TAD",
+		"description": "Total Amount Due or TAD",
+		"details": "The total amount you need to pay on your credit card. This amount should match all the transactions or purchases that you have made on your card account.",
+		"position": 83,
+		"format_type": "Universal"
+	},
+	{
+		"code": "unsecured_credit_cards",
+		"description": "Unsecured Credit Cards",
+		"details": "Unlike secured credit cards, these are cards that don't require collateral or security. To qualify for unsecured credit, you'll need to have a good credit history as well as sufficient income that show you can repay your debts.",
+		"position": 84,
+		"format_type": "Universal"
+	},
+	{
+		"code": "onlnpaymt",
+		"description": "Online Payment",
+		"details": "Payment using Online",
+		"position": 85,
+		"format_type": "Custom"
+	},
+	{
+		"code": "csh",
+		"description": "Cash",
+		"details": "Payment using Cash",
+		"position": 86,
+		"format_type": "Custom"
+	},
+	{
+		"code": "DC",
+		"description": "Debit Card",
+		"details": "Payment using Debit Card",
+		"position": 87,
+		"format_type": "Custom"
+	},
+	{
+		"code": "WLT",
+		"description": "Wallet",
+		"details": "Payment using Wallet",
+		"position": 88,
+		"format_type": "Custom"
+	},
+	{
+		"code": "CHQ",
+		"description": "Cheque",
+		"details": "Payment using Cheque",
+		"position": 89,
+		"format_type": "Custom"
+	},
+	{
+		"code": "NTBNG",
+		"description": "Net Banking",
+		"details": "Payment using Net Banking",
+		"position": 90,
+		"format_type": "Custom"
+	},
+	{
+		"code": "RC",
+		"description": "Reward Card",
+		"details": "Payment using Reward Card",
+		"position": 91,
+		"format_type": "Custom"
+	},
+	{
+		"code": "cc",
+		"description": "Credit Card",
+		"details": "Payment using Credit Card",
+		"position": 92,
+		"format_type": "Custom"
 	}
 ]
