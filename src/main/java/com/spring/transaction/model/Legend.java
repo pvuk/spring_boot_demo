@@ -42,6 +42,9 @@ public class Legend {
 	@Field(value="DESCRIPTION", order = 4)
 	private String description;
 	
+	/**
+	 * 1. Display format in DropDown should be DESCRIPTION (DETAILS)
+	 */
 	@Field(value="DETAILS", order = 5)
 	private String details;
 }
