@@ -39,6 +39,10 @@ public class CreditCardStatementTransaction {
 	@Field(value = "CREDIT_CARD_STATEMENT_ID")
 	private String creditCardStatementId;
 	
+	/**
+	 * 1. REFERENCE_NO format should be SOURCETYPE_BANK_SOURCENAME_ddMMYYYYHHmmssSSSSSSS
+	 * 2. Following are short code "ONLNPAY/CSH/DC/CC/WLT/CHQ/NTBNG/RC" check these brief details in put-legend_code.json file.
+	 */
 	@Field(value = "REFERENCE_NO")
 	private String referenceNo;
 	

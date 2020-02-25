@@ -29,6 +29,10 @@ public class RewardPointsRedeem {
 
 	@Field(value = "REWARDS_REDEEMED_ON", order = 5) 						private Date rewardsRedeemedOn;
 	
+	/**
+	 * 1. REFERENCE_NO format should be SOURCETYPE_BANK_SOURCENAME_ddMMYYYYHHmmssSSSSSSS
+	 * 2. Following are short code "ONLNPAY/CSH/DC/CC/WLT/CHQ/NTBNG/RC" check these brief details in put-legend_code.json file.
+	 */
 	@Field(value = "REFERENCE_NO", order = 6)								private String referenceNo;
 	
 	/**

@@ -25,6 +25,10 @@ public class WalletPayment {
 	@Id
 	@Field(value = "WALLET_PAYMENT_ID", order = 1)									private String walletPaymentId;
 	
+	/**
+	 * 1. REFERENCE_NO format should be SOURCETYPE_BANK_SOURCENAME_ddMMYYYYHHmmssSSSSSSS
+	 * 2. Following are short code "ONLNPAY/CSH/DC/CC/WLT/CHQ/NTBNG/RC" check these brief details in put-legend_code.json file.
+	 */
 	@Field(value = "REFERENCE_NO")													private String referenceNo;
 	
 	@Field(value = "TRANSACTION_DATE")												private Date transactionDate;

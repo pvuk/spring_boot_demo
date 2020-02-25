@@ -32,6 +32,9 @@ public class DebitCardStatement {
 	
 	/**
 	 * As per ICICI monthly Statement
+	 * 
+	 * 1. REFERENCE_NO format should be SOURCETYPE_BANK_SOURCENAME_ddMMYYYYHHmmssSSSSSSS
+	 * 2. Following are short code "ONLNPAY/CSH/DC/CC/WLT/CHQ/NTBNG/RC" check these brief details in put-legend_code.json file.
 	 */
 	private String statementReferenceNo;
 	
