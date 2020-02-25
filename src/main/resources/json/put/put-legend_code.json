@@ -1,48 +1,48 @@
 [
 	{
-		"code": "VAT/MAT/NFS",
+		"code": "vat_mat_nfs",
 		"description": "VAT/MAT/NFS",
 		"details": "Cash Withdrawal at other bank's ATM",
 		"position": 1
 	},
 	{
-		"code": "EBA",
+		"code": "eba",
 		"description": "EBA",
 		"details": "Transaction at ICICIDirect",
 		"position": 2
 	},
 	{
-		"code": "VPS/IPS-Debit",
+		"code": "vps_ips__debit",
 		"description": "VPS/IPS",
 		"details": "Debit card transaction",
 		"position": 3
 	},
 	{
-		"code": "RTGS",
+		"code": "rtgs",
 		"description": "RTGS",
 		"details": "Real Time Gross Settlement (Instant transfer above Rs 2 Lakh)",
 		"position": 4
 	},
 	{
-		"code": "INF",
+		"code": "inf",
 		"description": "INF",
 		"details": "Internet funds transfer in linked accounts",
 		"position": 5
 	},
 	{
-		"code": "BIL",
+		"code": "bil",
 		"description": "BIL",
 		"details": "Internet bill payment or funds transfer to third party",
 		"position": 6
 	},
 	{
-		"code": "TOP",
+		"code": "top",
 		"description": "TOP",
 		"details": "Mobile Recharge",
 		"position": 7
 	},
 	{
-		"code": "NEFT",
+		"code": "neft",
 		"description": "NEFT",
 		"details": "National Electronic Fund Transfer",
 		"position": 8
