@@ -75,6 +75,10 @@ Liquibase helps teams track, version, and deploy database schema and logic chang
 	Ex:	Save it with file name Inquisitor +(Telugu Meaning).txt.
 4. When bill is calculated provide calculate button to know user before saving the record.
 5. Implement GenericsMultipleTypeExample<T, U, K> type, it is useful in project
+6. 5) Why char array is better than String for storing password?
+This String interview question is debatable and you might not agree with interviewer but this is also a chance to show that how deep and differently you can think of. One of the reasons which people give Why you should store a password in char array over String is related to immutability since it's not possible to erase contents of String but you can erase contents of a char array. See Why char array preferred over String for a password for a complete discussion.
+
+Read more: https://javarevisited.blogspot.com/2012/10/10-java-string-interview-question-answers-top.html#ixzz6C1UktSXi
 
 ===================================================================================================================================
 ##MongoDB - Task																	
