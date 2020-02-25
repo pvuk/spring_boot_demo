@@ -3,48 +3,119 @@
 		"code": "vat_mat_nfs",
 		"description": "VAT/MAT/NFS",
 		"details": "Cash Withdrawal at other bank's ATM",
-		"position": 1
+		"position": 1,
+		"format_type": "Universal"
 	},
 	{
 		"code": "eba",
 		"description": "EBA",
 		"details": "Transaction at ICICIDirect",
-		"position": 2
+		"position": 2,
+		"format_type": "Universal"
 	},
 	{
 		"code": "vps_ips__debit",
 		"description": "VPS/IPS",
 		"details": "Debit card transaction",
-		"position": 3
+		"position": 3,
+		"format_type": "Universal"
 	},
 	{
 		"code": "rtgs",
 		"description": "RTGS",
 		"details": "Real Time Gross Settlement (Instant transfer above Rs 2 Lakh)",
-		"position": 4
+		"position": 4,
+		"format_type": "Universal"
 	},
 	{
 		"code": "inf",
 		"description": "INF",
 		"details": "Internet funds transfer in linked accounts",
-		"position": 5
+		"position": 5,
+		"format_type": "Universal"
 	},
 	{
 		"code": "bil",
 		"description": "BIL",
 		"details": "Internet bill payment or funds transfer to third party",
-		"position": 6
+		"position": 6,
+		"format_type": "Universal"
 	},
 	{
 		"code": "top",
 		"description": "TOP",
 		"details": "Mobile Recharge",
-		"position": 7
+		"position": 7,
+		"format_type": "Universal"
 	},
 	{
 		"code": "neft",
 		"description": "NEFT",
 		"details": "National Electronic Fund Transfer",
-		"position": 8
+		"position": 8,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "autosweep",
+		"description": "AUTOSWEEP",
+		"details": "Transfer to linked fixed deposit",
+		"position": 9,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "rev_sweep",
+		"description": "REV SWEEP",
+		"details": "Interest on linked fixed deposit",
+		"position": 10,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "sweeptrf",
+		"description": "SWEEP TRF",
+		"details": "Transfer from linked fixed deposit / account",
+		"position": 11,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "vmt",
+		"description": "VMT",
+		"details": "Visa money transfer through ATM",
+		"position": 12,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "mmt",
+		"description": "MMT",
+		"details": "MasterCard money transfer through ATM",
+		"position": 13,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "int.pd.",
+		"description": "Int. Pd.",
+		"details": "Interest paid to customer",
+		"position": 14,
+		"format_type": "Universal"
+	},
+	{	
+		"code": "int.coll.",
+		"description": "Int. Coll.",
+		"details": "Interest collected from the customer",
+		"position": 15,
+		"format_type": "Universal"
+	},
+	{
+		"code": "clg",
+		"description": "CLG",
+		"details": "Cheque clearing transaction",
+		"position": 16,
+		"format_type": "Universal"
+	},
+	{
+		"code": "pur",
+		"description": "PUR",
+		"details": "Purchase using the debit card",
+		"position": 17,
+		"format_type": "Custom"
 	}
 ]
