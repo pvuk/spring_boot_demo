@@ -1,0 +1,47 @@
+[
+	{
+		"code": "cash",
+		"position": 1,
+		"description": "Cash"
+	},
+	{
+		"code": "credit_card",
+		"position": 2,
+		"description": "Credit Card"
+	},
+	{
+		"code": "debit_card",
+		"position": 3,
+		"description": "Debit Card"
+	},
+	{
+		"code": "deposit_by_cash",
+		"position": 4,
+		"description": "Deposit By Cash"
+	},
+	{
+		"code": "netbanking",
+		"position": 5,
+		"description": "NetBanking"
+	},
+	{
+		"code": "others",
+		"position": 6,
+		"description": "Others"
+	},
+	{
+		"code": "upi",
+		"position": 7,
+		"description": "UPI"
+	},
+	{
+		"code": "virtual_credit_card",
+		"position": 8,
+		"description": "Virtual Credit Card"
+	},
+	{
+		"code": "wallet",
+		"position": 9,
+		"description": "Wallet"
+	}
+]

@@ -43,5 +43,10 @@
 		"entity_name": "Wallet",
 		"collection": "WALLET_CODE",
 		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
+	},
+	{
+		"entity_name": "AssignPayment",
+		"collection": "ASSIGN_PAYMENT_CODE",
+		"comment": "When new option is requested by user, need to confirm by Developer and approved by Manager ore rejected by TechSupport"
 	}
 ]

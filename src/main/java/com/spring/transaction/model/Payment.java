@@ -1,5 +1,7 @@
 package com.spring.transaction.model;
 
+import java.util.List;
+
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.annotations.Type;
@@ -16,7 +18,15 @@ public class Payment {
 	@Id
 	@Field(value = "PAYMENT_ID")								private String paymentId;
 	
-	@Field(value = "PAYMENT_FROM_ID")							private String paymentFromId;
+	/**
+	 * 1. If Booking ticket from bookmyshow.com PAYMENT_SOURCE_ID is bookmyshow and PAYMENT_FROM_ID is ICICI Debit Card and PAYMENT_TO_ID bookmyshow
+	 */
+	@Field(value = "PAYMENT_SOURCE_ID")							private String paymentSourceId;
+	
+	/**
+	 * 1. Some times user need to pay using Multiple Options. So PAYMENT_FROM_ID having two records i.e., Wallet Balance + DC / CC / NetBanking / UPI payment. 
+	 */
+	@Field(value = "PAYMENT_FROM_ID")							private List<String> paymentFromId;
 	@Field(value = "PAYMENT_TO_ID")								private String paymentToId;
 	
 	/**

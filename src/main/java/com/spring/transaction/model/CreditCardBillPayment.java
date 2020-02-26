@@ -2,6 +2,7 @@ package com.spring.transaction.model;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.constraints.NotNull;
 
@@ -47,6 +48,21 @@ public class CreditCardBillPayment {
 	private String referenceNo;
 	
 	/**
+	 * 1. To show creditcardcreditpay / debitcardcreditpay(Others Amount) / debitcardpay / featurepay / latepay / minimumpay / netbankingpay / overpay / rewardpointspay / upipay / walletpay / partialpay / fullpay
+	 * open popup
+	 */
+	@NotNull(message="Payment By is required field.")
+	@Field(value = "PAYMENT_BY_ID")
+	private List<String> paymentById;
+	
+	/**
+	 * 1. If user selects code "overpay", select default option "fullpay" from PAY_TYPE_CODE.
+	 */
+	@NotNull(message="Pay Type is required field.")
+	@Field(value = "PAY_TYPE_ID")
+	private String payTypeId;
+	
+	/**
 	 * 1. Where the transaction is done.
 	 */
 	@NotNull(message="Transaction Details is required field.")
@@ -68,6 +84,9 @@ public class CreditCardBillPayment {
 	@Field(value = "CONFIRM_CREDIT_CARD_CREDIT_AMOUNT")
 	private Boolean confirmCreditCardCreditAmount;
 	
+	/**
+	 * 1. Accept only credit, debit options from put-payment_type_code.json file.
+	 */
 	@NotNull(message = "Payment Type is required field")
 	@Field(value = "PAYMENT_TYPE_ID")
 	private String paymentTypeId;
@@ -77,7 +96,7 @@ public class CreditCardBillPayment {
 	private String paymentStatusId;
 	
 	/**
-	 * CREDIT_CARD_STATEMENT STATEMENT_DATE
+	 * 1. CREDIT_CARD_STATEMENT_ID is PARENT_PAYMENT_ID
 	 */
 	@NotNull(message = "Parent Payment Id is required field.")
 	@Field(value = "PARENT_PAYMENT_ID")

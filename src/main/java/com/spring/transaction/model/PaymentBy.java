@@ -76,8 +76,19 @@ public class PaymentBy {
 	@Field(value = "COMMENT", order = 13)
 	private String comment;
 	
+	@Transient
+	private List<Payment> payments;
+	
 	/**
-	 * 1. If user tries to pay using other payment modes restrict the user and pay using previous what selected.
+	 * 1. REFERENCE_NO format should be SOURCETYPE_BANK_SOURCENAME_ddMMYYYYHHmmssSSSSSSS(CC_SBI_SIMCLK_250220201915285920000)
+	 * 2. Following are short code "ONLNPAY/CSH/DC/CC/WLT/CHQ/NTBNG/RC" check these brief details in put-legend_code.json file.
+	 */
+	@Field(value = "REFERENCE_NO")
+	private String referenceNo;
+	
+	/**
+	 * 1. Select this option if user wants to pay for current transaction amount using DC or Savings Account in future. 
+	 * 2. If user tries to pay using other payment modes restrict the user and pay using previous what selected.
 	 */
 	@Field(value = "ASSIGN_PAYMENT_BY_ID")
 	private String assignPaymentById;
@@ -108,6 +119,4 @@ public class PaymentBy {
 	@NotNull(message = "Customer is required field.")
 	private String customerId;
 	
-	@Transient
-	private List<Payment> payments;
 }

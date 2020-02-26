@@ -12,7 +12,8 @@
 	{
 		"code": "creditcardcreditpay",
 		"position": 3,
-		"description": "Credit Card Credit Pay"
+		"description": "Credit Card Credit Pay",
+		"details": "Transfer / Swipe / Wallet Add / App Add / Using Other Payment Sources from CC and Pay Credit Card Bill."
 	},
 	{
 		"code": "creditcardpay",
@@ -22,7 +23,8 @@
 	{
 		"code": "debitcardcreditpay",
 		"position": 5,
-		"description": "Debit Card Credit Pay"
+		"description": "Debit Card Credit Pay",
+		"details": "Transfer / Swipe / Wallet Add / App Add / Using Other Payment Sources from Family / Friends / Relatives / Others and Pay Credit Card Bill."
 	},{
 		"code": "debitcardpay",
 		"position": 6,
@@ -31,7 +33,8 @@
 	{
 		"code": "featurepay",
 		"position": 7,
-		"description": "Feature Pay"
+		"description": "Feature Pay",
+		"details": "This payment is going to be Repay. This Payment is credit payment."
 	},
 	{
 		"code": "latepay",
@@ -56,17 +59,20 @@
 	{
 		"code": "overpay",
 		"position": 12,
-		"description": "Over Pay"
+		"description": "Over Pay",
+		"details": "If the Bill is 1000 but paid 1100. Extra 100 is Overpay amount."
 	},
 	{
 		"code": "repay",
 		"position": 13,
-		"description": "Re Pay"
+		"description": "Re Pay",
+		"details": "Settle the payment with Source Account."
 	},
 	{
 		"code": "rewardpointspay",
 		"position": 14,
-		"description": "Reward Points Pay"
+		"description": "Reward Points Pay",
+		"details": "Paying Bill using Rewards Points Redeemption."
 	},
 	{
 		"code": "upipay",
@@ -77,5 +83,15 @@
 		"code": "walletpay",
 		"position": 16,
 		"description": "Wallet Pay"
+	},
+	{
+		"code": "partialpay",
+		"position": 17,
+		"description": "Partial Pay"
+	},
+	{
+		"code": "fullpay",
+		"position": 18,
+		"description": "Full Pay"
 	}
 ]

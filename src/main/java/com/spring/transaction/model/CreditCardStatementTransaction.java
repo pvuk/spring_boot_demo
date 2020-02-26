@@ -72,6 +72,9 @@ public class CreditCardStatementTransaction {
 	@Field(value = "AMOUNT")
 	private BigDecimal amount;
 	
+	@Field(value="PAYMENT_STATUS_ID")
+	private String paymentStatusId;
+	
 	@NotNull(message="Customer is required field.")
 	@Field(value = "CUSTOMER_ID")
 	private String customerId;
