@@ -34,6 +34,9 @@ public class PaymentBy {
 	@Field(value = "PAYMENT_BY_ID", order = 1)
 	private String paymentById;
 
+	@Field(value = "PAYMENT_ID")
+	private String paymentId;
+	
 	/**
 	 * 1. If payment received from more than one customer., we need to insert two
 	 * records for single transaction.
@@ -42,8 +45,8 @@ public class PaymentBy {
 	@Field(value = "PAYMENT_RECEIVED_ID", order = 2)
 	private List<String> paymentReceivedIds;
 
-	@Field(value = "CREDIT_CARD_BILL_PAYMENT_ID", order = 3)
-	private String creditCardBillPaymentId;
+	@Field(value = "CREDIT_CARD_PAYMENT_ID", order = 3)
+	private String creditCardPaymentId;
 
 	@Field(value = "DEBIT_CARD_PAYMENT_ID", order = 4)
 	private String debitCardPaymentId;

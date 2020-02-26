@@ -49,7 +49,7 @@ public class CashPayment {
 	private String referenceNo;
 	
 	/**
-	 * 1. Where the transaction is done.
+	 * 1. Brief Description Transaction related details
 	 */
 	@NotNull(message="Transaction Details is required field.")
 	@Field(value = "TRANSACTION_DETAILS")

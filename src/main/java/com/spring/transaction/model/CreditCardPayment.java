@@ -13,19 +13,36 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import lombok.Data;
 
 @Data
-@Document(collection = "CREDIT_CARD_BILL_PAYMENT")
-public class CreditCardBillPayment {
-	
+@Document(collection = "CREDIT_CARD_PAYMENT")
+public class CreditCardPayment {
+
 	@Id
-	@Field(value="CREDIT_CARD_BILL_PAYMENT_ID", order = 1)
-	private String creditCardBillPaymentId;
+	@Field(value="CREDIT_CARD_PAYMENT_ID", order = 1)
+	private String creditCardPaymentId;
 	
 	@NotNull(message="Credit Card is required field.")
 	@Field(value="CREDIT_CARD_ID", order = 2)
 	private String creditCardId;
 	
+	/**
+	 * 1. Following columns are one group 
+	 * CONFIRM_WITH_CREDIT_CARD_STATEMENT_TRANSACTION_ID, 
+	 * CREDIT_CARD_STATEMENT_ID, 
+	 * CREDIT_CARD_STATEMENT_TRANSACTION_ID, 
+	 * CREDIT_CARD_STATEMENT_DATE.
+	 * 
+	 * 2. If CONFIRM_WITH_CREDIT_CARD_STATEMENT_TRANSACTION_ID updated remaining columns also need to be updated.
+	 * 
+	 * 3. Once Credit Card Statement is generated match CREDIT_CARD_PAYMENT_ID transaction with CONFIRM_WITH_CREDIT_CARD_STATEMENT_TRANSACTION_ID.
+	 */
+	@Field(value = "CONFIRM_WITH_CREDIT_CARD_STATEMENT_TRANSACTION_ID")
+	private Boolean confirmWithCreditCardStatementTransactionId;
+	
 	@Field(value = "CREDIT_CARD_STATEMENT_ID")
 	private String creditCardStatementId;
+	
+	@Field(value = "CREDIT_CARD_STATEMENT_TRANSACTION_ID")
+	private String creditCardStatementTransactionId;
 	
 	/**
 	 * 1. CREDIT_CARD_STATEMENT_DATE should be display in DropDown as FromDate To ToDate [03-Jan-2020 To 02-Feb-2020](Reference: CREDIT_CARD_STATEMENT -> STATEMENT_PERIOD).
@@ -63,7 +80,7 @@ public class CreditCardBillPayment {
 	private String payTypeId;
 	
 	/**
-	 * 1. Brief Description Transaction related details
+	 * 1. Brief Description Transaction related details.
 	 */
 	@NotNull(message="Transaction Details is required field.")
 	@Field(value = "TRANSACTION_DETAILS")
@@ -101,4 +118,5 @@ public class CreditCardBillPayment {
 	@NotNull(message = "Parent Payment Id is required field.")
 	@Field(value = "PARENT_PAYMENT_ID")
 	private String parentPaymentId;
+	
 }

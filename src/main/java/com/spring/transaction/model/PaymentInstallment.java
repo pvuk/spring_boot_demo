@@ -37,7 +37,7 @@ public class PaymentInstallment {
 	@Field(value = "REFERENCE_NO")										private String referenceNo;
 	
 	/**
-	 * 1. Where the transaction is done.
+	 * 1. Brief Description Transaction related details
 	 */
 	@Size(max = 3000)
 	@NotNull(message="Transaction Details is required field.")
