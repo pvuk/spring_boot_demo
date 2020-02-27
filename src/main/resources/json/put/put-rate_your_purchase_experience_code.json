@@ -1,0 +1,33 @@
+
+[
+	{
+		"code": "android_experience",
+		"position": 1,
+		"description": "Android Experience"
+	},
+	{
+		"code": "credit_payment",
+		"position": 2,
+		"description": "Credit Payment"
+	},
+	{
+		"code": "debit_payment",
+		"position": 3,
+		"description": "Debit Payment"
+	},
+	{
+		"code": "ios_experience",
+		"position": 4,
+		"description": "IOSExperience"
+	},
+	{
+		"code": "transaction",
+		"position": 5,
+		"description": "Transaction"
+	},
+	{
+		"code": "web_experience",
+		"position": 6,
+		"description": "Web Experience"
+	}
+]
