@@ -38,7 +38,7 @@ public class DebitCardPayment {
 	private String referenceNo;
 	
 	/**
-	 * 1. Brief Description Transaction related details
+	 * 1. Brief Description about Transaction related details
 	 */
 	@NotNull(message="Transaction Details is required field.")
 	@Field(value = "TRANSACTION_DETAILS")

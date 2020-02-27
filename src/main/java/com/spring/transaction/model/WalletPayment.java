@@ -34,7 +34,7 @@ public class WalletPayment {
 	@Field(value = "TRANSACTION_DATE")												private Date transactionDate;
 	
 	/**
-	 * 1. Brief Description Transaction related details
+	 * 1. Brief Description about Transaction related details
 	 */
 	@NotNull(message="Transaction Details is required field.")
 	@Field(value = "TRANSACTION_DETAILS", order = 7) 								private String transactionDetails;
