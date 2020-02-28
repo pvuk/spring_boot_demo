@@ -1,0 +1,37 @@
+[
+	{
+		"code": "success",
+		"position": 1,
+		"description": "Success"
+	},
+	{
+		"code": "hold",
+		"position": 2,
+		"description": "Hold"
+	},
+	{
+		"code": "rejected",
+		"position": 3,
+		"description": "Rejected"
+	},
+	{
+		"code": "approved",
+		"position": 4,
+		"description": "Approved"
+	},
+	{
+		"code": "pending",
+		"position": 5,
+		"description": "Pending"
+	},
+	{
+		"code": "processing",
+		"position": 6,
+		"description": "Processing"
+	},
+	{
+		"code": "progress",
+		"position": 7,
+		"description": "Progress"
+	}
+]

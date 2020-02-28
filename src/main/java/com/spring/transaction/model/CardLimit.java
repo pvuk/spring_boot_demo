@@ -1,7 +1,7 @@
 package com.spring.transaction.model;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 
 import javax.validation.constraints.NotNull;
 
@@ -21,28 +21,33 @@ import lombok.NoArgsConstructor;
 @Document(collection = "CARD_LIMIT")
 public class CardLimit {
 
-	@Field(value="CARD_LIMIT_ID", order = 1)
 	@Id
-	private String cardLimitId;
+	@Field(value="CARD_LIMIT_ID", order = 1)							private String cardLimitId;
 	
-	//Message, Email, ITR, SMS, Post
-	@Field(value="CARD_UPGRADE_THROUGH", order = 2) private String cardUpgradeThrough;
+	/**
+	 * 1. Refer to CREDIT_CARD_ID, DEBIT_CARD_ID, WALLET_CARD_ID, GIFT_CARD_ID, REWARD_CARD_ID, 
+	 * 		VIRTUAL_CREDIT_CARD, VIRTUAL_DEBIT_CARD etc.,
+	 */
+	@Field(value = "CARD_ID", order = 12)
+	@NotNull(message = "Card is required field.")
+	private String cardId;
 	
-	@Field(value = "CARD_LIMIT_ENHANCEMENT_REQUEST_ON") private Date cardLimitEnhancementRequestOn;
+	//Message, Email, IVR, SMS, Post
+	@Field(value="CARD_UPGRADE_THROUGH", order = 2) 					private String cardUpgradeThrough;
 	
-	@Field(value="UPGRADE_LIMIT_FROM", order = 3) private Long upgradeLimitFrom;
-	@Field(value="UPGRADE_LIMIT_TO", order = 4) private Long upgradeLimitTo;
-	@Field(value="UPGRADE_LIMIT_ON", order = 5) private Timestamp upgradeLimitOn;
-
-	@Field(value="TEMPORARY_LIMIT_FROM", order = 6) 				private Long temporaryLimit;
-	@Field(value="TEMPORARY_LIMIT_TO", order = 7) 					private Date temporaryLimitFrom;
-	@Field(value="TEMPORARY_LIMIT_ELIGIBLE_FROM_DATE", order = 8) 	private Date temporaryLimitEligibleFromDate;
-	@Field(value="TEMPORARY_LIMIT_ELIGIBLE_TO_DATE", order = 9) 	private Date temporaryLimitEligibleToDate;
+	@Field(value = "CARD_LIMIT_ENHANCEMENT_REQUEST_ON") 				private OffsetDateTime cardLimitEnhancementRequestOn;
 	
-	@Field(value = "CARD_DETAILS_ID", order = 10)
-	private String cardDetailsId;
+	@Field(value="UPGRADE_LIMIT_FROM", order = 3) 						private BigDecimal upgradeLimitFrom;
+	@Field(value="UPGRADE_LIMIT_TO", order = 4) 						private BigDecimal upgradeLimitTo;
+	@Field(value="UPGRADE_LIMIT_ON", order = 5) 						private OffsetDateTime upgradeLimitOn;
 	
-	@Field(value="CUSTOMER_ID", order = 11)
+	@Field(value="TEMPORARY_LIMIT_FROM", order = 6) 					private BigDecimal temporaryLimitFrom;
+	@Field(value="TEMPORARY_LIMIT_TO", order = 7) 						private BigDecimal temporaryLimitTo;
+	@Field(value="TEMPORARY_LIMIT_ELIGIBLE_FROM_DATE", order = 8) 		private OffsetDateTime temporaryLimitEligibleFromDate;
+	@Field(value="TEMPORARY_LIMIT_ELIGIBLE_TO_DATE", order = 9) 		private OffsetDateTime temporaryLimitEligibleToDate;
+	
+	@Field(value = "COMMENT", order = 10)								private String comment;
+	
 	@NotNull(message="Customer is required field.")
-	private String customerId;
+	@Field(value="CUSTOMER_ID", order = 11)								private String customerId;
 }

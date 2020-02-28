@@ -24,7 +24,9 @@ public class CardDetails {
 	private String cardTypeId;
 	
 	/**
-	 * 1. Refer to CREDIT_CARD_ID, DEBIT_CARD_ID, WALLET_CARD_ID, GIFT_CARD_ID, REWARD_CARD_ID etc.,
+	 * 1. Refer to CREDIT_CARD_ID, DEBIT_CARD_ID, WALLET_CARD_ID, GIFT_CARD_ID, REWARD_CARD_ID, 
+	 * 		VIRTUAL_CREDIT_CARD, VIRTUAL_DEBIT_CARD etc.,
+	 * 2. Maintain Format XX_XXXX_XXXX
 	 */
 	@Field(value = "CARD_ID", order = 3)
 	@NotNull(message = "Card is required field.")
@@ -32,6 +34,13 @@ public class CardDetails {
 	
 	@Field(value = "FEES_AND_CHARGES_ID")
 	private String feesAndChargesId;
+	
+	/**
+	 * 1.* When CREDIT_CARD_CODE is upgraded update CREDIT_CARD_ID with UPGRADE_FROM_CARD_ID and new card with UPGRADE_TO_CARD_ID.
+	 * 2. ACTIVE set false, UPGRADED true.
+	 */
+	@Field(value="UPGRADE_FROM_CARD_ID", order = 8)	private String upgradeFromCardId;
+	@Field(value="UPGRADE_TO_CARD_ID", order = 8)	private String upgradeToCardId;
 	
 	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")

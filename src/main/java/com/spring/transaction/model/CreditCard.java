@@ -34,27 +34,26 @@ public class CreditCard {
 	
 	@NotNull(message="Card Name is required field.")
 	@Field(value="DESCRIPTION", order = 4) 				private String description;
+
+	@Field(value = "CARD_STATUS_ID", order = 5)			private String cardStatusId;
+	@Field(value = "UPGRADE_STATUS_ID", order = 6)		private String upgradeStatusId;
 	
 	@Type(type = "yes_no")
-	@Field(value="ACTIVE", order = 5)					private	Boolean active;
+	@Field(value="ACTIVE", order = 7)					private	Boolean active;
 	
 	@Type(type = "yes_no")
-	@Field(value="UPGRADED", order = 6)					private Boolean upgraded;
+	@Field(value="UPGRADED", order = 8)					private Boolean upgraded;
 	
 	/**
-	 * 1. once Credit Card is CLOSED true, the value of ACTIVE should be set to false.
-	 * 2. if UPGRADED true value of CLOSED set to true.
+	 * 1. Once Credit Card is CLOSED true, the value of ACTIVE should be set to false.
+	 * 2. If UPGRADED true value of CLOSED set to true.
 	 */
 	@Type(type = "yes_no")
-	@Field(value="CLOSED", order = 7)					private Boolean closed;
+	@Field(value="CLOSED", order = 9)					private Boolean closed;
 	
-	/**
-	 * 1. When Credit Card is upgraded update CREDIT_CARD_ID with UPGRADE_CREDIT_CARD_ID.
-	 * 2. ACTIVE set false, UPGRADED true.
-	 */
-	@Field(value="UPGRADE_CREDIT_CARD_ID", order = 8)	private String upgradeCreditCardId;
 	
-	@Field(value="CUSTOMER_ID", order = 9)
+	
+	@Field(value="CUSTOMER_ID", order = 10)
 	@NotNull(message = "Customer is required field.")	private String customerId;
 	
 	@Transient

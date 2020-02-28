@@ -34,7 +34,14 @@ public class PaymentByServiceImpl implements PaymentByService {
 
 	@Override
 	public String save(PaymentBy paymentBy) throws Exception {
-		// TODO Auto-generated method stub
+		try {
+			
+		} catch (Exception e) {
+			log.error("save: {}", e.getMessage());
+			e.printStackTrace();
+		} finally {
+			
+		}
 		return null;
 	}
 
