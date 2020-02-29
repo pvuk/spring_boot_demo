@@ -33,5 +33,30 @@
 		"code": "progress",
 		"position": 7,
 		"description": "Progress"
+	},
+	{
+		"code": "accepted",
+		"position": 8,
+		"description": "Accepted"
+	},
+	{
+		"code": "not_accepted",
+		"position": 9,
+		"description": "Not Accepted"
+	},
+	{
+		"code": "eligible",
+		"position": 10,
+		"description": "Eligible"
+	},
+	{
+		"code": "request_raised",
+		"position": 11,
+		"description": "Request Raised"
+	},
+	{
+		"code": "auto_revise",
+		"position": 12,
+		"description": "Auto Revise"
 	}
 ]
