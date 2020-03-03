@@ -58,5 +58,20 @@
 		"code": "auto_revise",
 		"position": 12,
 		"description": "Auto Revise"
+	},
+	{
+		"code": "upgraded",
+		"position": 13,
+		"description": "Upgraded"
+	},
+	{
+		"code": "downgraded",
+		"position": 14,
+		"description": "Downgraded"
+	},
+	{
+		"code": "lifetime_free",
+		"position": 15,
+		"description": "Lifetime Free"
 	}
 ]
