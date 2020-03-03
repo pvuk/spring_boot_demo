@@ -29,4 +29,10 @@ public class PayType {
 	
 	@NotNull(message="Pay Type is required field.")
 	@Field(value="DESCRIPTION") 						private String description;
+	
+	/**
+	 * 1. Display format in DropDown should be DESCRIPTION (DETAILS)
+	 */
+	@Field(value="DETAILS")
+	private String details;
 }

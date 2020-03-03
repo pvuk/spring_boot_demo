@@ -77,7 +77,8 @@
 	{
 		"code": "upipay",
 		"position": 15,
-		"description": "UPI Pay"
+		"description": "UPI Pay",
+		"details": "Paying Bill using UPI Supported Applications."
 	},
 	{
 		"code": "walletpay",
@@ -87,7 +88,8 @@
 	{
 		"code": "partialpay",
 		"position": 17,
-		"description": "Partial Pay"
+		"description": "Partial Pay",
+		"details": "Instead of Paying Bill with full payment Paid partially."
 	},
 	{
 		"code": "fullpay",
