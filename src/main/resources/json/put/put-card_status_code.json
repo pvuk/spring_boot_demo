@@ -43,5 +43,10 @@
 		"code": "renewal",
 		"position": 9,
 		"description": "Renewal"
+	},
+	{
+		"code": "damaged",
+		"position": 10,
+		"description": "Damaged"
 	}
 ]
