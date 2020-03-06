@@ -43,5 +43,10 @@
 		"code": "success",
 		"position": 9,
 		"description": "Success"
+	},
+	{
+		"code": "expire",
+		"position": 10,
+		"description": "Expire"
 	}
 ]

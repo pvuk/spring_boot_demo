@@ -10,13 +10,23 @@
 		"description": "Pending"
 	},
 	{
-		"code": "processing",
+		"code": "in_process",
 		"position": 3,
-		"description": "Processing"
+		"description": "In Process"
 	},
 	{
 		"code": "completed",
 		"position": 4,
 		"description": "Completed"
+	},
+	{
+		"code": "not_participated",
+		"position": 5,
+		"description": "Not Participated"
+	},
+	{
+		"code": "in_progress",
+		"position": 6,
+		"description": "In Progress"
 	}
 ]
