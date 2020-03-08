@@ -73,5 +73,15 @@
 		"code": "lifetime_free",
 		"position": 15,
 		"description": "Lifetime Free"
+	},
+	{
+		"code": "cancel",
+		"position": 16,
+		"description": "Cancel"
+	},
+	{
+		"code": "failed",
+		"position": 17,
+		"description": "Failed"
 	}
 ]
