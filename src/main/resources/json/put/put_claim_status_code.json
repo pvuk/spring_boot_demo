@@ -1,0 +1,33 @@
+[
+	{
+		"code": "success",
+		"position": 1,
+		"description": "Success"
+	},
+	{
+		"code": "failed",
+		"position": 2,
+		"description": "Failed"
+	},
+	{
+		"code": "in_process",
+		"position": 3,
+		"description": "In Process"
+	},
+	{
+		"code": "expired",
+		"position": 4,
+		"description": "Expired"
+	},
+	{
+		"code": "not_participated",
+		"position": 5,
+		"description": "Not Participated"
+	},
+	{
+		"code": "in_progress",
+		"position": 6,
+		"description": "In Progress",
+		"details": "We can use 'In Progress' option if the offer can utilize more than once like Payzaap, citi bank Utility Bill payments"
+	}
+]
