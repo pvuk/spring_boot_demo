@@ -27,6 +27,7 @@
 	{
 		"code": "in_progress",
 		"position": 6,
-		"description": "In Progress"
+		"description": "In Progress",
+		"details": "We can use 'In Progress' option if the offer can utilize more than once like Payzaap, citi bank Utility Bill payments"
 	}
 ]

@@ -95,5 +95,15 @@
 		"code": "fullpay",
 		"position": 18,
 		"description": "Full Pay"
+	},
+	{
+		"code": "otherspay",
+		"position": 19,
+		"description": "Others Pay"
+	},
+	{
+		"code": "overduepay",
+		"position": 20,
+		"description": "Over Due Pay"
 	}
 ]
