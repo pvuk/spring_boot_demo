@@ -21,20 +21,16 @@ import lombok.Data;
 @Document(collection = "ASSIGN_PAYMENT_CODE")
 public class AssignPayment {
 	
-	@Field(value = "ASSIGN_PAYMENT_ID", order = 1)
 	@Id
-	private String assignPaymentId;
+	@Field(value = "ASSIGN_PAYMENT_ID", order = 1)											private String assignPaymentId;
 	
-	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@TextIndexed
 	@NotNull(message = "Assign Payment Code is required field.")
-	private String code;
+	@Field(value = "CODE", order = 2)														private String code;
 
-	@Field(value = "POSITION", order = 3)
-	private int position;
+	@Field(value = "POSITION", order = 3)													private int position;
 
-	@Field(value = "DESCRIPTION", order = 4)
 	@NotNull(message = "Assign Payment is required field.")
-	private String description;
+	@Field(value = "DESCRIPTION", order = 4)												private String description;
 }

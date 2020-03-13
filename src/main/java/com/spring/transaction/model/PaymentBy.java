@@ -118,8 +118,8 @@ public class PaymentBy {
 	@Field(value = "OFFER_EXPENDITURE_ID")
 	private String offerExpenditureId;
 
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
+	@Field(value = "CUSTOMER_ID")
 	private String customerId;
 	
 }

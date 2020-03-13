@@ -28,9 +28,8 @@ public class CardLimit {
 	 * 1. Refer to CREDIT_CARD_ID, DEBIT_CARD_ID, WALLET_CARD_ID, GIFT_CARD_ID, REWARD_CARD_ID, 
 	 * 		VIRTUAL_CREDIT_CARD, VIRTUAL_DEBIT_CARD etc.,
 	 */
-	@Field(value = "CARD_ID", order = 12)
 	@NotNull(message = "Card is required field.")
-	private String cardId;
+	@Field(value = "CARD_ID", order = 12)								private String cardId;
 	
 	//Message, Email, IVR, SMS, Post
 	@Field(value="CARD_UPGRADE_THROUGH", order = 2) 					private String cardUpgradeThrough;

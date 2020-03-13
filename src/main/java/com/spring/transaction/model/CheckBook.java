@@ -15,9 +15,8 @@ import lombok.Data;
 @Document(collection="CHECK_BOOK")
 public class CheckBook {
 	
-	@Field(value = "CHECK_BOOK_ID")
 	@Id
-	private String checkBookId;
+	@Field(value = "CHECK_BOOK_ID")											private String checkBookId;
 	
 	private String bankBranchId;
 	
@@ -43,7 +42,6 @@ public class CheckBook {
 	
 	private Date validUpto;
 	
-	@Field(value="CUSTOMER_ID")
 	@NotNull(message="Customer is required field.")
-	private String customerId;
+	@Field(value="CUSTOMER_ID")												private String customerId;
 }

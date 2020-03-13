@@ -21,8 +21,8 @@ public class ClaimStatus {
 	@Id
 	@Field(value = "CLAIM_STATUS_ID")					private String claimStatusId;
 	
-	@Field(value="CODE")
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)
+	@Field(value="CODE")								private String code;
 	
 	@Field(value="POSITION") 							private Long position;
 	

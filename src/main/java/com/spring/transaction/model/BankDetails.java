@@ -21,8 +21,8 @@ import lombok.Data;
 @Document(collection="BANK_DETAILS")
 public class BankDetails {
 	
-	@Field(value = "BANK_DETAILS_ID", order = 1)
 	@Id
+	@Field(value = "BANK_DETAILS_ID", order = 1)
 	private String bankDetailsId;
 	
 	@Field(value="BANK_ID", order = 2)
@@ -31,8 +31,8 @@ public class BankDetails {
 	@Field(value="BANK_BRANCH_ID", order = 3)
 	private String bankBranchId;
 	
-	@Field(value = "ACCOUNT_NUMBER")
 	@NotNull(message = "Account Number is required field.")
+	@Field(value = "ACCOUNT_NUMBER")
 	private BigDecimal accountNumber;
 	
 	/**
@@ -45,9 +45,9 @@ public class BankDetails {
 	 * 1. If bank account is transferred to other branch then new branch account is in
 	 * active state. Transfer from branch isActive false.
 	 */
-	@Field(value="IS_TRANSFERRED", order = 5)
 	@Type(type="yes_no")
 	@Builder.Default
+	@Field(value="IS_TRANSFERRED", order = 5)
 	private Boolean isTransferred = false;
 	
 	@Field(value="ACCOUNT_CREATED_ON", order = 6)
@@ -59,8 +59,8 @@ public class BankDetails {
 	@Field(value = "TransferOn", order = 8)
 	private Date transferOn;
 	
-	@Field(value="CUSTOMER_ID", order = 9)
 	@NotNull(message = "Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 9)
 	private String customerId;
 	
 	private String bankAccountTypeId;

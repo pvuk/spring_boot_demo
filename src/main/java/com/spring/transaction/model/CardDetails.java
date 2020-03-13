@@ -19,8 +19,8 @@ public class CardDetails {
 	@Field(value = "CARD_DETAILS_ID", order = 1)
 	private String cardDetailsId;
 	
-	@Field(value = "CARD_TYPE_ID", order = 2)
 	@NotNull(message = "Card Type is required field.")
+	@Field(value = "CARD_TYPE_ID", order = 2)
 	private String cardTypeId;
 	
 	/**
@@ -28,8 +28,8 @@ public class CardDetails {
 	 * 		VIRTUAL_CREDIT_CARD, VIRTUAL_DEBIT_CARD etc.,
 	 * 2. Maintain Format XX_XXXX_XXXX
 	 */
-	@Field(value = "CARD_ID", order = 3)
 	@NotNull(message = "Card is required field.")
+	@Field(value = "CARD_ID", order = 3)
 	private String cardId;
 	
 	@Field(value = "FEES_AND_CHARGES_ID")
@@ -39,11 +39,11 @@ public class CardDetails {
 	 * 1.* When CREDIT_CARD_CODE is upgraded update CREDIT_CARD_ID with UPGRADE_FROM_CARD_ID and new card with UPGRADE_TO_CARD_ID.
 	 * 2. ACTIVE set false, UPGRADED true.
 	 */
-	@Field(value="UPGRADE_FROM_CARD_ID", order = 8)	private String upgradeFromCardId;
-	@Field(value="UPGRADE_TO_CARD_ID", order = 8)	private String upgradeToCardId;
+	@Field(value="UPGRADE_FROM_CARD_ID", order = 8)										private String upgradeFromCardId;
+	@Field(value="UPGRADE_TO_CARD_ID", order = 8)										private String upgradeToCardId;
 	
-	@Field(value="CUSTOMER_ID", order = 4)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 4)
 	private String customerId;
 	
 	@Embedded

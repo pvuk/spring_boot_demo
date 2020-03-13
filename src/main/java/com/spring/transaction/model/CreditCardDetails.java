@@ -15,12 +15,12 @@ import lombok.Data;
 @Document(collection = "CREDIT_CARD_DETAILS")
 public class CreditCardDetails {
 
-	@Field(value = "CREDIT_CARD_DETAILS_ID", order = 1)
 	@Id
+	@Field(value = "CREDIT_CARD_DETAILS_ID", order = 1)
 	private String creditCardDetailsId;
 
-	@Field(value = "CARD_NUMBER", order = 2)
 	@Indexed(unique = true)
+	@Field(value = "CARD_NUMBER", order = 2)
 	private String cardNumber;
 
 	@Field(value = "EXPIRE_MONTH", order = 3)
@@ -38,12 +38,12 @@ public class CreditCardDetails {
 	@Field(value = "ALLOWED_INTERNATIONAL_TRANSACTION", order = 7)
 	private boolean allowedInternationalTransaction;
 
-	@Field(value = "CREDIT_CARD_ID", order = 8)
 	@NotNull(message = "Credit Card is required field.")
+	@Field(value = "CREDIT_CARD_ID", order = 8)
 	private String creditCardId;
 	
-	@Field(value = "BANK_ID", order = 9)
 	@NotNull(message = "BankId is required field.")
+	@Field(value = "BANK_ID", order = 9)
 	private long bankId;
 
 	@Field(value = "CARD_TYPE_ID", order = 10)
@@ -55,8 +55,8 @@ public class CreditCardDetails {
 	@Field(value = "VALID_FROM_YEAR", order = 12)
 	private Date validFromYear;
 
-	@Field(value = "REWARD_CARD_ID", order=13)
 	@NotNull(message="Reward Card is required field.")
+	@Field(value = "REWARD_CARD_ID", order=13)
 	private Long rewardCardId;
 	
 	@Field(value = "CARD_STATUS_ID", order=14)
@@ -68,7 +68,7 @@ public class CreditCardDetails {
 	@Field(value = "CARD_LIMIT_ID", order=16)
 	private String cardLimitId;
 
-	@Field(value = "CUSTOMER_ID", order = 17)
 	@NotNull(message = "Customer is required field.")
+	@Field(value = "CUSTOMER_ID", order = 17)
 	private String customerId;
 }

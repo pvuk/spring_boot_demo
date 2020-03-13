@@ -122,8 +122,8 @@ public class DebitCardStatement {
 	/**
 	 * 1. check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
-	@Field(value="CUSTOMER_ID", order = 6)
-	@NotNull(message="Customer is required field.") 								private String customerId;
+	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 6)											private String customerId;
 
 	@Transient 																		private Set<DebitCardStatementTransaction> dcStatementTransactionSet;
 }

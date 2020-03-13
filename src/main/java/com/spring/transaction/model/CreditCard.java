@@ -21,14 +21,14 @@ import lombok.NoArgsConstructor;
 @Document(collection = "CREDIT_CARD_CODE")
 public class CreditCard {
 
-	@Field(value = "CREDIT_CARD_ID", order = 1)
-	@Id 												private String creditCardId;
+	@Id
+	@Field(value = "CREDIT_CARD_ID", order = 1)			private String creditCardId;
 
 	/**
 	 * 1. <a href="https://docs.mongodb.com/manual/core/index-unique/">Unique Indexes</a>
 	 */
-	@Field(value="CODE", order = 2)
-	@Indexed(unique=true)								private String code;
+	@Indexed(unique=true)
+	@Field(value="CODE", order = 2)						private String code;
 	
 	@Field(value="POSITION", order = 3) 				private Long position;
 	
@@ -51,10 +51,8 @@ public class CreditCard {
 	@Type(type = "yes_no")
 	@Field(value="CLOSED", order = 9)					private Boolean closed;
 	
-	
-	
-	@Field(value="CUSTOMER_ID", order = 10)
-	@NotNull(message = "Customer is required field.")	private String customerId;
+	@NotNull(message = "Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 10)				private String customerId;
 	
 	@Transient
 	@Builder.Default

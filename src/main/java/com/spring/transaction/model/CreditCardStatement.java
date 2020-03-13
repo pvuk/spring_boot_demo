@@ -43,12 +43,12 @@ import lombok.Data;
 @Document(collection = "CREDIT_CARD_STATEMENT")
 public class CreditCardStatement {
 	
-	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 1)
-	@Id																				private String creditCardStatementId;
+	@Id
+	@Field(value = "CREDIT_CARD_STATEMENT_ID", order = 1)							private String creditCardStatementId;
 	
 	@Type(type="yes_no")
-	@Field(value = "IS_STATEMENT_CYCLE_CLOSED", order = 2)
-	@NotNull(message="Credit Card Statement Cycle Closed is required field.")		private Boolean isStatementCycleClosed = Boolean.FALSE;
+	@NotNull(message="Credit Card Statement Cycle Closed is required field.")
+	@Column(name = "IS_STATEMENT_CYCLE_CLOSED")										private Boolean isStatementCycleClosed = Boolean.FALSE;
 	
 	private Long currencyId;
 	
@@ -103,16 +103,18 @@ public class CreditCardStatement {
 	@Column(name = "REWARD_POINTS_DETAILS_ID")										private String rewardPointsDetailsId;
 	
 	@NotNull(message="Credit card is required field.")
-	@DBRef 																			private CreditCard creditCardId;
+	@DBRef
+	@Column(name = "CREDIT_CARD_ID")												private CreditCard creditCardId;
 	
 	@Column(name = "CREDIT_CARD_Bill_PAYMENT_MODE_ID")								private String creditCardBillPaymentModeId;
 	
 	/**
 	 * 1. check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
-	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")
+	@Column(name="CUSTOMER_ID")
 	private String customerId;
 	
-	@Transient 																		private Set<CreditCardStatementTransaction> ccStatementTransactionSet;
+	@Transient
+	private Set<CreditCardStatementTransaction> ccStatementTransactionSet;
 }

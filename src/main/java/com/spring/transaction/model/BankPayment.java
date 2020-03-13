@@ -25,13 +25,13 @@ import lombok.NoArgsConstructor;
 @Document(collection = "BANK_PAYMENT")
 public class BankPayment {
 
-	@Field(value = "BANK_PAYMENT_ID", order = 1)
 	@Id
+	@Field(value = "BANK_PAYMENT_ID", order = 1)
 	private String bankPaymentId;
 
-	@Field(value = "BANK_CODE", order = 2)
 	@NotNull(message = "Bank Can't be empty.")
 	@DBRef
+	@Field(value = "BANK_CODE", order = 2)
 	private Bank bank;
 
 	/**
@@ -53,8 +53,8 @@ public class BankPayment {
 	/**
 	 * 1. Where the transaction is done / transaction details.
 	 */
-	@Field(value = "TRANSACTION_DETAILS", order = 6)
 	@NotNull(message = "Transaction Details is required field.")
+	@Field(value = "TRANSACTION_DETAILS", order = 6)
 	private String transactionDetails;
 	
 	@Field(value="CHECK_BOOK_ID", order = 7)
@@ -69,8 +69,8 @@ public class BankPayment {
 	/**
 	 * 1. WITHDRAWAL_AMOUNT / DEPOSIT_AMOUNT should be enter to calculate BALANCE
 	 */
-	@Field(value = "BALANCE", order = 10)
 	@NotNull(message = "Amount is required field.")
+	@Field(value = "BALANCE", order = 10)
 	private BigDecimal balance;
 
 	/**
@@ -80,12 +80,12 @@ public class BankPayment {
 	@Field(value = "CONFIRM_PAYMENT", order = 11)
 	private Boolean confirmPayment;
 
-	@Field(value = "CUSTOMER_ID")
 	@NotNull(message = "Customer is required field.")
+	@Field(value = "CUSTOMER_ID")
 	private String customerId;
 
-	@Field(value = "PAYMENT_TYPE_ID")
 	@NotNull(message = "Payment Type is required field")
+	@Field(value = "PAYMENT_TYPE_ID")
 	private String paymentTypeId;
 	
 	@NotNull(message = "Payment Status is required field")
@@ -98,12 +98,12 @@ public class BankPayment {
 	/**
 	 * payee name
 	 */
-	@Field(value="TRANSFER_TO_ID")
 	@NotNull(message = "Transfer To is required field.")
+	@Field(value="TRANSFER_TO_ID")
 	private String transferToId;
 	
-	@Field(value = "PARENT_PAYMENT_ID")
 	/* @NotNull(message = "Parent Payment Id is required field.") */
+	@Field(value = "PARENT_PAYMENT_ID")
 	private String parentPaymentId;
 
 	@Embedded

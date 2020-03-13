@@ -32,12 +32,12 @@ import lombok.NoArgsConstructor;
 @Document(collection = "CURRENT_ADDRESS")
 public class CurrentAddress {
 
-	@Field(value="CURRENT_ADDRESS_ID", order = 1)
 	@Id
+	@Field(value="CURRENT_ADDRESS_ID", order = 1)
 	private ObjectId currentAddressId;
 
-	@Field(value="ADDRESS", order = 2)
 	@Column(length = 3000)
+	@Field(value="ADDRESS", order = 2)
 	private String address;
 
 	@Field(value="CITY", order = 3)
@@ -55,19 +55,19 @@ public class CurrentAddress {
 	@Field(value="COUNTRY", order = 7)
 	private String country;
 
-	@Field(value="ADDRESS_ID", order = 8)
 	@NotNull(message = "Address is required field.")
+	@Field(value="ADDRESS_ID", order = 8)
 	private String addressId;
 	
 	/**
 	 * 1. Only one IS_ACTIVE_CURRENT_ADDRESS should be active
 	 * 2. Which is recently inserted or updated is going to be IS_ACTIVE_CURRENT_ADDRESS true
 	 */
-	@Field(value = "IS_ACTIVE_CURRENT_ADDRESS", order = 9)
 	@Type(type="yes_no")
+	@Field(value = "IS_ACTIVE_CURRENT_ADDRESS", order = 9)
 	private Boolean isActiveCurrentAddress;
 	
-	@Field(value="CUSTOMER_ID", order = 10)
 	@NotNull(message="Customer is required field.")
+	@Field(value="CUSTOMER_ID", order = 10)
 	private String customerId;
 }

@@ -25,18 +25,18 @@ import lombok.Data;
 @Document(collection = "ASSIGN_PAYMENT_BY")
 public class AssignPaymentBy {
 	
-	@Field(value = "ASSIGN_PAYMENT_BY_ID")
 	@Id
+	@Field(value = "ASSIGN_PAYMENT_BY_ID")
 	private String assignPaymentById;
 	
-	@Field(value="AMOUNT")
 	@NotNull(message="Amount is required field.")
+	@Field(value="AMOUNT")
 	private BigDecimal amount;
 	
 	@Field(value = "COMMENT")
 	private String comment;
 	
-	@Field(value = "ASSIGN_PAYMENT_ID")
 	@NotNull(message="Assign Payment is required field.")
+	@Field(value = "ASSIGN_PAYMENT_ID")
 	private String assignPaymentId;
 }

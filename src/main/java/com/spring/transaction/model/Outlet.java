@@ -26,13 +26,13 @@ import lombok.NoArgsConstructor;
 public class Outlet {
 
 	@Id
-	@Field(value = "OUTLET_ID", order = 1)					private String outletId;
+	@Field(value = "OUTLET_ID", order = 1)									private String outletId;
 
-	@Field(value = "CODE", order = 2)
-	@Indexed(unique = true)									private String code;
+	@Indexed(unique = true)
+	@Field(value = "CODE", order = 2)										private String code;
 	
-	@Field(value = "POSITION", order = 3) 					private Long position;
+	@Field(value = "POSITION", order = 3) 									private Long position;
 	
 	@NotNull(message = "Outlet is required field.")
-	@Field(value = "DESCRIPTION", order = 4) 				private String description;
+	@Field(value = "DESCRIPTION", order = 4) 								private String description;
 }

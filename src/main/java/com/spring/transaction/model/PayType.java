@@ -33,6 +33,5 @@ public class PayType {
 	/**
 	 * 1. Display format in DropDown should be DESCRIPTION (DETAILS)
 	 */
-	@Field(value="DETAILS")
-	private String details;
+	@Field(value="DETAILS")								private String details;
 }

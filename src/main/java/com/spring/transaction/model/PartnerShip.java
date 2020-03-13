@@ -26,10 +26,10 @@ public class PartnerShip {
 	@Field(value="EXTENDED_PARTNER_SHIP", order = 3)
 	private Boolean extendedPartnerShip;
 	
-	@Field(value="PARTERN_SHIP_FROM", order = 4)
-	private Date parternShipFrom;
+	@Field(value="PARTERN_SHIP_FROM_DATE", order = 4)
+	private Date parternShipFromDate;
 	
-	@Field(value="PARTNER_SHIP_TILL", order = 5)
-	private Date partnerShipTill;
+	@Field(value="PARTNER_SHIP_TILL_DATE", order = 5)
+	private Date partnerShipTillDate;
 	
 }

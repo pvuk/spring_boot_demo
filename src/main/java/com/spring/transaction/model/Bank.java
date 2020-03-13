@@ -29,58 +29,47 @@ import lombok.NoArgsConstructor;
 public class Bank {
 
 	@Id
-	@Field(value = "BANK_ID", order = 1)
-	private String bankId;
+	@Field(value = "BANK_ID", order = 1)												private String bankId;
 
-	@Field(value = "BANK_NAME", order = 2)
 	@Indexed(unique = true)
 	@NotBlank(message = "Bank Name is required field.")
-	private String bankName;
+	@Field(value = "BANK_NAME", order = 2)												private String bankName;
 	
-	@Field(value = "ESTABLISHED_ON", order = 3)
-	private Date establishedOn;
+	@Field(value = "ESTABLISHED_ON", order = 3)											private Date establishedOn;
 	
-	@Field(value = "ESTABLISHED_YEAR", order = 4)
-	private Long establishedYear;
+	@Field(value = "ESTABLISHED_YEAR", order = 4)										private Long establishedYear;
 	
-	@Field(value = "HEAD_QUARTER", order = 5)
-	private String headQuarter;
+	@Field(value = "HEAD_QUARTER", order = 5)											private String headQuarter;
 	
-	@Field(value = "BRANCHES", order = 6)
-	private Long branches;
+	@Field(value = "BRANCHES", order = 6)												private Long branches;
 	
-	@Field(value = "REVENUES", order = 7)
-	private BigDecimal revenues;
+	@Field(value = "REVENUES", order = 7)												private BigDecimal revenues;
 	
 	@Transient
 	private String strRevenues;
 	
-	@Field(value = "TOTAL_ASSETS", order = 8)
-	private BigDecimal totalAssets;
+	@Field(value = "TOTAL_ASSETS", order = 8)											private BigDecimal totalAssets;
 	
-	@Transient
-	private String strTotalAssets;
+	@Transient																			private String strTotalAssets;
 	
-	@Field(value = "NOTES", order = 9)
-	private String notes;
+	@Field(value = "NOTES", order = 9)													private String notes;
 	
-	@Field(value = "REF_LINK", order = 10)
-	private String refLink;
+	@Field(value = "REF_LINK", order = 10)												private String refLink;
 	
 	@DBRef
-	@Field(value="BANK_TYPE", order = 11)
-	private BankType bankType;
+	@Field(value="BANK_TYPE", order = 11)												private BankType bankType;
 
 	/**
 	 * 1. BANK_NAME added by
 	 */
-	@Field(value="CUSTOMER_ID", order = 12)
 	@NotNull(message="Customer is required field.")
-	private String customerId;
+	@Field(value="CUSTOMER_ID", order = 12)												private String customerId;
 	
-	@Embedded
-	private AuditData auditData;
+	@Embedded																			private AuditData auditData;
 	
+	/**
+	 * 1. Only Database Inserted columns should be formated
+	 */
 	@Transient
 	@Builder.Default
 	private ErrorMessageMap errorMessageMap = new ErrorMessageMap();

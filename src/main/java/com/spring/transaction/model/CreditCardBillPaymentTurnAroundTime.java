@@ -21,18 +21,18 @@ import lombok.Data;
 public class CreditCardBillPaymentTurnAroundTime {
 	
 	@Id
-	private String creditCardBillPaymentTurnAroundTimeId;
+	@Field(value="CREDIT_CARD_BILL_PAYMENT_TURN_AROUND_TIME_ID", order = 1)		private String creditCardBillPaymentTurnAroundTimeId;
 	
 	@NotNull(message = "Credit Card Bill Payment Type is required field.")
-	private CreditCardBillPaymentType ccBillPaymentType;
+	@Field(value = "CC_BILL_PAYMENT_TYPE")										private CreditCardBillPaymentType ccBillPaymentType;
 	
-	private String availableLimitRelease;
-	private String paymentCreditToCardAccount;
+	@Field(value = "AVAILABLE_LIMIT_RELEASE")									private String availableLimitRelease;
+	
+	@Field(value = "PAYMENT_CREDIT_TO_CARD_ACCOUNT")							private String paymentCreditToCardAccount;
 	
 	/**
 	 * 1. Check how this field position is placed in MongoDB., because only few columns order are mentioned.
 	 */
-	@Field(value="CUSTOMER_ID", order = 6)
 	@NotNull(message="Customer is required field.")
-	private String customerId;
+	@Field(value="CUSTOMER_ID", order = 6)										private String customerId;
 }

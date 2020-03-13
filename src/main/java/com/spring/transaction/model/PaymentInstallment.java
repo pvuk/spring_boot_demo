@@ -19,8 +19,8 @@ public class PaymentInstallment {
 	@Id
 	@Field(value="PAYMENT_INSTALLMENT_ID", order = 1)					private String paymentInstallmentId;
 	
-	@Field(value="AMOUNT_DUE", order = 2)
-	@NotNull(message="Amount Due is required field.")					private BigDecimal amountDue;
+	@NotNull(message="Amount Due is required field.")
+	@Field(value="AMOUNT_DUE", order = 2)								private BigDecimal amountDue;
 	
 	@Field(value="DUE_DATE", order = 3) 								private Date dueDate;
 	@Field(value="PREVIOUS_AMOUNT", order = 4) 							private BigDecimal previousAmount;

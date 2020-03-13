@@ -36,8 +36,8 @@ import lombok.NoArgsConstructor;
 @Document(collection = "ADDRESS")
 public class Address {
 
-	@Field(value = "ADDRESS_ID", order = 1)
 	@Id
+	@Field(value = "ADDRESS_ID", order = 1)
 	private ObjectId addressId;
 
 	/**
@@ -47,25 +47,25 @@ public class Address {
 	 * <h1>if we use @Type annotation value is going to be save either 'Y' or
 	 * 'N'</h1>
 	 */
-	@Field(value = "IS_PERMANENT_ADDRESS_IS_SAME_AS_CURRENT_ADDRESS", order = 2)
 	@NotNull(message = "Permanent Address is required field.")
 	@Type(type = "yes_no")
+	@Field(value = "IS_PERMANENT_ADDRESS_IS_SAME_AS_CURRENT_ADDRESS", order = 2)
 	private Boolean isPermanentAddressIsSameAsCurrentAddress;
 
-	@Field(value = "PERMANENT_ADDRESS_ID", order = 3)
 	@NotNull(message = "Permanent Address is required field.")
+	@Field(value = "PERMANENT_ADDRESS_ID", order = 3)
 	private ObjectId permanentAddressId;
 
 	/**
 	 * 1. IS_CURRENT_ADDRESS can be many for single user If new address is added
 	 * maintain it in current_address
 	 */
-	@Field(value = "CURRENT_ADDRESS_ID", order = 4)
 	@NotNull(message = "Current Address is required field.")
+	@Field(value = "CURRENT_ADDRESS_ID", order = 4)
 	private ObjectId currentAddressId;
 
-	@Field(value = "CUSTOMER_ID", order = 5)
 	@NotNull(message = "Customer is required field.")
+	@Field(value = "CUSTOMER_ID", order = 5)
 	private String customerId;
 
 	@Transient

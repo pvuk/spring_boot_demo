@@ -53,14 +53,14 @@ public class ChequePayment {
 	/**
 	 * 1. Display at UI side only Debit / Bounce
 	 */
-	@Field(value = "PAYMENT_TYPE_ID")
 	@NotNull(message = "Payment Type is required field")
+	@Field(value = "PAYMENT_TYPE_ID")
 	private String paymentTypeId;
 	
 	@NotNull(message = "Payment Status is required field")
 	@Field(value="PAYMENT_STATUS_ID")
 	private String paymentStatusId;
 	
-	@Field(value = "PARENT_PAYMENT_ID")
-	@NotNull(message = "Parent Payment Id is required field.")	private String parentPaymentId;
+	@NotNull(message = "Parent Payment Id is required field.")
+	@Field(value = "PARENT_PAYMENT_ID")										private String parentPaymentId;
 }

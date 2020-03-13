@@ -17,8 +17,8 @@ import lombok.Data;
 @Document(collection="CUSTOMER")
 public class Customer {
 	
-	@Field(value = "CUSTOMER_ID", order = 1)
 	@Id
+	@Field(value = "CUSTOMER_ID", order = 1)
 	private String customerId;
 	
 	@Field(value = "USER_NAME", order = 2)
@@ -51,8 +51,8 @@ public class Customer {
 	@Field(value = "DATE_OF_BIRTH", order = 11)
 	private Date dateOfBirth;
 	
-	@Field(value = "ADDRESS_ID", order = 12)
 	@NotNull(message= "Address is required field")
+	@Field(value = "ADDRESS_ID", order = 12)
 	private String addressId;
 	
 	@Field(value = "EMPLOYEER_ID", order = 13)

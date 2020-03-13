@@ -14,17 +14,14 @@ import lombok.Data;
 public class PaymentStatus {
 	
 	@Id
-	@Field(value="PAYMENT_STATUS_ID", order = 1)
-	private String paymentStatusId;
+	@Field(value="PAYMENT_STATUS_ID", order = 1)							private String paymentStatusId;
 	
 	@Indexed(unique = true)
 	@NotNull(message = "Code is required field.")
-	@Field(value="CODE", order = 2)
-	private String code;
+	@Field(value="CODE", order = 2)											private String code;
 	
-	@Field(value="POSITION", order = 3) private int position;
+	@Field(value="POSITION", order = 3) 									private int position;
 	
 	@NotNull(message = "Status is required field.")
-	@Field(value="DESCRIPTION", order = 4)
-	private String description;
+	@Field(value="DESCRIPTION", order = 4)									private String description;
 }

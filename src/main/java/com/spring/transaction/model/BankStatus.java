@@ -20,19 +20,19 @@ import lombok.Data;
 @Document(collection = "BANK_STATUS_CODE")
 public class BankStatus {
 	
-	@Field(value = "BANK_STATUS_ID")
 	@Id
+	@Field(value = "BANK_STATUS_ID")
 	private String bankStatusId;
 	
-	@Field(value = "CODE", order = 2)
 	@Indexed(unique = true, name = "CODE_INDEX", direction = IndexDirection.ASCENDING)
 	@NotNull(message = "Bank Status Code is required field.")
+	@Field(value = "CODE", order = 2)
 	private String code;
 
 	@Field(value = "POSITION", order = 3)
 	private int position;
 
-	@Field(value = "DESCRIPTION", order = 4)
 	@NotNull(message = "Bank Status is required field.")
+	@Field(value = "DESCRIPTION", order = 4)
 	private String description;
 }
