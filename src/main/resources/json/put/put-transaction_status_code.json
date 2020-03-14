@@ -1,8 +1,8 @@
 [
 	{
-		"code": "sucess",
+		"code": "success",
 		"position": 1,
-		"description": "Sucess"
+		"description": "Success"
 	},
 	{
 		"code": "failed",
@@ -18,5 +18,20 @@
 		"code": "pending",
 		"position": 4,
 		"description": "Pending"
+	},
+	{
+		"code": "declined",
+		"position": 5,
+		"description": "Declined"
+	},
+	{
+		"code": "processing",
+		"position": 6,
+		"description": "Processing"
+	},
+	{
+		"code": "reverse",
+		"position": 7,
+		"description": "Reverse"
 	}
 ]

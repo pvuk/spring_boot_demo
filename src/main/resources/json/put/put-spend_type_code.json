@@ -57,11 +57,16 @@
 	{
 		"code": "store",
 		"position": 12,
-		"description": "store"
+		"description": "Store"
 	},
 	{
 		"code": "investment",
 		"position": 13,
 		"description": "Investment"
+	},
+	{
+		"code": "financial",
+		"position": 14,
+		"description": "Financial"
 	}
 ]

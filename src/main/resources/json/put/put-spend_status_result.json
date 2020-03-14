@@ -23,5 +23,10 @@
 		"code": "win",
 		"position": 5,
 		"description": "Win"
+	},
+	{
+		"code": "hold",
+		"position": 6,
+		"description": "Hold"
 	}
 ]
